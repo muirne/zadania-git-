@@ -1,0 +1,15 @@
+1504686379916	Sync.LogManager	DEBUG	Flushing file log
+1504686379965	Sync.LogManager	DEBUG	Log cleanup threshold time: 1503822379965
+1504686380005	Sync.LogManager	DEBUG	Done deleting files.
+1504689979881	Sync.Service	DEBUG	User-Agent: Firefox/54.0 (Linux x86_64) FxSync/1.56.0.20170612122310.desktop
+1504689979882	Sync.Service	INFO	Starting sync at 2017-09-06 11:26:19 in browser session 9Hl-J4akncji
+1504689979882	Sync.Service	DEBUG	In sync: should login.
+1504689979883	Sync.Status	DEBUG	Status.login: error.login.reason.no_username => error.login.reason.no_username
+1504689979884	Sync.Status	DEBUG	Status.service: service.client_not_configured => service.client_not_configured
+1504689979885	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1504689979887	Sync.SyncScheduler	DEBUG	Next sync in 3600000 ms.
+1504689979888	Sync.ErrorHandler	ERROR	Sync encountered a login error
+1504689979892	Sync.Service	DEBUG	Exception calling WrappedLock: Aborting login, client not configured.
+1504689979894	Sync.Service	DEBUG	Not syncing: login returned false.
+1504689979909	Sync.ErrorHandler	DEBUG	Addons installed: 1
+1504689979910	Sync.ErrorHandler	DEBUG	 - Ubuntu Modifications, version 3.2, id ubufox@ubuntu.com

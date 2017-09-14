@@ -1,0 +1,570 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+		
+	
+<style type="text/css">
+.limitdisplay-user { display: none; }.limitdisplay-user-10 { display: inline; }.limitdisplay-user-block-10 { display: block; }</style>	
+		    		
+			
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	                                <title>Prawidłowe dane do faktur / FPU / Strona główna - Biuro Promocji i Informacji Politechniki Warszawskiej</title>
+
+    
+    
+                <meta name="Content-Type" content="text/html; charset=utf-8" />
+
+            <meta name="Content-language" content="pl-PL" />
+
+                    <meta name="author" content="eZ Systems" />
+    
+                <meta name="copyright" content="eZ Systems" />
+    
+                <meta name="description" content="Content Management System" />
+    
+                <meta name="keywords" content="cms, publish, e-commerce, content management, development framework" />
+    
+    
+    
+    <!--[if lt IE 9 ]>
+        <meta http-equiv="X-UA-Compatible" content="IE=8,chrome=1" />
+    <![endif]-->
+
+    <meta name="MSSmartTagsPreventParsing" content="TRUE" />
+    <meta name="generator" content="eZ Publish" />
+        
+<link rel="Home" href="/" title="Biuro Promocji i Informacji Politechniki Warszawskiej strona główna" />
+<link rel="Index" href="/" />
+<link rel="Top"  href="/" title="Prawidłowe dane do faktur / FPU / Strona główna - Biuro Promocji i Informacji Politechniki Warszawskiej" />
+<link rel="Search" href="/content/advancedsearch" title="Szukaj Biuro Promocji i Informacji Politechniki Warszawskiej" />
+<link rel="Shortcut icon" href="/design/bpi/images/favicon.ico" type="image/x-icon" />
+<link rel="Copyright" href="/ezinfo/copyright" />
+<link rel="Author" href="/ezinfo/about" />
+<link rel="Alternate" type="application/rss+xml" title="RSS" href="/rss/feed/my_feed" />
+<script type="text/javascript">
+(function() {
+    var head = document.getElementsByTagName('head')[0];
+    var printNode = document.createElement('link');
+    printNode.rel = 'Alternate';
+    printNode.href = "/layout/set/print/FPU/Prawidlowe-dane-do-faktur" + document.location.search;
+    printNode.media = 'print';
+    printNode.title = "Wersja do druku";
+    head.appendChild(printNode);
+})();
+</script>	      <link rel="stylesheet" type="text/css" href="/var/bpi/cache/public/stylesheets/f6a2311326f0f2f4b6a2cf5756ee31f5_all.css" />
+
+<link rel="stylesheet" type="text/css" href="/design/bpi/stylesheets/classes-colors.css" />
+<link rel="stylesheet" type="text/css" href="/design/bpi/stylesheets/site-colors.css" />
+<link rel="stylesheet" type="text/css" href="/extension/ezwebin/design/ezwebin/stylesheets/print.css" media="print" />
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezflow/design/ezflow/stylesheets/browsers/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 7]> <style type="text/css"> @import url(/extension/ezflow/design/ezflow/stylesheets/browsers/ie7lte.css); </style> <![endif]-->	
+<script type="text/javascript" src="/var/bpi/cache/public/javascript/b46d6a3923b52ec6f4a3006219d82e2f.js" charset="utf-8"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="/design/pw/images/favicon.ico" />
+	
+	
+	<script type="text/javascript">
+		var jRes = jRespond([
+		    {
+		        label: 'screen-xs',
+		        enter: 0,
+		        exit: 767
+		    },{
+		        label: 'screen-sm',
+		        enter: 768,
+		        exit: 991
+		    },{
+		        label: 'screen-md',
+		        enter: 992,
+		        exit: 1199
+		    },{
+		        label: 'screen-lg',
+		        enter: 1200,
+		        exit: 10000
+		    }
+		]);
+
+	</script>
+	
+	
+</head>
+
+<!--[if lt IE 7 ]><body class="ie6"><![endif]-->
+<!--[if IE 7 ]>   <body class="ie7"><![endif]-->
+<!--[if IE 8 ]>   <body class="ie8"><![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!--><body><!--<![endif]-->
+<!-- Complete page area: START -->
+	
+	
+	<!-- Change between "sidemenu"/"nosidemenu" and "extrainfo"/"noextrainfo" to switch display of side columns on or off  -->
+<div id="page" class="sidemenu extrainfo section_id_1 subtree_level_0_node_id_2 subtree_level_1_node_id_64 subtree_level_2_node_id_134">
+		
+		  	
+	  <!-- Top menu area: START -->
+	  	    <div id="top_stripe_wrapper">
+	<div id="topmenu_navbar" class="navbar navbar-inverse container" role="navigation">
+		<div id="topmenu_container">
+	   	 		<div id="topmenu_header" class="navbar-header hidden-md hidden-lg">
+		<button id="topmenu_button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<!--<p class="navbar-brand">Politechnika Warszawska</p>-->
+	</div>
+	<div id="menu_top" class="collapse navbar-collapse">
+	    <!-- Top menu content: START -->
+	    <ul class="nav navbar-nav">
+	    	    	       	            	            	                	            	            	            	
+	            	                <li id="node_id_62" class="firstli"><a href="/Aktualnosci"><span>Aktualności</span></a></li>
+	            	          	            	            	            	            	
+	            	                <li id="node_id_66"><a href="/Biuro"><span>Biuro</span></a></li>
+	            	          	            	            	            	            	
+	            	                <li id="node_id_65"><a href="/Marka-PW"><span>Marka PW</span></a></li>
+	            	          	            	            	            	            	
+	            	                <li id="node_id_64" class="selected"><a href="/FPU"><span>FPU</span></a></li>
+	            	          	            	            	            	            	
+	            	                <li id="node_id_110"><a href="/Projekty"><span>Projekty</span></a></li>
+	            	          	            	            	            	            	
+	            	                <li id="node_id_140"><a href="/Dokumenty"><span>Dokumenty</span></a></li>
+	            	          	            	            	            	            	
+	            	                <li id="node_id_397"><a href="/Jak-i-u-kogo"><span>Jak i u kogo?</span></a></li>
+	            	          	            	            	            	            	
+	            	                <li id="node_id_68"><a href="/Kontakt"><span>Kontakt</span></a></li>
+	            	          	            	            	            	                	            	            	
+	            	                <li id="node_id_207" class="lastli"><a href="#" title="Szukaj" class="menu-item-link" rel="/Szukaj"><span>Szukaj</span></a></li>
+	            	          		
+	    	    	    </ul>
+	</div>
+    <!-- Top menu content: END -->	  	</div>
+		<div id="searchbox_top">
+		  <form class="navbar-form" role="search" action="/content/search">
+		  <div class="input-group">
+		    <label for="searchtext" class="hide">Search text:</label>
+		    		    <input type="text" class="form-control" placeholder="Szukaj..." name="SearchText" id="srch-term" />
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" value="" title="Szukaj"><i class="glyphicon glyphicon-search"></i></button>
+            </div>		    
+		        		    		  </div>
+		  </form>
+		</div>		
+	</div>
+</div>
+	  	  <!-- Top menu area: END -->
+	  
+	  <!-- User menu area: START -->
+	    <div id="usermenu-position">
+	      <div id="usermenu">
+		
+	    
+		
+	
+		<div id="searchbox">
+  <form action="/content/search">
+  <div id="searchbox-inner">
+    <label for="searchtext" class="hide">Search text:</label>
+        <input id="searchtext" name="SearchText" type="text" value="" size="12" />
+    <input id="searchbutton" class="button" type="submit" value="" title="Szukaj" />
+              </div>
+  </form>
+</div>	      </div>
+	    </div>
+	  <!-- User menu area: END -->
+	
+	  <!-- Header area: START -->
+		<div id="header-position">
+  <div id="naglowek" class="container">
+
+	
+
+    
+    <div class="naglowek-middle logo">
+    	<p class="logo-pw"><a href="https://www.pw.edu.pl" title="Politechnika Warszawska">Politechnika<br><span class="more-spacing">Warszawska</span></a></p><p class="logo-jednostka"><a href="/" title="Biuro Promocji i Informacji Politechniki Warszawskiej">Biuro ds. Promocji<br>i Informacji</a></p>
+    	
+    </div>
+  </div>
+</div>
+	  <!-- Header area: END -->
+	
+	  	
+	  <!-- Toolbar area: START -->
+	  	  <!-- Toolbar area: END -->
+	
+	<!-- Columns area: START -->
+	<div>
+
+		
+		<div id="wrapper" class="container">
+			<div class="row">
+				<!-- Banner area: START -->
+
+				
+				
+												<!-- Banner area: END -->
+							
+			</div>
+			
+			<div id="main" class="row">	
+				<!-- Side menu area: START -->
+									<div class="col-md-3 col-sm-4 col-xs-12 col-md-push-9 col-sm-push-8">
+				    	      <div id="sidemenu">
+                    <div class="border-box">	<div id="menuleft_toppanel">
+    	<h4><a id="menuleft_header" href="/FPU">FPU</a></h4>
+    </div>
+    
+    
+        <ul id="menuleft" class="menu-list">
+			<script type="text/javascript">
+					
+				jRes.addFunc([
+				{
+					breakpoint:	['screen-lg', 'screen-md', 'screen-sm'],
+					enter: function(){
+					    		jQuery(function( $ ){
+									$( "#menuleft" ).css("height", "auto");					    		
+									/*$( "#menuleft_toppanel" ).bind('click',false);*/
+								});		
+					},
+					exit: function(){
+									/*$( "#menuleft_toppanel" ).unbind('click',false);*/
+					}
+				},{
+					breakpoint:	'screen-xs',
+					enter: function(){
+			    		jQuery(function( $ ){
+							$( "#menuleft" ).addClass("collapse");
+							/*$( "#menuleft_toppanel h4" ).append(" <b class='caret' />");*/
+							$( "#menuleft_toppanel h4" ).append('<button id="menuleft_button" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuleft"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>');
+							$( "#menuleft_toppanel h4 a" ).bind('click',false);
+							/*$( "#menuleft_toppanel" ).wrap('<button id="menuleft_button" type="button" class="collapsed" data-toggle="collapse" data-target="#menuleft"></button>');*/
+							/*$( "#menuleft_toppanel h4").addClass("collapsed").attr("data-toggle","collapse").attr("data-target","#menuleft");*/
+						});				
+					},
+					exit: function(){
+			    		jQuery(function( $ ){
+			    			/*$( "#menuleft_toppanel" ).unwrap();*/
+							$( "#menuleft_toppanel h4 b.caret" ).remove();
+							$( "#menuleft_toppanel button#menuleft_button" ).remove();
+							$( "#menuleft" ).removeClass("collapse").removeClass("collapse.in");
+							$( "#menuleft_toppanel h4 a" ).unbind('click',false);									
+						});	
+					}	
+				}
+				]);
+	
+			
+			</script>   
+                    
+                                                    <li class="firstli"><div class="second_level_menu"><a href="/FPU/Procedura">Procedura</a></div>
+            
+                        </li>
+                    
+                                                                                <li><div class="second_level_menu"><a href="/FPU/Prawidlowe-dane-do-faktur" class="selected current">Prawidłowe dane do faktur</a></div>
+            
+                                                                                </li>
+                    
+                                                                                <li class="lastli"><div class="second_level_menu"><a href="/FPU/Regulamin">Regulamin</a></div>
+            
+                        </li>
+                </ul>
+        
+</div>
+               </div>
+				    </div>
+					<!-- Main area: START -->
+					
+					<div class="col-md-9 col-sm-8 col-xs-12 col-md-pull-3 col-sm-pull-4">
+								<!-- Side menu area: END -->
+												
+								
+				          <!-- Main area content: START -->
+	  <!-- Path area: START -->
+	  	    	        <div id="path">
+      <!-- Path content: START -->
+  <p>
+        <a href="/">Strona główna</a>
+  
+      <span class="path-separator">&raquo;</span>      <a href="/FPU">FPU</a>
+  
+      <span class="path-separator">&raquo;</span>        </p>
+  <!-- Path content: END -->  </div>	    	  	  <!-- Path area: END -->
+          
+<div class="content-view-full">
+    <div class="class-folder">
+
+        
+        <div class="attribute-header">
+            <h1>
+Prawidłowe dane do faktur</h1>
+        </div>
+
+                            
+                    <div class="attribute-long">
+                
+<p>NIP: 525-000-58-34</p><p>
+Politechnika Warszawska <br />
+Pl. Politechniki 1<br />00-661 Warszawa</p>            </div>
+        
+                                     
+            
+            
+            <div class="content-view-children">
+                            </div>
+
+            
+
+ 
+
+            </div>
+</div>
+
+          <!-- Main area content: END -->
+				</div> <!-- koniec mainarea -->
+				<!-- Main area: END -->
+				
+								
+							</div>
+			
+			<!-- Extra area: START -->
+						        <div id="extrainfo-position">
+      <div id="extrainfo">
+                    
+<!-- ZONE CONTENT: START -->
+
+<!-- ZONE CONTENT: END -->              </div>
+    </div>						<!-- Extra area: END -->
+			
+			
+			  <!-- Columns area: END -->
+			
+			  <!-- Footer area: START -->
+			<div class="row">
+				<div id="footer" class="col-xs-12">
+			  	<!-- Footer area: START -->
+
+<div class="row">
+	<div class="col-xs-12 col-md-8">
+		<div id="kanaly">
+			<div id="kanal-rss" class="my_clearfix"><a href="http://www.promocja.pw.edu.pl/rss"  target="_blank" title="Kanały RSS PW"><div class="kanal-ikonka"></div><p class="visible-xs">Kanały RSS</p></a></div>
+			<div id="kanal-facebook" class="my_clearfix"><a href="http://www.facebook.com/politechnika.warszawska" target="_blank" title="Strona PW na Facebook"><div class="kanal-ikonka"></div><p class="visible-xs">PW na Facebook</p></a></div>
+			<div id="kanal-twitter" class="my_clearfix"><a href="http://twitter.com/PW_edu" target="_blank" title="PW na Twitterze"><div class="kanal-ikonka"></div><p class="visible-xs">PW na Twitterze</p></a></div>		
+			<div id="kanal-instagram" class="hidden-sm my_clearfix"><a href="http://instagram.com/politechnika_warszawska#" target="_blank" title="PW na Instagram"><div class="kanal-ikonka"></div><p class="visible-xs">PW na Instagramie</p></a></div>
+			<div id="kanal-youtube" class="my_clearfix"><a href="https://www.youtube.com/channel/UCCXBvkV8M7t-3k6Pd5j82aQ" target="_blank" title="PW na YouTube"><div class="kanal-ikonka"></div><p class="visible-xs">PW na YouTube</p></a></div>
+			<div id="kanal-snapchat" class="my_clearfix"><a href="/pw/Media/Images/Media-spolecznosciowe/Snapchat" target="_blank" title="PW na Snapchat"><div class="kanal-ikonka"></div><p class="visible-xs">PW na Snapchat</p></a></div>		
+			<div id="kanal-plpw1" class="my_clearfix"><a href="http://placpolitechniki1.wordpress.com" target="_blank" title="Blog Politechniki Warszawskiej"><div class="kanal-ikonka"></div><p class="visible-xs">Blog PW</p></a></div>
+			<div id="kanal-bpw" class="my_clearfix"><a href="http://www.biuletyn.pw.edu.pl" target="_blank" title="Biuletyn PW"><div class="kanal-ikonka"></div><p class="visible-xs">Biuletyn PW</p></a></div>
+			<div id="kanal-pe" class="my_clearfix"><a href="http://www.eksperci.pw.edu.pl" target="_blank" title="Platforma Ekspertów PW"><div class="kanal-ikonka"></div><p class="visible-xs">Platforma Ekspertów</p></a></div>
+			<div id="kanal-pinterest" class="my_clearfix"><a href="http://www.pinterest.com/PW_edu" target="_blank" title="Politechnika Warszawska na Pinterest"><div class="kanal-ikonka"></div><p class="visible-xs">PW na Pinterest</p></a></div>
+			<div id="kanal-linkedin" class="my_clearfix"><a href="https://pl.linkedin.com/edu/politechnika-warszawska-15980" target="_blank" title="Politechnika Warszawska na LinkedIn"><div class="kanal-ikonka"></div><p class="visible-xs">PW na LinkedIn</p></a></div>
+			<div id="kanal-bwpw" class="my_clearfix"><a href="http://repo.bg.pw.edu.pl/index.php/pl/" target="_blank" title="Baza Wiedzy Politechniki Warszawskiej"><div class="kanal-ikonka"></div><p class="visible-xs">Baza Wiedzy PW</p></a></div>			
+<!--			<div id="kanal-rss" class="my_clearfix"><a href="http://www.promocja.pw.edu.pl/rss"  target="_blank" title="Kanały RSS PW"><img src="/design/bpi/images/rss_logo_szare.png" width="41" height="40" alt="RSS"/><p class="visible-xs">Kanały RSS</p></a></div>
+			<div id="kanal-facebook" class="my_clearfix"><a href="http://www.facebook.com/politechnika.warszawska" target="_blank" title="Strona PW na Facebook"><img src="/design/bpi/images/f_logo_szare.png" width="40" height="40" alt="Ikona Facebook"/><p class="visible-xs">PW na Facebook</p></a></div>
+			<div id="kanal-twitter" class="my_clearfix"><a href="http://twitter.com/PW_edu" target="_blank" title="PW na Twitterze"><img src="/design/bpi/images/tw_logo_szare.png" width="40" height="40" alt="PW na Twitterze"/><p class="visible-xs">PW na Twitterze</p></a></div>
+			<div id="kanal-instagram" class="hidden-sm my_clearfix"><a href="http://instagram.com/politechnika_warszawska#" target="_blank" title="PW na Instagram"><img src="/design/bpi/images/instagram-szare.png" width="40" height="40" alt="Ikona Instagram"/><p class="visible-xs">PW na Instagramie</p></a></div>
+			<div id="kanal-plpw1" class="my_clearfix"><a href="http://placpolitechniki1.wordpress.com" target="_blank" title="Blog Politechniki Warszawskiej"><img src="/design/bpi/images/plpw1-szare.png" width="40" height="40" alt="Ikona Blogu Politechniki Warszawskiej - Plac Politechniki 1"/><p class="visible-xs">Blog PW</p></a></div>
+			<div id="kanal-bpw" class="my_clearfix"><a href="http://www.biuletyn.pw.edu.pl" target="_blank" title="Biuletyn PW"><img src="/design/bpi/images/bpw-szare.png" width="40" height="40" alt="Ikona Biuletynu Politechniki Warszawskiej"/><p class="visible-xs">Biuletyn PW</p></a></div>
+			<div id="kanal-pe" class="my_clearfix"><a href="http://www.eksperci.pw.edu.pl" target="_blank" title="Platforma Ekspertów PW"><img src="/design/bpi/images/platformaekspertow-szare.png" width="40" height="40" alt="Ikona Platformy Ekspertów Politechniki Warszawskiej"/><p class="visible-xs">Platforma Ekspertów</p></a></div>
+			<div id="kanal-pinterest" class="my_clearfix"><a href="http://www.pinterest.com/PW_edu" target="_blank" title="Politechnika Warszawska na Pinterest"><img src="/design/bpi/images/pinterest-szare.png" width="41" height="40" alt="Ikona Pinterest"/><p class="visible-xs">PW na Pinterest</p></a></div>
+			<div id="kanal-linkedin" class="my_clearfix"><a href="https://pl.linkedin.com/edu/politechnika-warszawska-15980" target="_blank" title="Politechnika Warszawska na LinkedIn"><img src="/design/bpi/images/linkedin-szare.png" width="46" height="40" alt="Ikona LinkedIn"/><p class="visible-xs">PW na LinkedIn</p></a></div>
+			<div id="kanal-bwpw" class="my_clearfix"><a href="http://repo.bg.pw.edu.pl/index.php/pl/" target="_blank" title="Baza Wiedzy Politechniki Warszawskiej"><img src="/design/bpi/images/bwpw-szare.png" width="40" height="40" alt="Ikona BWPW"/><p class="visible-xs">Baza Wiedzy PW</p></a></div>-->			
+		</div>	
+		<div class="address">
+			<p>&copy; 1998-2017 <br class="hidden-sm hidden-md hidden-lg" />Politechnika Warszawska,<br/>Pl. Politechniki 1,<br class="hidden-sm hidden-md hidden-lg" /> 00-661 Warszawa</p>
+		</div>
+	</div>
+	<div class="col-xs-12 col-md-4">
+		<div id="footer-right">
+			<img id="godlo-polski" width="50px" alt="Godło Polski" src="/design/pwmain/images/PW-orzel.png" />
+		</div>
+	</div>
+</div>
+
+<!-- Footer area: END -->
+			  	</div>
+			</div>
+			  <!-- Footer area: END -->
+			
+			
+			<!-- Complete page area: END -->
+			
+			<!-- Footer script area: START -->
+						<!-- Footer script area: END -->
+	
+		</div>	
+	</div>
+</div>
+	
+		
+	
+	
+	<script type="text/javascript">
+	
+	
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-1468707-9', 'auto');
+  ga('send', 'pageview');	
+
+	  /**************************/
+  	
+  	function pickColor(){
+  		var colors = new Array("zolty", "pomaranczowy", "niebieski", "zielony");
+  		var randomNumber= Math.floor(Math.random() * colors.length);
+  		console.log(colors.length);
+  		console.log(randomNumber);
+  		console.log(colors[randomNumber]);
+  		jQuery('#PW-symbol').removeClass().addClass('PW-symbol-'+colors[randomNumber]);		
+  		jQuery('div.block-type-topinfomanual div.class-topinfo div.opis h2').removeClass().addClass('kolor-PW-'+colors[randomNumber]+'-bg');
+  	}
+  	
+  	jQuery(document).ready(function(){
+  		pickColor();
+  	});
+  	
+	jQuery(function( $ ){
+	//dla kazdego filmu dodajemy kontener, dodajemy mu klase css,
+	//ustawiamy mu padding-bottom zgodny z proporcjami filmu
+	//oraz ustawiamy odpowiednią klasę dla iframe'a z filmem
+		var $allVideos = $("iframe");
+	 	$allVideos.each( function() {
+	 		$aspectRatio =  this.height/this.width;
+	  		$(this)
+	  		//.data('aspectRatio', this.height/this.width)
+	  		.removeAttr('height')
+	  		.removeAttr('width');	//usuwamy zapisana na sztywno wysokosc i szerokosc
+	  		
+	  		//console.log( $(this).data( 'aspectRatio' ) );
+		  	$(this).wrap("<div class='video-container'></div>");
+		  	$(this).parent().css("padding-bottom", ($aspectRatio*100).toFixed(2) + "%")
+		  	$(this).addClass("video"); 
+	  	});
+		
+	});	
+	  
+	jRes.addFunc([
+	{
+		breakpoint:	['screen-lg', 'screen-md', 'screen-sm'],
+		enter: function(){
+		  jQuery(function( $ ){
+		  });
+		},
+		exit: function(){
+		}
+	},{
+		breakpoint:	'screen-xs',
+		enter: function(){
+			jQuery(function( $ ){
+ 				$( "div#path span.path-separator" ).after('<span class="my_clearfix"></span>');
+ 				/*$( "div#topmenu_header p.navbar-brand" ).text("PW");*/				
+			});		
+		},
+		exit: function(){
+    		jQuery(function( $ ){
+    			$( "div#path span.my_clearfix" ).remove();
+    			/*$( "div#topmenu_header p.navbar-brand" ).text("Politechnika Warszawska");*/		    			    			
+			});	
+		}	
+	}	
+	]);
+	
+		jRes.addFunc([
+	{
+		breakpoint:	['screen-lg', 'screen-md'],
+		enter: function(){
+		  jQuery(function( $ ){
+
+		  });
+		},
+		exit: function(){
+		}
+	},{
+		breakpoint:	['screen-sm', 'screen-xs'],
+		enter: function(){
+			jQuery(function( $ ){
+				$( "#menu_top li.lastli a").attr("href", "/pw/content/search").off("click").unbind("click").off("click").undelegate("click").die("click");; 		
+			});		
+		},
+		exit: function(){
+    		jQuery(function( $ ){
+    			$( "#menu_top li.lastli a").attr("href", "#");
+    			$( "#menu_top li.lastli a").on('click', function(){
+		  			$('div#usermenu-position').toggle('blind');
+		  		});
+			});	
+		}	
+	}	
+	]);
+	
+	jRes.addFunc([
+	{
+		breakpoint:	'*',
+		enter: function(){
+		  	/*jQuery(function( $ ){
+				var $allVideos = $("iframe");
+			 	$allVideos.each( function() {
+			 		$rodzic = $(this).parent();
+			 		$szer = $rodzic.width();
+			  		$(this).width( $szer );
+			  		$(this).height( $szer * $(this).data( 'aspectRatio' ) ) ;
+			  		console.log("szer: " + $szer );
+			  		console.log("wys: " + $szer * $(this).data( 'aspectRatio' ) ); 
+			  	});  			
+		  		
+		  	});*/
+		},
+		exit: function(){
+		}
+	}	
+	]);  
+	$(window).resize(function(){
+	/*	  	jQuery(function( $ ){
+				var $allVideos = $("iframe");
+			 	$allVideos.each( function() {
+			 		$rodzic = $(this).parent();
+			 		$szer = $rodzic.width();
+			  		$(this).width( $szer );
+			  		$(this).height( $szer * $(this).data( 'aspectRatio' ) ) ;
+			  		console.log("szer: " + $szer );
+			  		console.log("wys: " + $szer * $(this).data( 'aspectRatio' ) ); 
+			  	});  			
+		  		
+		  	});*/
+	}).resize();  
+	
+	</script>
+</body>
+</html>
+���wnH      Y�_!Y�_$>/b       8    :http://promocja.pw.edu.pl/FPU/Prawidlowe-dane-do-faktur necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Mon, 11 Sep 2017 10:02:09 GMT
+Server: Apache
+X-Powered-By: eZ Publish
+Expires: Sat, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Mon, 11 Sep 2017 10:02:09 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Served-by: promocja.pw.edu.pl
+Content-language: pl-PL
+Content-Type: text/html; charset=utf-8
+Via: 1.1 www.promocja.pw.edu.pl
+ original-response-headers Date: Mon, 11 Sep 2017 10:02:09 GMT
+Server: Apache
+X-Powered-By: eZ Publish
+Expires: Sat, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Mon, 11 Sep 2017 10:02:09 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Served-by: promocja.pw.edu.pl
+Content-language: pl-PL
+Content-Type: text/html; charset=utf-8
+Via: 1.1 www.promocja.pw.edu.pl
+Keep-Alive: timeout=15, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+ uncompressed-len 0 predictor::resource-count 28 predictor::http://promocja.pw.edu.pl/var/bpi/cache/public/stylesheets/f6a2311326f0f2f4b6a2cf5756ee31f5_all.css 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/bpi/stylesheets/classes-colors.css 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/bpi/stylesheets/site-colors.css 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/extension/ezwebin/design/ezwebin/stylesheets/print.css 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/var/bpi/cache/public/javascript/b46d6a3923b52ec6f4a3006219d82e2f.js 1,1,1505124129,4096 net-response-time-onstart 395 net-response-time-onstop 583 predictor::http://promocja.pw.edu.pl/design/pwmain/images/PW-orzel.png 1,1,1505124129,4096 predictor::http://www.google-analytics.com/analytics.js 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/searchbox_l.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/searchbox_r.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/extension/ezflow/design/ezflow/images/path-a-bg.gif 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-rss-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-fb-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-twitter-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-instagram-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-yt-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-snap-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-plpw1-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-bpw-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-platformaekspertow-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-pinterest-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-linkedin-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/images/social-bwpw-lila.png 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/stylesheets//design/pwmain/stylesheets/fonts/adagio_slab-regular-webfont.woff2 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/stylesheets//design/pwmain/stylesheets/fonts/radikalwut-bold.woff2 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/stylesheets//design/pwmain/stylesheets/fonts/adagio_slab-bold-webfont.woff2 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/stylesheets/fonts/adagio_slab-regular-webfont.woff 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/stylesheets/fonts/radikalwut-bold.woff 1,1,1505124129,4096 predictor::http://promocja.pw.edu.pl/design/pwmain/stylesheets/fonts/adagio_slab-bold-webfont.woff 1,1,1505124129,4096   ^L

@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+            <title>Dictionaries & Language Packs :: Add-ons for Firefox</title>
+
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://addons.cdn.mozilla.net/static/img/favicon.ico">
+
+    
+        <link title="Firefox Add-ons"
+          rel="search" type="application/opensearchdescription+xml"
+          href="/en-US/firefox/opensearch.xml" />
+
+          <link href="https://addons.cdn.mozilla.net/static/css/tabzilla/tabzilla.css" rel="stylesheet" />
+              <link rel="stylesheet" media="all" href="https://addons.cdn.mozilla.net/static/css/zamboni/impala-min.css?build=e668fab" />
+      <link rel="stylesheet" media="all" href="https://addons.cdn.mozilla.net/static/css/restyle/css-min.css?build=c88dcff" />
+    
+        <noscript><link rel="stylesheet" href="https://addons.cdn.mozilla.net/static/css/impala/nojs.css?b=2c4f6d42-59b29482"></noscript>
+
+    
+    <script src="https://addons.cdn.mozilla.net/static/js/preload-min.js?build=2c4f6d42-59b29482"></script>
+  </head>
+  <body class="html-ltr firefox moz-header-slim dictionaries is-impala restyle"
+        data-app="firefox"
+        data-appname="Firefox"
+        data-appid="1"
+        data-anonymous="true"
+        data-readonly="false"
+        data-media-url="https://addons.cdn.mozilla.net/user-media/"
+        data-static-url="https://addons.cdn.mozilla.net/static/"
+        data-raven-dsn="https://8c1c5936578948a9a0614cbbafccf049@sentry.prod.mozaws.net/78"
+        data-raven-urls="[&#39;addons.mozilla.org&#39;, &#39;addons.cdn.mozilla.net&#39;]"
+        data-fxa-config="{&#34;state&#34;: &#34;2545f50db41dfe0d26c269f2dd6e2547da986a23a25cb5b18270bbc39f4ef421&#34;, &#34;clientId&#34;: &#34;a4907de5fa9d78fc&#34;, &#34;oauthHost&#34;: &#34;https://oauth.accounts.firefox.com/v1&#34;, &#34;profileHost&#34;: &#34;https://profile.accounts.firefox.com/v1&#34;, &#34;redirectUrl&#34;: &#34;https://addons.mozilla.org/api/v3/accounts/authenticate/&#34;, &#34;scope&#34;: &#34;profile&#34;, &#34;contentHost&#34;: &#34;https://accounts.firefox.com&#34;}"
+        >
+
+    <div id="main-wrapper">
+      <div id="page" class="c">
+                  <div class="header-bg">
+            <div class="amo-header-wrapper">
+              <div id="tabzilla">
+    <a href="https://www.mozilla.org/">Mozilla</a>
+</div>              <div class="amo-header">
+                <nav id="aux-nav" role="navigation" class="menu-nav c">
+                  <ul>
+                                            <li class="account anonymous nomenu login legacy">
+    <a href="https://oauth.accounts.firefox.com/v1/authorization?action=signup&amp;scope=profile&amp;state=2545f50db41dfe0d26c269f2dd6e2547da986a23a25cb5b18270bbc39f4ef421%3AL2VuLVVTL2ZpcmVmb3gvbGFuZ3VhZ2UtdG9vbHMv&amp;redirect_url=https%3A%2F%2Faddons.mozilla.org%2Fapi%2Fv3%2Faccounts%2Fauthenticate%2F&amp;client_id=a4907de5fa9d78fc">Register</a> or <a href="https://oauth.accounts.firefox.com/v1/authorization?action=signin&amp;scope=profile&amp;state=2545f50db41dfe0d26c269f2dd6e2547da986a23a25cb5b18270bbc39f4ef421%3AL2VuLVVTL2ZpcmVmb3gvbGFuZ3VhZ2UtdG9vbHMv&amp;redirect_url=https%3A%2F%2Faddons.mozilla.org%2Fapi%2Fv3%2Faccounts%2Fauthenticate%2F&amp;client_id=a4907de5fa9d78fc">Log in</a>  </li>
+
+                                                              <li>
+                        <a href="#" id="other-apps" title="Find add-ons for other applications">Other Applications</a>
+                        <ul class="other-apps">
+                                                                                                                                          <li id="app-thunderbird" class="thunderbird">
+                                <a href="/en-US/thunderbird">Thunderbird</a>
+                              </li>
+                                                                                                                <li id="app-android" class="android">
+                                <a href="/en-US/android">Firefox for Android</a>
+                              </li>
+                                                                                                                <li id="app-seamonkey" class="seamonkey">
+                                <a href="/en-US/seamonkey">SeaMonkey</a>
+                              </li>
+                                                                              </ul>
+                      </li>
+                                      </ul>
+                </nav>
+                <div class="header-search" role="search">
+                                                                                <form id="search" action="/en-US/firefox/search/" data-no-csrf>
+  <input id="search-q" type="text" name="q" autocomplete="off" title=""
+         class="text placeholder"
+         placeholder="search for add-ons"
+         value="">
+      <input id="id_cat" name="cat" type="hidden" value="3,0" />
+        <input id="id_appver" name="appver" type="hidden" />
+    <input id="id_platform" name="platform" type="hidden" />
+    <button class="search-button" type="submit" title="Search"
+         src="https://addons.cdn.mozilla.net/static/img/zamboni/global/btn-search.png?b=2c4f6d42-59b29482"></button>
+      <div id="site-search-suggestions"
+         data-cat="3,0"
+         data-src="/en-US/firefox/search/suggestions"></div>
+  </form>                                                      </div>
+                <div id="masthead">
+                                    <h1 class="site-title">
+  <a href="/en-US/firefox/" title="Return to the Firefox Add-ons homepage">
+    <img alt="Firefox" src="https://addons.cdn.mozilla.net/static/img/icons/firefox.png?b=2c4f6d42-59b29482">
+    Add-ons
+</a>
+</h1>                  
+
+<nav id="site-nav" class="menu-nav c">
+  <ul>
+      <li id="extensions">
+    <a href="/en-US/firefox/extensions/">Extensions</a>
+    <ul class="two-col">
+              <li><em><a href="/en-US/firefox/extensions/?sort=featured">Featured</a></em></li>
+              <li><em><a href="/en-US/firefox/extensions/?sort=users">Most Popular</a></em></li>
+              <li><em><a href="/en-US/firefox/extensions/?sort=rating">Top Rated</a></em></li>
+                  <li><a href="/en-US/firefox/extensions/alerts-updates/">Alerts &amp; Updates</a></li>
+            <li><a href="/en-US/firefox/extensions/appearance/">Appearance</a></li>
+            <li><a href="/en-US/firefox/extensions/bookmarks/">Bookmarks</a></li>
+            <li><a href="/en-US/firefox/extensions/download-management/">Download Management</a></li>
+            <li><a href="/en-US/firefox/extensions/feeds-news-blogging/">Feeds, News &amp; Blogging</a></li>
+            <li><a href="/en-US/firefox/extensions/games-entertainment/">Games &amp; Entertainment</a></li>
+            <li><a href="/en-US/firefox/extensions/language-support/">Language Support</a></li>
+            <li><a href="/en-US/firefox/extensions/photos-music-videos/">Photos, Music &amp; Videos</a></li>
+            <li><a href="/en-US/firefox/extensions/privacy-security/">Privacy &amp; Security</a></li>
+            <li><a href="/en-US/firefox/extensions/search-tools/">Search Tools</a></li>
+            <li><a href="/en-US/firefox/extensions/shopping/">Shopping</a></li>
+            <li><a href="/en-US/firefox/extensions/social-communication/">Social &amp; Communication</a></li>
+            <li><a href="/en-US/firefox/extensions/tabs/">Tabs</a></li>
+            <li><a href="/en-US/firefox/extensions/web-development/">Web Development</a></li>
+            <li><a href="/en-US/firefox/extensions/other/">Other</a></li>
+          </ul>
+  </li>
+
+    
+        <li id="themes">
+      <a href="/en-US/firefox/themes/">Themes</a>
+              <ul class="two-col">
+                      <li><em><a href="/en-US/firefox/themes/?sort=popular">Most Popular</a></em></li>
+                      <li><em><a href="/en-US/firefox/themes/?sort=rating">Top Rated</a></em></li>
+                      <li><em><a href="/en-US/firefox/themes/?sort=created">Newest</a></em></li>
+                                <li><a href="/en-US/firefox/themes/abstract">Abstract</a></li>
+                      <li><a href="/en-US/firefox/themes/causes">Causes</a></li>
+                      <li><a href="/en-US/firefox/themes/fashion">Fashion</a></li>
+                      <li><a href="/en-US/firefox/themes/film-and-tv">Film and TV</a></li>
+                      <li><a href="/en-US/firefox/themes/firefox">Firefox</a></li>
+                      <li><a href="/en-US/firefox/themes/foxkeh">Foxkeh</a></li>
+                      <li><a href="/en-US/firefox/themes/holiday">Holiday</a></li>
+                      <li><a href="/en-US/firefox/themes/music">Music</a></li>
+                      <li><a href="/en-US/firefox/themes/nature">Nature</a></li>
+                      <li><a href="/en-US/firefox/themes/other">Other</a></li>
+                      <li><a href="/en-US/firefox/themes/scenery">Scenery</a></li>
+                      <li><a href="/en-US/firefox/themes/seasonal">Seasonal</a></li>
+                      <li><a href="/en-US/firefox/themes/solid">Solid</a></li>
+                      <li><a href="/en-US/firefox/themes/sports">Sports</a></li>
+                      <li><a href="/en-US/firefox/themes/websites">Websites</a></li>
+                  </ul>
+        <div>
+          <a class="complete-themes" href="/en-US/firefox/complete-themes/">
+            Want more customization? Try <b>Complete Themes</b>          </a>
+        </div>
+          </li>
+
+        <li id="collections">
+            <a href="/en-US/firefox/collections/">Collections</a>
+      <ul>
+                  <li><em><a href="/en-US/firefox/collections/?sort=featured">Featured</a></em></li>
+                  <li><em><a href="/en-US/firefox/collections/?sort=users">Most Followers</a></em></li>
+                  <li><em><a href="/en-US/firefox/collections/?sort=created">Newest</a></em></li>
+                <hr>
+        <li><a href="/en-US/firefox/collections/mine/">
+          Collections I've Made</a></li>
+        <li><a href="/en-US/firefox/collections/following/">
+          Collections I'm Following</a></li>
+                <li><a href="/en-US/firefox/collections/mine/favorites">
+          My Favorite Add-ons</a></li>
+      </ul>
+          </li>
+    <li id="more">
+      <a href="#">More&hellip;</a>
+      <ul>
+                  <li class="more-mobile"><a href="/en-US/android">
+            Add-ons for Mobile</a></li>
+                <li class="more-lang"><a href="/en-US/firefox/language-tools/">
+          Dictionaries & Language Packs</a></li>
+        <li><a href="/en-US/firefox/search-tools/">Search Tools</a></li>
+        <li><a href="/en-US/developers/">Developer Hub</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                                  </div>
+                                                                                                      <div class="site-balloon" id="site-nonfx">
+                      <p>
+                        To try the thousands of add-ons available here, download <a href="http://mozilla.org/firefox/?src=amo">Mozilla Firefox</a>, a fast, free way to surf the Web!                      </p>
+                      <a href="#" class="close">Close</a>
+                    </div>
+                                    <div class="site-balloon" id="site-welcome">
+                                        <h3>Welcome to Firefox Add-ons.</h3>
+                    <p>
+                                              Choose from thousands of extra features and styles to make Firefox your own.                                          </p>
+                    <a href="#" class="close">Close</a>
+                  </div>
+                  <div class="site-balloon" id="mobile-banner">
+                    <h3>On the go?</h3>
+                    <p>
+                      Check out our <a class="mobile-link" href="#">Mobile Add-ons site</a>.                    </p>
+                    <a href="#" class="close">Close</a>
+                  </div>
+                                              </div>
+            </div>           </div>         
+                                              <header>
+  <h1>Dictionaries & Language Packs</h1>
+  <h3>Installing a dictionary add-on will add a new language option to your Firefox spell-checker, which checks your spelling when you fill out Web forms. Language pack add-ons change the language of the entire application.</h3>
+</header>
+<section class="island full">
+      <h2>Available in your locale</h2>
+    <table>
+      <caption>List of language packs and dictionaries available in your locale.</caption>
+      <thead>
+        <tr>
+          <th colspan="2">Language</th>
+          <th>Dictionary</th>
+          <th>Language Pack</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <th>English (US)</th>
+          <td lang="en-US">English (US)</td>
+          <td>    <p>
+    <a href="/en-US/firefox/addon/united-states-english-spellche/">Install Dictionary</a>
+    (306.4 KiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/us-english-dictionary/">Install Dictionary</a>
+    (208.8 KiB)
+      </p>
+  </td>
+          <td>    <p>
+    <a href="/en-US/firefox/addon/english-us-language-pack/">Install Language Pack</a>
+    (449.7 KiB)
+      </p>
+  </td>
+        </tr>
+              </tbody>
+    </table>
+    <h2>All locales</h2>
+  <table>
+    <caption>List of language packs and dictionaries.</caption>
+    <thead>
+      <tr>
+        <th colspan="2">Language</th>
+        <th>Dictionary</th>
+        <th>Language Pack</th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr>
+        <th>Acholi</th>
+        <td lang="ach">Acholi</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/acholi-ug-language-pack/">Install Language Pack</a>
+    (457.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Afrikaans</th>
+        <td lang="af">Afrikaans</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/afrikaans-spell-checker/">Install Dictionary</a>
+    (917.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/afrikaans-language-pack/">Install Language Pack</a>
+    (458.3 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Akan</th>
+        <td lang="ak">Akan</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/akan-ns%C9%9Bmfuaasekyer%C9%9B/">Install Dictionary</a>
+    (9.2 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/akan-language-pack-for-firefox/">Install Language Pack</a>
+    (363.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Albanian</th>
+        <td lang="sq">Shqip</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/albanian-dictionary/">Install Dictionary</a>
+    (649.0 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/shqip-language-pack/">Install Language Pack</a>
+    (479.9 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Amharic</th>
+        <td lang="am-ET">አማርኛ</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/amharic-spell-checker/">Install Dictionary</a>
+    (676.3 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Arabic</th>
+        <td lang="ar">عربي</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/arabic-spell-checking-dictiona/">Install Dictionary</a>
+    (805.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-language-pack/">Install Language Pack</a>
+    (501.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Aragonese</th>
+        <td lang="an">aragonés</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/corrector-ortografico-aragones/">Install Dictionary</a>
+    (87.3 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/aragonese-language-pack/">Install Language Pack</a>
+    (354.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Armenian</th>
+        <td lang="hy-AM">Հայերեն</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/armenian-hy-am-language-pack/">Install Language Pack</a>
+    (528.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Armenian spell checker dictionary (am)</th>
+        <td lang="am"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/armenian-spell-checker-diction/">Install Dictionary</a>
+    (197.2 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Assamese</th>
+        <td lang="as">অসমীয়া</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/assamese-spell-checker/">Install Dictionary</a>
+    (327.5 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/assamese-in-language-pack/">Install Language Pack</a>
+    (510.1 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Asturian</th>
+        <td lang="ast">Asturianu</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/correutor_asturianu/">Install Dictionary</a>
+    (254.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/asturianu-language-pack/">Install Language Pack</a>
+    (470.3 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Azerbaijani</th>
+        <td lang="az-IR">Azərbaycanca (az-ir)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/azerbaijani-spell-checker/">Install Dictionary</a>
+    (54.8 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Azerbaijani</th>
+        <td lang="az">Azərbaycanca</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/azerbaijani-az-language-pack/">Install Language Pack</a>
+    (484.3 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Basque</th>
+        <td lang="eu">Euskara</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/xuxen/">Install Dictionary</a>
+    (803.8 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/basque-language-pack/">Install Language Pack</a>
+    (469.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Belarusian</th>
+        <td lang="be">Беларуская</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/belarusian-dictionary/">Install Dictionary</a>
+    (3.8 MiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/belarusian-classic-dictionary/">Install Dictionary</a>
+    (3.8 MiB)
+          <br>(Classic Spelling)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D0%BA%D0%B0%D1%8F-language-pack/">Install Language Pack</a>
+    (530.4 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Bengali (Bangladesh)</th>
+        <td lang="bn-BD">বাংলা (বাংলাদেশ)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/bengali-bangladesh-dictionary/">Install Dictionary</a>
+    (1.8 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/%E0%A6%87%E0%A6%B0%E0%A6%9C-%E0%A6%AF%E0%A6%95%E0%A6%A4%E0%A6%B0%E0%A6%B7%E0%A6%9F%E0%A6%B0-language-pack/">Install Language Pack</a>
+    (543.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Bengali (India)</th>
+        <td lang="bn-IN">বাংলা (ভারত)</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/bengali-india-language-pack/">Install Language Pack</a>
+    (534.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Bosnian</th>
+        <td lang="bs">Bosanski</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/bosanski-language-pack/">Install Language Pack</a>
+    (474.4 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Breton</th>
+        <td lang="br">Brezhoneg</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/difazier-an-drouizig/">Install Dictionary</a>
+    (1.2 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/breton-language-pack-for-firef/">Install Language Pack</a>
+    (466.3 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Bulgarian</th>
+        <td lang="bg">Български</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/bulgarian-dictionary/">Install Dictionary</a>
+    (1.1 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8-language-pack/">Install Language Pack</a>
+    (528.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Catalan</th>
+        <td lang="ca">Català</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/general-catalan-dictionary/">Install Dictionary</a>
+    (502.2 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/ca-language-pack/">Install Language Pack</a>
+    (482.1 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Catalan (Valencian)</th>
+        <td lang="ca-valencia">català (valencià)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/valencian-spellchecker/">Install Dictionary</a>
+    (865.7 KiB)
+          <br>(myspell)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/valencian-catalan-dictionary/">Install Dictionary</a>
+    (502.7 KiB)
+          <br>(AVL)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/valencian-language-pack-for-fi/">Install Language Pack</a>
+    (105.0 KiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/valencian-catalan-languag-9702/">Install Language Pack</a>
+    (522.1 KiB)
+          <br>(AVL)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Chichewa Spell Check (ny-mw)</th>
+        <td lang="ny-MW"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/chichewa-spell-check/">Install Dictionary</a>
+    (19.0 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Chinese (Simplified)</th>
+        <td lang="zh-CN">中文 (简体)</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/chinese-simplified-zh-cn-la/">Install Language Pack</a>
+    (499.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Chinese (Traditional)</th>
+        <td lang="zh-TW">正體中文 (繁體)</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/traditional-chinese-zh-tw-l/">Install Language Pack</a>
+    (498.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Corrector orthographic de interlingua (ia-ia)</th>
+        <td lang="ia-ia"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/corrector_orthographic/">Install Dictionary</a>
+    (185.6 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Croatian</th>
+        <td lang="hr">Hrvatski</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/croatian-dictionary-hrvatski-r/">Install Dictionary</a>
+    (727.3 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/hrvatski-hr-language-pack/">Install Language Pack</a>
+    (477.3 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Croatian</th>
+        <td lang="hr-HR">Hrvatski (hr-hr)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/croatian-dictionary-hrvat-9795/">Install Dictionary</a>
+    (222.3 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Czech</th>
+        <td lang="cs">Čeština</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/czech-spell-checking-dictionar/">Install Dictionary</a>
+    (611.4 KiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/czech-spell-checking-without-d/">Install Dictionary</a>
+    (576.6 KiB)
+          <br>(bez diakritiky)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/czech-cz-language-pack/">Install Language Pack</a>
+    (485.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Danish</th>
+        <td lang="da">Dansk</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/dansk-ordbog/">Install Dictionary</a>
+    (608.9 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/dansk-da-language-pack/">Install Language Pack</a>
+    (462.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Diccionario Papiamento (pap-aw)</th>
+        <td lang="pap-AW"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/diccionario-papiamento/">Install Dictionary</a>
+    (56.5 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Dikshonario Papiamentu (pap-cw)</th>
+        <td lang="pap-CW"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/dikshonario-papiamentu/">Install Dictionary</a>
+    (57.1 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Dutch</th>
+        <td lang="nl">Nederlands</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/woordenboek-nederlands/">Install Dictionary</a>
+    (730.1 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/nederlands-nl-language-pack/">Install Language Pack</a>
+    (470.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>English (Australian)</th>
+        <td lang="en-AU">English (Australian)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/english-australian-dictionary/">Install Dictionary</a>
+    (222.9 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>English (British)</th>
+        <td lang="en-GB">English (British)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/british-english-dictionary-2/">Install Dictionary</a>
+    (288.2 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/ie/">Install Language Pack</a>
+    (184.0 KiB)
+          <br>(IE)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/english-gb-language-pack/">Install Language Pack</a>
+    (449.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>English (Canadian)</th>
+        <td lang="en-CA">English (Canadian)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/canadian-english-dictionary/">Install Dictionary</a>
+    (198.4 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>English (New Zealand)</th>
+        <td lang="en-NZ">English (New Zealand)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/new-zealand-english-dict/">Install Dictionary</a>
+    (218.4 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>English (South African)</th>
+        <td lang="en-ZA">English (South African)</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/english-south-african-language/">Install Language Pack</a>
+    (448.4 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>English (US)</th>
+        <td lang="en-US">English (US)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/united-states-english-spellche/">Install Dictionary</a>
+    (306.4 KiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/us-english-dictionary/">Install Dictionary</a>
+    (208.8 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/english-us-language-pack/">Install Language Pack</a>
+    (449.7 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Esperanto</th>
+        <td lang="eo">Esperanto</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/esperanta-vortaro/">Install Dictionary</a>
+    (98.1 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/esperanto-language-pack/">Install Language Pack</a>
+    (470.7 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Estonian</th>
+        <td lang="et">Eesti keel</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/eesti-keele-speller/">Install Dictionary</a>
+    (843.8 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/eesti-et-keele-pakk/">Install Language Pack</a>
+    (463.9 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Eʋegbe Spelling Dictionary (eegbe)</th>
+        <td lang="eegbe"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/e%CA%8Begbe-spelling-dictionary/">Install Dictionary</a>
+    (5.2 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Faroese Spell Checker (Faroe Islands) (fo-fo)</th>
+        <td lang="fo-FO"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/faroese-spell-checker-faroe-is/">Install Dictionary</a>
+    (564.0 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Fijian</th>
+        <td lang="fj-FJ">Vosa vaka-Viti</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/fijian-language-pack/">Install Language Pack</a>
+    (125.0 KiB)
+          <br>(Fijian)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Finnish</th>
+        <td lang="fi">suomi</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/finnish-language-pack/">Install Language Pack</a>
+    (463.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>French</th>
+        <td lang="fr">Français</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/dictionnaire-fran%C3%A7ais1/">Install Dictionary</a>
+    (328.4 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/fran%C3%A7ais-language-pack/">Install Language Pack</a>
+    (485.7 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Frisian</th>
+        <td lang="fy-NL">Frysk</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/dictionnaire-frison/">Install Dictionary</a>
+    (1.6 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/frysk-fy-language-pack/">Install Language Pack</a>
+    (479.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Friulian</th>
+        <td lang="fur-IT">Furlan</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/dizionari-furlan/">Install Dictionary</a>
+    (116.8 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/furlan-language-pack/">Install Language Pack</a>
+    (160.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Fulah</th>
+        <td lang="ff">Pulaar-Fulfulde</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/pulaar-fulfulde-language-pa/">Install Language Pack</a>
+    (464.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Gaelic (Scotland)</th>
+        <td lang="gd">Gàidhlig</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/scottish-gaelic-spell-checker/">Install Dictionary</a>
+    (1007.4 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/g%C3%A0idhlig-language-pack/">Install Language Pack</a>
+    (478.1 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Galician</th>
+        <td lang="gl">Galego</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/corrector-de-galego/">Install Dictionary</a>
+    (610.4 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Georgian</th>
+        <td lang="ka">ქართული</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/%E1%83%98%E1%83%9C%E1%83%92%E1%83%9A%E1%83%98%E1%83%A1%E1%83%A3%E1%83%A0%E1%83%98-%E1%83%90%E1%83%A8%E1%83%A8-language-pack/">Install Language Pack</a>
+    (503.1 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>German</th>
+        <td lang="de">Deutsch</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/deutsch-de-language-pack/">Install Language Pack</a>
+    (475.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>German (Austria)</th>
+        <td lang="de-AT">Deutsch (Österreich)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/german-dictionary-extended-for/">Install Dictionary</a>
+    (330.5 KiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/german-dictionary-de_at-for-sp/">Install Dictionary</a>
+    (336.0 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>German (Germany)</th>
+        <td lang="de-DE">Deutsch (Deutschland)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/german-dictionary/">Install Dictionary</a>
+    (329.1 KiB)
+          <br>(neue Rechtschreibung)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/german-dictionary-de_de-for-sp/">Install Dictionary</a>
+    (334.8 KiB)
+          <br>((neue Rechtschreibung))
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/deutsch-alte-rechtschreibung/">Install Dictionary</a>
+    (1005.6 KiB)
+          <br>(alte Rechtschreibung)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>German (Switzerland)</th>
+        <td lang="de-CH">Deutsch (Schweiz)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/german-dictionary-switzerland/">Install Dictionary</a>
+    (329.5 KiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/german-dictionary-de_ch-for-sp/">Install Dictionary</a>
+    (335.1 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Greek</th>
+        <td lang="el">Ελληνικά</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/greek-spellchecking-dictionary/">Install Dictionary</a>
+    (1.5 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/greek-gr-language-pack/">Install Language Pack</a>
+    (547.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Greek</th>
+        <td lang="el-en">Ελληνικά (el-en)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/english-greek-spelling-diction/">Install Dictionary</a>
+    (3.0 MiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Gujarati (India)</th>
+        <td lang="gu-IN">ગુજરાતી (ભારત)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/gujarati-spell-checker-india/">Install Dictionary</a>
+    (628.0 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/gujarati-in-language-pack/">Install Language Pack</a>
+    (507.6 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Haitian Creole spell checker (ht)</th>
+        <td lang="ht"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/haitian-creole-spell-checker/">Install Dictionary</a>
+    (57.7 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Hausa</th>
+        <td lang="ha-GH">Hausa (ha-gh)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/hausa-spelling-dictionary/">Install Dictionary</a>
+    (135.5 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Hawaiian spell checker (haw)</th>
+        <td lang="haw"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/hawaiian-spell-checker/">Install Dictionary</a>
+    (25.2 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Hebrew</th>
+        <td lang="he">עברית</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/hebrew-spell-checking-dictiona/">Install Dictionary</a>
+    (1.1 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/hebrew-il-language-pack/">Install Language Pack</a>
+    (488.7 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Hiligaynon spell checker (hil)</th>
+        <td lang="hil"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/hiligaynon-spell-checker/">Install Dictionary</a>
+    (73.0 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Hindi (India)</th>
+        <td lang="hi-IN">हिन्दी (भारत)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/hindi-spell-checker/">Install Dictionary</a>
+    (416.1 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/hindi-language-pack/">Install Language Pack</a>
+    (539.1 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Hungarian</th>
+        <td lang="hu">magyar</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/hungarian-dictionary/">Install Dictionary</a>
+    (714.8 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/magyar-nyelvi/">Install Language Pack</a>
+    (490.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Icelandic</th>
+        <td lang="is">íslenska</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/icelandic-dictionary/">Install Dictionary</a>
+    (655.5 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/icelandic-is-language-pack/">Install Language Pack</a>
+    (473.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Indonesian</th>
+        <td lang="id">Bahasa Indonesia</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/kamus-pengecek-ejaan-bahasa-in/">Install Dictionary</a>
+    (137.4 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/indonesian-langpack/">Install Language Pack</a>
+    (459.7 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Interlingue Spell Checker (ie)</th>
+        <td lang="ie"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/interlingue-spell-checker/">Install Dictionary</a>
+    (92.0 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Irish</th>
+        <td lang="ga-IE">Gaeilge</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/litreoir-gaelspell-do-mhozilla/">Install Dictionary</a>
+    (338.3 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/irish-ie-language-pack/">Install Language Pack</a>
+    (490.4 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Italian</th>
+        <td lang="it">Italiano</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/dizionario-italiano/">Install Dictionary</a>
+    (368.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/italiano-it-language-pack/">Install Language Pack</a>
+    (364.3 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Japanese</th>
+        <td lang="ja">日本語</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/japanese-language-pack-1/">Install Language Pack</a>
+    (527.7 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Kabyle</th>
+        <td lang="kab">Taqbaylit</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/taqbaylit-language-pack/">Install Language Pack</a>
+    (479.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Kannada</th>
+        <td lang="kn">ಕನ್ನಡ</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/kannada-spell-checker/">Install Dictionary</a>
+    (23.3 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/kannada-in-language-pack/">Install Language Pack</a>
+    (547.4 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Kashubian</th>
+        <td lang="csb">Kaszëbsczi</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/kashubian-spell-checker-poland/">Install Dictionary</a>
+    (1.7 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/kashubian-csb-language-pack/">Install Language Pack</a>
+    (432.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Kazakh</th>
+        <td lang="kk">Қазақ</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/kazakh-kz-language-pack/">Install Language Pack</a>
+    (534.3 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Khmer</th>
+        <td lang="km">ខ្មែរ</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/%E1%9E%81%E1%9E%98%E1%9E%9A-language-pack/">Install Language Pack</a>
+    (549.3 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Korean</th>
+        <td lang="ko">한국어</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/korean-spellchecker/">Install Dictionary</a>
+    (4.1 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/korean-kr-language-pack/">Install Language Pack</a>
+    (503.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Kurdish</th>
+        <td lang="ku">Kurdî</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/rastniv%C3%AEs/">Install Dictionary</a>
+    (43.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/kurdish-ku-language-pack/">Install Language Pack</a>
+    (454.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Lao</th>
+        <td lang="lo">ພາສາລາວ</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/lao-spellchecking-dictionar/">Install Dictionary</a>
+    (38.6 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Latin</th>
+        <td lang="la">Latina</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/latin-dictionary/">Install Dictionary</a>
+    (298.6 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Latvian</th>
+        <td lang="lv">Latviešu</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/latvie%C5%A1u-valodas-pareizrakst%C4%ABb/">Install Dictionary</a>
+    (352.0 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/saskarnes-latviskoju/">Install Language Pack</a>
+    (483.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Ligurian</th>
+        <td lang="lij">Ligure</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/ligure-zen%C3%A9ize-language-pac/">Install Language Pack</a>
+    (416.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Lingala</th>
+        <td lang="ln">Lingála</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/lingala-spell-checker/">Install Dictionary</a>
+    (26.1 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Lithuanian</th>
+        <td lang="lt">Lietuvių</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/lithuanian-spellcheck/">Install Dictionary</a>
+    (314.6 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/lietuvi%C5%B3-language-pack/">Install Language Pack</a>
+    (490.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Lower Sorbian</th>
+        <td lang="dsb">Dolnoserbšćina</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/dsb-spell/">Install Dictionary</a>
+    (299.1 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/dolnoserb%C5%A1%C4%87ina-language-pack/">Install Language Pack</a>
+    (491.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Luganda</th>
+        <td lang="lg">Luganda</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/luganda-ug-language-pack/">Install Language Pack</a>
+    (378.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Macedonian</th>
+        <td lang="mk">Македонски</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/macedonian-makedonski-mk-mk/">Install Dictionary</a>
+    (1.3 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/%D0%BC%D0%B0%D0%BA%D0%B5%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%B8-language-pack/">Install Language Pack</a>
+    (508.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Maithili</th>
+        <td lang="mai">मैथिली মৈথিলী</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/maithili-language-pack/">Install Language Pack</a>
+    (526.4 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Malagasy</th>
+        <td lang="mg">Malagasy</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/malagasy-mg-language-pack/">Install Language Pack</a>
+    (140.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Malagasy</th>
+        <td lang="mg-MG">Malagasy (mg-mg)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/malagasy-spell-checker/">Install Dictionary</a>
+    (61.1 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Malay</th>
+        <td lang="ms">Melayu</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/myeja/">Install Dictionary</a>
+    (78.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/bahasa-melayu-ms-language-pack/">Install Language Pack</a>
+    (468.7 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Malayalam</th>
+        <td lang="ml">മലയാളം</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/malayalam-in-language-pack/">Install Language Pack</a>
+    (549.4 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Maori (Aotearoa)</th>
+        <td lang="mi">Māori (Aotearoa)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/te-papakupu-m%C4%81ori/">Install Dictionary</a>
+    (105.2 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Marathi</th>
+        <td lang="mr">मराठी</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/marathi-dictionary/">Install Dictionary</a>
+    (717.0 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/marathi-language-pack/">Install Language Pack</a>
+    (536.9 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Mongolian</th>
+        <td lang="mn">Монгол</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/mongolian-spell-checking-dicti/">Install Dictionary</a>
+    (800.2 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Ndebele, South</th>
+        <td lang="nr">isiNdebele</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/ndebele-south-spell-checker/">Install Dictionary</a>
+    (85.0 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/ndebele-language-pack/">Install Language Pack</a>
+    (148.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Nepali</th>
+        <td lang="ne-NP">नेपाली</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/nepali-dictionary/">Install Dictionary</a>
+    (170.8 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Northern Sotho</th>
+        <td lang="nso">Sepedi</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/northern-sotho-spell-checker/">Install Dictionary</a>
+    (219.1 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/northern-sotho-sesotho-sa-lebo/">Install Language Pack</a>
+    (364.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Norwegian (Bokmål)</th>
+        <td lang="nb-NO">Norsk bokmål</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/norsk-bokm%C3%A5l-ordliste/">Install Dictionary</a>
+    (1.3 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/norsk-bokm%C3%A5l-no-language-pa/">Install Language Pack</a>
+    (467.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Norwegian (Nynorsk)</th>
+        <td lang="nn-NO">Norsk nynorsk</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/norsk-nynorsk-ordliste/">Install Dictionary</a>
+    (895.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/norsk-nynorsk-no-language-p/">Install Language Pack</a>
+    (468.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Occitan (Lengadocian)</th>
+        <td lang="oc">occitan (lengadocian)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/correcteur-occitan-languedocie/">Install Dictionary</a>
+    (165.8 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Odia</th>
+        <td lang="or-IN">ଓଡ଼ିଆ (or-in)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/odia-spelling-checker/">Install Dictionary</a>
+    (1.4 MiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Odia</th>
+        <td lang="or">ଓଡ଼ିଆ</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/oriya-spell-checker/">Install Dictionary</a>
+    (13.1 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/oriya-or-language-pack/">Install Language Pack</a>
+    (519.6 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Persian</th>
+        <td lang="fa-IR">فارسی (fa-ir)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/lilak-persian-dictionary/">Install Dictionary</a>
+    (362.6 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Persian</th>
+        <td lang="fa">فارسی</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/persian-dictionary/">Install Dictionary</a>
+    (1.0 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/persian-ir-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-lang/">Install Language Pack</a>
+    (519.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Polish</th>
+        <td lang="pl">Polski</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/polish-spellchecker-dictionary/">Install Dictionary</a>
+    (1.1 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/polski-language-pack/">Install Language Pack</a>
+    (383.3 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Portuguese (Brazilian)</th>
+        <td lang="pt-BR">Português (do Brasil)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/corretor/">Install Dictionary</a>
+    (178.4 KiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/verificador-ortogr%C3%A1fico-para-p/">Install Dictionary</a>
+    (1.3 MiB)
+          <br>(Reforma ortográfica de 2009)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/ortografia-br/">Install Dictionary</a>
+    (174.0 KiB)
+          <br>(Ortografia Antiga)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/firefox-br/">Install Language Pack</a>
+    (472.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Portuguese (Portugal)</th>
+        <td lang="pt-PT">Português (Europeu)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/european-portuguese-spellcheck/">Install Dictionary</a>
+    (276.6 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/portugu%C3%AAs-portugal-language/">Install Language Pack</a>
+    (474.6 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Punjabi (India)</th>
+        <td lang="pa-IN">ਪੰਜਾਬੀ (ਭਾਰਤ)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/punjabi-spell-checker/">Install Dictionary</a>
+    (11.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/punjabi-gurmukhi-language-p/">Install Language Pack</a>
+    (507.4 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Romanian</th>
+        <td lang="ro">Română</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/romanian-spellchecking-diction/">Install Dictionary</a>
+    (1.1 MiB)
+          <br>(trei dicționare: standard (cu â), clasic (cu î), cu sedile)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/romanian-language-pack/">Install Language Pack</a>
+    (263.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Romansh</th>
+        <td lang="rm">rumantsch</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/rumantsch-language-pack/">Install Language Pack</a>
+    (467.7 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Russian</th>
+        <td lang="ru">Русский</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/russian-spellchecking-dic-3703/">Install Dictionary</a>
+    (507.7 KiB)
+          <br>(Словарь Александра Лебедева)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/russian-hunspell-dictionary/">Install Dictionary</a>
+    (758.2 KiB)
+          <br>(Словарь Александра Клюквина)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/russian-ru-language-pack/">Install Language Pack</a>
+    (538.6 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Sanskrit</th>
+        <td lang="sa">संस्कृत</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/sanskrit-spell-checker/">Install Dictionary</a>
+    (16.6 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Serbian</th>
+        <td lang="sr">Српски</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/srpski/">Install Dictionary</a>
+    (1.0 MiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/%D1%81%D1%80%D0%BF%D1%81%D0%BA%D0%B8-%D1%80%D0%B5%D1%87%D0%BD%D0%B8%D0%BA-serbian-dictiona/">Install Dictionary</a>
+    (973.3 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/%D1%81%D1%80%D0%BF%D1%81%D0%BA%D0%B8-sr-language-pack/">Install Language Pack</a>
+    (503.4 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Sinhala</th>
+        <td lang="si">සිංහල</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/sinhala-lk-language-pack/">Install Language Pack</a>
+    (516.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Siswati</th>
+        <td lang="ss">siSwati</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/swati-spell-checker/">Install Dictionary</a>
+    (108.3 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/swazi-language-pack/">Install Language Pack</a>
+    (148.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Slovak</th>
+        <td lang="sk-SK">slovenčina (sk-sk)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/slovak-spell-checking-dictiona/">Install Dictionary</a>
+    (3.3 MiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Slovak</th>
+        <td lang="sk">slovenčina</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/slovak-sk-language-pack/">Install Language Pack</a>
+    (496.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Slovenian</th>
+        <td lang="sl">Slovenščina</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/slovar-za-slovenski-jezik/">Install Dictionary</a>
+    (1.1 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/slovenski-jezik-language-pa/">Install Language Pack</a>
+    (475.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Songhai</th>
+        <td lang="son">Soŋay</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/so%C5%8Bay-senni-hantum-tenjandikaw/">Install Dictionary</a>
+    (42.2 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/so%C5%8Bay-language-pack/">Install Language Pack</a>
+    (466.4 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Southern Sotho</th>
+        <td lang="st">Sesotho</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/southern-sotho-spell-checker/">Install Dictionary</a>
+    (50.8 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/southern-sotho-language-pack/">Install Language Pack</a>
+    (147.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Spanish</th>
+        <td lang="es-VE">Español (es-ve)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/diccionario-espa%C3%B1ol-venezuela/">Install Dictionary</a>
+    (346.1 KiB)
+          <br>(Español Venezuela)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Spanish (Argentina)</th>
+        <td lang="es-AR">Español (de Argentina)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/diccionario-espa%C3%B1ol-argentina/">Install Dictionary</a>
+    (225.2 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/espa%C3%B1ol-ar-language-pack/">Install Language Pack</a>
+    (477.1 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Spanish (Chile)</th>
+        <td lang="es-CL">Español (de Chile)</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/spanish-chile-language-pack/">Install Language Pack</a>
+    (480.9 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Spanish (Mexico)</th>
+        <td lang="es-MX">Español (de México)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/diccionario-espa%C3%B1ol-m%C3%A9xico/">Install Dictionary</a>
+    (196.7 KiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/spanish-mexico-dictionary/">Install Dictionary</a>
+    (260.1 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/spanish-mexico-language-pack/">Install Language Pack</a>
+    (483.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Spanish (Spain)</th>
+        <td lang="es-ES">Español (de España)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/spanish-spain-dictionary/">Install Dictionary</a>
+    (256.2 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/espa%C3%B1ol-espa%C3%B1a-language-pac/">Install Language Pack</a>
+    (371.1 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Swahili</th>
+        <td lang="sw-TZ">Kiswahili (sw-tz)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/kiswahili-spell-checker/">Install Dictionary</a>
+    (223.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/kiswahili-sw-tz-language-pack/">Install Language Pack</a>
+    (200.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Swahili</th>
+        <td lang="sw">Kiswahili</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/kiswahili-sw-language-pack/">Install Language Pack</a>
+    (121.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Swedish</th>
+        <td lang="sv-SE">Svenska</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/g%C3%B6rans-hemmasnickrade-ordli/">Install Dictionary</a>
+    (1.4 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/svenska-se-language-pack/">Install Language Pack</a>
+    (475.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Tamil</th>
+        <td lang="ta">தமிழ்</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/tamil-spell-checker-for-firefo/">Install Dictionary</a>
+    (283.4 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/tamil-language-pack-1/">Install Language Pack</a>
+    (528.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Tamil (India)</th>
+        <td lang="ta-IN">தமிழ் (இந்தியா)</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/thamizha-solthiruthi/">Install Dictionary</a>
+    (355.1 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Tamil (Sri Lanka)</th>
+        <td lang="ta-LK">தமிழ் (இலங்கை)</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/tamil-lk-language-pack-old/">Install Language Pack</a>
+    (175.0 KiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/tamil-ta-lk-language-pack/">Install Language Pack</a>
+    (409.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Telugu</th>
+        <td lang="te">తెలుగు</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/telugu-spell-checker/">Install Dictionary</a>
+    (537.4 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/telugu-in-language-pack-6930/">Install Language Pack</a>
+    (551.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Thai</th>
+        <td lang="th">ไทย</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/thai-language-pack/">Install Language Pack</a>
+    (520.2 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Tsonga</th>
+        <td lang="ts">Xitsonga</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/tsonga-spell-checker/">Install Dictionary</a>
+    (126.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/tsonga-language-pack/">Install Language Pack</a>
+    (147.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Tswana</th>
+        <td lang="tn">Setswana</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/tswana-spell-checker/">Install Dictionary</a>
+    (179.1 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/tswana-language-pack/">Install Language Pack</a>
+    (147.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Turkish</th>
+        <td lang="tr">Türkçe</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/turkce-yazim-denetimi/">Install Dictionary</a>
+    (4.1 MiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/t%C3%BCrk%C3%A7e-tr-language-pack/">Install Language Pack</a>
+    (481.1 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Turkmen spell checker dictionary (tk)</th>
+        <td lang="tk"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/turkmen-spell-checker/">Install Dictionary</a>
+    (230.5 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Ukrainian</th>
+        <td lang="uk">Українська</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/ukrainian-dictionary/">Install Dictionary</a>
+    (995.3 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/ukrainian-language-pack/">Install Language Pack</a>
+    (534.3 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Upper Sorbian</th>
+        <td lang="hsb">Hornjoserbsce</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/upper-sorbian-spelling-diction/">Install Dictionary</a>
+    (168.5 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/hornjoserb%C5%A1%C4%87ina-language-pack/">Install Language Pack</a>
+    (488.7 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Urdu</th>
+        <td lang="ur">اُردو</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/urdu-dictionary/">Install Dictionary</a>
+    (322.6 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/%D8%A7%D8%B1%D8%AF%D9%88-%D9%BE%D8%A7%DA%A9%D8%B3%D8%AA%D8%A7%D9%86-language-pack/">Install Language Pack</a>
+    (528.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Uzbek</th>
+        <td lang="uz">Oʻzbek tili</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/uzbek-spell-checker/">Install Dictionary</a>
+    (239.0 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/uzbek-language-pack/">Install Language Pack</a>
+    (476.8 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Venda</th>
+        <td lang="ve">Tshivenḓa</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/venda-spell-checker/">Install Dictionary</a>
+    (73.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/venda-language-pack/">Install Language Pack</a>
+    (149.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Venetan (vec)</th>
+        <td lang="vec"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/dithionario-de-lengua-v%C3%A8neta/">Install Dictionary</a>
+    (317.1 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Vietnamese</th>
+        <td lang="vi">Tiếng Việt</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/vietnamese-dictionary/">Install Dictionary</a>
+    (48.7 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/vietnamese-language-pack-old/">Install Language Pack</a>
+    (154.0 KiB)
+      </p>
+    <p>
+    <a href="/en-US/firefox/addon/vietnamese-language-pack/">Install Language Pack</a>
+    (485.5 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Walloon Language Pack (wa)</th>
+        <td lang="wa"></td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/walloon-language-pack/">Install Language Pack</a>
+    (164.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Welsh</th>
+        <td lang="cy">Cymraeg</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/geiriadur-cymraeg/">Install Dictionary</a>
+    (675.4 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/cymraeg-language-pack/">Install Language Pack</a>
+    (468.1 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Wolof</th>
+        <td lang="wo-SN">Wolof (wo-sn)</td>
+        <td>  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/wolof-senegal-language-pack/">Install Language Pack</a>
+    (161.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Xhosa</th>
+        <td lang="xh">isiXhosa</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/xhosa-spell-checker/">Install Dictionary</a>
+    (193.5 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/xhosa-language-pack/">Install Language Pack</a>
+    (151.0 KiB)
+      </p>
+  </td>
+      </tr>
+            <tr>
+        <th>Yiddish spell checker (YIVO) (yi)</th>
+        <td lang="yi"></td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/yiddish-spell-checker-yivo/">Install Dictionary</a>
+    (302.6 KiB)
+      </p>
+  </td>
+        <td>  </td>
+      </tr>
+            <tr>
+        <th>Zulu</th>
+        <td lang="zu">isiZulu</td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/zulu-spell-checker/">Install Dictionary</a>
+    (384.5 KiB)
+      </p>
+  </td>
+        <td>    <p>
+    <a href="/en-US/firefox/addon/zulu-language-pack/">Install Language Pack</a>
+    (466.4 KiB)
+      </p>
+  </td>
+      </tr>
+          </tbody>
+  </table>
+</section>
+              </div>
+      <div id="tooltip">
+        <span></span>
+      </div>
+      <div id="popup-staging">
+        <div id="add-to-collection" class="popup">
+          <div class="collection-add-login">
+            <p>To create your own collections, you must have a Mozilla Add-ons account.</p>
+            <p class="register-button">
+              <a class="button" href="https://oauth.accounts.firefox.com/v1/authorization?action=signup&amp;scope=profile&amp;state=2545f50db41dfe0d26c269f2dd6e2547da986a23a25cb5b18270bbc39f4ef421%3AL2VuLVVTL2ZpcmVmb3gvbGFuZ3VhZ2UtdG9vbHMv&amp;redirect_url=https%3A%2F%2Faddons.mozilla.org%2Fapi%2Fv3%2Faccounts%2Fauthenticate%2F&amp;client_id=a4907de5fa9d78fc">Create an Add-ons Account</a>
+            </p>
+            <p>
+              or <a href="https://oauth.accounts.firefox.com/v1/authorization?action=signin&amp;scope=profile&amp;state=2545f50db41dfe0d26c269f2dd6e2547da986a23a25cb5b18270bbc39f4ef421%3AL2VuLVVTL2ZpcmVmb3gvbGFuZ3VhZ2UtdG9vbHMv&amp;redirect_url=https%3A%2F%2Faddons.mozilla.org%2Fapi%2Fv3%2Faccounts%2Fauthenticate%2F&amp;client_id=a4907de5fa9d78fc">log in to your current account</a>            </p>
+          </div>
+        </div>
+                      </div>
+    </div>
+          <div id="footer" role="contentinfo">
+        <div class="section">
+                    <img class="footerlogo" src="https://addons.cdn.mozilla.net/static/img/zamboni/footer-logo-med.png?b=2c4f6d42-59b29482" alt="Footer logo">
+                                <div class="links-footer">
+  <ul>
+    <li>get to know <b>add-ons</b></li>
+    <li><a href="/en-US/about">About</a></li>
+    <li><a href="http://blog.mozilla.com/addons">Blog</a></li>
+    <li class="footer-devhub-link"><a href="/en-US/developers/">Developer Hub</a></li>
+    <li><a href="/en-US/faq">FAQ</a></li>
+    <li><a href="https://discourse.mozilla-community.org/c/add-ons">Forum</a></li>
+  </ul>
+</div>
+<div id="footer-content">
+                <form class="languages go" id="lang_form" method="get" action="" data-no-csrf>
+          <label for="language">Other languages</label>
+          <select id="language" name="lang" dir="ltr">
+            <option value="af">
+                Afrikaans
+              </option><option value="ar">
+                عربي
+              </option><option value="bg">
+                Български
+              </option><option value="bn-bd">
+                বাংলা (বাংলাদেশ)
+              </option><option value="ca">
+                Català
+              </option><option value="cs">
+                Čeština
+              </option><option value="da">
+                Dansk
+              </option><option value="de">
+                Deutsch
+              </option><option value="dsb">
+                Dolnoserbšćina
+              </option><option value="el">
+                Ελληνικά
+              </option><option value="en-gb">
+                English (British)
+              </option><option value="en-us" selected>
+                English (US)
+              </option><option value="es">
+                Español
+              </option><option value="eu">
+                Euskara
+              </option><option value="fa">
+                فارسی
+              </option><option value="fi">
+                suomi
+              </option><option value="fr">
+                Français
+              </option><option value="ga-ie">
+                Gaeilge
+              </option><option value="he">
+                עברית
+              </option><option value="hsb">
+                Hornjoserbsce
+              </option><option value="hu">
+                magyar
+              </option><option value="id">
+                Bahasa Indonesia
+              </option><option value="it">
+                Italiano
+              </option><option value="ja">
+                日本語
+              </option><option value="ka">
+                ქართული
+              </option><option value="kab">
+                Taqbaylit
+              </option><option value="ko">
+                한국어
+              </option><option value="mk">
+                Македонски
+              </option><option value="mn">
+                Монгол
+              </option><option value="nl">
+                Nederlands
+              </option><option value="nn-no">
+                Norsk nynorsk
+              </option><option value="pl">
+                Polski
+              </option><option value="pt-br">
+                Português (do Brasil)
+              </option><option value="pt-pt">
+                Português (Europeu)
+              </option><option value="ro">
+                Română
+              </option><option value="ru">
+                Русский
+              </option><option value="sk">
+                slovenčina
+              </option><option value="sl">
+                Slovenščina
+              </option><option value="sq">
+                Shqip
+              </option><option value="sv-se">
+                Svenska
+              </option><option value="uk">
+                Українська
+              </option><option value="ur">
+                اُردو
+              </option><option value="vi">
+                Tiếng Việt
+              </option><option value="zh-cn">
+                中文 (简体)
+              </option><option value="zh-tw">
+                正體中文 (繁體)
+              </option>          </select>
+                    <noscript><button type="submit">Go</button></noscript>
+        </form>
+            <div id="copyright">
+  <p id="footer-links">
+          <a href="https://www.mozilla.org/privacy/websites/">
+        Privacy Policy
+      </a> &nbsp;|&nbsp;
+      <a href="https://www.mozilla.org/about/legal/">
+        Legal Notices
+      </a> &nbsp;|&nbsp;
+      <a href="https://www.mozilla.org/about/legal/fraud-report/">
+        Report Trademark Abuse
+      </a>
+                        &nbsp;|&nbsp;<a class="mobile-link" href="#">View Mobile Site</a>
+                &nbsp;|&nbsp;<a href="https://status.mozilla.org/#addons.mozilla.org_service_history">Site Status </a>
+        &nbsp;|&nbsp;<a href="https://developer.mozilla.org/en-US/Add-ons/AMO/Policy/Contact">Report a bug</a>
+            </p>
+  <p>
+    Except where otherwise <a href="https://www.mozilla.org/about/legal/">noted</a>, content on this site is licensed under the <br /> <a href="https://creativecommons.org/licenses/by-sa/3.0/"> Creative Commons Attribution Share-Alike License v3.0 </a> or any later version.  </p>
+</div>    </div>
+                  </div>       </div>                   <script src="https://addons.cdn.mozilla.net/en-US/firefox/jsi18n.js?b=2c4f6d42-59b29482"></script>
+      <script src="https://addons.cdn.mozilla.net/static/js/impala-min.js?build=2c4f6d42-59b29482"></script>
+              </body>
+</html>�]�E�;      Y��yY���>2�       9    :https://addons.mozilla.org/en-US/firefox/language-tools/ necko:classified 1 strongly-framed 1 security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojH6pBabDSgSnsfLHeAAQAAgAAAAAAAAAAAAAAAAAAAAAB4vFIJp5wRkeyPxAQ9RJGKPqbqVvKO0mKuIl8ec8o/uhmCjImkVxP+7sgiYWmMt8FvcOXmlQiTNWFiWlrbpbqgwAAAAAAAAfNMIIHyTCCBrGgAwIBAgIQD2YBPt0CaUnfGaRk56rTEjANBgkqhkiG9w0BAQsFADB1MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMTQwMgYDVQQDEytEaWdpQ2VydCBTSEEyIEV4dGVuZGVkIFZhbGlkYXRpb24gU2VydmVyIENBMB4XDTE1MDczMTAwMDAwMFoXDTE3MDkyMTEyMDAwMFowggEIMR0wGwYDVQQPDBRQcml2YXRlIE9yZ2FuaXphdGlvbjETMBEGCysGAQQBgjc8AgEDEwJVUzEbMBkGCysGAQQBgjc8AgECEwpDYWxpZm9ybmlhMREwDwYDVQQFEwhDMjU0MzQzNjEeMBwGA1UECRMVNjUwIENhc3RybyBTdCBTdGUgMzAwMQ4wDAYDVQQREwU5NDA0MTELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxGzAZBgNVBAoTEk1vemlsbGEgRm91bmRhdGlvbjEbMBkGA1UEAxMSYWRkb25zLm1vemlsbGEub3JnMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3jJG6kmDY1p/wbvK6lC/CIggEwsLOXPlOq+uy8sn9NNIZyYQ7M0bEBW+DERxY8O7DTb8thPOxJSURCVufbdCKfwynPeB1LdouA5UKxJluXlRQudBYzjqdsFN4Fp8Xkx69maOo/LpAb/QWxU66iaN0aOW34T6WDTqlwZ16km9+hK6wX4qAa5ubidtcoSE932nN3qrBfp+Wmiazph53J3/z6B1dA2EAo+5YN3IR/ypziNnJdXPfa4x8iEVnGgnfWKQHYgVuNRZ4XdihYINIIfz+Ahj67OLGI/oPqgtsyTGub3W1GstcqTIl2VcF+acPZY+6mNMDqDKxYZRmoIaAzczAQIDAQABo4IDvjCCA7owHwYDVR0jBBgwFoAUPdNQpdagre7zSmAKZdMh1Pj41g8wHQYDVR0OBBYEFMlYS6CjLUJkL+ZxrL10vDjwuyZbMGsGA1UdEQRkMGKCEmFkZG9ucy5tb3ppbGxhLm9yZ4IRYWRkb24ubW96aWxsYS5vcmeCG3NlcnZpY2VzLmFkZG9ucy5tb3ppbGxhLm9yZ4IcZGlzY292ZXJ5LmFkZG9ucy5tb3ppbGxhLm9yZzAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMHUGA1UdHwRuMGwwNKAyoDCGLmh0dHA6Ly9jcmwzLmRpZ2ljZXJ0LmNvbS9zaGEyLWV2LXNlcnZlci1nMS5jcmwwNKAyoDCGLmh0dHA6Ly9jcmw0LmRpZ2ljZXJ0LmNvbS9zaGEyLWV2LXNlcnZlci1nMS5jcmwwSwYDVR0gBEQwQjA3BglghkgBhv1sAgEwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzAHBgVngQwBATCBiAYIKwYBBQUHAQEEfDB6MCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wUgYIKwYBBQUHMAKGRmh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydFNIQTJFeHRlbmRlZFZhbGlkYXRpb25TZXJ2ZXJDQS5jcnQwDAYDVR0TAQH/BAIwADCCAX0GCisGAQQB1nkCBAIEggFtBIIBaQFnAHYApLkJkLQYWBSHuxOizGdwCjw1mAT5G9+443fNDsgN3BAAAAFUGr5XNQAABAMARzBFAiBaW/XwBQKCJzZKJ25FFmzmIpbueU9SlaYlaDd2lGFQ8QIhAMzdjj1i72TMWaiyFHIlcEEBposADw8u2IARMYZCwE7xAHUAaPaY+B9kgr46jO65KB1M/HFRXWeT1ETRCmesu09P+8QAAAFUGr5XLwAABAMARjBEAiAlxhs3gwDNe6YNjd8YQiAmVCjLRSin+4bUUAJeFFxwjQIgUiVyjmeeXMB/LO/O7TxU77MJUsqoEx2eaXfsL+t0VyUAdgBWFAaaL9fC7NP14b1Esj7HRna5vJkRXMDvlJhV1onQ3QAAAVQavll0AAAEAwBHMEUCIQCuVjE0Ku+wsOhCyrvqBbZzboLkujFA7ZcuivKXg8S02AIgREiCCExrGuP30Dbl+ULzBqnPSVIF6jfj51jnxr2r3wcwDQYJKoZIhvcNAQELBQADggEBAA7+fGZpugTyB8BF7/VgQvWsu+oN7CQhJu9G3pNFpDOrmTyatzr/ope+Zxf7dYxBUnIssW9HxzO0vc6XMl99wFp6JMt2L32UN7G8QnslB1E8lylV9W1b2V1k+VrSlBhtxotsOLHhy4ywcUklga2gJw5LwpNCvhc6RzgurHsnxEe7CnYT01Q2dhgXRTuVMSWERxH4ElwYu3xfXgtfcUTdHtWlDfj4Zdjj5JWnzH9RLWP264rR+xUzFyxVLvynGk9N7S+k3VwKTxen/zeba8IPExRapLqVN5iNxRQo0yfw9u52ahPADcDQw7rYk06gjLmp+jxS+vjCtnQeyFe2pxWGAqvALwEDAAAAAQEBAAAAAA== request-method GET request-User-Agent Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:55.0) Gecko/20100101 Firefox/55.0 response-head HTTP/1.1 200 OK
+Content-Security-Policy: script-src https://ssl.google-analytics.com/ga.js https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.paypalobjects.com/js/external/dg.js https://addons.cdn.mozilla.net; style-src 'self' 'unsafe-inline' https://addons.cdn.mozilla.net; default-src 'self'; frame-src 'self' https://ic.paypal.com https://paypal.com https://www.google.com/recaptcha/ https://www.paypal.com; child-src 'self' https://ic.paypal.com https://paypal.com https://www.google.com/recaptcha/ https://www.paypal.com; img-src 'self' data: blob: https://www.paypal.com/webapps/checkout/ https://www.paypal.com/webapps/hermes/api/logger https://ssl.google-analytics.com https://addons.cdn.mozilla.net https://static.addons.mozilla.net https://sentry.prod.mozaws.net; media-src https://videos.cdn.mozilla.net; object-src 'none'; connect-src 'self' https://sentry.prod.mozaws.net; font-src 'self' https://addons.cdn.mozilla.net; form-action 'self' https://developer.mozilla.org; base-uri 'self' https://addons.mozilla.org; report-uri /__cspreport__
+Content-Type: text/html; charset=utf-8
+Date: Thu, 14 Sep 2017 15:38:34 GMT
+ETag: "d384b7dd9b8d22b2597145547c704e69"
+Public-Key-Pins: max-age=5184000; includeSubDomains; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18="; pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
+Server: nginx
+strict-transport-security: max-age=31536000
+Vary: User-Agent
+x-content-type-options: nosniff
+X-Frame-Options: DENY
+x-xss-protection: 1; mode=block
+ original-response-headers Content-Security-Policy: script-src https://ssl.google-analytics.com/ga.js https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.paypalobjects.com/js/external/dg.js https://addons.cdn.mozilla.net; style-src 'self' 'unsafe-inline' https://addons.cdn.mozilla.net; default-src 'self'; frame-src 'self' https://ic.paypal.com https://paypal.com https://www.google.com/recaptcha/ https://www.paypal.com; child-src 'self' https://ic.paypal.com https://paypal.com https://www.google.com/recaptcha/ https://www.paypal.com; img-src 'self' data: blob: https://www.paypal.com/webapps/checkout/ https://www.paypal.com/webapps/hermes/api/logger https://ssl.google-analytics.com https://addons.cdn.mozilla.net https://static.addons.mozilla.net https://sentry.prod.mozaws.net; media-src https://videos.cdn.mozilla.net; object-src 'none'; connect-src 'self' https://sentry.prod.mozaws.net; font-src 'self' https://addons.cdn.mozilla.net; form-action 'self' https://developer.mozilla.org; base-uri 'self' https://addons.mozilla.org; report-uri /__cspreport__
+Content-Type: text/html; charset=utf-8
+Date: Thu, 14 Sep 2017 15:38:34 GMT
+ETag: "d384b7dd9b8d22b2597145547c704e69"
+Public-Key-Pins: max-age=5184000; includeSubDomains; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18="; pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
+Server: nginx
+Set-Cookie: sessionid=".eJwNycENwCAIAMBdmEARULtMAwIL1EeTpru3970H8tbz2roDDkAmTi5uVD2jOMpCmYnuEv911zlEsSnyMrY6sBez1WZSJGGF9wPIvhcj:1dsWDq:BlfCDhyqXUwnqJIWIHs7phsbxZA"; Domain=.addons.mozilla.org; expires=Sat, 14-Oct-2017 15:38:34 GMT; httponly; Max-Age=2592000; Path=/; secure
+strict-transport-security: max-age=31536000
+Vary: User-Agent
+x-content-type-options: nosniff
+X-Frame-Options: DENY
+x-xss-protection: 1; mode=block
+transfer-encoding: chunked
+Connection: keep-alive
+ uncompressed-len 0 predictor::resource-count 17 predictor::https://addons.cdn.mozilla.net/static/css/tabzilla/tabzilla.css 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/css/zamboni/impala-min.css?build=e668fab 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/css/restyle/css-min.css?build=c88dcff 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/js/preload-min.js?build=2c4f6d42-59b29482 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/img/icons/firefox.png?b=2c4f6d42-59b29482 1,1,1505403513,4096 net-response-time-onstart 1385 net-response-time-onstop 1604 predictor::https://addons.cdn.mozilla.net/static/img/zamboni/footer-logo-med.png?b=2c4f6d42-59b29482 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/en-US/firefox/jsi18n.js?b=2c4f6d42-59b29482 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/js/impala-min.js?build=2c4f6d42-59b29482 1,1,1505403513,4096 predictor::https://ssl.google-analytics.com/ga.js 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/img/tabzilla/tabzilla-static.png 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/img/icons/search.png?eaad389 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/img/icons/go-arrow.png?ad8fa66 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/css/impala/fonts/OpenSans-Regular.ttf?629a55a 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/css/impala/fonts/OpenSans-Bold.ttf?5014568 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/css/impala/fonts/OpenSans-Italic.ttf?c7dcce0 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/img/impala/search-stem.png?11fc7d4 1,1,1505403513,4096 predictor::https://addons.cdn.mozilla.net/static/img/impala/banner-close-style-refresh.png?3241be0 1,1,1505403513,4096  �

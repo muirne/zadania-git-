@@ -1,0 +1,478 @@
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp, small, strong, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, canvas, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+h1 {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: Arial;
+    font-size: 20px;
+    color: #00975a;
+    font-weight: bold;
+    margin-left: 25px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+}
+
+select {
+	width:240px;
+	padding-right:30px;
+}
+
+input, select {
+  vertical-align: middle; }
+
+
+#mainContainer {
+	width: 980px;
+	padding: 0px;		
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 5;
+    display: block;
+    position:relative;
+}
+
+.container {
+	margin: 20px;
+	background: #f3f3f3;
+}
+
+.wrapper-content {
+  max-width: 980px;
+  width:100%;
+  margin: auto;
+  position: relative; }
+  
+.clear {
+	clear: both;
+}	
+
+.right {
+  float: right; }
+
+.left {
+  float: left; }
+		
+		
+.hide {
+  display: none; }
+	
+.row {
+	padding: 6px; }
+  
+  .row.small {
+    font-size: 12px;
+    line-height: 1.2; }
+  .row label.text {
+    width: 345px;
+    line-height: 30px;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 13px;
+    font-weight: bold; }
+    
+  .row label.text2 {
+    
+    font-size: 13px;
+    line-height: 30px;
+    display: inline-block;
+    margin-right: 15px; }
+  .row label.invalid {
+    color: #c93b1a; }
+  .row span.error {
+    color: #c93b1a;
+    padding-left: 362px;
+    padding-top: 2px;
+    display: block;
+    font-size: 11px; }
+    
+.rowDark {
+	background: #d8d5d5;
+	padding: 6px; }
+	.rowDark.small {
+    font-size: 12px;
+    line-height: 1.2; }
+  .rowDark label.text {
+    width: 345px;
+    font-size: 13px;
+    line-height: 30px;
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: bold; }
+  .rowDark label.invalid {
+    color: #c93b1a; }
+  .rowDark span.error {
+    color: #c93b1a;
+    padding-left: 362px;
+    padding-top: 2px;
+    display: block;
+    font-size: 11px; }
+	
+input[type="text"], input[type="password"] {
+	padding: 3px;
+	width: 230px
+}
+	#credit-parameters {
+		margin-top: 25px;
+	}
+	
+	#credit-parameters  .credit-parameter {
+		clear: both;
+		display:  block;
+	}
+	
+	#credit-parameters  .credit-parameter span {
+		font-size: 16px;
+		padding-top: 10px;
+	}
+	
+.slogan {
+  font-size: 16px;
+	display:  block;}
+  
+  .amount {	
+  font-size: 42px;
+  font-weight: bold;
+	display:  block;
+	padding-top: 10px;
+	color: #00975a;	}
+
+.form_separator {
+    height: 20px;
+    background: url(../images/lineSolid.gif) repeat-x center;
+}
+
+.step-nav .btn-take-credit {
+	background: url("../images/button_wez-kredyt.png") no-repeat center right!important;
+	cursor: pointer;
+	width: 137px;
+    position: absolute;
+    right: 0px;
+	top: 15px;
+	height: 30px;
+ }
+
+ 
+.step-nav .btn-forward {
+	background: url("../images/button_next_2.png") no-repeat center right!important;
+	cursor: pointer;
+	width: 137px;
+    position: absolute;
+    right: 0px;
+	height: 30px;
+ }
+
+.step-nav input {
+	background: url("../images/button_next_2.png") no-repeat center right!important;
+	cursor: pointer;
+	width: 137px;
+    position: absolute;
+    right: 0px;
+	height: 30px;
+	border: none;
+ }
+ 
+.btn-forward font {
+  color: white;
+    size: 18px; }
+
+input.btn-forward {
+  border: none;
+  width: 157px;
+  cursor: pointer; 
+  }
+  
+.btn-back {
+	background: url("../images/button_previous_3.png") no-repeat center right!important;
+	cursor: pointer;
+	width: 137px;
+    position: absolute;
+	right: 130px;
+	height: 30px;	
+ }
+
+.btn-cancel {
+	background: url("../images/button_cancel_2.png") no-repeat center right!important;
+	cursor: pointer;
+	width: 137px;
+    position: absolute;
+	right: 260px;
+	height: 30px;	
+ }
+
+.btn-change-terms {
+	background: url("../images/button_zmien-warunki.png") no-repeat center right!important;
+	cursor: pointer;
+	width: 137px;
+    position: absolute;
+	right: 130px;
+	height: 30px;	
+ }
+ 
+	.icon-24 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: inline-block;
+	top: 5px;
+  background-repeat: no-repeat; }
+  .icon-24.help {
+        background: url("../images/icon-24-help.png") no-repeat left center;
+    margin-left:5px!important; 
+	box-shadow: none;
+	border: none;
+  }
+  
+  .icon-28 {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  display: inline-block;
+  
+    vertical-align: middle;
+  background-repeat: no-repeat; }
+  .icon-28.calendar {
+    background-image: url("../images/icon-28-calendar.png"); }
+    
+.circle-empty {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-image: url("../images/icon-24-empty.png");
+	float: right;
+	padding-right: 10px;
+}
+
+.circle-half {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-image: url("../images/icon-24-half.png");
+	float: right;
+	padding-right: 10px;
+}
+
+.circle-full {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-image: url("../images/icon-24-full.png");
+	float: right;
+	padding-right: 10px;
+}
+	
+.ui-tooltip {
+  display: table;	
+  padding: 8px;
+  position: absolute;
+  z-index: 9999;
+  width: 400px;
+  background: #f3f3f3;
+  border: 1px solid white;
+  min-height: 56px;
+  border-radius: 5px; }
+  .ui-tooltip-content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .ui-tooltip:before {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: -5px;
+    width: 19px;
+    height: 24px;
+    background: url("../images/tooltip-arrow.png") no-repeat; }
+
+* html .ui-tooltip {
+  background-image: none; }
+
+body .ui-tooltip {
+  border-width: 2px; }
+  
+  .nav-container {
+  background: white;
+  width: 980px;
+		position:fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+		height: 50px;
+		bottom: 60px;
+		
+  }
+  
+  
+ #uniform-correspondence_no .error{
+  background-image: none !important;
+  margin-left: -363px;
+  width: 100px;
+   }
+
+   .selector#uniform-form_residencemonth {
+  width: 110px; }
+  .selector#uniform-form_residencemonth span {
+    width: 78px; }
+  .selector#uniform-form_residencemonth select {
+    width: 110px;
+    min-width: 113px; }
+	
+	.selector#uniform-form_income1_companystreetname {
+		width: 60px!important;	
+	}
+	.selector#uniform-input_correspondence_street_prefix {
+		width: 60px!important;	
+	}
+	
+	.selector#uniform-form_income1_companystreetname_prefix {
+		width: 60px!important;	
+	}
+	.selector {
+	width: 240px!important; 
+	}
+	
+.selector,
+.radio,
+.checker,
+.uploader,
+.button,
+.selector *,
+.radio *,
+.checker *,
+.uploader *,
+.button * {
+  margin: 0;
+  padding: 0; }
+
+.selector,
+.checker,
+.button,
+.radio,
+.uploader {
+  display: -moz-inline-box;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  line-height: 1;
+  *display: inline; }
+
+.selector select:focus,
+.radio input:focus,
+.checker input:focus,
+.uploader input:focus {
+  outline: 0; }
+
+
+
+  div.selector span {
+display: none;
+     }
+     
+     
+.slideButton {
+	color: #00975a;
+	font-size: 13px;
+	width: 65px;
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.slideDown {
+	background: url('../images/expand_more.png') no-repeat 35px;
+}
+
+.slideUp {
+	background: url('../images/expand_less.png') no-repeat 35px;
+}
+
+.noBackgroud {
+	background: none;
+}
+
+.ajaxLoader {
+	background: url('../images/ajax-loader.gif') no-repeat;
+	width: 380px; height: 100%; position: absolute;
+    left: 50%;
+    transform: translate(65%, 40%);
+}
+
+.calendarButton {
+	background: url('../images/calendar.png') no-repeat left center;
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	margin-left: 5px;
+	vertical-align: middle;
+    cursor: pointer;
+}
+
+#bankName {
+    color: #a0a0a0;
+   	position: relative;
+    font-size: 11px;
+}
+
+.errorSection {
+	background: url('../images/icon-16-invalid.png') no-repeat right top;
+}
+
+.spinnerContainer {
+    text-align: center;
+    margin: 30px;
+}
+
+.agreementBold {
+	color: #00975a;
+	font-weight: bold;
+}
+    
+#agreementsContainer {
+	background: #d8d5d5;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+
+#sectionError {
+	background: #f3f3f3;
+	padding : 15px;
+}{I÷Ì‡       YÆﬂéYÆﬂè>)‡÷Y∏   J    :https://e-bank.credit-agricole.pl/wniosek/landing-pages/698/css/style.css necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Date: Tue, 05 Sep 2017 17:31:58 GMT
+Server: Apache-Coyote/1.1
+Accept-Ranges: bytes
+Etag: W/"8807-1498204818000"
+Last-Modified: Fri, 23 Jun 2017 08:00:18 GMT
+Content-Type: text/css;charset=UTF-8
+Content-Language: pl-PL
+Content-Length: 8807
+ original-response-headers Date: Tue, 05 Sep 2017 17:31:58 GMT
+Server: Apache-Coyote/1.1
+Accept-Ranges: bytes
+Etag: W/"8807-1498204818000"
+Last-Modified: Fri, 23 Jun 2017 08:00:18 GMT
+Content-Type: text/css;charset=UTF-8
+Content-Language: pl-PL
+Content-Length: 8807
+Keep-Alive: timeout=15, max=96
+Connection: Keep-Alive
+ uncompressed-len 0 net-response-time-onstart 183 net-response-time-onstop 190   "g

@@ -1,0 +1,2068 @@
+var CONFIGURATION_FOR_SIMULATION_ADDRESS = "offer/configuration-for-simulation";
+var CALCULATE_INSTALLMENT_ADDRESS = "calculation-simulation/calculate-installment";
+var BANK_DETAILS_ADDRESS = "bank-details";
+var REDIRECT_ADDRESS = "http://credit-agricole.pl";
+var OFFER_ADDRESS = "offer/";
+
+var iban_status = -1;
+
+$(function(){
+	loadScripts('js/jquery.uniform.min.js', 'utf-8', function(){
+		$('.uniform').uniform({selectAutoWidth:true});
+	});
+	
+	loadScripts('js/jquery.meiomask.js', 'utf-8', function(){
+		$.mask.masks = $.extend($.mask.masks, {
+			pesel:         { mask: '99999999999', type: 'repeat' },
+			postcodehead:   { mask: '99'},
+			postcodetail:   { mask: '999' },
+			numbernip:      { mask: '9999999999', type: 'repeat' },
+			number: { mask: '999999999', type: 'repeat' },
+			czasZamieszkania: { mask: '999' },
+			dowodNumer: {mask: '999999', type: 'repeat'},
+			dowod: { mask: '***999999', type: 'repeat' },
+			passport: { mask: '9999999', type: 'repeat'},
+			kartaPobytu: { mask: '99999999', type: 'repeat'},
+			datepl: {mask: '99*99*9999', type: 'repeat' },
+			polish: {mask: 'L', type: 'repeat'},
+			position: {mask: 'M', type: 'repeat'},
+			polishno: {mask: 'N', type: 'repeat'},
+			amount: {mask: '999999' },
+			amount2: {mask: '99'},
+			amount6: {mask: '999999'},
+			creditperiod: {mask: '99'},
+			year: {mask: '9999'},
+			letters: {mask: 'P', type: 'repeat'},
+			accountnumber: {mask: '99 9999 9999 9999 9999 9999 9999', type: 'repeat'}
+		});
+				
+		$.mask.rules = $.extend($.mask.rules, {
+			p: /[abcdefghijklmnopqrstuvwxyz]/,
+			P: /[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZĄąĆćĘęŁłŃńÓóŚśŹźŻż]/,
+			L: /[a-z\u0080-\u017F\u002D\u0020]/i,
+			M: /[a-z\u0080-\u017F\u002D\u0020\u002F\u002E]/i,
+			N: /[0-9a-z\u002F\u0080-\u017F\u002D\u0020\u002E]/i
+			
+		});
+		$('input.masked').setMask({
+			'attr': 'data-mask'
+		});
+	});
+	
+	$('#checkbox_expired').on("change", function () {
+		if ($(this).is(':checked')) {
+    		$(this).val('true');
+    	} else {
+    		$(this).val('false');
+    	}
+		$.uniform.update($(this));
+	});
+	
+	$('select[name="doc_type"]').on("change", function () {
+        var a = $(this).val();
+        
+        if (a) {
+        	$("#placer_identity").text($(this).find('option:selected').text());
+        }
+        else {
+        	$("#placer_identity").text('');
+        }
+        
+        $(".identity").slideUp();
+        $(".identity input.required").removeClass("required valid invalid").siblings(".icon-16, .error").remove(); 
+        $("#identity_" + a).slideDown();
+        $("#identity_" + a + " input").addClass("required"); 
+        $(".placer_identity").hide();
+        $("#placer_identity_" + a).show();
+    });
+	
+	$("[data-slider]").bind("slider:ready slider:changed", function (event, data) {
+		var $input = $(this).nextAll(".output").find("input");
+		$input.val(data.value);
+	});
+	
+	$('input.postcodehead').on('keyup', function(){
+		if($(this).length==2) {
+			$(this).siblings('input').trigger('focus');
+		}
+	});
+	
+	$('#account_number').on('blur', function() {
+		getBankDetails();
+	});
+	
+	$( '.tooltip' ).tooltip({
+        position: {
+			my: "left+5 bottom-17",
+			at: "left top",
+			collision: "none",
+	        using: function( position, feedback ) {
+	            $( this ).css( position );
+	            $( this ).css( "width", "200px");
+	            $( "<div>" )
+	                .addClass( "arrow" )
+	                .addClass( feedback.vertical )
+	                .addClass( feedback.horizontal )
+	                .appendTo( this );
+	        }
+	    },
+	    content: function(){
+	    	var $element = $(this);
+	    	if($(this).attr('title').length) {
+	    		return $(this).attr('title');
+	    	} else {
+	    		return $(this).children('span').html();
+	    	}
+	    }
+    });
+	
+	
+	$( '.checkboxTooltip' ).tooltip({
+        position: {
+			my: "left+5 bottom-17",
+			at: "left top",
+			collision: "none",
+	        using: function( position, feedback ) {
+	            $( this ).css( position );
+	            $( "<div>" )
+	                .addClass( "arrow" )
+	                .addClass( feedback.vertical )
+	                .addClass( feedback.horizontal )
+	                .appendTo( this );
+	        }
+	    },
+	    content: function(){
+	    	var $element = $(this);
+	    	if($(this).attr('title').length) {
+	    		return $(this).attr('title');
+	    	} else {
+	    		return $(this).children('span').html();
+	    	}
+	    }
+    });	
+
+    $("#input_dependants").focusout(function() {
+        if ($(this).val() != null && $(this).val() != '') {
+            var value = parseInt($(this).val().replace(/\D/g, ''));
+            $(this).val(value);
+        }
+    });
+	
+	$("#input_monthlyexpenses").focusout(function() {
+		if ($(this).val() != null && $(this).val() != '') {
+			var value = parseFloat($(this).val().replace(/ /g, ''));
+			value = formatPrice(value, 2);
+			$(this).val(value);
+		}
+	});
+	
+	$("#form_loanlimit").focusout(function() {
+		if ($(this).val() != null && $(this).val() != '') {
+			var value = parseFloat($(this).val().replace(/ /g, ''));
+			value = formatPrice(value, 2);
+			$(this).val(value);
+		}		
+	});
+	
+	$("#form_cardlimit").focusout(function() {
+		if ($(this).val() != null && $(this).val() != '') {
+			var value = parseFloat($(this).val().replace(/ /g, ''));
+			value = formatPrice(value, 2);
+			$(this).val(value);
+		}
+	});
+	
+	$("#form_creditmonthly").focusout(function() {
+		if ($(this).val() != null && $(this).val() != '') {
+			var value = parseFloat($(this).val().replace(/ /g, ''));
+			value = formatPrice(value, 2);
+			$(this).val(value);
+		}
+	});
+	
+	$("#form_income1_netto").focusout(function() {
+		if ($(this).val() != null && $(this).val() != '') {
+			var value = parseFloat($(this).val().replace(/ /g, ''));
+			value = formatPrice(value, 2);
+			$(this).val(value);
+		}
+	});
+	
+	 $(document).on('click', '.showhide input[type="radio"], .showhide input[type="checkbox"]', function(){
+		var $el = $(this);
+        var target = $(this).parent().parent().parent().data('target');
+        var $t = $('#'+target);
+        var show = new String($(this).parent().parent().parent().data('show'));
+
+        var yes = show=="false" || show=="CN" ? "tak" : "nie";
+        var no = show=="true" || show=="CO" ? "tak" : "nie";
+        
+        var value=null;
+        
+        if ($el.attr('type')=='checkbox') {
+        	if ($el.is(':checked')) {
+        		value = 'true';
+        	}
+        	else {
+        		value = 'false';
+        	}
+        } else {
+        	value = $el.val();
+        }
+        
+        var correspondenceAddress = "";
+        if($(this).attr('id') == 'correspondence_no') {
+        	correspondenceAddress = "true";
+        } else if($(this).attr('id') == 'correspondence_yes') {
+        	correspondenceAddress = "false";
+        }
+
+        if($(this).attr('id') == 'jobContract_yes') {
+        	$('#form_income1_jobcontractexpiry').addClass('required');
+        } else if($(this).attr('id') == 'correspondence_yes') {
+            $('#form_income1_jobcontractexpiry').removeClass('required');
+        }
+		
+        if(value==show) {
+            $t.slideDown();
+            if(target=="mailAddress")
+                $('input:not(#input_correspondence_flatnumber), select, .selector', $t).addClass('required');
+            else if (target="incomeSource") {
+            	$('#form_income2_netto, #form_income2_type', $t).addClass('required');
+            }
+            else {
+                $('input, select, .selector', $t).addClass('required');
+            }
+            $('#placer_'+target+'_other').show();
+            $('#placer_'+target).text(no);
+        } else {
+        	if(target=="incomeSource") {
+                $t.next('div').children('div').hide();
+                $('#form_income2_type option:selected').removeAttr('selected');
+                $('#form_income2_type option:first-child').attr('selected','selected');
+                $.uniform.update();
+            } 
+
+			setTimeout(function(){
+                $('input, select, .selector', $t).removeClass('required valid invalid');
+                $('.icon-16, span.error', $t).remove();
+                $('#placer_'+target+'_other').hide();
+                $('#placer_'+target).text(yes);
+
+                Validator.markSectionIfInvalid();
+                $t.slideUp();
+            }, 200);
+        }
+        
+        if(correspondenceAddress == "false") {
+		  $('#placer_'+target).text(yes);
+		} else if(correspondenceAddress == "true") {
+		  $('#placer_'+target).text(no);
+		}
+    });
+
+    $(document).on('change', 'input.change-checkbox', function(){
+        var $el = $(this);
+        var target = $(this).attr('id');
+
+        if($el.is(':checked')) {
+            $('#placer_'+target).text('tak');
+        } else {
+            $('#placer_'+target).text('nie');
+        }
+    });
+	
+	$(document).on('blur', 'input.required, input[data-parser="notrequired"]', function(){
+		if($(this).hasClass('datepicker')) {
+			var $this = $(this);
+			setTimeout(function(){
+				Validator.checkField($this, $this.data('parser'));
+				Validator.markSectionIfInvalid();
+			}, 200);
+		} else {
+			Validator.checkField($(this), $(this).data('parser'));
+			Validator.markSectionIfInvalid();
+		}
+	});
+	$(document).on('change', 'select.required', function(){
+		Validator.checkField($(this), $(this).data('parser'));
+		Validator.markSectionIfInvalid();
+	});
+
+	$(document).on('change', '.select_target', function(){
+		var target = $('option:selected', $(this)).data('target') || null;
+		var visible = $(this).data('visible') || null;
+		$(this).data('visible', target);
+
+		if(visible!==null) {
+			var avisible = visible.split(',');
+			for(var i=0;i<avisible.length;i++) {
+				var el = $('#'+avisible[i]);
+				if(el.is(':visible')) {
+					el.hide();
+					$('#placer_'+avisible[i]).hide();
+					$('.required', el).each(function() {
+						window.Validator.cleanValidInvalid($(this));
+						$(this).removeClass('required');
+					});
+				}
+			}
+		}
+		
+		if(target!==null) {
+			var atarget = target.split(',');
+			for(var i=0;i<atarget.length;i++) {
+				
+				var el = $('#'+atarget[i]);
+				if(!el.is(':visible')) {
+					
+					var elements=new Array();
+					
+					if (atarget[i]=='company') {
+						elements = $('input:not(.notrequired, #form_income1_companyregon, #form_income1_companyphone), select:not(.notrequired)', el);
+					}
+					else if (atarget[i]=='companyIS2') {
+						elements = $('input:not(.notrequired, #form_income2_companyregon, #form_income2_companyphone), select:not(.notrequired)', el);
+					} else if (atarget[i]=='rent') {
+						elements = $('input:not(.notrequired, #form_income1_rentexpiry), select:not(.notrequired)', el);
+					} else if (atarget[i]=='rentIS2') {
+						elements = $('input:not(.notrequired, #form_income2_rentexpiry), select:not(.notrequired)', el);
+					} else if (atarget[i]=='farm2' || atarget[i]=='farm') {
+						elements = $('input:not(.notrequired, #form_farmincome_position, #form_farmincome_companyName, #form_farmincome_companyphone), select:not(.notrequired)', el);
+					} else if (atarget[i]=='farmIS2' || atarget[i]=='farm1IS2') {
+						elements = $('input:not(.notrequired, #form_farmincome2_position, #form_farmincome2_companyName, #form_farmincome2_companyphone), select:not(.notrequired)', el);
+					} else {
+						elements = $('input:not(.notrequired), select:not(.notrequired)', el);
+					}
+					
+					elements.addClass('required');
+					el.show();
+					$('#placer_'+atarget[i]).show();
+				}
+			}
+		}
+	});
+	
+	$('.step-nav a').off('click').on('click', function(){
+		var action = $(this).data('action');
+		var href = $(this).attr('href');
+		var id = href.substr(1);
+		placeAgreement();
+		if(action=="forward") {
+			var errors = Validator.checkStep($('input.required, select.required, input[data-parser="notrequired"], input[type="checkbox"]', $('.form-steps .step:visible')), 'data-parser');
+			if(errors.nerrors==0) {
+				var current = $('.form-steps .step:visible').attr('id');
+				$('.form-steps .step:visible').hide();
+				$(href).show();
+				$('#form-path .step[data-id='+id+']').addClass('active');
+				$('#form-path .step[data-id='+current+']').addClass('passed');
+				if(typeof(w2tReport) == 'function'){
+                	wt2Report(href.substr(6));
+                }
+				
+				$(".active").each(function() {
+					$(this).attr("style", "");
+				});
+				
+				$(".passed").each(function() {
+					if ($(this).data('id')!= current) {
+						$(this).attr("style", "background: none;");
+					}
+				});
+			} else {
+				$('div.step:not(.hide) fieldset').each(function() {
+					Validator.markSectionIfInvalid();
+				});
+			}
+		}
+		else if (action=="backward") {
+			var current = $('.form-steps .step:visible').attr('id');
+			$('.form-steps .step:visible').hide();
+			$(href).show();
+			$('#form-path .step[data-id='+id+']').removeClass('passed').addClass('active');
+			$('#form-path .step[data-id='+current+']').removeClass('active');
+			if(typeof(w2tReport) == 'function'){
+            	wt2Report(href.substr(6));
+            }
+			
+			$(".active").each(function() {
+				$(this).attr("style", "");
+			});
+		}
+		return false;
+	});
+	
+	$('.step-nav input').off('click').on('click', function(){
+
+		placeAgreement();
+		
+		var errors = Validator.checkStep($('input.required, select.required, input[data-parser="notrequired"], input[type="checkbox"]', $('.form-steps .step:visible')), 'data-parser');
+		if(errors.nerrors==0 && iban_status == 1) {
+			$("form").submit();
+		} else {
+			$('div.step:not(.hide) fieldset').each(function() {
+				Validator.markSectionIfInvalid();
+			});			
+		}
+		
+		return false;
+	});
+	
+	$('#resign_btn').on('click', function(){
+	    jQuery( "#dialog-confirm" ).dialog({
+	        resizable: false,
+
+	        modal: true,
+	        buttons: {
+	          "Nie": function() {
+	        	  jQuery( this ).dialog( "close" );
+	          },
+	          "Tak": function() {
+	        	  $('.form-steps .step:visible, #top_buttons, #form-path, #credit-section').hide(); 
+	        	  $('#step-resign').show(); 
+	        	  jQuery( this ).dialog( "close" );
+	          }
+	        },
+	        open: function() {
+	     	    jQuery("[aria-describedby='dialog-confirm'] .ui-dialog-titlebar-close").attr('title','');
+	        }
+	      });	
+	    
+	    return false;
+	});	
+	
+	$('#input_amount').on('change', function(){
+		var val = '' + $(this).val() + '';
+		$('#placer_input_amount').text(val);
+	});
+	
+	$('#input_period').on('change', function(){
+		var val = '' + $(this).val() + '';
+		$('#placer_input_period').text(val);
+	});
+	
+	$('#checkbox_checkall').on('click', function(){
+		if($(this).is(':checked')) {
+			$('#all_checkboxes input[type="checkbox"]').each(function(){
+				$('#placer_'+$(this).attr('id')).show();
+				$(this).attr('checked','checked');
+			});
+			$('#all_checkboxes .invalid').removeClass('invalid');
+		} else {
+			$('#all_checkboxes input[type="checkbox"]').each(function(){
+				$('#placer_'+$(this).attr('id')).hide();
+				$(this).removeAttr('checked');
+			});
+		}
+		Validator.markSectionIfInvalid();
+		$.uniform.update();
+	});
+	
+	$('#checkbox_1').on('click', function(){
+		if($(this).is(':checked')) {
+			$('#checkbox_5').attr('checked','checked');
+			$('#checkbox_11').attr('checked','checked');
+		} else {
+			$('#checkbox_5').removeAttr('checked');
+			$('#checkbox_11').removeAttr('checked');
+		}
+		Validator.markSectionIfInvalid();
+		$.uniform.update();
+	});
+
+	$('#checkbox_5').on('click', function(){
+		if($(this).is(':checked')) {
+			$('#checkbox_1').attr('checked','checked');
+			$('#checkbox_11').attr('checked','checked');
+		} else {
+			$('#checkbox_1').removeAttr('checked');
+			$('#checkbox_11').removeAttr('checked');
+		}
+		Validator.markSectionIfInvalid();
+		$.uniform.update();
+	});
+
+	$('#checkbox_11').on('click', function(){
+		if($(this).is(':checked')) {
+			$('#checkbox_1').attr('checked','checked');
+			$('#checkbox_5').attr('checked','checked');
+		} else {
+			$('#checkbox_1').removeAttr('checked');
+			$('#checkbox_5').removeAttr('checked');
+		}
+		Validator.markSectionIfInvalid();
+		$.uniform.update();
+	});
+
+	
+	$('#all_checkboxes input[type="checkbox"]').on('change', function(){
+		placeAgreement();
+	});
+	
+	function placeAgreement() {
+		$('#all_checkboxes').find('input:checkbox').each(function() {
+			$('#placer_'+$(this).attr('id')).text('');
+			$('#placer_'+$(this).attr('id')).hide();
+		});
+		
+		$('#all_checkboxes').find('input:checkbox').each(function() {
+			if($(this).is(':checked')){
+				var val = $(this).data('value') || $(this).val();
+				$('#placer_'+$(this).attr('id')).text(val);
+				$('#placer_'+$(this).attr('id')).show();
+			} else {
+				$('#placer_'+$(this).attr('id')).text('');
+				$('#placer_'+$(this).attr('id')).hide();
+			}
+		});
+	}
+	
+	$('#input_email, #input_email2, #input_phone, #input_phone2').on('keydown', function(e) {
+		if(e.ctrlKey && (e.keyCode==67 || e.keyCode==86)) {
+			e.preventDefault();
+		}
+	});
+	
+	$('#mainForm').submit(function(){		
+		$('[name="creditData.creditInfo.creditValue"]').val($('[name="creditData.creditInfo.creditValue"]').val().replace(' ', ''));
+		$('[name="creditData.incomeSource1.netto"]').val($('[name="creditData.incomeSource1.netto"]').val().replace(' ', ''));
+		$('[name="creditData.extendedPersonalData.fixedMonthlyExpenses"]').val($('[name="creditData.extendedPersonalData.fixedMonthlyExpenses"]').val().replace(' ', ''));
+		$('[name="creditData.financialInformation.loanLimit"]').val($('[name="creditData.financialInformation.loanLimit"]').val().replace(' ', ''));
+		$('[name="creditData.financialInformation.creditCardLimit"]').val($('[name="creditData.financialInformation.creditCardLimit"]').val().replace(' ', ''));
+		$('[name="creditData.financialInformation.creditMonthlyValue"]').val($('[name="creditData.financialInformation.creditMonthlyValue"]').val().replace(' ', ''));
+		$('.questionsContainer div').each(function() {
+			if ($(this).css('display')=='none') {
+				$(this).remove();
+			}
+		});
+		
+	});
+	
+    $(".output input").on("keyup", function() {
+        var data = $(this).parent().prev("input").data();
+        
+        if (data != null) {
+            $(this).parent().prev("input").data().sliderObject.setValue($(this).val());
+        }
+    });
+    
+    $('#form_income1_type_farm').on('change', function(){
+    	if($(this).val() == 'PR') {
+    		$('#form_farmincome_nip').addClass("notrequired");
+    		$('#form_farmincome_position').val('Właściciel');
+			$.uniform.update();
+    	} else {
+    		$('#form_farmincome_nip').removeClass("notrequired");
+    	}
+    	
+	});
+    
+    $('#form_income1_type').on('change', function(){
+		$('#form_farmincome_position').val('');
+		$.uniform.update();
+		
+		if ($(this).val() == 'UO') {
+			
+			$("#form_income1_startdate").parent().removeClass('rowDark').addClass('row');
+			$("#uniform-jobContract_yes").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_jobcontractexpiry").parent().removeClass('rowDark').addClass('row');
+			$("#uniform-form_income1_repeatJob").parent().removeClass('row').addClass('rowDark');			
+			
+			$("#uniform-form_income1_jobcategory").parent().removeClass('rowDark').addClass('row');
+			$("#uniform-form_income1_jobprofession").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_jobposition").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companyname").parent().removeClass('row').addClass('rowDark');
+			$("#uniform-companyNIP1").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companynip").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companyregon").parent().removeClass('row').addClass('rowDark');
+			$("#uniform-companyPhoneSM_1").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companyhomephone").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companyphone").parent().removeClass('row').addClass('rowDark');
+			$("#input_income1_companypostcode").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companycity").parent().removeClass('row').addClass('rowDark');
+			$("#uniform-form_income1_companystreetname_prefix").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companystreetnumber").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companyapartmentnumber").parent().removeClass('rowDark').addClass('row');
+			
+		} else if ($(this).val() == 'DZ') {
+			$("#uniform-form_income1_jobcategory").parent().removeClass('rowDark').addClass('row');
+			$("#uniform-form_income1_jobprofession").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_jobposition").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companyname").parent().removeClass('row').addClass('rowDark');
+			$("#uniform-companyNIP1").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companynip").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companyregon").parent().removeClass('row').addClass('rowDark');
+			$("#uniform-companyPhoneSM_1").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companyhomephone").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companyphone").parent().removeClass('row').addClass('rowDark');
+			$("#input_income1_companypostcode").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companycity").parent().removeClass('row').addClass('rowDark');
+			$("#uniform-form_income1_companystreetname_prefix").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companystreetnumber").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companyapartmentnumber").parent().removeClass('rowDark').addClass('row');
+			
+		} else if ($(this).val() == 'UC') {
+			$("#form_income1_startdate").parent().removeClass('row').addClass('rowDark');
+			$("#uniform-jobContract_yes").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_jobcontractexpiry").parent().removeClass('row').addClass('rowDark');
+			$("#uniform-form_income1_repeatJob").parent().removeClass('rowDark').addClass('row');
+			
+			$("#uniform-form_income1_jobcategory").parent().removeClass('row').addClass('rowDark');
+			$("#uniform-form_income1_jobprofession").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_jobposition").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companyname").parent().removeClass('rowDark').addClass('row');
+			$("#uniform-companyNIP1").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companynip").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companyregon").parent().removeClass('rowDark').addClass('row');
+			$("#uniform-companyPhoneSM_1").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companyhomephone").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companyphone").parent().removeClass('rowDark').addClass('row');
+			$("#input_income1_companypostcode").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companycity").parent().removeClass('rowDark').addClass('row');
+			$("#uniform-form_income1_companystreetname").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companystreetnumber").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companyapartmentnumber").parent().removeClass('row').addClass('rowDark');
+		} else if ($(this).val() == 'GR') {
+			$("#input_income1_companypostcode").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companycity").parent().removeClass('rowDark').addClass('row');
+			$("#uniform-form_income1_companystreetname").parent().removeClass('row').addClass('rowDark');
+			$("#form_income1_companystreetnumber").parent().removeClass('rowDark').addClass('row');
+			$("#form_income1_companyapartmentnumber").parent().removeClass('row').addClass('rowDark');
+		}
+	});
+    
+	$('.companyNIPREGON1').click(function() {
+		if($(this).attr('id') == 'companyNIP1') {
+			$('#companyNIP_1').show();
+			$('#companyNIP_1 input').addClass('required');
+			$('#companyREGON_1').hide();
+			$('#companyREGON_1 input').removeClass('invalid required').siblings(".icon-16, .error").remove();
+		} else {
+			$('#companyREGON_1').show();
+			$('#companyREGON_1 input').addClass('required');
+			$('#companyNIP_1').hide();
+			$('#companyNIP_1 input').removeClass('invalid required').siblings(".icon-16, .error").remove();
+		}
+	});
+	
+	$('.farmNIPREGON1').click(function() {
+		if($(this).attr('id') == 'farmNIP1') {
+			$('#farmNIP_1').show();
+			$('#farmNIP_1 input').remove('notrequired');
+			$('#farmNIP_1 input').addClass('required');
+			$('#farmREGON_1').hide();
+			$('#farmREGON_1 input').removeClass('invalid required').siblings(".icon-16, .error").remove();
+		} else {
+			$('#farmREGON_1').show();
+			$('#farmNIP_1 input').remove('notrequired');
+			$('#farmREGON_1 input').addClass('required');
+			$('#farmNIP_1').hide();
+			$('#farmNIP_1 input').removeClass('invalid required').siblings(".icon-16, .error").remove();
+		}
+	});
+	
+	$('.radioDataTargetPhone1').click(function() {
+		if($(this).attr('id') == 'companyPhoneSM_1') {
+			$('#companyPhone_M').hide();
+			$('#companyPhone_M input').removeClass('invalid required').siblings(".icon-16, .error").remove();
+			$('#companyPhone_S').show();
+			$('#companyPhone_S input').addClass('required');
+		} else {
+			$('#companyPhone_M').show();
+			$('#companyPhone_M input').addClass('required');
+			$('#companyPhone_S').hide();
+			$('#companyPhone_S input').removeClass('invalid required').siblings(".icon-16, .error").remove();
+		}
+	});
+	
+	$('.street_prefix').change(function() {
+		if ($(this).val()!="") {
+			var id = $(this).attr('id');
+			//alert('#placer_' + id + ': ' + $(this).val() + " ");
+			$('#placer_' + id).text($(this).val() + " ");
+		}
+	});
+	
+
+	$(".slideButton").each(function() {
+		$(this).click(function () {
+			var id = '#' + $(this).attr('id');
+			var element = id + 'Container';
+			  if ( $( element ).is( ":hidden" ) ) {
+				  hideSections();
+			    $( element ).slideDown( "slow" );
+			    $(this).text("zwiń");
+			    $(this).removeClass("slideDown").addClass("slideUp");
+			  } else {
+			    $( element).slideUp("slow");
+			    $(this).text("rozwiń");
+			    $(this).removeClass("slideUp").addClass("slideDown");
+			  }	
+		});
+		}
+	);
+	
+	$(".showMore").each(function() {
+		$(this).click(function (e) {
+			e.preventDefault();
+			var state = $(this).html();
+			var elem = $(this).clone();
+			if (state == "więcej") {
+				$(this).html("mniej");
+				$(this).parent().children(":first").html($(this).data("long") + " ");
+			} else {
+				$(this).html("więcej");
+				$(this).parent().children(":first").html($(this).data("short") + " ");
+			}
+		});
+		}
+	);
+	
+	$( document ).ready(function() {
+		getEBankUser();
+		getConfigurationForSimulation();
+	});
+});
+
+var loadScripts = function loadScripts(src, charset, callback) {
+	if(typeof(callback)!="function") {
+		callback = function(){
+			return true;
+		};
+	}
+	$.ajax({
+		url: src,
+		scriptCharset: charset || 'utf-8',
+		dataType: "script"
+	}).done(callback);
+};
+
+
+var Validator = function(){
+	var nerrors = 0;
+	
+   var markSectionIfInvalid = function() {
+		$('.headerSection').each(function() {
+			  $( this ).removeClass('errorSection');
+			  
+			  var containerId = "#" + $(this).attr('id').replace("Header", "Container");
+			  if ($( containerId ).find('.invalid').length>0) {
+				$( this ).addClass('errorSection');
+			  }
+		});
+    };
+    
+    this.markSectionIfInvalid = markSectionIfInvalid;
+	
+	var addInvalid = function(el, msg){
+    	cleanValidInvalid(el);
+		el.removeClass('valid').addClass('invalid');
+		el.after('<span class="icon-16 invalid" />');
+		
+		nerrors++;
+		if (!msg) {
+			msg = el.data('msg');
+		}
+		if (el.attr("name") === 'creditData.mailAddress.sameAsPermanent') {
+			el.parent().parent().parent().append('<span class="error">'+msg+'</span>');		
+		} else {
+			el.parent().append('<span class="error">'+msg+'</span>');
+		}
+	};
+	
+	this.addInvalid = addInvalid;
+	
+	var addValid = function(el) {
+    	cleanValidInvalid(el);
+		var id = el.data('placer') || el.attr('id');
+		el.removeClass('invalid').addClass('valid');
+		el.after('<span class="icon-16 valid" />');
+		$('#placer_'+id).text(el.val());
+	};
+	
+	var waitForAjaxValidator = function(el) {
+		//el.removeClass('valid');
+		//el.removeClass('invalid');
+		cleanValidInvalid(el);
+		nerrors++;
+	};
+	
+	var cleanValidInvalid = function(el) {
+		el.removeClass('valid');
+		el.removeClass('invalid');
+		var rootElement = el;
+		if (el.prop("tagName")=='SELECT') {
+			rootElement = el.parent();
+		}
+		
+		if (rootElement.attr("name") === 'creditData.mailAddress.sameAsPermanent') {
+			rootElement.siblings('span.error, span.valid, span.invalid').remove();
+			rootElement.parent().parent().siblings('span.error, span.valid, span.invalid').remove();
+		} else if (rootElement.attr("name") !== 'creditData.mailAddress.apartmentNumber') {
+			rootElement.siblings('span.error, span.valid, span.invalid').remove();
+		}
+		//el.parent().find('span.error, span.valid, span.invalid').remove();
+		$.uniform.update(el);
+		
+		
+	};
+	
+	this.cleanValidInvalid = cleanValidInvalid;
+	
+    checkRanges = function (el) {
+        if (el.val()) {
+            if ($('.icon-16', el.parent()).length) {
+                $('.icon-16', el.parent()).remove();
+            }
+
+            var range = el.data("range").split(",");
+
+            if (el.val() < parseInt(range[0]) ||
+                el.val() > parseInt(range[1])) {
+                el.parent().append('<span class="error">' + el.data('msg-range') + '</span>');
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+            } else {
+                el.parent().children("span.erro").remove();
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+            }
+        }
+    };	
+    
+    var checkDateTodayOrGreater = function(el) {
+    	if (el.val()) {
+    		var normalizedDate = normalizeDate(el.val());
+    
+    		if (normalizedDate>=getCurrentDate()) {
+    			addValid(el);
+	    		return true;
+    		}
+    		else {
+	    		addInvalid(el, el.data('msg-datetodayorgreater'));
+	    		return false;
+    		}
+    	}
+    };
+    
+        
+    var checkIdentityCardExpiryDate = function(el) {
+    	var startDateInput = $('#input_datecreated').val();
+    	var endDateInput = el.val();
+
+    	var startDateSplit = startDateInput.split('/');
+    	var endDateSplit = endDateInput.split('/');
+    	
+    	startDateInput = new Date((parseInt(startDateSplit[2]) + 10), startDateSplit[1], startDateSplit[0]);
+    	endDateInput = new Date(endDateSplit[2], endDateSplit[1], endDateSplit[0]);
+    	
+    	if(startDateInput != null && startDateInput != '' && endDateInput != null && endDateInput != '') {
+    		var startDate = new Date(Date.parse(startDateInput));
+    		var endDate = new Date(Date.parse(endDateInput));
+        	if((startDate.getTime() > endDate.getTime()) || (startDate.getTime() < endDate.getTime())) {
+    			addInvalid(el);
+    		} else {
+    			addValid(el);
+    		}
+    	}
+    	
+    }
+    
+    var checkDateTodayOrLess = function(el) {
+    	if (el.val()) {
+    		var normalizedDate = normalizeDate(el.val());
+    		
+    		if (normalizedDate<=getCurrentDate()) {
+	    		addValid(el);
+	    		return true;
+    		}
+    		else {
+	    		addInvalid(el, el.data('msg-datetodayorless'));
+	    		return false;
+    		}
+    	}
+    };    
+    
+    var checkOneword = function(el) {
+    	if (el.val()) {
+	    	var re = / /;
+	    	
+	    	if (re.test(el.val())) {
+	    		addInvalid(el);
+	    		return false;
+	    	}
+	    	else {
+	    		addValid(el);
+	    		return true;
+	    	}
+    	}
+    };
+	
+    var checkDateFormat = function(el) {
+    	if (el.val()) {    		
+	    	var re = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+	    	
+	    	if (re.test(el.val())) {
+	    		var spl = el.val().split("/");
+	    		if((parseInt(spl[0]) > 31 || spl[0] == '00') || (parseInt(spl[1]) > 12 || spl[1] == '00') || (parseInt(spl[2]) < 1000 || spl[2] == '0000')) {
+	    			addInvalid(el);
+	    			return false;
+	    		} else {
+	    			addValid(el);
+	    		}
+	    		return true;
+	    	}
+	    	else {
+	    		addInvalid(el);
+	    		return false;
+	    	}
+    	}
+    };
+    
+    var checkOneNumber = function(el) {
+    	if(el.val().match(/^(([a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]+)?(-)?([0-9]+)(-)?([a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]+)?)$/)) {
+    		addValid(el);
+    	} else {
+    		addInvalid(el);
+    	}	
+    }
+    
+    var checkHouseNumber = function(el) {
+        if(el.val().match(/^([0-9a-zA-Z]*([0-9a-zA-Z](([-/]?)[0-9a-zA-Z]*)?)*)?$/)) {
+            addValid(el);
+        } else {
+            addInvalid(el);
+        }
+    }
+	
+    var checkOneLetter = function(el) {
+    	if(el.val().match(/^(([0-9]+)?(-)?(\s)?([a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]+)(-)?(\s)?([0-9]+)?(-)?(\s)?([a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]+)?)$/)) {
+    		addValid(el);
+    	} else {
+    		addInvalid(el);
+    	}	
+    }
+    
+    var checkLastName = function(el) {
+    	if(el.val().match(/^(([a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]+)(\s)?(-)?([a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]+)?)$/)) {
+    		addValid(el);
+    	} else {
+    		addInvalid(el);
+    	}
+    }
+    
+  var checkAmount = function(el) {
+		var value = el.val().replace(/\D/g, '');
+    	if(value.match(/^((([0-9]+)?)(((.)([0-9]{2}))?))$/)) {
+    		addValid(el);
+    	} else {
+    		addInvalid(el);
+    	}
+    }
+    
+	var checkEmail = function(el) {
+		var bcompare = true;
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		if(typeof(el.attr('data-compare'))!="undefined" && el.attr('data-compare')!="") {
+			if(el.val()!=$('#' + el.data('compare')).val())
+				bcompare = false;
+		}
+		
+		if(!re.test(el.val()) || !bcompare) {
+			addInvalid(el);
+		} else {
+			addValid(el);
+		}
+	};
+	
+	var checkNumbervalue = function(el) {
+		var max = el.data('max');
+		var min = el.data('min');
+		var berror = false;
+		
+		if(max=="nowyear") {
+			var d = new Date();
+			max = d.getFullYear();
+		}
+		
+		// sprawdzamy datę na podstawie roku
+		if(typeof(el.data('also'))!="undefined" && el.data('also')!="") {
+			var current_date = new Date();
+			if(el.val()==current_date.getFullYear()) {
+				var month = $('option:selected', $('#'+el.data('also'))).data('month');
+				if(month > current_date.getMonth()+1) {
+					$('#'+el.data('also')).parent().removeClass('valid').addClass('invalid');
+					$.uniform.update();
+					berror = true;
+				} else {
+					$('#'+el.data('also')).parent().removeClass('invalid').addClass('valid');
+					$.uniform.update();
+				}
+			} else {
+				checkSelect($('#'+el.data('also')));
+			}
+		}
+		
+		var value = el.val().replace(/\D/g, '');
+		if(value >= min && value <= max && !berror) {
+			addValid(el);
+		} else {
+			addInvalid(el);
+		}
+	};
+	
+	var checkEmpty = function(el) {
+		
+		var bcompare = true;
+		var blength = true;
+		if(typeof(el.data('minlength'))!="undefined" && el.data('minlength')!="") {
+			if(!String.prototype.trim) {
+				if(el.val().replace(/^\s+|\s+$/g, '').length<=el.data('minlength')) {
+					blength = false;
+				}
+			} else {
+				if(el.val().trim().length<=el.data('minlength')) {
+					blength = false;
+				}
+			}
+		}
+		
+		if(typeof(el.attr('data-compare'))!="undefined" && el.attr('data-compare')!="") {
+			if(el.val()!=$('#' + el.data('compare')).val())
+				bcompare = false;
+		}
+		
+		if(el.attr('id')=='input_phone' || el.attr('id')=='input_phone2' || el.attr('id')=='input_homephone' || el.attr('id')=="form_income2_companyphone" || el.attr('id')=="form_income1_companyphone") {
+			if(el.val().length != 9)
+				blength = false;
+		}
+		
+		if(el.hasClass('datepicker')) {
+			var date = el.val().split('.');
+			$( ".datepicker[data-parser='date']" ).datepicker( "option", "minDate", new Date(parseInt(date[2]), parseInt(date[1]) - 1, parseInt(date[0]) + 1) );
+		}
+		
+		if(el.val()=="" || !bcompare || !blength) {
+			addInvalid(el);
+			return false;
+		} else {
+			addValid(el);
+			return true;
+		}
+	};
+	
+	/*var checkNotRequired = function(el) {
+		if(el.val()!="") {
+			var id = el.data('placer') || el.attr('id');
+			addValid(el);
+			$('#placer_'+id).text(el.val());
+		} else {
+			var id = el.data('placer') || el.attr('id');
+			el.removeClass('valid');
+			$('#placer_'+id).text('');
+		}
+	};*/
+	
+	var checkNotRequired = function(el) {
+        if(el.val()!="") {
+            var id = el.data('placer') || el.attr('id');
+            addValid(el);
+            $('#placer_'+id).text(el.val());
+        } else {
+            var id = el.data('placer') || el.attr('id');
+            //el.removeClass('valid');
+            cleanValidInvalid(el);
+            $('#placer_'+id).text('');
+        }
+    }; 
+    
+	var checkSelect = function(el) {
+		var berror = false;		
+		var option = $('option:selected', el);
+		var tmsg = '<span class="error">'+el.data('msg')+'</span>';
+		
+		cleanValidInvalid(el.parent());
+		
+		/*el.removeClass('valid');
+		el.removeClass('invalid');
+		el.parent().children('span.error').remove();
+		if($('.icon-16', el.parent().parent()).length)
+		{
+			$('.icon-16', el.parent().parent()).remove();
+		}*/		
+		 
+		// sprawdzamy datę na podstawie roku
+		if(typeof(el.data('also'))!="undefined" && el.data('also')!="") {
+			var current_date = new Date();
+			var el2 = $('#'+el.data('also'));
+			if(el2.val()==current_date.getFullYear()) {
+				var month = $('option:selected', el).data('month');
+				if(month > current_date.getMonth()+1) {
+					$('#'+el.data('also')).addClass('invalid');
+					$.uniform.update();
+					berror = true;
+				} else {
+					$('#'+el.data('also')).removeClass('invalid');
+				}
+			}
+		} 
+		 
+		el = el.parent();
+		
+		if(option.val()=="" || berror) {
+			el.removeClass('valid').addClass('invalid');
+			el.after('<span class="icon-16 invalid" />');
+			nerrors++;
+	
+			el.parent().append(tmsg);
+		} else {
+			var id = el.children('select').data('placer') || el.children('select').attr('id');
+			el.removeClass('invalid').addClass('valid');
+			el.after('<span class="icon-16 valid" />');
+			$('#placer_'+id).text(option.text());
+		}
+		
+	};
+	
+	var checkCheckbox = function(el) {
+		var c = el.parent().parent().siblings('label');
+		if(!el.is(':checked') && el.hasClass('required')) {
+			c.addClass('invalid');
+			$('#placer_'+id).text('').hide();
+			nerrors++;
+		} else {
+			var id = el.data('placer') || el.attr('id');
+			var val = el.data('value') || el.val();
+			$('label[for="'+id+'"]').removeClass('invalid');
+			//placeAgreement
+			//$('#placer_'+id).text(val).show();
+		}
+	};
+	
+	var checkPesel = function(el) {
+			
+		var validatePesel = function(p) {
+			var ratio=parseInt(p[0])*1;
+				ratio+=parseInt(p[1])*3;
+				ratio+=parseInt(p[2])*7;
+				ratio+=parseInt(p[3])*9;
+				ratio+=parseInt(p[4])*1;
+				ratio+=parseInt(p[5])*3;
+				ratio+=parseInt(p[6])*7;
+				ratio+=parseInt(p[7])*9;
+				ratio+=parseInt(p[8])*1;
+				ratio+=parseInt(p[9])*3;
+			var sum = ratio%10;
+			if(sum==0) {
+				return true;
+			} else {
+				sum = 10-sum;
+				if(sum==p[10]) return true;
+				else return false;
+			}
+		}
+			
+		var p = el.val();
+		p+='';
+		p = p.split("");
+		if(validatePesel(p) && (el.val()!="00000000000" && el.val()!="22222222222" && el.val()!="44444444444" && el.val()!="55555555555" && el.val()!="66666666666" && el.val()!="88888888888")) {
+			addValid(el);
+		} else {
+			addInvalid(el);
+		}
+	};
+	
+	var checkEmptyRadio = function(el) {
+        var idek = el.attr('id');
+        idek = idek.replace('yes','').replace('no','');
+        if($('#'+idek+'no').attr('checked')==undefined && $('#'+idek+'yes').attr('checked')==undefined) {
+        	if(el.attr('id') == "correspondence_no") {
+        		addInvalid(el);
+        		return;
+        	}
+        }
+        
+        addValid($('#correspondence_no'));
+        
+    } 
+	
+	var checkNIP = function(el) {
+		var value = el.val();
+					
+		var verificator_nip = new Array(6,5,7,2,3,4,5,6,7); 
+		var nip = value.replace(/[\ \-]/gi, '');
+		
+		if(nip.length != 10) { 
+			addInvalid(el);
+			return;
+		} else {
+		var n = 0;
+		for (var i=0; i<9; i++) {
+			n += (parseInt(nip.charAt(i)) * parseInt(verificator_nip[i])); 
+		}
+		n %= 11;
+		if (n != nip.charAt(9)) { 
+			addInvalid(el); 
+			return;
+		}
+		}
+		addValid(el);
+	}
+	
+	var checkIdentityCard = function(el) {
+		var input_idnumber = $('#input_idnumber').val();
+		input_idnumber = input_idnumber.toUpperCase();
+		$('#input_idnumber').val(input_idnumber);
+		var input_idnumber2 = $('#input_idnumber2').val();
+		var nd = "";
+		if(input_idnumber != null && input_idnumber.length > 0) {
+			if(input_idnumber2 != null && input_idnumber2.length > 0) {
+				nd = input_idnumber.toUpperCase() + input_idnumber2;
+				var num = eval(nd.length===9 && parseInt(nd[3]) === eval(nd.split("").map(function(v, i) {return(v.charCodeAt() * [7,3,1,0,7,3,1,7,3][i]) - [385,165,55,0,336,144,48,336,144][i];}).join('+'))%10);
+				if(num == true) {
+					addValid(el);
+				} else if(num == false) {
+					addInvalid(el);
+				}
+			}
+		} 
+		if(input_idnumber == null || input_idnumber == '') {
+			addInvalid(jQuery(input_idnumber));
+		} else {
+			addValid(jQuery(input_idnumber));
+		}
+		$.uniform.update(input_idnumber);
+	}
+	
+	var checkREGON = function(el) {
+		var regon = el.val();
+						
+		var reg = /^[0-9]{9}$/;
+		if(reg.test(regon) == false) {
+			addInvalid(el);
+		} else {
+			var dig = (""+regon).split("");
+			var kontrola = (8*parseInt(dig[0]) + 9*parseInt(dig[1]) + 2*parseInt(dig[2]) + 3*parseInt(dig[3]) + 4*parseInt(dig[4]) + 5*parseInt(dig[5]) + 6*parseInt(dig[6]) + 7*parseInt(dig[7]))%11;
+			if(kontrola == 10) kontrola = 0;
+			if(parseInt(dig[8])==kontrola) {
+				addValid(el);
+			} else {
+				addInvalid(el);
+			}
+		}
+	}
+
+	/*var checkAjaxCisField = function(el) {	
+		if(el.val() == null || el.val() == '') {
+			addValid(el);
+			return;
+		}
+		if (acquisition.isFieldValidating(el.attr('name'))) {
+			waitForAjaxValidator(el);
+		}
+		else {
+			if (acquisition.isFieldValid(el.attr('name'))) {
+				addValid(el);
+			}
+			else {
+				addInvalid(el);
+			}
+		}
+	};*/
+	
+	var checkAjaxCisField = function(el) {
+
+        if (el.val()!="") {
+            if (acquisition.isFieldValidating(el.attr('name'))) {
+                waitForAjaxValidator(el);
+            }
+            else {
+                if (acquisition.isFieldValid(el.attr('name'))) {
+                    addValid(el);
+                }
+                else {
+                    addInvalid(el);
+                }
+            }
+        }
+    }; 
+	
+	var checkIDnumber = function(el) {
+			
+		var arr, weights, sum, i, key, id_length;
+	    arr = {"A" : "10", "B" : "11", "C" : "12", "D" : "13", "E" : "14",
+	               "F" : "15", "G" : "16", "H" : "17", "I" : "18", "J" : "19",
+	               "K" : "20", "L" : "21", "M" : "22", "N" : "23", "O" : "24",
+	               "P" : "25", "Q" : "26", "R" : "27", "S" : "28", "T" : "29",
+	               "U" : "30", "V" : "31", "W" : "32", "X" : "33", "Y" : "34",
+	               "Z" : "35"};
+	    weights = [7, 3, 1, 9, 7, 3, 1, 7, 3];
+	    sum = 0;
+	    key = '';
+	    id = el.val().split('');
+	    id_length = id.length;
+	    for (i = 0; i < id_length ; i += 1) {
+	        key = id[i];
+	        if(isNaN(key)) {
+	        	key = key.toUpperCase();
+	        }
+		    if (typeof arr[key] !== 'undefined') {
+	                id[i] = parseInt(arr[key], 10);
+		    } else {
+		        id[i] = parseInt(id[i], 10);
+		    }
+		    sum += id[i] * weights[i];
+	    }
+	    if (sum % 10 === 0 && el.val()!="" && el.val().length==9) {
+			addValid(el);
+	    } else {
+			addInvalid(el);
+		}
+	}
+	
+	var checkPassport = function(el) {
+			
+        var arr = {"A" : "10", "B" : "11", "C" : "12", "D" : "13",
+           "E" : "14", "F" : "15", "G" : "16", "H" : "17", "I" : "18",
+           "J" : "19", "K" : "20", "L" : "21", "M" : "22", "N" : "23",
+           "O" : "24", "P" : "25", "Q" : "26", "R" : "27", "S" : "28",
+           "T" : "29", "U" : "30", "V" : "31", "W" : "32", "X" : "33",
+           "Y" : "34", "Z" : "35"};
+        var weights = [7, 3, 9, 1, 7, 3, 1, 7, 3];
+        var sum = 0;
+        var key = '';
+        var passportSerial = $('#input_passport').val();
+        var passportNumber = $('#input_passport2').val();
+        
+        if(passportSerial == null || passportSerial == '' || passportNumber == null || passportNumber == '') {
+        	return;
+        }
+        
+        var passportNumber = passportSerial + passportNumber;
+        id = passportNumber.split('');
+        
+        var id_length = id.length;
+        for (var i = 0; i < id_length; i++) {
+            key = id[i];
+	        if(isNaN(key)) {
+	        	key = key.toUpperCase();
+	        }
+	        if (typeof arr[key] !== 'undefined') {
+                    id[i] = arr[key];
+	        }
+	        sum += id[i] * weights[i];
+        }
+	    if (sum % 10 === 0 && passportNumber!="") {
+			addValid(el);
+	    } else {
+	    	addInvalid(el);
+		}
+	    
+	    passportSerial = passportSerial.toUpperCase();
+		$('#input_passport').val(passportSerial);
+	    $.uniform.update(passportSerial);
+	};
+	
+	var checkKartaStalegoPobytu = function(el) {
+		var kartaSerial = $('#input_card').val();
+		var kartaNumber = $('#input_card2').val();
+		kartaSerial = kartaSerial.toUpperCase();
+		$('#input_card').val(kartaSerial);
+		var kartaSum = kartaSerial + kartaNumber;
+		
+		if(kartaSum.length <= 9) {
+			addValid(el);
+		} else {
+			addInvalid(el);
+		}
+	    $.uniform.update(kartaSerial);
+	}
+	
+	var checkDate = function(el) {
+			
+		var identity = $('#identity option:selected').index();
+			
+		var date_create = $('#input_datecreated').val().split('.');
+		var date_expired = el.val().split('.'); 
+		if((date_create[2]<=date_expired[2]) && (date_create[1]<=date_expired[1]) && (date_create[0]<date_expired[0])) {
+			addValid(el);
+		} else {
+			addInvalid(el);
+		}
+	};
+	
+	var checkPhone = function(el) {
+		if(el.val() == null || el.val() == '') {
+			addValid(el);			
+		} else if(el.val().length != 9) {
+			addInvalid(el);
+		} else {
+			addValid(el);
+		}
+	};
+	
+	var checkIncomeNetto = function(el) {
+		if(el.val() != null && el.val() != '') {
+			var value = el.val().replace(/ /g, '');
+			if(parseFloat(value) < 450.00 || parseFloat(value) > 999999.00) {
+				addInvalid(el);
+			} else {
+				addValid(el);
+			}
+		}
+	};
+	
+	var checkIncome = function(el) {
+        if(el.val() != null && el.val() != '') {
+            var value = el.val().replace(/ /g, '');
+            if(parseFloat(value) > 999999.99) {
+                addInvalid(el);
+            } else {
+                addValid(el);
+            }
+        }
+    };
+	
+	var checkAddress = function(el) {
+		var id = el.attr("id");
+		var sum = 0;
+		if (id.indexOf("input_correspondence_") > -1) {
+			sum += $('#input_correspondence_postcode').val().length;
+			sum += $('#input_correspondence_postcodetail').val().length;
+			sum += $('#input_correspondence_city').val().length;
+			sum += $('#input_correspondence_street_prefix').val().length;
+			sum += $('#input_correspondence_city').val().length;
+			sum += $('#input_correspondence_street').val().length;
+			sum += $('#input_correspondence_homenumber').val().length;
+			sum += $('#input_correspondence_flatnumber').val().length;
+			
+			if(sum > 80) {
+				addInvalid($('#input_correspondence_street'), "Skróć nazwę ulicy");
+			} else if ($('#input_correspondence_street').is(':visible') && $('#input_correspondence_street').val().length == 0) {
+                addInvalid($('#input_correspondence_street'), "Podaj nazwę ulicy");
+            } else {
+				addValid($('#input_correspondence_street'), "Skróć nazwę ulicy");
+                addValid($('#input_correspondence_street'), "Podaj nazwę ulicy");
+			}
+		} else {
+			sum += $('#input_income1_companypostcode').val().length;
+			sum += $('#input_income1_companypostcodetail').val().length;
+			sum += $('#form_income1_companycity').val().length;
+			sum += $('#form_income1_companystreetname_prefix').val().length;
+			sum += $('#form_income1_companycity').val().length;
+			sum += $('#form_income1_companystreetname').val().length;
+			sum += $('#form_income1_companystreetnumber').val().length;
+			sum += $('#form_income1_companyapartmentnumber').val().length;
+			
+			if(sum > 80) {
+				addInvalid($('#form_income1_companystreetname'), "Skróć nazwę ulicy");
+			} else if ($('#form_income1_companystreetname').is(':visible') && $('#form_income1_companystreetname').val().length == 0) {
+                addInvalid($('#form_income1_companystreetname'), "Podaj nazwę ulicy");
+            } else {
+				addValid($('#form_income1_companystreetname'), "Skróć nazwę ulicy");
+                addValid($('#form_income1_companystreetname'), "Podaj nazwę ulicy");
+			}
+		}
+	}
+	
+	var checkAccountNumber = function (el) {
+		var nrb, id;
+
+		nrb = el.val();
+		nrb = nrb.replace(/[^0-9]+/g, '');
+		var wagi = new Array(1, 10, 3, 30, 9, 90, 27, 76, 81, 34, 49, 5, 50, 15, 53, 45, 62, 38, 89, 17, 73, 51, 25, 56, 75, 71, 31, 19, 93, 57);
+		if (iban_status != 0 && nrb.length === 26) {
+			var Z, i;
+			Z = 0;
+			nrb = nrb + "2521";
+			nrb = nrb.substr(2) + nrb.substr(0, 2);
+			for (i = 0; i < 30; i++) {
+				Z += nrb.charAt(29 - i) * wagi[i];
+				
+			}
+
+			if (Z % 97 === 1) {
+				addValid(el);
+			} else {
+				addInvalid(el);
+			}
+
+		} else {
+			addInvalid(el);
+		}
+	};
+		
+	var checkTypes = function(el, type){
+		var result=null;
+		
+	/*	if(type=="select") {
+			el.parent().children('span.error').remove();
+			if($('.icon-16', el.parent().parent()).length)
+				$('.icon-16', el.parent().parent()).remove();
+		} else {
+			el.parent().children('span.error').remove();
+			if($('.icon-16', el.parent()).length)
+				$('.icon-16', el.parent()).remove();
+		}*/
+		
+		switch(type){
+			case "email":
+				result = checkEmail(el);
+			break;
+			case "empty":
+				result = checkEmpty(el);
+			break;
+			case "select":
+				result = checkSelect(el);
+			break;
+			case "pesel":
+				result = checkPesel(el);
+			break;
+			case "ajaxCisField":
+				result = checkAjaxCisField(el);
+			break;
+			case "idnumber":
+				result = checkIDnumber(el);
+			break;
+			case "passport":
+				result = checkPassport(el);
+			break;
+			case "checkbox":
+				result = checkCheckbox(el);
+			break;
+			case "date":
+				result = checkDate(el);
+			break;
+			case "notrequired":
+				result = checkNotRequired(el);
+			break;
+			case "numbervalue":
+				result = checkNumbervalue(el);
+			break;
+			case "range":
+				result = checkRanges(el);
+	        break;
+			case "oneword":
+				result = checkOneword(el);
+	        break;
+			case "dateTodayOrGreater":
+				retult = checkDateTodayOrGreater(el);
+			break;
+			case "dateTodayOrLess":
+				retult = checkDateTodayOrLess(el);
+			break;
+			case "dateFormat":
+				result = checkDateFormat(el);
+			break;
+			case "nip":
+				result = checkNIP(el);
+			break;
+			case "regon":
+				result = checkREGON(el);
+			break;
+			case "dowodOsobisty":
+				result = checkIdentityCard(el);
+			break;
+			case "oneNumber":
+				result = checkOneNumber(el);
+			break;
+			case "houseNumber":
+                checkHouseNumber(el);
+			break;
+			case "oneLetter":
+				result = checkOneLetter(el);
+			break;
+			case "lastName":
+				result = checkLastName(el);
+			break;
+			break;
+			case "amount":
+				result = checkAmount(el);
+			break;
+			case "emptyradio":
+                result = checkEmptyRadio(el);
+            break; 
+			case "kartaPobytu":
+                result = checkKartaStalegoPobytu(el);
+            break;
+			case "identityCardExpiryDate":
+                result = checkIdentityCardExpiryDate(el);
+            break;
+			case "phone":
+                result = checkPhone(el);
+            break;
+			case "nrb":
+				result = checkAccountNumber(el);
+				break;
+			case "incomeNetto":
+                result = checkIncomeNetto(el);
+                break;
+			case "income":
+                result = checkIncome(el);
+                break;
+			case "address":
+                result = checkAddress(el);
+                break;
+		}
+		
+		return result;
+	};
+	
+	this.checkTypes=checkTypes;
+	
+    this.checkField = function (el, type) {
+
+        if (type !== undefined) {
+
+            var types = type.split(",");
+
+            for (var i = 0; i < types.length; i++) {
+            	
+                if (checkTypes(el, types[i])===false) {
+                	break;
+                }
+            }
+        }
+        
+        markSectionIfInvalid();
+    };
+    
+    this.checkStep = function (el, type) {
+//        var msg;
+        nerrors = 0;
+
+//        msg = '<strong>Wyst�pi�y nast�puj�ce b��dy:</strong><ul>';
+        el.each(function () {
+        	if ($(this).attr(type) !== undefined ) {
+	            var types = $(this).attr(type).split(",");
+	            
+	            for (var i = 0; i < types.length; i++) {
+	                if (checkTypes($(this), types[i])===false) {
+	                	break;
+	                }
+	            }
+        	}
+        });
+        return {
+            nerrors: nerrors
+        };
+    };
+    
+    function getCurrentDate() { //format: 2014-01-01
+    	var d = new Date();
+
+    	var month = d.getMonth()+1;
+    	var day = d.getDate();
+
+    	var output = d.getFullYear() + '-' +
+    	    (month<10 ? '0' : '') + month + '-' +
+    	    (day<10 ? '0' : '') + day;
+    	
+    	return output;
+    }
+    
+    function normalizeDate(val) { //zmienia format z kalendarzyka na 2014-01-01
+    	var dateParts = val.split('/');
+    	
+    	return dateParts[2]+'-'+dateParts[1]+'-'+dateParts[0];
+    }
+};
+
+var lastNameRegEx = /^([a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ðZĄąĆćĘęŁłŃńÓóŚśŹźŻż]*([a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ðZĄąĆćĘęŁłŃńÓóŚśŹźŻż]( |( ?- ?)[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ðZĄąĆćĘęŁłŃńÓóŚśŹźŻż]*)?)*)?$/;
+
+var identityCardPrefix = /^[a-zA-Z]*$/;
+
+var street = /^([a-zA-Z0-9ZĄąĆćĘęŁłŃńÓóŚśŹźŻż"]*([a-zA-Z0-9ZĄąĆćĘęŁłŃńÓóŚśŹźŻż"]( |( ?- ?)[a-zA-Z0-9ZĄąĆćĘęŁłŃńÓóŚśŹźŻż"]*)?)*)?$/;
+var houseNo = /^([0-9a-zA-Z]*([0-9a-zA-Z](([-/]?)[0-9a-zA-Z]*)?)*)?$/;
+var apartmentNo = /^([0-9a-zA-Z]*([0-9a-zA-Z]((-?)[0-9a-zA-Z]*)?)*)?$/;
+var oneNumber = /^(([0-9])?)$/;
+
+var incomeNetto = /^([0-9]*([.]{1})?([0-9]{0,2})?)?$/;
+var phoneNo = /^([1-9])([0-9]*)$/;
+var iban = /^([0-9]{0,2}\s?)([0-9]{0,4}\s?)([0-9]{0,4}\s?)([0-9]{0,4}\s?)([0-9]{0,4}\s?)([0-9]{0,4}\s?)([0-9]{0,4})$/;
+
+$('input').keyup(function() {
+	if($(this).attr('id') == 'input_lastname') {
+		regexExecutor($(this), lastNameRegEx);
+	} else if($(this).attr('id') == 'input_motherMaidenName') {
+		regexExecutor($(this), lastNameRegEx);
+	} else if($(this).attr('id') == 'input_idnumber') {
+		regexExecutor($(this), identityCardPrefix);
+	} else if($(this).attr('id') == 'input_card') {
+		regexExecutor($(this), identityCardPrefix);
+	} else if($(this).attr('id') == 'input_passport') {
+		regexExecutor($(this), identityCardPrefix);
+	} else if($(this).attr('id') == 'input_street') {
+		regexExecutor($(this), street);
+	} else if($(this).attr('id') == 'input_correspondence_street') {  
+		regexExecutor($(this), street);
+	} else if($(this).attr('id') == 'form_income1_companystreetname') {  
+		regexExecutor($(this), street);
+	} else if($(this).attr('id') == 'form_income2_companystreetname') {  
+		regexExecutor($(this), street);
+	} else if($(this).attr('id') == 'input_homenumber') {     
+		regexExecutor($(this), houseNo);
+	} else if($(this).attr('id') == 'input_correspondence_homenumber') {  
+		regexExecutor($(this), houseNo);
+	} else if($(this).attr('id') == 'form_income1_companystreetnumber') {  
+		regexExecutor($(this), houseNo);
+	} else if($(this).attr('id') == 'form_income2_companystreetnumber') {  
+		regexExecutor($(this), houseNo);
+	} else if($(this).attr('id') == 'input_flatnumber') {  
+		regexExecutor($(this), apartmentNo);
+	} else if($(this).attr('id') == 'input_correspondence_flatnumber') {  
+		regexExecutor($(this), apartmentNo);
+	} else if($(this).attr('id') == 'form_income1_companyapartmentnumber') {  
+		regexExecutor($(this), apartmentNo);
+	} else if($(this).attr('id') == 'form_income2_companyapartmentnumber') {  
+		regexExecutor($(this), apartmentNo);
+	} else if($(this).attr('id') == 'form_income1_netto' || $(this).attr('id') == 'input_monthlyexpenses' || $(this).attr('id') == 'form_loanlimit' || $(this).attr('id') == 'form_cardlimit' || $(this).attr('id') == 'form_creditmonthly') {
+		$(this).val($(this).val().replace(',','.'));
+		$.uniform.update($(this));
+		regexExecutor($(this), incomeNetto);
+	} else if($(this).attr('id') == 'form_income2_netto') {  
+		$(this).val($(this).val().replace(',','.'));
+		$.uniform.update($(this));
+		regexExecutor($(this), incomeNetto);
+	} else if($(this).attr('id') == 'input_phone') {  
+		regexExecutor($(this), phoneNo);
+	} else if($(this).attr('id') == 'input_mobile') {  
+		regexExecutor($(this), phoneNo);
+	} else if($(this).attr('id') == 'form_farmincome_companyphone') {  
+		regexExecutor($(this), phoneNo);
+	} else if($(this).attr('id') == 'form_income1_companyhomephone') {  
+		regexExecutor($(this), phoneNo);
+	} else if($(this).attr('id') == 'form_income1_companyphone') {  
+		regexExecutor($(this), phoneNo);
+	} else if($(this).attr('id') == 'form_farmincome2_companyphone') {  
+		regexExecutor($(this), phoneNo);
+	} else if($(this).attr('id') == 'form_income2_companyhomephone') {  
+		regexExecutor($(this), phoneNo);
+	} else if($(this).attr('id') == 'form_income2_companyphone') {  
+		regexExecutor($(this), phoneNo);
+	} else if($(this).attr('id') == 'account_number') {  
+		regexExecutor($(this), iban);
+	}
+	     
+	
+	
+});
+
+function regexExecutor(element, regex) {
+    while (jQuery(element).val() != '' && !jQuery(element).val().match(regex)) {
+    	jQuery(element).val(jQuery(element).val().replace(/.$/,''));
+    }
+} 
+
+window.Validator = new Validator();
+
+function blockBackspaceAndEnter(e) {
+    if (!e) { // IE reports window.event instead of the argument
+        e = window.event;
+    }
+    var keycode;
+    if (document.all) {
+        // IE
+        keycode = e.keyCode;
+    } else {
+        // Not IE
+        keycode = e.which;
+    }
+
+    // Enter is only allowed in textareas, and Backspace is only allowed in textarea and input text and password
+
+    var d = e.srcElement || e.target;
+
+    if ((keycode == 8
+            && d.type != "text"
+            && d.type != "textarea"
+            && d.type != "password")
+            || (keycode == 13 && d.type != "textarea")) {
+        return false;
+    }
+}
+
+function cancel() {
+	var response = confirm("Czy na pewno chcesz zrezygnować z wypełniania wniosku?");
+	if (response == true) {
+		location.replace(REDIRECT_ADDRESS);
+	}
+}
+
+function getEBankUser() {
+	var url = SERVER_ADDRESS + OFFER_ADDRESS;
+	$.ajax({
+	  url: url,
+	  dataType: "json",
+	  method: "GET"
+	}).done(function( data, statusText, xhr ) {
+		if (xhr.status == 401) {
+			location.replace(BASE_ADDRESS + "/redirect-ca-token-session?app=EBANK&application-url=section");
+		} else {
+			if (data.ebankUser.ube == true) {
+				$("#loader").hide();
+				$('#mainForm').show();
+				var address = data.ebankUser.street + " " + data.ebankUser.houseNo;
+				if (data.ebankUser.flatNo != null && data.ebankUser.flatNo != '' && data.ebankUser.flatNo != 'null') {
+					address += ("/" + data.ebankUser.flatNo);
+				}
+				address += (", " + data.ebankUser.zipCode + " " + data.ebankUser.city);
+				$('#userAddress').html(address);
+				if (data.ebankUser.email != null && data.ebankUser.email != 'null') {
+					$('#input_email').val(data.ebankUser.email);
+				}
+				if (data.ebankUser.mobile != null && data.ebankUser.mobile != 'null') {
+					$('#input_mobile').val(data.ebankUser.mobile);
+				}
+				if (data.ebankUser.phone != null && data.ebankUser.phone != 'null') {
+					$('#input_phone').val(data.ebankUser.phone);
+				}
+			} else {
+				$('#noUbeError').show();
+				$("#loader").hide();
+				$('#mainForm').remove();
+			}
+		}
+	}).error(function (httpObj, textStatus) {
+        if (httpObj.status == 401) {
+            location.replace(BASE_ADDRESS + "/redirect-ca-token-session?app=EBANK&application-url=section");
+        }
+    });
+}
+	
+function getConfigurationForSimulation() {
+	var url = SERVER_ADDRESS + CONFIGURATION_FOR_SIMULATION_ADDRESS;
+	$.ajax({
+	  url: url,
+	  dataType: "json",
+	  method: "GET"
+	}).done(function( data, statusText, xhr ) {
+		if (xhr.status == 401) {
+			location.replace(BASE_ADDRESS + "/redirect-ca-token-session?app=EBANK&application-url=section");
+		} else {
+			$('#creditAmountSlider').html('<input id="input_amount"type="text" data-slider="true" data-slider-range="' + data.minAmount + ',' + data.maxAmount + '" data-slider-step="100" style="float:left;" data-slider-highlight="true">' + 
+				'<div class="small-elem output" style="display: inline-block; vertical-align: middle">' +
+					'<input id="input_amount_value" class="required masked" type="text" data-mask="number"  maxlength="6" data-msg="Podaj kwotę kredytu" data-msg-range="Wartość nie mieści się w zadanym zakresie" data-parser="empty,range" data-range="' + data.minAmount + ',' + data.maxAmount + '" name="creditData.creditInfo.creditValue" value="5000" />' + 
+				   '<span class="input-title">zł</span>' + 	
+				'</div>' + 
+				'<div class="range-subtitle">' + 
+				   '<span class="left">' + formatPrice(data.minAmount, 0) + '</span>' + 
+				   '<span class="right">' + formatPrice(data.maxAmount, 0) + '</span>' + 
+				'</div>');
+
+
+			$('#creditPeriodSlider').html('<input id="input_period" type="text" data-slider="true" data-slider-range="' + data.minDuration + ',' + data.maxDuration + '" data-slider-step="1" style="float:left;" data-slider-highlight="true">' +
+			  '<div class="small-elem output" style="display: inline-block; vertical-align: middle">' +
+				  '<input id="input_period_value" class="required masked" type="text" data-mask="number"  maxlength="3" data-msg="Podaj okres kredytowania" data-msg-range="Wartość nie mieści się w zadanym zakresie" data-parser="empty,range" data-range="' + data.minDuration + ',' + data.maxDuration + '" name="creditData.creditInfo.creditPeriod" value="24" />' +
+				  '<span class="input-title">miesięcy</span>' +
+			  '</div>' +
+			  '<div class="range-subtitle">' +
+				  '<span class="left">' + data.minDuration + '</span>' +
+				  '<span class="right">' + data.maxDuration + '</span>' +
+			  '</div>');
+			
+			$("#input_amount").simpleSlider();
+			$("#input_amount").simpleSlider('setValue', 5000);
+			$('#input_amount_value').on('keydown', function(e) {
+				if (e.which == 13) {
+					e.preventDefault();
+				}
+			});
+			
+			$("#input_amount_value").keyup(function(e) {
+				if (/\D/g.test(this.value)) {
+					this.value = this.value.replace(/\D/g, '');
+				}			
+			});
+			
+			$("#input_amount_value").focusout(function() {
+				var value = $(this).val().replace(/\D/g, '');
+				if (value > data.maxAmount) {
+					value = data.maxAmount;
+					$("#input_amount_value").val(value);
+				}
+
+				if (value < data.minAmount) {
+					value = data.minAmount;
+					$("#input_amount_value").val(value);
+				}
+
+				$('#creditSectionLoader').show();
+				value = Math.round(value / 100) * 100;
+				$("#input_amount_value").val(value);
+				$("#input_amount").simpleSlider("setValue", value);
+				setTimeout(function() {calculateInstallment(value, $('#input_period').val())}, 2000);
+			});
+			
+			$("#input_amount").bind("slider:changed", function (event, data) {
+				$('#input_amount_value').val(formatPrice(data.value, 0));
+
+				$('#creditSectionLoader').show();
+				setTimeout(function() {calculateInstallment(data.value, $('#input_period').val())}, 2000);
+			});
+			
+			$("#input_period").simpleSlider();
+			$("#input_period").simpleSlider('setValue', 24);
+			$("#input_period").bind("slider:changed", function (event, data) {
+				$('#input_period_value').val(data.value, 0);
+
+				$('#creditSectionLoader').show();
+				setTimeout(function() {calculateInstallment($('#input_amount').val().replace(/\s/g, ''), data.value)}, 2000);
+			});
+			$('#input_period_value').on('keydown', function(e) {
+				if (e.which == 13) {
+					e.preventDefault();
+				}
+			});
+			
+			$("#input_period_value").keyup(function(e) {
+				if (/\D/g.test(this.value)) {
+					this.value = this.value.replace(/\D/g, '');
+				}			
+			});
+			
+			$("#input_period_value").focusout(function() {
+				var value = $(this).val().replace(/\D/g, '');
+				if (value > data.maxDuration) {
+					value = data.maxDuration;
+					$("#input_period_value").val(value);
+				}
+				
+				if (value < data.minDuration) {
+					value = data.minDuration;
+					$("#input_period_value").val(value);
+				}
+				
+				$('#creditSectionLoader').show();
+				$("#input_period").simpleSlider("setValue", value);
+				setTimeout(function() {calculateInstallment($('#input_amount').val().replace(/\s/g, ''), value)}, 2000);
+			});
+			
+			calculateInstallment($('#input_amount').val().replace(/\s/g, ''), $("#input_period").val());
+		}
+	}).error(function (httpObj, textStatus) {
+        if (httpObj.status == 401) {
+            location.replace(BASE_ADDRESS + "/redirect-ca-token-session?app=EBANK&application-url=section");
+        }
+    });
+}
+
+function calculateInstallment(amount, period) {
+	if (amount == $("#input_amount").val().replace(/\s/g, '') && period == $("#input_period").val() ) {
+		var url = SERVER_ADDRESS + CALCULATE_INSTALLMENT_ADDRESS;
+		$.ajax({
+		  url: url,
+		  dataType: "json",
+		  type: "POST",
+		  method: "POST",
+		  data:  { creditAmount: $( "#input_amount" ).val(), installmentNumber: $( "#input_period" ).val() }
+		}).done(function( data, statusText, xhr ) {
+			if (xhr.status == 401) {
+				location.replace(BASE_ADDRESS + "/redirect-ca-token-session?app=EBANK&application-url=section");
+			} else {	
+				$('#installmentAmount').html(formatPriceWithCurrency(data.installmentAmount, 2));
+				$('#totalCreditCost').html(formatPriceWithCurrency(data.totalCreditCost, 2));
+				$('#interestRate').html(formatPercent(data.interestRate));
+				$('#commisionAmount').html(formatPriceWithCurrency(data.commisionAmount, 2));
+				$('#apr').html(formatPercent(data.apr));
+				
+				$('#creditSectionLoader').hide();
+			}
+		}).error(function (httpObj, textStatus) {
+			if (httpObj.status == 401) {
+				location.replace(BASE_ADDRESS + "/redirect-ca-token-session?app=EBANK&application-url=section");
+			}
+		});
+	}
+}
+
+function getBankDetails() {
+	iban_status = -1;
+	var url = SERVER_ADDRESS + BANK_DETAILS_ADDRESS;
+	$.ajax({
+	  url: url,
+	  dataType: "json",
+	  type: "POST",
+	  method: "POST",
+	  data:  { iban: $( "#account_number" ).val()}
+	}).done(function( data, statusText, xhr ) {
+		if (xhr.status == 401) {
+			location.replace(BASE_ADDRESS + "/redirect-ca-token-session?app=EBANK&application-url=section");
+		} else {
+			if (data != null && data.shortName != null && data.shortName != '') {
+				iban_status = 1;
+				$('#bankName').html(data.shortName);
+			} else {
+				iban_status = 0;
+			}
+			Validator.checkField($('#account_number'), $('#account_number').data('parser'));
+			Validator.markSectionIfInvalid();
+		}
+	}).error(function (httpObj, textStatus) {
+        if (httpObj.status == 401) {
+            location.replace(BASE_ADDRESS + "/redirect-ca-token-session?app=EBANK&application-url=section");
+        } else {
+			iban_status = 0;
+			Validator.checkField($('#account_number'), $('#account_number').data('parser'));
+			Validator.markSectionIfInvalid();
+		}
+	});
+}
+
+function formatPriceWithCurrency(price, fix) {
+	return formatPrice(price, fix)  + " zł";
+}
+
+function formatPrice(price, fix) {
+	var n = price.toFixed(fix).toString(), p = n.indexOf(',');
+    return n.replace(/\d(?=(?:\d{3})+(?:\.|$))/g, function($0, i){
+        return p<0 || i<p ? ($0+' ') : $0;
+    });
+}
+
+function formatPercent(value) {
+	return value.toFixed(2) + " %";
+}
+
+function toggleText(text) {
+    
+    if (status == "less") {
+        document.getElementById("textArea").innerHTML=text;
+        document.getElementById("toggleButton").innerText = "See Less";
+        status = "more";
+    } else if (status == "more") {
+        document.getElementById("textArea").innerHTML = "";
+        document.getElementById("toggleButton").innerText = "See More";
+        status = "less"
+    }
+}
+
+function hideSections() {
+	$(".slideButton").each(function() {
+		var id = '#' + $(this).attr('id');
+		var element = id + 'Container';
+		$(element).slideUp("slow");
+		$(this).text("rozwiń");
+		$(this).removeClass("slideUp").addClass("slideDown");
+	});
+}�zf�      Y�ߎY�ߏ>)��Y�   J    :https://e-bank.credit-agricole.pl/wniosek/landing-pages/698/js/scripts.js necko:classified 1 strongly-framed 1 security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojH6pBabDSgSnsfLHeAAQAAgAAAAAAAAAAAAAAAAAAAAAB4vFIJp5wRkeyPxAQ9RJGKPqbqVvKO0mKuIl8ec8o/uhmCjImkVxP+7sgiYWmMt8FvcOXmlQiTNWFiWlrbpbqgwAAAAAAAAcOMIIHCjCCBfKgAwIBAgIQHuPTCXmY3z7yX5taPWiQSDANBgkqhkiG9w0BAQsFADB3MQswCQYDVQQGEwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xHzAdBgNVBAsTFlN5bWFudGVjIFRydXN0IE5ldHdvcmsxKDAmBgNVBAMTH1N5bWFudGVjIENsYXNzIDMgRVYgU1NMIENBIC0gRzMwHhcNMTUxMDAxMDAwMDAwWhcNMTcwOTMwMjM1OTU5WjCCARAxEzARBgsrBgEEAYI3PAIBAxMCUEwxHTAbBgNVBA8TFFByaXZhdGUgT3JnYW5pemF0aW9uMRMwEQYDVQQFEwowMDAwMDM5ODg3MQswCQYDVQQGEwJQTDEPMA0GA1UEEQwGNTMtNjA1MRUwEwYDVQQIDAxEb2xub3NsYXNraWUxEDAOBgNVBAcMB1dyb2NsYXcxHzAdBgNVBAkMFlBsYWMgT3JsYXQgTHdvd3NraWNoIDExKTAnBgNVBAoMIENyZWRpdCBBZ3JpY29sZSBCYW5rIFBvbHNrYSBTLkEuMQ4wDAYDVQQLDAVERFVJVDEiMCAGA1UEAwwZZS1iYW5rLmNyZWRpdC1hZ3JpY29sZS5wbDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKQeen7PtfLshz09XlLmoCNuUZ6mkTaDsAOWiTSVCFyirRWGxprCWSq1bg3ncIRb3YtsYuEzSlQ8aQXhu/Q5DoTYnwRnzR1HBdj0kBSqpaX4cB83Qw86LEmuDY9MYPE1KQ5ajHV3m2MtUHq7YkDxMe3Cf91PTdLp7WhJCds9jXBBoNTm1BEOerZTjzYanf7De6Q6aTOUZM8smS7owD3q8mnIgvBmqMvGrSh17E2tpwKHwfMEgoYdmVshvHtQ79JiiXS/+rLe3LuUXEYxqiXqjBwMcTxI1D6m47hB6x7TYVZryPKcUZFT9R7DttLfr3zYkgEKBDPVSSxJWDB+0LBg89kCAwEAAaOCAvUwggLxMCQGA1UdEQQdMBuCGWUtYmFuay5jcmVkaXQtYWdyaWNvbGUucGwwCQYDVR0TBAIwADAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMGYGA1UdIARfMF0wWwYLYIZIAYb4RQEHFwYwTDAjBggrBgEFBQcCARYXaHR0cHM6Ly9kLnN5bWNiLmNvbS9jcHMwJQYIKwYBBQUHAgIwGRoXaHR0cHM6Ly9kLnN5bWNiLmNvbS9ycGEwHwYDVR0jBBgwFoAUAVmr5906C1mmZGPWzyAHV9WR52owKwYDVR0fBCQwIjAgoB6gHIYaaHR0cDovL3NyLnN5bWNiLmNvbS9zci5jcmwwVwYIKwYBBQUHAQEESzBJMB8GCCsGAQUFBzABhhNodHRwOi8vc3Iuc3ltY2QuY29tMCYGCCsGAQUFBzAChhpodHRwOi8vc3Iuc3ltY2IuY29tL3NyLmNydDCCAX4GCisGAQQB1nkCBAIEggFuBIIBagFoAHYA3esdK3oNT6Ygi4GtgWhwfi6OnQHVXIiNPRHEzbbsvswAAAFQIoLxggAABAMARzBFAiEA+/uaiWB97Acy+B/lYxxr3bfN12byYMJdhtjpboYmZQ8CIGKYJp9H5queoC4Qb0Lut8+NaC8LKGi0pxrzi/L4cUflAHYApLkJkLQYWBSHuxOizGdwCjw1mAT5G9+443fNDsgN3BAAAAFQIoLxwgAABAMARzBFAiEA2gyyQHt79kv9lSiG+j3vGC+RVyY8TnDjIumqvcHdqpoCIEo6dNfGLz1GiZXjd8bxhmpwN2ibXg56Ue3PDNoGL8UbAHYAaPaY+B9kgr46jO65KB1M/HFRXWeT1ETRCmesu09P+8QAAAFQIoLxzAAABAMARzBFAiEAp0cd86xERtkgUKQdocaoa5kGckyqDXpsP6DXNhsDmi8CIFsK8T/o12b2Nlt8W/UMFxns/AqFPfHcfO9Skw1FLT6+MA0GCSqGSIb3DQEBCwUAA4IBAQBOPLNb7bUcL2VBvoOiEEM1NRLlmokjLPQGVPjZ0iDuVXakr3oBbGmjicuqwYRECTSd1WPM4De451bTzo8LC+otGVP7YqQvPtMJ1E+3LIIooKeDc4ORkmtIw0GxvjqsPx7bGJ6BlfwBAsmXyXTWb3jqPYoUfZsW4xdG8IlAwO75rPkedqddimUESGDG7WWz7dC5TywzoLPKfRfU4Ho958GCoHKL6OMtNWPEHq5CktwEHutF/MoO0XLsLRy8Fs8qznkUrgV/OI5xCyBwQpUrLWrK7R17TsYCkbvFLQylFQ5xEn72F8bE4uCLabF6rwDswEYeWTrlQASugr7nK4pQM4vZADMBAwAAAAEBAQAAAAA= request-method GET response-head HTTP/1.1 200 OK
+Date: Tue, 05 Sep 2017 17:31:58 GMT
+Server: Apache-Coyote/1.1
+Accept-Ranges: bytes
+Etag: W/"70687-1498204819000"
+Last-Modified: Fri, 23 Jun 2017 08:00:19 GMT
+Content-Type: application/javascript;charset=UTF-8
+Content-Language: pl-PL
+Content-Length: 70687
+ original-response-headers Date: Tue, 05 Sep 2017 17:31:58 GMT
+Server: Apache-Coyote/1.1
+Accept-Ranges: bytes
+Etag: W/"70687-1498204819000"
+Last-Modified: Fri, 23 Jun 2017 08:00:19 GMT
+Content-Type: application/javascript;charset=UTF-8
+Content-Language: pl-PL
+Content-Length: 70687
+Keep-Alive: timeout=15, max=94
+Connection: Keep-Alive
+ uncompressed-len 0 net-response-time-onstart 400 net-response-time-onstop 510  

@@ -1,0 +1,4 @@
+
+(unity-settings-daemon:1442): color-plugin-WARNING **: failed to connect to device: Failed to connect to missing device /org/freedesktop/ColorManager/devices/cups_DeskJet_1110_series
+
+(unity-settings-daemon:1442): power-plugin-WARNING **: failed to turn the kbd backlight off: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface 'org.freedesktop.UPower.KbdBacklight' on object at path /org/freedesktop/UPower/KbdBacklight

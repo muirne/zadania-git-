@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7 no-js" lang="pl-PL">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8 no-js" lang="pl-PL">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html class="no-js" lang="pl-PL">
+<!--<![endif]-->
+					<head>
+				    <meta charset="UTF-8" />
+				    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+            				    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				    <link rel="profile" href="http://gmpg.org/xfn/11" />
+				    <link rel="pingback" href="http://ubuntu.pl/xmlrpc.php" />
+
+				   <!-- html5shiv for IE8 and less  -->
+				    <!--[if lt IE 9]>
+				      <script src="http://ubuntu.pl/wp-content/themes/customizr/inc/assets/js/html5.js"></script>
+				    <![endif]-->
+				    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Ubuntu 16.04 wydane &#8211; kolejna wersja z długim okresem wsparcia &#8211; Ubuntu.pl</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Ubuntu.pl &raquo; Kanał z wpisami" href="http://ubuntu.pl/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Ubuntu.pl &raquo; Kanał z komentarzami" href="http://ubuntu.pl/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Ubuntu.pl &raquo; Ubuntu 16.04 wydane &#8211; kolejna wersja z długim okresem wsparcia Kanał z komentarzami" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ubuntu.pl\/wp-includes\/js\/wp-emoji-release.min.js?ver=19571d0e676e8ab0256f2b8d4f484181"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='tc-gfonts-css'  href='//fonts.googleapis.com/css?family=Ubuntu:400%7CUbuntu:400' type='text/css' media='all' />
+<link rel='stylesheet' id='cookie-consent-style-css'  href='http://ubuntu.pl/wp-content/plugins/uk-cookie-consent/assets/css/style.css?ver=19571d0e676e8ab0256f2b8d4f484181' type='text/css' media='all' />
+<link rel='stylesheet' id='customizr-fa-css'  href='http://ubuntu.pl/wp-content/themes/customizr/assets/shared/fonts/fa/css/font-awesome.min.css?ver=4.0.6' type='text/css' media='all' />
+<link rel='stylesheet' id='customizr-common-css'  href='http://ubuntu.pl/wp-content/themes/customizr/inc/assets/css/tc_common.min.css?ver=4.0.6' type='text/css' media='all' />
+<link rel='stylesheet' id='customizr-skin-css'  href='http://ubuntu.pl/wp-content/themes/customizr-ubupl/inc/assets/css/orange.min.css?ver=4.0.6' type='text/css' media='all' />
+<style id='customizr-skin-inline-css' type='text/css'>
+
+                  .site-title,.site-description,h1,h2,h3,.tc-dropcap {
+                    font-family : 'Ubuntu';
+                    font-weight : 400;
+                  }
+
+                  body,.navbar .nav>li>a {
+                    font-family : 'Ubuntu';
+                    font-weight : 400;
+                  }
+table { border-collapse: separate; }
+                           body table { border-collapse: collapse; }
+                          
+.social-links .social-icon:before { content: none } 
+.sticky-enabled .tc-shrink-on .site-logo img {
+    					height:30px!important;width:auto!important
+    				}
+
+    				.sticky-enabled .tc-shrink-on .brand .site-title {
+    					font-size:0.6em;opacity:0.8;line-height:1.2em
+    				}
+
+#tc-push-footer { display: none; visibility: hidden; }
+         .tc-sticky-footer #tc-push-footer.sticky-footer-enabled { display: block; }
+        
+
+</style>
+<link rel='stylesheet' id='customizr-style-css'  href='http://ubuntu.pl/wp-content/themes/customizr-ubupl/style.css?ver=4.0.6' type='text/css' media='all' />
+<link rel='stylesheet' id='fancyboxcss-css'  href='http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/fancybox/jquery.fancybox-1.3.4.min.css?ver=19571d0e676e8ab0256f2b8d4f484181' type='text/css' media='all' />
+<link rel='stylesheet' id='author-avatars-widget-css'  href='http://ubuntu.pl/wp-content/plugins/author-avatars/css/widget.css?ver=1.11' type='text/css' media='all' />
+<link rel='stylesheet' id='author-avatars-shortcode-css'  href='http://ubuntu.pl/wp-content/plugins/author-avatars/css/shortcode.css?ver=1.11' type='text/css' media='all' />
+<script type='text/javascript' src='http://ubuntu.pl/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/fancybox/jquery.fancybox-1.3.4.min.js?ver=4.0.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var TCParams = {"_disabled":[],"FancyBoxState":"1","FancyBoxAutoscale":"1","SliderName":"","SliderDelay":"","SliderHover":"1","centerSliderImg":"1","SmoothScroll":{"Enabled":false,"Options":{"touchpadSupport":false}},"anchorSmoothScroll":"linear","anchorSmoothScrollExclude":{"simple":["[class*=edd]",".tc-carousel-control",".carousel-control","[data-toggle=\"modal\"]","[data-toggle=\"dropdown\"]","[data-toggle=\"tooltip\"]","[data-toggle=\"popover\"]","[data-toggle=\"collapse\"]","[data-toggle=\"tab\"]","[class*=upme]","[class*=um-]"],"deep":{"classes":[],"ids":[]}},"ReorderBlocks":"1","centerAllImg":"1","HasComments":"1","LeftSidebarClass":".span3.left.tc-sidebar","RightSidebarClass":".span3.right.tc-sidebar","LoadModernizr":"1","stickyCustomOffset":{"_initial":0,"_scrolling":0,"options":{"_static":true,"_element":""}},"stickyHeader":"1","dropdowntoViewport":"","timerOnScrollAllBrowsers":"1","extLinksStyle":"","extLinksTargetExt":"","extLinksSkipSelectors":{"classes":["btn","button"],"ids":[]},"dropcapEnabled":"","dropcapWhere":{"post":"","page":""},"dropcapMinWords":"50","dropcapSkipSelectors":{"tags":["IMG","IFRAME","H1","H2","H3","H4","H5","H6","BLOCKQUOTE","UL","OL"],"classes":["btn","tc-placeholder-wrap"],"id":[]},"imgSmartLoadEnabled":"","imgSmartLoadOpts":{"parentSelectors":[".article-container",".__before_main_wrapper",".widget-front"],"opts":{"excludeImg":[".tc-holder-img"]}},"goldenRatio":"1.618","gridGoldenRatioLimit":"350","isSecondMenuEnabled":"","secondMenuRespSet":"in-sn-before","isParallaxOn":"1","parallaxRatio":"0.55","pluginCompats":[],"frontHelpNoticesOn":"1","frontHelpNoticeParams":{"thumbnail":{"active":false,"args":{"action":"dismiss_thumbnail_help","nonce":{"id":"thumbnailNonce","handle":"8b9784e5c9"},"class":"tc-thumbnail-help"}},"smartload":{"active":true,"args":{"action":"dismiss_img_smartload_help","nonce":{"id":"imgSmartLoadNonce","handle":"71e864901c"},"class":"tc-img-smartload-help"}},"sidenav":{"active":false,"args":{"action":"dismiss_sidenav_help","nonce":{"id":"sideNavNonce","handle":"b0c4053676"},"class":"tc-sidenav-help"}},"secondMenu":{"active":false,"args":{"action":"dismiss_second_menu_notice","nonce":{"id":"secondMenuNonce","handle":"91bf9e30a4"},"class":"tc-menu-placeholder"}},"mainMenu":{"active":false,"args":{"action":"dismiss_main_menu_notice","nonce":{"id":"mainMenuNonce","handle":"8299ec21c7"},"class":"tc-main-menu-notice"}},"slider":{"active":false,"args":{"action":"slider_notice_actions","nonce":{"id":"sliderNoticeNonce","handle":"a91dc9aa0f"},"class":"tc-slider-notice"}},"fp":{"active":false,"args":{"action":"fp_notice_actions","nonce":{"id":"fpNoticeNonce","handle":"9557f95ae3"},"class":"tc-fp-notice"}},"widget":{"active":false,"args":{"action":"dismiss_widget_notice","nonce":{"id":"WidgetNonce","handle":"70b16d5d7e"}}}},"adminAjaxUrl":"http:\/\/ubuntu.pl\/wp-admin\/admin-ajax.php","ajaxUrl":"http:\/\/ubuntu.pl\/?czrajax=1","frontNonce":{"id":"CZRFrontNonce","handle":"bd94331101"},"isDevMode":"","isModernStyle":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/themes/customizr/inc/assets/js/tc-scripts.min.js?ver=4.0.6'></script>
+<link rel='https://api.w.org/' href='http://ubuntu.pl/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://ubuntu.pl/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://ubuntu.pl/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Stjerm &#8211; jeszcze jeden terminal w stylu Quake&#8217;a' href='http://ubuntu.pl/czytelnia/2016/04/20/stjerm-jeszcze-jeden-terminal-w-stylu-quakea/' />
+<link rel='next' title='Ubuntu 16.04.1 &#8211; aktualizowanie starszych systemów rozpoczęte' href='http://ubuntu.pl/czytelnia/2016/08/06/ubuntu-16-04-1-aktualizowanie-starszych-systemow-rozpoczete/' />
+
+<link rel="canonical" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/" />
+<link rel='shortlink' href='http://ubuntu.pl/?p=22169' />
+<link rel="alternate" type="application/json+oembed" href="http://ubuntu.pl/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fubuntu.pl%2Fczytelnia%2F2016%2F04%2F22%2Fubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://ubuntu.pl/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fubuntu.pl%2Fczytelnia%2F2016%2F04%2F22%2Fubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia%2F&#038;format=xml" />
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-1206337-9', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+		<style id="ctcc-css" type="text/css" media="screen">
+				#catapult-cookie-bar {
+					box-sizing: border-box;
+					max-height: 0;
+					opacity: 0;
+					z-index: 99999;
+					overflow: hidden;
+					color: #ddd;
+					position: fixed;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					background-color: #464646;
+				}
+				#catapult-cookie-bar a {
+					color: #fff;
+				}
+				#catapult-cookie-bar .x_close span {
+					background-color: ;
+				}
+				button#catapultCookie {
+					background:;
+					color: ;
+					border: 0; padding: 6px 9px; border-radius: 3px;
+				}
+				#catapult-cookie-bar h3 {
+					color: #ddd;
+				}
+				.has-cookie-bar #catapult-cookie-bar {
+					opacity: 1;
+					max-height: 999px;
+					min-height: 30px;
+				}</style><script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//ubuntu.pl/?wordfence_logHuman=1&hid=7FF3550B91A9A0F9C5EB41561CDEECA4');
+</script>		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+						</head>
+				
+	<body class="post-template-default single single-post postid-22169 single-format-standard tc-fade-hover-links tc-r-sidebar tc-center-images skin-orange tc-sticky-header sticky-disabled tc-transparent-on-scroll no-navbar tc-regular-menu tc-sticky-footer" itemscope itemtype="http://schema.org/WebPage">
+
+    
+    <div id="tc-page-wrap" class="">
+
+  		
+  	   	<header class="tc-header clearfix row-fluid tc-tagline-off tc-title-logo-on  tc-shrink-on tc-menu-on logo-left tc-second-menu-in-sn-before-when-mobile" role="banner">
+  			      <div class="brand span3 pull-left ">
+
+        <h1><a class="site-title" href="http://ubuntu.pl/" title="Ubuntu.pl | Polskie forum użytkowników Ubuntu">Ubuntu.pl</a></h1>
+      </div> <!-- brand span3 pull-left -->
+      <div class="container outside"><h2 class="site-description">Polskie forum użytkowników Ubuntu</h2></div>      	<div class="navbar-wrapper clearfix span9 tc-submenu-fade tc-submenu-move tc-open-on-hover pull-menu-left">
+        	<div class="navbar resp">
+          		<div class="navbar-inner" role="navigation">
+            		<div class="row-fluid">
+              		<div class="social-block span5"><div class="social-links"><a rel="nofollow" class="social-icon icon-feed-square"  title="Zapisz nasz kanał RSS" aria-label="Zapisz nasz kanał RSS" href="http://ubuntu.pl/feed/rss/"  target="_blank" ><i class="fa fa-rss-square"></i></a><a rel="nofollow" class="social-icon icon-facebook"  title="Obserwuj nas na Facebooku" aria-label="Obserwuj nas na Facebooku" href="https://www.facebook.com/ubuntupl/"  target="_blank" ><i class="fa fa-facebook"></i></a><a rel="nofollow" class="social-icon icon-stack-exchange"  title="Zajrzyj na nasze forum" aria-label="Zajrzyj na nasze forum" href="http://ubuntu.pl/forum"  ><i class="fa fa-stack-exchange"></i></a></div></div><h2 class="span7 inside site-description">Polskie forum użytkowników Ubuntu</h2><div class="nav-collapse collapse tc-hover-menu-wrapper"><div class="menu-glowne-container"><ul id="menu-glowne-2" class="nav tc-hover-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children dropdown menu-item-22064"><a href="http://ubuntu.pl/">Ubuntu.pl <strong class="caret"></strong></a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22088"><a href="http://ubuntu.pl/pobierz/">Pobierz</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22085"><a href="http://ubuntu.pl/o-ubuntu/">O Ubuntu</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22086"><a href="http://ubuntu.pl/manifest/">Manifest</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22084"><a href="http://ubuntu.pl/reklama/">Reklama</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22087"><a href="http://ubuntu.pl/pobierz/">Pobierz</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22065"><a href="http://ubuntu.pl/forum/">Forum</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children dropdown menu-item-22058"><a href="http://ubuntu.pl/czytelnia/">Czytelnia <strong class="caret"></strong></a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22046"><a href="http://ubuntu.pl/regulamin/">Regulamin</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22044"><a href="http://ubuntu.pl/jak-pisac/">Jak pisać</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22047"><a href="http://ubuntu.pl/napisz-artykul/">Napisz artykuł</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-22166"><a href="http://ubuntu.pl/czytelnia/2014/05/20/przewodnik-po-ubuntu-14-04-lts-trusty-tahr/">Przewodnik</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22045"><a href="http://ubuntu.pl/o-nas/">O nas</a></li>
+</ul></div></div><div class="btn-toggle-nav pull-right"><button type="button" class="btn menu-btn" data-toggle="collapse" data-target=".nav-collapse" title="Otwórz menu" aria-label="Otwórz menu"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </button><span class="menu-label">Menu</span></div>          			</div><!-- /.row-fluid -->
+          		</div><!-- /.navbar-inner -->
+        	</div><!-- /.navbar resp -->
+      	</div><!-- /.navbar-wrapper -->
+    	  		</header>
+  		<div id="tc-reset-margin-top" class="container-fluid" style="margin-top:103px"></div><div id="main-wrapper" class="container">
+
+    <div class="tc-hot-crumble container" role="navigation"><div class="row"><div class="span12"><div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><span class="trail-begin"><a href="http://ubuntu.pl" title="Ubuntu.pl" rel="home" class="trail-begin">Strona Główna</a></span> <span class="sep">&raquo;</span> <a href="http://ubuntu.pl/czytelnia/" title="Czytelnia">Czytelnia</a> <span class="sep">&raquo;</span> <a href="http://ubuntu.pl/czytelnia/category/aktualnosci/" title="Aktualności">Aktualności</a> <span class="sep">&raquo;</span> <span class="trail-end">Ubuntu 16.04 wydane &#8211; kolejna wersja z długim okresem wsparcia</span></div></div></div></div>
+    <div class="container" role="main">
+        <div class="row column-content-wrapper">
+
+            
+                <div id="content" class="span9 article-container tc-gallery-style">
+
+                    
+                        
+                                                                                    
+                                                                    <article id="post-22169" class="row-fluid post-22169 post type-post status-publish format-standard has-post-thumbnail hentry category-aktualnosci">
+                                                <header class="entry-header">
+          <h1 class="entry-title ">Ubuntu 16.04 wydane &#8211; kolejna wersja z długim okresem wsparcia <span class="comments-link"><a href="#tc-comment-title" title="60 Komentarze do Ubuntu 16.04 wydane &#8211; kolejna wersja z długim okresem wsparcia" data-disqus-identifier="javascript:this.page.identifier"><span class="tc-comment-bubble default-bubble">60 </span></a></span></h1><div class="entry-meta"><a href="http://ubuntu.pl/czytelnia/2016/04/22/" title="01:13" rel="bookmark"><time class="entry-date updated" datetime="2016-04-22T01:13:34+00:00">22 Kwi, 2016</time></a> &nbsp;w <a class="" href="http://ubuntu.pl/czytelnia/category/aktualnosci/" title="Zobacz wszystkie wpisy z kategorii &#8222;Aktualności&#8221;"> Aktualności </a> <span class="by-author"> przez  <span class="author vcard"><a class="url fn n" href="http://ubuntu.pl/czytelnia/author/mario_7/" title="Zobacz wszystkie wpisy opublikowane przez mario_7" rel="author">mario_7</a></span></span> (zaktualizowany <a href="http://ubuntu.pl/czytelnia/2016/04/22/" title="01:13" rel="bookmark"><time class="entry-date updated" datetime="2016-04-22T01:14:55+00:00">22 kwietnia 2016</time></a>)</div><hr class="featurette-divider __before_content">        </header>
+                  <section class="entry-content ">
+              <p><a href="http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-pulpit.png"class="grouped_elements" rel="tc-fancybox-group22169" rel="attachment wp-att-22172"><img src="http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-pulpit-150x94.png" alt="Ubuntu 16.04 - pulpit" width="150" height="94" class="alignleft size-thumbnail wp-image-22172" srcset="http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-pulpit-150x94.png 150w, http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-pulpit-300x188.png 300w, http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-pulpit-1024x640.png 1024w, http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-pulpit.png 1440w" sizes="(max-width: 150px) 100vw, 150px" /></a>21 kwietnia 2016 roku firma Canonical ogłosiła wydanie kolejnej edycji naszego ulubionego systemu &#8211; Ubuntu. Wersja 16.04 o nazwie kodowej Xenial Xerus (w wolnym tłumaczeniu: Gościnna Afrowiórka) jest typu LTS (Long Term Support), czyli z długim 5-letnim okresem wsparcia. Oznacza to, że od momentu premiery przez kolejne 5 lat wydawane będą aktualizacje bezpieczeństwa (ale też inne) dla tej wersji sytemu. Sporo zmian wprowadzono w odmianie serwerowej &#8211; głównie pod kątem wirtualizacji i tworzenia chmur, ale na ten moment najbardziej interesują nas nowości w wersji biurkowej.</p>
+<h2>Jądro Linux w wersji 4.4</h2>
+<p>A wraz z nim m.in.</p>
+<ul>
+<li>zdecydowanie lepsze sterowniki open source dla najpopularniejszych kart graficznych;</li>
+<li>wsparcie dla systemu plików ZFS &#8211; znanego z systemu Solaris.</li>
+</ul>
+<h2>Nowa wersja środowiska Unity &#8211; 7.4</h2>
+<p><a href="http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-panel.png"class="grouped_elements" rel="tc-fancybox-group22169" rel="attachment wp-att-22173"><img src="http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-panel-150x94.png" alt="Ubuntu 16.04 - panel przy dolnej krawędzi" width="150" height="94" class="alignleft size-thumbnail wp-image-22173" srcset="http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-panel-150x94.png 150w, http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-panel-300x188.png 300w, http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-panel-1024x640.png 1024w, http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-panel.png 1440w" sizes="(max-width: 150px) 100vw, 150px" /></a></p>
+<ul>
+<li>Wiele poprawek w funkcjonowaniu;</li>
+<li>możliwość przeniesienia panelu z lewej krawędzi na dolną (opcja dostępna z konsoli lub przy pomocy narzędzia Ubuntu Tweak);</li>
+<li>opcja &#8222;zawsze pokazuj menu&#8221;;</li>
+<li>możliwość przeciągania ikon z Dasha na pulpit w celu utworzenia aktywatorów;</li>
+<li>dodano opcję formatowania do ikon urządzeń wymiennych;</li>
+<li>nowe paski przewijania.</li>
+</ul>
+<h2>Wsparcie dla paczek Snap</h2>
+<ul>
+<li>To nowy formatu rozpowszechniania oprogramowania, który ma pomóc w rozwiązaniu problemów z kompatybilnością aplikacji względem zależności dostępnych w systemie. Twórcy oprogramowania mogą w prosty sposób przygotować pakiet, który będzie ze sobą dostarczał kluczowe zależności w odpowiednich wersjach, aby zapewnić poprawne działanie aplikacji. Do zarządzania paczkami Snap służy narzędzie snappy. Można go używać równolegle do apt-get i dobrze znanych paczek deb.</li>
+</ul>
+<h2>Nowy sklep z aplikacjami</h2>
+<p><a href="http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-sklep.png"class="grouped_elements" rel="tc-fancybox-group22169" rel="attachment wp-att-22174"><img src="http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-sklep-150x94.png" alt="Ubuntu 16.04 - centrum oprogramowania" width="150" height="94" class="alignleft size-thumbnail wp-image-22174" srcset="http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-sklep-150x94.png 150w, http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-sklep-300x188.png 300w, http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-sklep-1024x640.png 1024w, http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-sklep.png 1440w" sizes="(max-width: 150px) 100vw, 150px" /></a></p>
+<ul>
+<li>Jest to aplikacja znana ze środowiska GNOME i zastępuje Centrum Oprogramowania Ubuntu. Nie da się ukryć że jest nieco uboższa od poprzednika, ale to z pewnością z czasem ulegnie zmianie na lepsze.</li>
+<li>Pozostałe zmiany w domyślnych aplikacjach obejmują dodanie Kalendarza, programu do obsługi kamer Cheese oraz usunięcie komunikatora Empathy i nagrywarki CD Brasero (naturalnie wciąż można je zainstalować z repozytoriów).</li>
+</ul>
+<h2>Inne</h2>
+<ul>
+<li>Oczywiście wiele aplikacji pojawiło się w nowszych (lub najnowszych) wersjach, np.: Firefox 45, Thunderbird 38, LibreOffice 5.1, Python 3.5.</li>
+</ul>
+<p>Ubuntu w najnowszej odsłonie można pobrać ze strony domowej &#8211; <a href="http://ubuntu.com/">ubuntu.com</a>.<br />
+Możliwa jest też aktualizacja starszych wersji &#8211; 15.10 oraz 14.04 &#8211; poprzez aktualizacje systemowe.</p>
+                                      </section><!-- .entry-content -->
+        <footer class="entry-meta"><hr class="featurette-divider"><div class="author-info"><div class="row-fluid"><div class="comment-avatar author-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' /></div> <div class="author-description span10"><h3>O mario_7</h3><p>Informatyk-programista-kierownik, pracownik korporacji, od momentu otrzymania pierwszej płyty z Ubuntu 5.10 zagorzały fan open source i Linuksa (w szczególności Ubuntu). Lubi słuchać wszelkich odmian rocka i metalu. Gdy już odejdzie od komputera - lubi pograć w bilarda, wspinać się na ścianki oraz jeździć na rowerze i nartach.</p><div class="author-link"><a href="http://ubuntu.pl/czytelnia/author/mario_7/" rel="author">Zobacz wszystkie wpisy, których autorem jest mario_7 <span class="meta-nav">&rarr;</span></a></div></div></div></div></footer>                                    </article>
+                                
+                            
+                        
+                    <hr class="featurette-divider __after_loop">
+<div id="comments" class="comments-area" >
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Dodaj komentarz <small><a rel="nofollow" id="cancel-comment-reply-link" href="/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#respond" style="display:none;">Anuluj pisanie odpowiedzi</a></small></h3>			<form action="http://ubuntu.pl/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Twój adres email nie zostanie opublikowany.</span> Pola, których wypełnienie jest wymagane, są oznaczone symbolem <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Komentarz</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Podpis <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Witryna internetowa</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Opublikuj komentarz" /> <input type='hidden' name='comment_post_ID' value='22169' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="2aba90bade" /></p>
+<script type='text/javascript'>
+/* <![CDATA[ */
+r3f5x9JS=escape(document['referrer']);
+hf1N='a89fedfd8e68a321a6b6234083d2daee';
+hf1V='c069a59a665754864bd6c4a411e4958a';
+document.write("<input type='hidden' name='r3f5x9JS' value='"+r3f5x9JS+"' /><input type='hidden' name='"+hf1N+"' value='"+hf1V+"' />");
+/* ]]> */
+</script>
+<noscript><input type="hidden" name="JS04X7" value="NS1" /></noscript>
+<noscript><p><strong>Currently you have JavaScript disabled. In order to post comments, please make sure JavaScript and Cookies are enabled, and reload the page.</strong> <a href="http://enable-javascript.com/" rel="nofollow external" >Click here for instructions on how to enable JavaScript in your browser.</a></p></noscript>
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="160"/></p>			</form>
+			</div><!-- #respond -->
+	<h2 id="tc-comment-title" class="comments-title">60 komentarzy do &ldquo;<span>Ubuntu 16.04 wydane &#8211; kolejna wersja z długim okresem wsparcia</span>&rdquo;</h2>              <ul class="commentlist">
+                        <li class="comment even thread-even depth-1" id="li-comment-16462">
+
+            <article id="comment-16462" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/f0d4d3bc4d7866aab634fc264c0ac33b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f0d4d3bc4d7866aab634fc264c0ac33b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16462#respond' onclick='return addComment.moveForm( "comment-16462", "16462", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi blabla'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">blabla  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16462"><time datetime="2016-04-22T17:21:21+00:00">22 kwietnia 2016 o 17:21</time></a></header>  <section class="comment-content comment"><p>Właśnie piszę z Ubuntu 16.04.<br />
+Jestem zadowolony aczkolwiek nie pogardziłbym Unity 8 na pokładzie 😉</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-16463">
+
+            <article id="comment-16463" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3f9cb204dc307071095917762e3139d0?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3f9cb204dc307071095917762e3139d0?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16463#respond' onclick='return addComment.moveForm( "comment-16463", "16463", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Amra'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Amra  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16463"><time datetime="2016-04-22T20:58:47+00:00">22 kwietnia 2016 o 20:58</time></a></header>  <section class="comment-content comment"><p>W wymaganiach jest 25GB wolnej przestrzeni,na 20 GB da rade zainstalować czy instalator nie pozwoli?</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor even depth-2" id="li-comment-16464">
+
+            <article id="comment-16464" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16464#respond' onclick='return addComment.moveForm( "comment-16464", "16464", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16464"><time datetime="2016-04-22T21:32:59+00:00">22 kwietnia 2016 o 21:32</time></a></header>  <section class="comment-content comment"><p>Sprawdź, powinno dać radę.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt depth-2" id="li-comment-16496">
+
+            <article id="comment-16496" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/9b6a0cb7c4d4f1baaf959c4552690b08?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9b6a0cb7c4d4f1baaf959c4552690b08?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16496#respond' onclick='return addComment.moveForm( "comment-16496", "16496", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Mirek'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Mirek  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16496"><time datetime="2016-05-06T19:54:31+00:00">6 maja 2016 o 19:54</time></a></header>  <section class="comment-content comment"><p>Da się, mam 21, wogle to system zajmuje 4 gb (po dodaniu j.polskiego)</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-16465">
+
+            <article id="comment-16465" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16465#respond' onclick='return addComment.moveForm( "comment-16465", "16465", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Piotr'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://dev.nwg.pl' rel='external nofollow' class='url'>Piotr</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16465"><time datetime="2016-04-22T23:36:18+00:00">22 kwietnia 2016 o 23:36</time></a></header>  <section class="comment-content comment"><p>&#8222;Możliwa jest też aktualizacja starszych wersji – 15.10 oraz 14.04 – poprzez aktualizacje systemowe.&#8221; Próbuję z 14.04 LTS i proponuje mi tylko aktualizację do 15.10. Czy tylko ja tak mam?</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor odd alt depth-2" id="li-comment-16466">
+
+            <article id="comment-16466" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16466#respond' onclick='return addComment.moveForm( "comment-16466", "16466", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16466"><time datetime="2016-04-22T23:44:21+00:00">22 kwietnia 2016 o 23:44</time></a></header>  <section class="comment-content comment"><p>To kwestia serwerów które jeszcze się nie zsynchronizowały. Za jakiś czas będzie prawidłowo oferował aktualizację.<br />
+W ustawieniach aktualizacji ustaw aktualizacje tylko do wydań LTS.<br />
+Jeśli to nie pomoże,  to możesz spróbować polecenia: sudo update-manager -d</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment even depth-3" id="li-comment-16467">
+
+            <article id="comment-16467" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16467#respond' onclick='return addComment.moveForm( "comment-16467", "16467", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Piotr'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://dev.nwg.pl' rel='external nofollow' class='url'>Piotr</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16467"><time datetime="2016-04-22T23:46:46+00:00">22 kwietnia 2016 o 23:46</time></a></header>  <section class="comment-content comment"><p>Dzięki. Zaraz z tym powalczę, tylko skończą się backupować projekty. Strzeżonego Pan Bóg strzeże. 😉</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt depth-3" id="li-comment-16468">
+
+            <article id="comment-16468" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16468#respond' onclick='return addComment.moveForm( "comment-16468", "16468", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Piotr'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://dev.nwg.pl' rel='external nofollow' class='url'>Piotr</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16468"><time datetime="2016-04-23T00:11:12+00:00">23 kwietnia 2016 o 00:11</time></a></header>  <section class="comment-content comment"><p>Chyba jednak muszę poczekać. Po komendzie z terminala melduje mi: &#8222;Welcome to the Ubuntu ‚Xenial Xerus’ development release.<br />
+This release is still in development. Do not install it on production machines.&#8221; :/</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor even depth-4" id="li-comment-16470">
+
+            <article id="comment-16470" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16470#respond' onclick='return addComment.moveForm( "comment-16470", "16470", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16470"><time datetime="2016-04-23T10:06:06+00:00">23 kwietnia 2016 o 10:06</time></a></header>  <section class="comment-content comment"><p>W ostatnich dniach przed premierą kluczowych zmian nie było,  także bardzo starej wersji na pewno nie masz 😉</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment odd alt depth-5" id="li-comment-16472">
+
+            <article id="comment-16472" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://dev.nwg.pl' rel='external nofollow' class='url'>Piotr</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16472"><time datetime="2016-04-23T11:31:16+00:00">23 kwietnia 2016 o 11:31</time></a></header>  <section class="comment-content comment"><p>Echhh&#8230; Niestety, mój lapek jest bardzo &#8222;production machine&#8221; i chciałbym jak najmniej eksperymentować. Przez wszystkie lata używania Ubuntu parę razy miałem kłopoty z aktualizacją: działała kulawo, a raz nawet wcale. Dlatego ostatnio zwykle stawiałem system od nowa. Niestety na tym akurat kompie mam cały warsztat i jak pomyślę o zasysaniu Android Studio z przyległościami na LTE od Polsatu, to już mi słabo. 😉 Tymczasem aktualizacji nadal u mnie nie widać. Komuś się już udało?</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even depth-2" id="li-comment-16476">
+
+            <article id="comment-16476" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/f13a542aea2572bf00412f9ac7f31be5?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f13a542aea2572bf00412f9ac7f31be5?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16476#respond' onclick='return addComment.moveForm( "comment-16476", "16476", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Tomek'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Tomek  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16476"><time datetime="2016-04-24T17:05:04+00:00">24 kwietnia 2016 o 17:05</time></a></header>  <section class="comment-content comment"><p>Informacja o aktualizacji do 16.04 dla 14.04 pojawi się jak tylko będzie tzw pierwszy point release (16.04.1), tak żeby osoby które wymagają bardzo stabilnego systemu poczekały aż pierwsze problemy zostaną rozwiązane. </p>
+<p>Sam zrobiłem upgrade poprzez sudo update-manager -d i wsio chodzi tak jak należy a nawet dużo lepiej 😉</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment odd alt depth-3" id="li-comment-16494">
+
+            <article id="comment-16494" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/0175e2f4efe5a261d9ad25646573095d?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0175e2f4efe5a261d9ad25646573095d?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16494#respond' onclick='return addComment.moveForm( "comment-16494", "16494", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Dyrszlak'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Dyrszlak  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16494"><time datetime="2016-05-04T12:06:32+00:00">4 maja 2016 o 12:06</time></a></header>  <section class="comment-content comment"><p>Mi się udało. Ale dopiero teraz. Niestety po aktualizacji wyglądało to tak, jakby dosłownie na 14.04 nałożył mi się 16.04. Pierwsze zgłaszało mi się logowanie do 14.04 a zaraz po nim nowe do 16.04. System się grzebał i strasznie wywalał. Na szczęście zrobiłem bacup wszystkiego, co ważne i postawiłem 16.04 od początku. Ale chyba mam za stary komputer, bo 14.04 chodziło mi przepięknie, płynnie i nawet dość szybko. 16.04 co chwila wywala mi na przemian dwa komunikaty. Pierwszy, to &#8222;aplikacja Plasma została niespodziewanie zakończona&#8221; i po tym oczywiście kompletny halt i tylko twardy reset. Drugi, co częściej wyskakuje to &#8222;could no start ksmserver. check installation&#8221; i wracam do logowania. Więc jest mi strasznie przykro i w weekend wracam do 14.04. Chyba przyjdzie mi zakupić nowszy sprzęt, a z nim&#8230;.. Winda 10? Koszmar!</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-16469">
+
+            <article id="comment-16469" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/5c2d933305c3552fd1d78698c0af5fca?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5c2d933305c3552fd1d78698c0af5fca?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16469#respond' onclick='return addComment.moveForm( "comment-16469", "16469", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi bengrush'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">bengrush  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16469"><time datetime="2016-04-23T05:31:09+00:00">23 kwietnia 2016 o 05:31</time></a></header>  <section class="comment-content comment"><p>Pytanie moje to czy będzie działał pulseaudioserver w Skypie? Czy dali radę (w tym elemencie animalnym jakim jest niewątpliwie afrowiórka) ogarnąć mikrofony dla tej aplikacji?</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor odd alt depth-2" id="li-comment-16471">
+
+            <article id="comment-16471" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16471#respond' onclick='return addComment.moveForm( "comment-16471", "16471", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16471"><time datetime="2016-04-23T10:06:31+00:00">23 kwietnia 2016 o 10:06</time></a></header>  <section class="comment-content comment"><p>Polecam zapytać o to na naszym forum.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment even depth-3" id="li-comment-16473">
+
+            <article id="comment-16473" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/5c2d933305c3552fd1d78698c0af5fca?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5c2d933305c3552fd1d78698c0af5fca?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16473#respond' onclick='return addComment.moveForm( "comment-16473", "16473", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi bengrush'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">bengrush  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16473"><time datetime="2016-04-23T16:58:58+00:00">23 kwietnia 2016 o 16:58</time></a></header>  <section class="comment-content comment"><p>Jestem autorem wątku na ten temat na forum ubuntu i nie tylko ja o tym błędzie wrzucam wpisy.<br />
+Mikrofon w Skypie nie działa i nikt od czasu Puchacza nie umie tego naprawić. Polecam przejrzeć forum.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment odd alt depth-4" id="li-comment-16534">
+
+            <article id="comment-16534" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/c583600131671aa2e006f2413898d40a?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c583600131671aa2e006f2413898d40a?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16534#respond' onclick='return addComment.moveForm( "comment-16534", "16534", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi auto_joker'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">auto_joker  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16534"><time datetime="2016-08-07T22:21:25+00:00">7 sierpnia 2016 o 22:21</time></a></header>  <section class="comment-content comment"><p>u mnie na Puchaczu mikrofon działa.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even depth-3" id="li-comment-16479">
+
+            <article id="comment-16479" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/5c2d933305c3552fd1d78698c0af5fca?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5c2d933305c3552fd1d78698c0af5fca?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16479#respond' onclick='return addComment.moveForm( "comment-16479", "16479", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi bengrush'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">bengrush  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16479"><time datetime="2016-04-25T14:29:56+00:00">25 kwietnia 2016 o 14:29</time></a></header>  <section class="comment-content comment"><p>Serwery się zsynchronizowały i &#8230;<br />
+No jak mam wykorzenić Windę u staruszków jak ich media do łączności z dziećmi pod Ubuntu nie działają?<br />
+Ponawiam:<br />
+Mikrofon w pulseadudioserver Skype&#8217;a pod 16.04 NIE DZIAŁA.<br />
+Jest na sali kozak, który to potrafi naprawić?</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1" id="li-comment-16474">
+
+            <article id="comment-16474" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/9b2b4ae5aeadef7b2df74cb4ac7a6856?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9b2b4ae5aeadef7b2df74cb4ac7a6856?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16474#respond' onclick='return addComment.moveForm( "comment-16474", "16474", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi ubuntowicz'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">ubuntowicz  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16474"><time datetime="2016-04-24T13:55:14+00:00">24 kwietnia 2016 o 13:55</time></a></header>  <section class="comment-content comment"><p>Kiedy można się spodziewać polskiego remixu? Może będzie to eXcytująca Xena? hehe 😀 Pozdrawiam</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor even depth-2" id="li-comment-16475">
+
+            <article id="comment-16475" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16475#respond' onclick='return addComment.moveForm( "comment-16475", "16475", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16475"><time datetime="2016-04-24T14:00:21+00:00">24 kwietnia 2016 o 14:00</time></a></header>  <section class="comment-content comment"><p>Na forum padło już to pytanie: <a href="http://ubuntu.pl/forum/viewtopic.php?f=214&#038;t=179616" rel="nofollow">http://ubuntu.pl/forum/viewtopic.php?f=214&#038;t=179616</a></p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-16477">
+
+            <article id="comment-16477" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/1070641648f24d9ed98c27e4f36f5ed1?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1070641648f24d9ed98c27e4f36f5ed1?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16477#respond' onclick='return addComment.moveForm( "comment-16477", "16477", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi elrobertos'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">elrobertos  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16477"><time datetime="2016-04-25T09:46:10+00:00">25 kwietnia 2016 o 09:46</time></a></header>  <section class="comment-content comment"><p>Do chwili obecnej na moim sprzęcie lepiej sprawował się system ze środowiskiem mate, ze względu na sterownik karty graficznej, unity zawsze startowało ze 100% jasnością  matrycy, co mnie irytowało. Zaryzykowałem i postawiłem na próbę klasyczne ubuntu i jestem pod wrażeniem. Wszystko działa od strzału, niewiele trzeba robić, dodałem, preload, exfat-fuse, czcionki, VLC i nic więcej nie trzeba. Jestem zadowolony, w domu. W pracy też bym go postawił na kilku komputerach, tylko jest jedno ale, nie ma sensownego programu darmowego do wystawiania faktur. Gdyby ktoś zechciał go stworzyć to byłoby dobrze.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment even depth-2" id="li-comment-16495">
+
+            <article id="comment-16495" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3c0257dc3e96bd333bd44d252087a3b1?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3c0257dc3e96bd333bd44d252087a3b1?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16495#respond' onclick='return addComment.moveForm( "comment-16495", "16495", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi s'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">s  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16495"><time datetime="2016-05-05T19:01:46+00:00">5 maja 2016 o 19:01</time></a></header>  <section class="comment-content comment"><p>f7faktury@wine używamy i działa choć nie jest idealny</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1" id="li-comment-16478">
+
+            <article id="comment-16478" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/79e17103a9f82bb6c42b21340e5c5f32?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/79e17103a9f82bb6c42b21340e5c5f32?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16478#respond' onclick='return addComment.moveForm( "comment-16478", "16478", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Emil'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Emil  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16478"><time datetime="2016-04-25T14:29:30+00:00">25 kwietnia 2016 o 14:29</time></a></header>  <section class="comment-content comment"><p>Szkoda, że nie uporali się w Xubuntu 16.04 LTS z cięciem obrazu na filmach (które było już 14.04)&#8230; 🙁</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment even depth-2" id="li-comment-16485">
+
+            <article id="comment-16485" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/50b60527cbb31f3d74375275d8c456f1?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/50b60527cbb31f3d74375275d8c456f1?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16485#respond' onclick='return addComment.moveForm( "comment-16485", "16485", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Krystian'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Krystian  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16485"><time datetime="2016-04-26T18:48:50+00:00">26 kwietnia 2016 o 18:48</time></a></header>  <section class="comment-content comment"><p>Prawdopodobnie to problem u Ciebie &#8211; niestety. Na mojej maszynie śmiga idealnie, a mam 4 letniego laptopa z Celeronem oraz Intel HD.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-16480">
+
+            <article id="comment-16480" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/e0fe5bdb1ddc88de24791bc1b7f686bc?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e0fe5bdb1ddc88de24791bc1b7f686bc?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16480#respond' onclick='return addComment.moveForm( "comment-16480", "16480", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi cormo'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">cormo  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16480"><time datetime="2016-04-25T18:24:53+00:00">25 kwietnia 2016 o 18:24</time></a></header>  <section class="comment-content comment"><p>Ktoś wie, jak w ubuntu 14.04 LTS zainstalować jeszcze google chrome ? W repo już go nie ma.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment even depth-2" id="li-comment-16486">
+
+            <article id="comment-16486" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/50b60527cbb31f3d74375275d8c456f1?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/50b60527cbb31f3d74375275d8c456f1?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16486#respond' onclick='return addComment.moveForm( "comment-16486", "16486", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Krystian'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Krystian  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16486"><time datetime="2016-04-26T18:50:44+00:00">26 kwietnia 2016 o 18:50</time></a></header>  <section class="comment-content comment"><p>Zassaj paczkę ze strony Google Chrome.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1" id="li-comment-16481">
+
+            <article id="comment-16481" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16481#respond' onclick='return addComment.moveForm( "comment-16481", "16481", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Piotr'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://dev.nwg.pl' rel='external nofollow' class='url'>Piotr</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16481"><time datetime="2016-04-26T02:31:41+00:00">26 kwietnia 2016 o 02:31</time></a></header>  <section class="comment-content comment"><p>Czy ktoś ma, tak jak ja, problem z GIMP-em po aktualizacji systemu do 16.04? Menu zniknęło i nie bardzo wiem jak je przywrócić. Mam tylko gimpowe okienka&#8230;</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment even depth-2" id="li-comment-16483">
+
+            <article id="comment-16483" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/1f99855613e8b35b1bf220c39ba860f2?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1f99855613e8b35b1bf220c39ba860f2?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16483#respond' onclick='return addComment.moveForm( "comment-16483", "16483", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Lech'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://www.ksp.republika.pl' rel='external nofollow' class='url'>Lech</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16483"><time datetime="2016-04-26T09:59:16+00:00">26 kwietnia 2016 o 09:59</time></a></header>  <section class="comment-content comment"><p>MIałem ten sam problem po aktualizacji z 15.10 i zaistalowałem Ubuntu 16.04 od nowa.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment odd alt depth-3" id="li-comment-16484">
+
+            <article id="comment-16484" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16484#respond' onclick='return addComment.moveForm( "comment-16484", "16484", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Piotr'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://dev.nwg.pl' rel='external nofollow' class='url'>Piotr</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16484"><time datetime="2016-04-26T17:22:05+00:00">26 kwietnia 2016 o 17:22</time></a></header>  <section class="comment-content comment"><p>Znalezione na <a href="http://askubuntu.com/questions/761035/ubuntu-16-04-no-menu-bar-or-launcher-help" rel="nofollow">http://askubuntu.com/questions/761035/ubuntu-16-04-no-menu-bar-or-launcher-help</a></p>
+<p>dconf reset -f /org/compiz/<br />
+setsid unity</p>
+<p>Pomaga od ręki.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-16482">
+
+            <article id="comment-16482" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/1f99855613e8b35b1bf220c39ba860f2?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1f99855613e8b35b1bf220c39ba860f2?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16482#respond' onclick='return addComment.moveForm( "comment-16482", "16482", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Lech'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://www.ksp.republika.pl' rel='external nofollow' class='url'>Lech</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16482"><time datetime="2016-04-26T09:57:11+00:00">26 kwietnia 2016 o 09:57</time></a></header>  <section class="comment-content comment"><p>Instalacja poprzez Centrum Oprogramowania programu użytkowego Gnome Commander w Ubuntu 16.04  (posiadam wersję 64 bit) instaluje tylko sama ikonę. Program Gnome Commader nie działa!!!</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment odd alt depth-2" id="li-comment-16487">
+
+            <article id="comment-16487" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/50b60527cbb31f3d74375275d8c456f1?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/50b60527cbb31f3d74375275d8c456f1?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16487#respond' onclick='return addComment.moveForm( "comment-16487", "16487", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Krystian'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Krystian  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16487"><time datetime="2016-04-26T18:52:44+00:00">26 kwietnia 2016 o 18:52</time></a></header>  <section class="comment-content comment"><p>Odpal spod konsoli &#8211; może to jakiś prozaiczny problem.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment even depth-3" id="li-comment-16488">
+
+            <article id="comment-16488" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/1f99855613e8b35b1bf220c39ba860f2?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1f99855613e8b35b1bf220c39ba860f2?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16488#respond' onclick='return addComment.moveForm( "comment-16488", "16488", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Lech'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://www.ksp.republika.pl' rel='external nofollow' class='url'>Lech</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16488"><time datetime="2016-04-26T21:42:40+00:00">26 kwietnia 2016 o 21:42</time></a></header>  <section class="comment-content comment"><p>Próbowałem kilkukrotnie spod konsoli i efekt byl ten sam. Dopiero po ściągnięciu z odpowiedniej strony paczki: gnome-commander_1.4.7-1build1_amd64.deb i odpaleniu instalacji Gonome Commander zadziałał.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt depth-3" id="li-comment-16489">
+
+            <article id="comment-16489" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/1f99855613e8b35b1bf220c39ba860f2?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1f99855613e8b35b1bf220c39ba860f2?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16489#respond' onclick='return addComment.moveForm( "comment-16489", "16489", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Lech'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://www.ksp.republika.pl' rel='external nofollow' class='url'>Lech</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16489"><time datetime="2016-04-28T09:52:19+00:00">28 kwietnia 2016 o 09:52</time></a></header>  <section class="comment-content comment"><p>Odpalanie paczek deb myszą nie działa. Po kliknięciu na paczkę z wprawdzie otwiera się Centrum Oprogramowania i okieno z wyborem &#8222;zainstaluj&#8221;. ale mimo kilkakrotych prób zainstalowania programy się nie instalują. W poprzednich wersjach Ubuntu ten sposób instalacji programów działał bez zarzutu.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment even depth-4" id="li-comment-16490">
+
+            <article id="comment-16490" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/1b88f2cfa0af0954095e2a4dd379a028?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1b88f2cfa0af0954095e2a4dd379a028?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16490#respond' onclick='return addComment.moveForm( "comment-16490", "16490", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi bear7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">bear7  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16490"><time datetime="2016-04-30T17:23:42+00:00">30 kwietnia 2016 o 17:23</time></a></header>  <section class="comment-content comment"><p>Jest to błąd, który umknął uwadze i znalazł się w wydaniu 16.04. Nieco więcej znajdziesz tutaj <a href="http://ubuntu.pl/forum/viewtopic.php?f=145&#038;t=179690&#038;p=1011667#p1011667" rel="nofollow">http://ubuntu.pl/forum/viewtopic.php?f=145&#038;t=179690&#038;p=1011667#p1011667</a></p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1" id="li-comment-16491">
+
+            <article id="comment-16491" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/8e6c894c72d82cf23d2ed2a9a555b4aa?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/8e6c894c72d82cf23d2ed2a9a555b4aa?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16491#respond' onclick='return addComment.moveForm( "comment-16491", "16491", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi myrpling'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">myrpling  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16491"><time datetime="2016-05-02T17:00:36+00:00">2 maja 2016 o 17:00</time></a></header>  <section class="comment-content comment"><p>Wreszcie można zmienić pozycję tego paska i umieścić go tak jak to Bóg przykazał na dole. I tak mnie unity nie przekonuje, choć wygląda dość dobrze. Źle mi się w nim pracuje. Ta wersja chodzi dość ładnie, choć dobór oprogramowania mnie razi. Nie ma gimpa, a jest jakiś image magic, który wygląda jakby był stworzony na początku lat 90, a działa jeszcze gorzej. Jest zupełnie nieintuicyjny i pomimo, że wykonuje proste zadania wiesza się. W tej chwili odmówił posłuszeństwa i nie mogę go nawet wyłączyć. Jakieś nieporozumienie. Ten program zamulił mi kompa :/</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-16492">
+
+            <article id="comment-16492" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/af0e33c269a63ba8f278e4779bd1af01?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/af0e33c269a63ba8f278e4779bd1af01?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16492#respond' onclick='return addComment.moveForm( "comment-16492", "16492", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi LXQtfan'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">LXQtfan  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16492"><time datetime="2016-05-03T11:04:42+00:00">3 maja 2016 o 11:04</time></a></header>  <section class="comment-content comment"><p>Warto się przesiąść z Windows 10? Na drugim komputerze mam Manajro LXQt, Ubuntu kiedyś miałem (12.04 i potem 14.04), warto spróbować z 16.04?</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor odd alt depth-2" id="li-comment-16493">
+
+            <article id="comment-16493" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16493#respond' onclick='return addComment.moveForm( "comment-16493", "16493", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16493"><time datetime="2016-05-03T11:33:06+00:00">3 maja 2016 o 11:33</time></a></header>  <section class="comment-content comment"><p>Tylko Ty jesteś w stanie udzielić odpowiedzi. 😉<br />
+Spróbuj w trybie live i sam się przekonaj.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment even depth-2" id="li-comment-16512">
+
+            <article id="comment-16512" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d7dce9afb082f13bb701e518aa695c3?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d7dce9afb082f13bb701e518aa695c3?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16512#respond' onclick='return addComment.moveForm( "comment-16512", "16512", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi kiki'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">kiki  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16512"><time datetime="2016-05-28T19:29:06+00:00">28 maja 2016 o 19:29</time></a></header>  <section class="comment-content comment"><p>Jasne, że warto. U mnie w domu na żadnym kompie/laptopie nie ma już MS-Windowsa. 3xLubntu 16.04 + 2x MacOSX.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1" id="li-comment-16497">
+
+            <article id="comment-16497" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/e5c5a9e059939db566ee51ae2e665341?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e5c5a9e059939db566ee51ae2e665341?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16497#respond' onclick='return addComment.moveForm( "comment-16497", "16497", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi polakmalyszczerbaty'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">polakmalyszczerbaty  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16497"><time datetime="2016-05-07T17:56:17+00:00">7 maja 2016 o 17:56</time></a></header>  <section class="comment-content comment"><p>1. polskiego remiksu nie bedzie?</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor even depth-2" id="li-comment-16498">
+
+            <article id="comment-16498" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16498#respond' onclick='return addComment.moveForm( "comment-16498", "16498", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16498"><time datetime="2016-05-07T18:03:57+00:00">7 maja 2016 o 18:03</time></a></header>  <section class="comment-content comment"><p><a href="http://ubuntu.pl/forum/viewtopic.php?f=214&#038;t=179616" rel="nofollow">http://ubuntu.pl/forum/viewtopic.php?f=214&#038;t=179616</a></p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-16501">
+
+            <article id="comment-16501" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/c07610fea5ace7956ca813618d55d1cf?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c07610fea5ace7956ca813618d55d1cf?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16501#respond' onclick='return addComment.moveForm( "comment-16501", "16501", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi unbreak'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://unbreak.pl' rel='external nofollow' class='url'>unbreak</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16501"><time datetime="2016-05-11T18:35:18+00:00">11 maja 2016 o 18:35</time></a></header>  <section class="comment-content comment"><p>Czy jest możliwość bezbolesnej aktualizacji z 13.04? 😀</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-16502">
+
+            <article id="comment-16502" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/a74250c36bfcd3f40fcbc08671374007?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/a74250c36bfcd3f40fcbc08671374007?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16502#respond' onclick='return addComment.moveForm( "comment-16502", "16502", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Tofer'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Tofer  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16502"><time datetime="2016-05-16T18:16:13+00:00">16 maja 2016 o 18:16</time></a></header>  <section class="comment-content comment"><p>Witam!<br />
+Właśnie czytam i nie mogę w to uwierzyć! Jakiś czas temu, mój system zaktualizował się do UBUNTU 16,04 i poza jądrem nic się nie zmieniło, no chyba że kilka programów ubyło, a i tak jestem zadowolony z Ubuntu! Jedynie co by można poprawić, to działanie przeglądarki Firefox, ale to chyba inne forum!</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-16506">
+
+            <article id="comment-16506" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/b78c256f2c7d8ee985995a331fadc84f?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b78c256f2c7d8ee985995a331fadc84f?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16506#respond' onclick='return addComment.moveForm( "comment-16506", "16506", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi J23'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">J23  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16506"><time datetime="2016-05-23T07:50:01+00:00">23 maja 2016 o 07:50</time></a></header>  <section class="comment-content comment"><p>super! 16.04 wydane miesiąc temu tylko szkoda że w dziale POBIERZ nadal wersja 14.04&#8230; tak wiem, że można aktualizować aktualizację&#8230; ale prościej i wygodniej byłoby chyba umieścić od razu nową wersję do pobrania, a nie pobierać 14.04 i się bawić&#8230;</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor even depth-2" id="li-comment-16507">
+
+            <article id="comment-16507" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16507#respond' onclick='return addComment.moveForm( "comment-16507", "16507", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16507"><time datetime="2016-05-23T07:52:34+00:00">23 maja 2016 o 07:52</time></a></header>  <section class="comment-content comment"><p>W dziale pobierz jest nasz polski remiks.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment odd alt depth-3" id="li-comment-16508">
+
+            <article id="comment-16508" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/b78c256f2c7d8ee985995a331fadc84f?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b78c256f2c7d8ee985995a331fadc84f?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16508#respond' onclick='return addComment.moveForm( "comment-16508", "16508", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi J23'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">J23  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16508"><time datetime="2016-05-25T23:11:14+00:00">25 maja 2016 o 23:11</time></a></header>  <section class="comment-content comment"><p>proszę podaj mi link do 16.04</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor even depth-4" id="li-comment-16511">
+
+            <article id="comment-16511" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16511#respond' onclick='return addComment.moveForm( "comment-16511", "16511", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16511"><time datetime="2016-05-27T09:32:00+00:00">27 maja 2016 o 09:32</time></a></header>  <section class="comment-content comment"><p>Nie ma na razie naszego remiksu wersji 16.04.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment odd alt depth-5" id="li-comment-16515">
+
+            <article id="comment-16515" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/aff099f5ea032876ff38ca7e92471b1c?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/aff099f5ea032876ff38ca7e92471b1c?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"> <header class="comment-meta comment-author vcard"><cite class="fn">ostatni_mohikanin  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16515"><time datetime="2016-06-09T08:24:50+00:00">9 czerwca 2016 o 08:24</time></a></header>  <section class="comment-content comment"><p>a kiedy wrzucicie PL 16.04 ?</p>
+<p>pozdro</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-mario_7 bypostauthor even depth-5" id="li-comment-16516">
+
+            <article id="comment-16516" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16516"><time datetime="2016-06-09T09:07:44+00:00">9 czerwca 2016 o 09:07</time></a></header>  <section class="comment-content comment"><p><a href="http://ubuntu.pl/forum/viewtopic.php?f=214&#038;t=179616" rel="nofollow">http://ubuntu.pl/forum/viewtopic.php?f=214&#038;t=179616</a></p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1" id="li-comment-16519">
+
+            <article id="comment-16519" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/5522fcce6e834384c3d5a060e25dd936?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5522fcce6e834384c3d5a060e25dd936?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16519#respond' onclick='return addComment.moveForm( "comment-16519", "16519", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi bp'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">bp  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16519"><time datetime="2016-06-13T07:55:44+00:00">13 czerwca 2016 o 07:55</time></a></header>  <section class="comment-content comment"><p>Krótkie pytanie, laika. Jak zainstalować 16.04 tak by było po polsku lub co i w jaki sposób doinstalować ? Gdy ściągam 16 z oficjalnego mirrora to tam nie widzę PL_pl. A po polsku ściągnąłem jedynie 14.04.</p>
+<p>Jestem laikiem w domowym używaniu linuxa choć na produkcji od 5 lat na nich pracuję i chcę właśnie przejść na coś porządnego w domu.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor even depth-2" id="li-comment-16520">
+
+            <article id="comment-16520" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16520#respond' onclick='return addComment.moveForm( "comment-16520", "16520", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16520"><time datetime="2016-06-13T08:46:20+00:00">13 czerwca 2016 o 08:46</time></a></header>  <section class="comment-content comment"><p>Jeśli w trakcie instalacji Ubuntu wybierzesz język polski i będziesz miał aktywne połączenie z internetem, to spolszczenie zostanie pobrane i zainstalowane automatycznie.<br />
+Po instalacji systemu w innym języku też można spolszczenie zainstalować &#8211; w ustawieniach systemu należy wybrać język polski i system zapyta czy pobrać i zainstalować brakujące pakiety. </p>
+<p>Powyższe dotyczy wszystkich wersji Ubuntu.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-16521">
+
+            <article id="comment-16521" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/c7c4e6de0e39c2c9c4d58497840c4890?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c7c4e6de0e39c2c9c4d58497840c4890?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16521#respond' onclick='return addComment.moveForm( "comment-16521", "16521", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi AngelHeart'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">AngelHeart  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16521"><time datetime="2016-06-15T21:56:01+00:00">15 czerwca 2016 o 21:56</time></a></header>  <section class="comment-content comment"><p>Hej. Mam MacBooka Pro z 2007 roku. od trzech lat biedaczek leży w szafie bo nie moglem przejść na nowsze wersje osa. Czy mógłbym na niego zainstalować ubuntu &#8211; jeżeli tak czy ktoś byłby tak miły i wytłumaczył jak to zrobić ?</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor even depth-2" id="li-comment-16522">
+
+            <article id="comment-16522" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16522#respond' onclick='return addComment.moveForm( "comment-16522", "16522", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16522"><time datetime="2016-06-15T23:30:26+00:00">15 czerwca 2016 o 23:30</time></a></header>  <section class="comment-content comment"><p>Zapraszam na nasze forum.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1" id="li-comment-16523">
+
+            <article id="comment-16523" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/06c84d1308534a086c124a551aa71f44?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/06c84d1308534a086c124a551aa71f44?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16523#respond' onclick='return addComment.moveForm( "comment-16523", "16523", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi ObBernardL'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">ObBernardL  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16523"><time datetime="2016-06-17T22:13:49+00:00">17 czerwca 2016 o 22:13</time></a></header>  <section class="comment-content comment"><p>Wyłącznie na Xubuntu, później Ubuntu, siedzę od paru latek. W żadnym razie nie jestem jakimś hard userem. Tyle, że potrafię postawić system. Głęboko nigdy nie grzebię, bo się nie znam, terminala nie ogarniam a jak czegoś nie ma w centrum oprogramowania to&#8230; mam lekki problem chyba, że znajdę gdzieś w necie gotowe komendy, krok po kroku. Dzisiaj przeszedłem z Ubuntu 14.04 na 16.04. System postawiony na świeżo na Lenovo T420 z dyskiem SSD. Brother DCP-7030 i WiFi z którymi miałem przy 14.04 na początku problemy (sterowniki), na najnowszej wersji poszły od strzała. W 14.04 system zawsze startował z maksymalnym podświetleniem matrycy. Tutaj startuje z ostatnio zadanym. Dla mnie Ubuntu 14.04 już był super a 16.04 wydaje się jeszcze lepszy. Chociaż jakiś bardzo widocznych zmian nie ma to cieszą nowsze programy, bogatsza biblioteka sterowników no i oczywiście aktualny wspierany system. Dla mnie bomba 🙂</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-16540">
+
+            <article id="comment-16540" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/11f4bddb8e7d0e17cf03584420dede09?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/11f4bddb8e7d0e17cf03584420dede09?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16540#respond' onclick='return addComment.moveForm( "comment-16540", "16540", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi alex'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">alex  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16540"><time datetime="2016-08-30T20:32:33+00:00">30 sierpnia 2016 o 20:32</time></a></header>  <section class="comment-content comment"><p>Proszę o pomoc !!!!! Mam połączenie z przewodowym internetem a nie otwierają się karty w ubuntu 16.04.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor odd alt depth-2" id="li-comment-16541">
+
+            <article id="comment-16541" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16541#respond' onclick='return addComment.moveForm( "comment-16541", "16541", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16541"><time datetime="2016-08-30T21:46:54+00:00">30 sierpnia 2016 o 21:46</time></a></header>  <section class="comment-content comment"><p>Zapraszam na forum.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-16548">
+
+            <article id="comment-16548" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/c339669155e6d575979be7979c30df0b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c339669155e6d575979be7979c30df0b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16548#respond' onclick='return addComment.moveForm( "comment-16548", "16548", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi adzio'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">adzio  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16548"><time datetime="2016-09-18T22:36:22+00:00">18 września 2016 o 22:36</time></a></header>  <section class="comment-content comment"><p>witam mam laptop toshiba z procesorem amd a4 jest to 4 rdzenie po 1.5 i do tego grafike radeona hd nie jest to super sprzet ale ubuntu 16.04 lts chodził mi tragicznie w dodatku nie miał sterowników do radeona . przed załadowaniem ubuntu wyskakiwały mi badblocki . a zeby było malo nie dało sie zainstalowac chrome ze strony producenta !<br />
+orietujecie sie jakie dokładne zmiany w 16.04.01 ?<br />
+czy lepie czekac na 16.10?</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor odd alt depth-2" id="li-comment-16549">
+
+            <article id="comment-16549" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16549#respond' onclick='return addComment.moveForm( "comment-16549", "16549", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16549"><time datetime="2016-09-19T10:25:25+00:00">19 września 2016 o 10:25</time></a></header>  <section class="comment-content comment"><p>Sterowniki ma, ale to nie te same co we wcześniejszych wersjach. Więcej informacji na forum.</p>
+<p>Ten komunikat przed załadowaniem to zapewne tylko informacja, że system plików został sprawdzony.</p>
+<p>Problem z instalacją Chrome to coś dziwnego, bo to działa&#8230;</p>
+<p>Zmiany to po prostu aktualizacja pakietów. </p>
+<p>Można czekać na 16.10, ale to nie będzie LTS.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-16563">
+
+            <article id="comment-16563" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/90b150d32d1c7eb76991113ba4f056ed?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/90b150d32d1c7eb76991113ba4f056ed?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16563#respond' onclick='return addComment.moveForm( "comment-16563", "16563", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Adam'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://Ubuntu' rel='external nofollow' class='url'>Adam</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16563"><time datetime="2016-10-21T08:17:39+00:00">21 października 2016 o 08:17</time></a></header>  <section class="comment-content comment"><p>Chłopaki ratujcie. Zrobiłem aktualizacje do 16.04.1 LTS ,nagle laptop się wyłączył i po ponownym uruchomieniu jest czarny ekran i małymi białymi napisami prosi mnie o jakiś longin i potem hasło!!!! Co to jest,jak to ominąc???</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment byuser comment-author-mario_7 bypostauthor odd alt depth-2" id="li-comment-16564">
+
+            <article id="comment-16564" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16564#respond' onclick='return addComment.moveForm( "comment-16564", "16564", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi mario_7'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mario_7 <span> Autor wpisu</span> </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16564"><time datetime="2016-10-21T10:25:39+00:00">21 października 2016 o 10:25</time></a></header>  <section class="comment-content comment"><p>Zapraszam na nasze forum.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        <ul class="children">
+        <li class="comment even depth-3" id="li-comment-16565">
+
+            <article id="comment-16565" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/90b150d32d1c7eb76991113ba4f056ed?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/90b150d32d1c7eb76991113ba4f056ed?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16565#respond' onclick='return addComment.moveForm( "comment-16565", "16565", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Adam'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn"><a href='http://Ubuntu' rel='external nofollow' class='url'>Adam</a>  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16565"><time datetime="2016-10-21T13:13:49+00:00">21 października 2016 o 13:13</time></a></header>  <section class="comment-content comment"><p>Na które forum kolego???</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1" id="li-comment-16649">
+
+            <article id="comment-16649" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/c5edfb29af70f8a9c08fa1e4ccce68a1?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c5edfb29af70f8a9c08fa1e4ccce68a1?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/?replytocom=16649#respond' onclick='return addComment.moveForm( "comment-16649", "16649", "respond", "22169" )' aria-label='Odpowiedz użytkownikowi Adamix'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Adamix  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/#comment-16649"><time datetime="2017-04-02T08:48:54+00:00">2 kwietnia 2017 o 08:48</time></a></header>  <section class="comment-content comment"><p>Używam Xubuntu 16.04 na starym dellu d610 i śmiga rewelacyjnie! To naprawdę dobry system. Trochę pracy na początku z konfiguracją, ale potem chodzi pięknie. Polecam.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+              </ul><!-- .commentlist -->
+            </div><!-- //#comments .comments-area -->
+
+        
+          <hr class="featurette-divider __after_loop">
+        <nav id="nav-below" class="navigation" role="navigation">
+
+              <h3 class="assistive-text">
+                Przeglądanie Wpisów              </h3>
+
+              <ul class="pager">
+                                  <li class="previous">
+                    <span class="nav-previous">
+                      <a href="http://ubuntu.pl/czytelnia/2016/04/20/stjerm-jeszcze-jeden-terminal-w-stylu-quakea/" rel="prev"><span class="meta-nav">&larr;</span> Stjerm &#8211; jeszcze jeden terminal w stylu Quake&#8217;a</a>                    </span>
+                  </li>
+                                                  <li class="next">
+                    <span class="nav-next">
+                        <a href="http://ubuntu.pl/czytelnia/2016/08/06/ubuntu-16-04-1-aktualizowanie-starszych-systemow-rozpoczete/" rel="next">Ubuntu 16.04.1 &#8211; aktualizowanie starszych systemów rozpoczęte <span class="meta-nav">&rarr;</span></a>                    </span>
+                  </li>
+                              </ul>
+
+          </nav><!-- //#nav-below .navigation -->
+
+        
+        
+                </div><!--.article-container -->
+
+           
+        <div class="span3 right tc-sidebar">
+           <div id="right" class="widget-area" role="complementary">
+              <aside id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://ubuntu.pl/">
+				<div>
+					<label class="screen-reader-text" for="s">Szukaj:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Szukaj" />
+				</div>
+			</form></aside><aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="http://ubuntu.pl/wp-login.php?action=register">Zarejestruj się</a></li>			<li><a href="http://ubuntu.pl/wp-login.php">Zaloguj się</a></li>
+			<li><a href="http://ubuntu.pl/feed/">Kanał <abbr title="Really Simple Syndication">RSS</abbr> z wpisami</a></li>
+			<li><a href="http://ubuntu.pl/comments/feed/">Kanał <abbr title="Really Simple Syndication">RSS</abbr> z komentarzami</a></li>
+			<li><a href="https://pl.wordpress.org/" title="Ta strona jest oparta na WordPressie &mdash; nowoczesnej, semantycznej, osobistej platformie publikacyjnej.">WordPress.org</a></li>			</ul>
+			</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Kategorie</h3>		<ul>
+	<li class="cat-item cat-item-2"><a href="http://ubuntu.pl/czytelnia/category/aktualnosci/" title="Czyli co nowego w wielkim świecie?">Aktualności</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://ubuntu.pl/czytelnia/category/bibliotekarz-poleca/" title="Czyli wszystko to, na czym kurz osiadać nie powinien.  ">Bibliotekarz Poleca</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://ubuntu.pl/czytelnia/category/czytelnia/" title="Co nowego w czytelni?">Czytelnia</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://ubuntu.pl/czytelnia/category/felietony/" title="Czyli radosna twórczość wokół Ubuntu.">Felietony</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://ubuntu.pl/czytelnia/category/gry/" title="Czyli życie to nie tylko praca.">Gry</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://ubuntu.pl/czytelnia/category/poradniki/" title="Przepisy gotowe do użycia!">Poradniki</a>
+</li>
+		</ul>
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Najnowsze wpisy</h3>		<ul>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/">GIMP to nie wszystko &#8211; jest jeszcze Krita</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/05/19/bug-squad-mozesz-pomoc-w-rozwoju-ubuntu/">Bug Squad &#8211; możesz pomóc w rozwoju Ubuntu</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/05/15/w-czerwcu-2017-zakonczy-sie-wsparcie-dla-ubuntu-phone/">W czerwcu 2017 zakończy się wsparcie dla Ubuntu Phone</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/04/21/fonty-zgodne-z-calibri-i-cambria-aby-dokumenty-wygladaly-jak-trzeba/">Fonty zgodne z Calibri i Cambria &#8211; aby dokumenty wyglądały jak trzeba</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/04/18/samouczki-ubuntu-zrobmy-sobie-pakiet-snap/">Samouczki Ubuntu &#8211; zróbmy sobie pakiet snap</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Najnowsze komentarze</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">mario_7</span> o <a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/#comment-16710">GIMP to nie wszystko &#8211; jest jeszcze Krita</a></li><li class="recentcomments"><span class="comment-author-link">Czesław</span> o <a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/#comment-16709">GIMP to nie wszystko &#8211; jest jeszcze Krita</a></li><li class="recentcomments"><span class="comment-author-link">tadeusz</span> o <a href="http://ubuntu.pl/czytelnia/2017/04/06/ubuntu-18-04-nie-z-unity-lecz-z-gnome-projekt-ubuntu-phone-konczy-swoj-zywot/#comment-16708">Ubuntu 18.04 nie z Unity lecz z GNOME, projekt Ubuntu Phone kończy swój żywot</a></li><li class="recentcomments"><span class="comment-author-link">user</span> o <a href="http://ubuntu.pl/czytelnia/2008/07/30/wstep-do-programowania-w-linuksie-na-przykladzie-ubuntu/#comment-16707">Wstęp do programowania w Linuksie na przykładzie Ubuntu</a></li><li class="recentcomments"><span class="comment-author-link">mario_7</span> o <a href="http://ubuntu.pl/czytelnia/2009/02/17/zaawansowana-instalacja-ubuntu-1-software-raid/#comment-16706">Zaawansowana instalacja Ubuntu #1 &#8211; Software RAID</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archiwa</h3>		<label class="screen-reader-text" for="archives-dropdown-2">Archiwa</label>
+		<select id="archives-dropdown-2" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			
+			<option value="">Wybierz miesiąc</option>
+				<option value='http://ubuntu.pl/czytelnia/2017/08/'> Sierpień 2017 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/05/'> Maj 2017 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/04/'> Kwiecień 2017 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/02/'> Luty 2017 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/12/'> Grudzień 2016 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/10/'> Październik 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/08/'> Sierpień 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/04/'> Kwiecień 2016 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/03/'> Marzec 2016 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/02/'> Luty 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/10/'> Październik 2014 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/09/'> Wrzesień 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/08/'> Sierpień 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/07/'> Lipiec 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/06/'> Czerwiec 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/05/'> Maj 2014 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/04/'> Kwiecień 2014 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/03/'> Marzec 2014 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/02/'> Luty 2014 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/01/'> Styczeń 2014 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/12/'> Grudzień 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/11/'> Listopad 2013 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/10/'> Październik 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/09/'> Wrzesień 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/07/'> Lipiec 2013 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/06/'> Czerwiec 2013 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/05/'> Maj 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/04/'> Kwiecień 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/03/'> Marzec 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/02/'> Luty 2013 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/01/'> Styczeń 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/12/'> Grudzień 2012 &nbsp;(12)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/11/'> Listopad 2012 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/10/'> Październik 2012 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/09/'> Wrzesień 2012 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/08/'> Sierpień 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/07/'> Lipiec 2012 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/06/'> Czerwiec 2012 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/05/'> Maj 2012 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/04/'> Kwiecień 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/03/'> Marzec 2012 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/02/'> Luty 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/01/'> Styczeń 2012 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/12/'> Grudzień 2011 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/11/'> Listopad 2011 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/10/'> Październik 2011 &nbsp;(12)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/09/'> Wrzesień 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/08/'> Sierpień 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/07/'> Lipiec 2011 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/06/'> Czerwiec 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/05/'> Maj 2011 &nbsp;(13)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/04/'> Kwiecień 2011 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/03/'> Marzec 2011 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/02/'> Luty 2011 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/12/'> Grudzień 2010 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/11/'> Listopad 2010 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/10/'> Październik 2010 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/08/'> Sierpień 2010 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/07/'> Lipiec 2010 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/06/'> Czerwiec 2010 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/05/'> Maj 2010 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/04/'> Kwiecień 2010 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/03/'> Marzec 2010 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/02/'> Luty 2010 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/01/'> Styczeń 2010 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/12/'> Grudzień 2009 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/11/'> Listopad 2009 &nbsp;(15)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/10/'> Październik 2009 &nbsp;(15)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/09/'> Wrzesień 2009 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/08/'> Sierpień 2009 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/07/'> Lipiec 2009 &nbsp;(14)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/06/'> Czerwiec 2009 &nbsp;(17)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/05/'> Maj 2009 &nbsp;(22)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/04/'> Kwiecień 2009 &nbsp;(19)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/03/'> Marzec 2009 &nbsp;(33)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/02/'> Luty 2009 &nbsp;(30)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/01/'> Styczeń 2009 &nbsp;(18)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/12/'> Grudzień 2008 &nbsp;(18)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/11/'> Listopad 2008 &nbsp;(19)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/10/'> Październik 2008 &nbsp;(35)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/09/'> Wrzesień 2008 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/08/'> Sierpień 2008 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/07/'> Lipiec 2008 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/06/'> Czerwiec 2008 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/05/'> Maj 2008 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/04/'> Kwiecień 2008 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/03/'> Marzec 2008 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/02/'> Luty 2008 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/01/'> Styczeń 2008 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/12/'> Grudzień 2007 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/11/'> Listopad 2007 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/10/'> Październik 2007 &nbsp;(14)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/09/'> Wrzesień 2007 &nbsp;(13)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/08/'> Sierpień 2007 &nbsp;(27)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/07/'> Lipiec 2007 &nbsp;(23)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/06/'> Czerwiec 2007 &nbsp;(35)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/05/'> Maj 2007 &nbsp;(53)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/04/'> Kwiecień 2007 &nbsp;(48)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/03/'> Marzec 2007 &nbsp;(42)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/02/'> Luty 2007 &nbsp;(25)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/01/'> Styczeń 2007 &nbsp;(29)</option>
+
+		</select>
+		</aside><aside id="rss-2" class="widget widget_rss"><h3 class="widget-title"><a class="rsswidget" href="http://ubuntu.pl/forum/feed.php"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="http://ubuntu.pl/wp-includes/images/rss.png" alt="RSS" /></a> <a class="rsswidget" href="http://ubuntu.pl/forum/index.php">Ostatnio na forum</a></h3><ul><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182512&#038;p=1022390#p1022390'>Ostatnia deska ratunku • Re: Zaszyfrowany home i problem z kluczem</a> <cite>Linfann</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182491&#038;p=1022389#p1022389'>Środowiska graficzne • Re: cinnamon - tryb awaryjny po aktualizacji</a> <cite>Lucas39</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182519&#038;p=1022388#p1022388'>Sieci, serwery, Internet • błędy łączenia z siecią wifi z telefonowego AP</a> <cite>wojciechtomasz</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182511&#038;p=1022387#p1022387'>Przedszkole Linuksa • Re: Bateria nie jest ładowana, chociaż jej stan twierdzi co innego</a> <cite>Smevios</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182518&#038;p=1022386#p1022386'>Inne • Jaka aplikacja do tworzenia kopii (backup) dysku</a> <cite>nikczemnik</cite></li></ul></aside>            </div><!-- //#left or //#right -->
+        </div><!--.tc-sidebar -->
+
+        
+        </div><!--.row -->
+    </div><!-- .container role: main -->
+
+    <div id="tc-push-footer"></div>
+</div><!-- //#main-wrapper -->
+
+  		<!-- FOOTER -->
+  		<footer id="footer" class="">
+  		 					<div class="container footer-widgets ">
+                    <div class="row widget-area" role="complementary">
+												
+							<div id="footer_one" class="span4">
+																
+										<aside id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://ubuntu.pl/">
+				<div>
+					<label class="screen-reader-text" for="s">Szukaj:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Szukaj" />
+				</div>
+			</form></aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Kategorie</h3>		<ul>
+	<li class="cat-item cat-item-2"><a href="http://ubuntu.pl/czytelnia/category/aktualnosci/" title="Czyli co nowego w wielkim świecie?">Aktualności</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://ubuntu.pl/czytelnia/category/bibliotekarz-poleca/" title="Czyli wszystko to, na czym kurz osiadać nie powinien.  ">Bibliotekarz Poleca</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://ubuntu.pl/czytelnia/category/czytelnia/" title="Co nowego w czytelni?">Czytelnia</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://ubuntu.pl/czytelnia/category/felietony/" title="Czyli radosna twórczość wokół Ubuntu.">Felietony</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://ubuntu.pl/czytelnia/category/gry/" title="Czyli życie to nie tylko praca.">Gry</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://ubuntu.pl/czytelnia/category/poradniki/" title="Przepisy gotowe do użycia!">Poradniki</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="http://ubuntu.pl/wp-login.php?action=register">Zarejestruj się</a></li>			<li><a href="http://ubuntu.pl/wp-login.php">Zaloguj się</a></li>
+			<li><a href="http://ubuntu.pl/feed/">Kanał <abbr title="Really Simple Syndication">RSS</abbr> z wpisami</a></li>
+			<li><a href="http://ubuntu.pl/comments/feed/">Kanał <abbr title="Really Simple Syndication">RSS</abbr> z komentarzami</a></li>
+			<li><a href="https://pl.wordpress.org/" title="Ta strona jest oparta na WordPressie &mdash; nowoczesnej, semantycznej, osobistej platformie publikacyjnej.">WordPress.org</a></li>			</ul>
+			</aside>
+																							</div><!-- .{$key}_widget_class -->
+
+						
+							<div id="footer_two" class="span4">
+																
+												<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Najnowsze wpisy</h3>		<ul>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/">GIMP to nie wszystko &#8211; jest jeszcze Krita</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/05/19/bug-squad-mozesz-pomoc-w-rozwoju-ubuntu/">Bug Squad &#8211; możesz pomóc w rozwoju Ubuntu</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/05/15/w-czerwcu-2017-zakonczy-sie-wsparcie-dla-ubuntu-phone/">W czerwcu 2017 zakończy się wsparcie dla Ubuntu Phone</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/04/21/fonty-zgodne-z-calibri-i-cambria-aby-dokumenty-wygladaly-jak-trzeba/">Fonty zgodne z Calibri i Cambria &#8211; aby dokumenty wyglądały jak trzeba</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/04/18/samouczki-ubuntu-zrobmy-sobie-pakiet-snap/">Samouczki Ubuntu &#8211; zróbmy sobie pakiet snap</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Najnowsze komentarze</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">mario_7</span> o <a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/#comment-16710">GIMP to nie wszystko &#8211; jest jeszcze Krita</a></li><li class="recentcomments"><span class="comment-author-link">Czesław</span> o <a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/#comment-16709">GIMP to nie wszystko &#8211; jest jeszcze Krita</a></li><li class="recentcomments"><span class="comment-author-link">tadeusz</span> o <a href="http://ubuntu.pl/czytelnia/2017/04/06/ubuntu-18-04-nie-z-unity-lecz-z-gnome-projekt-ubuntu-phone-konczy-swoj-zywot/#comment-16708">Ubuntu 18.04 nie z Unity lecz z GNOME, projekt Ubuntu Phone kończy swój żywot</a></li><li class="recentcomments"><span class="comment-author-link">user</span> o <a href="http://ubuntu.pl/czytelnia/2008/07/30/wstep-do-programowania-w-linuksie-na-przykladzie-ubuntu/#comment-16707">Wstęp do programowania w Linuksie na przykładzie Ubuntu</a></li><li class="recentcomments"><span class="comment-author-link">mario_7</span> o <a href="http://ubuntu.pl/czytelnia/2009/02/17/zaawansowana-instalacja-ubuntu-1-software-raid/#comment-16706">Zaawansowana instalacja Ubuntu #1 &#8211; Software RAID</a></li></ul></aside><aside id="rss-3" class="widget widget_rss"><h3 class="widget-title"><a class="rsswidget" href="http://ubuntu.pl/forum/feed.php"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="http://ubuntu.pl/wp-includes/images/rss.png" alt="RSS" /></a> <a class="rsswidget" href="http://ubuntu.pl/forum/index.php">Ostatnio na forum</a></h3><ul><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182512&#038;p=1022390#p1022390'>Ostatnia deska ratunku • Re: Zaszyfrowany home i problem z kluczem</a> <cite>Linfann</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182491&#038;p=1022389#p1022389'>Środowiska graficzne • Re: cinnamon - tryb awaryjny po aktualizacji</a> <cite>Lucas39</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182519&#038;p=1022388#p1022388'>Sieci, serwery, Internet • błędy łączenia z siecią wifi z telefonowego AP</a> <cite>wojciechtomasz</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182511&#038;p=1022387#p1022387'>Przedszkole Linuksa • Re: Bateria nie jest ładowana, chociaż jej stan twierdzi co innego</a> <cite>Smevios</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182518&#038;p=1022386#p1022386'>Inne • Jaka aplikacja do tworzenia kopii (backup) dysku</a> <cite>nikczemnik</cite></li></ul></aside>
+																							</div><!-- .{$key}_widget_class -->
+
+						
+							<div id="footer_three" class="span4">
+																
+										<aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archiwa</h3>		<label class="screen-reader-text" for="archives-dropdown-2">Archiwa</label>
+		<select id="archives-dropdown-2" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			
+			<option value="">Wybierz miesiąc</option>
+				<option value='http://ubuntu.pl/czytelnia/2017/08/'> Sierpień 2017 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/05/'> Maj 2017 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/04/'> Kwiecień 2017 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/02/'> Luty 2017 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/12/'> Grudzień 2016 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/10/'> Październik 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/08/'> Sierpień 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/04/'> Kwiecień 2016 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/03/'> Marzec 2016 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/02/'> Luty 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/10/'> Październik 2014 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/09/'> Wrzesień 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/08/'> Sierpień 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/07/'> Lipiec 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/06/'> Czerwiec 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/05/'> Maj 2014 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/04/'> Kwiecień 2014 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/03/'> Marzec 2014 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/02/'> Luty 2014 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/01/'> Styczeń 2014 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/12/'> Grudzień 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/11/'> Listopad 2013 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/10/'> Październik 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/09/'> Wrzesień 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/07/'> Lipiec 2013 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/06/'> Czerwiec 2013 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/05/'> Maj 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/04/'> Kwiecień 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/03/'> Marzec 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/02/'> Luty 2013 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/01/'> Styczeń 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/12/'> Grudzień 2012 &nbsp;(12)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/11/'> Listopad 2012 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/10/'> Październik 2012 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/09/'> Wrzesień 2012 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/08/'> Sierpień 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/07/'> Lipiec 2012 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/06/'> Czerwiec 2012 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/05/'> Maj 2012 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/04/'> Kwiecień 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/03/'> Marzec 2012 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/02/'> Luty 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/01/'> Styczeń 2012 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/12/'> Grudzień 2011 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/11/'> Listopad 2011 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/10/'> Październik 2011 &nbsp;(12)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/09/'> Wrzesień 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/08/'> Sierpień 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/07/'> Lipiec 2011 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/06/'> Czerwiec 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/05/'> Maj 2011 &nbsp;(13)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/04/'> Kwiecień 2011 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/03/'> Marzec 2011 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/02/'> Luty 2011 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/12/'> Grudzień 2010 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/11/'> Listopad 2010 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/10/'> Październik 2010 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/08/'> Sierpień 2010 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/07/'> Lipiec 2010 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/06/'> Czerwiec 2010 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/05/'> Maj 2010 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/04/'> Kwiecień 2010 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/03/'> Marzec 2010 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/02/'> Luty 2010 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/01/'> Styczeń 2010 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/12/'> Grudzień 2009 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/11/'> Listopad 2009 &nbsp;(15)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/10/'> Październik 2009 &nbsp;(15)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/09/'> Wrzesień 2009 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/08/'> Sierpień 2009 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/07/'> Lipiec 2009 &nbsp;(14)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/06/'> Czerwiec 2009 &nbsp;(17)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/05/'> Maj 2009 &nbsp;(22)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/04/'> Kwiecień 2009 &nbsp;(19)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/03/'> Marzec 2009 &nbsp;(33)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/02/'> Luty 2009 &nbsp;(30)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/01/'> Styczeń 2009 &nbsp;(18)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/12/'> Grudzień 2008 &nbsp;(18)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/11/'> Listopad 2008 &nbsp;(19)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/10/'> Październik 2008 &nbsp;(35)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/09/'> Wrzesień 2008 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/08/'> Sierpień 2008 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/07/'> Lipiec 2008 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/06/'> Czerwiec 2008 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/05/'> Maj 2008 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/04/'> Kwiecień 2008 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/03/'> Marzec 2008 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/02/'> Luty 2008 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/01/'> Styczeń 2008 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/12/'> Grudzień 2007 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/11/'> Listopad 2007 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/10/'> Październik 2007 &nbsp;(14)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/09/'> Wrzesień 2007 &nbsp;(13)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/08/'> Sierpień 2007 &nbsp;(27)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/07/'> Lipiec 2007 &nbsp;(23)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/06/'> Czerwiec 2007 &nbsp;(35)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/05/'> Maj 2007 &nbsp;(53)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/04/'> Kwiecień 2007 &nbsp;(48)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/03/'> Marzec 2007 &nbsp;(42)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/02/'> Luty 2007 &nbsp;(25)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/01/'> Styczeń 2007 &nbsp;(29)</option>
+
+		</select>
+		</aside><aside id="calendar-2" class="widget widget_calendar"><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>Kwiecień 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="poniedziałek">P</th>
+		<th scope="col" title="wtorek">W</th>
+		<th scope="col" title="środa">Ś</th>
+		<th scope="col" title="czwartek">C</th>
+		<th scope="col" title="piątek">P</th>
+		<th scope="col" title="sobota">S</th>
+		<th scope="col" title="niedziela">N</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://ubuntu.pl/czytelnia/2016/03/">&laquo; Mar</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next"><a href="http://ubuntu.pl/czytelnia/2016/08/">Sie &raquo;</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="4" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td>
+	</tr>
+	<tr>
+		<td>4</td><td>5</td><td>6</td><td>7</td><td><a href="http://ubuntu.pl/czytelnia/2016/04/08/" aria-label="Wpisy opublikowane dnia 8 April 2016">8</a></td><td>9</td><td>10</td>
+	</tr>
+	<tr>
+		<td>11</td><td>12</td><td>13</td><td><a href="http://ubuntu.pl/czytelnia/2016/04/14/" aria-label="Wpisy opublikowane dnia 14 April 2016">14</a></td><td>15</td><td>16</td><td>17</td>
+	</tr>
+	<tr>
+		<td>18</td><td>19</td><td><a href="http://ubuntu.pl/czytelnia/2016/04/20/" aria-label="Wpisy opublikowane dnia 20 April 2016">20</a></td><td>21</td><td><a href="http://ubuntu.pl/czytelnia/2016/04/22/" aria-label="Wpisy opublikowane dnia 22 April 2016">22</a></td><td>23</td><td>24</td>
+	</tr>
+	<tr>
+		<td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+		<td class="pad" colspan="1">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></aside>
+																							</div><!-- .{$key}_widget_class -->
+
+																	</div><!-- .row.widget-area -->
+				</div><!--.footer-widgets -->
+				    				 <div class="colophon">
+			 	<div class="container">
+			 		<div class="row-fluid">
+					    <div class="span3 social-block pull-left"><span class="social-links"><a rel="nofollow" class="social-icon icon-feed-square"  title="Zapisz nasz kanał RSS" aria-label="Zapisz nasz kanał RSS" href="http://ubuntu.pl/feed/rss/"  target="_blank" ><i class="fa fa-rss-square"></i></a><a rel="nofollow" class="social-icon icon-facebook"  title="Obserwuj nas na Facebooku" aria-label="Obserwuj nas na Facebooku" href="https://www.facebook.com/ubuntupl/"  target="_blank" ><i class="fa fa-facebook"></i></a><a rel="nofollow" class="social-icon icon-stack-exchange"  title="Zajrzyj na nasze forum" aria-label="Zajrzyj na nasze forum" href="http://ubuntu.pl/forum"  ><i class="fa fa-stack-exchange"></i></a></span></div><div class="span6 credits"><p>&middot; <span class="tc-copyright-text">&copy; 2017</span> <a href="http://ubuntu.pl" title="Ubuntu.pl" rel="bookmark">Ubuntu.pl</a> &middot; <span class="tc-credits-text">Designed by</span> <a href="http://presscustomizr.com/">Press Customizr</a> &middot; <span class="tc-wp-powered-text">Napędzany</span> <a class="icon-wordpress" target="_blank" href="https://wordpress.org" title="Ta strona jest oparta na WordPressie"></a> &middot;</p></div>	      			</div><!-- .row-fluid -->
+	      		</div><!-- .container -->
+	      	</div><!-- .colophon -->
+	    	  		</footer>
+    </div><!-- //#tc-page-wrapper -->
+		
+<script type='text/javascript'>
+/* <![CDATA[ */
+r3f5x9JS=escape(document['referrer']);
+hf4N='a89fedfd8e68a321a6b6234083d2daee';
+hf4V='c069a59a665754864bd6c4a411e4958a';
+cm4S="form[action='http://ubuntu.pl/wp-comments-post.php']";
+jQuery(document).ready(function($){var e="#commentform, .comment-respond form, .comment-form, "+cm4S+", #lostpasswordform, #registerform, #loginform, #login_form, #wpss_contact_form";$(e).submit(function(){$("<input>").attr("type","hidden").attr("name","r3f5x9JS").attr("value",r3f5x9JS).appendTo(e);return true;});var h="form[method='post']";$(h).submit(function(){$("<input>").attr("type","hidden").attr("name",hf4N).attr("value",hf4V).appendTo(h);return true;});});
+/* ]]> */
+</script> 
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ctcc_vars = {"expiry":"30","method":"1","version":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/plugins/uk-cookie-consent/assets/js/uk-cookie-consent-js.js?ver=2.3.0'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-includes/js/comment-reply.min.js?ver=19571d0e676e8ab0256f2b8d4f484181'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/modernizr.min.js?ver=4.0.6'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/plugins/wp-spamshield/js/jscripts-ftr2-min.js'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-includes/js/wp-embed.min.js?ver=19571d0e676e8ab0256f2b8d4f484181'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/plugins/akismet/_inc/form.js?ver=3.3.4'></script>
+			
+				<script type="text/javascript">
+					jQuery(document).ready(function($){
+												if(!catapultReadCookie("catAccCookies")){ // If the cookie has not been set then show the bar
+							$("html").addClass("has-cookie-bar");
+							$("html").addClass("cookie-bar-bottom-bar");
+							$("html").addClass("cookie-bar-bar");
+													}
+																	});
+				</script>
+			
+			<div id="catapult-cookie-bar" class=""><div class="ctcc-inner "><span class="ctcc-left-side">Serwis wykorzystuje pliki cookies. Korzystając ze strony wyrażasz zgodę na wykorzystywanie plików cookies. <a class="ctcc-more-info-link" tabindex=0 target="_blank" href="http://wszystkoociasteczkach.pl/">Dowiedz się więcej.</a></span><span class="ctcc-right-side"><button id="catapultCookie" tabindex=0 onclick="catapultAcceptCookies();">Ok, rozumiem</button></span></div><!-- custom wrapper class --></div><!-- #catapult-cookie-bar --><div id="tc-footer-btt-wrapper" class="tc-btt-wrapper right"><i class="btt-arrow"></i></div>	</body>
+	</html><����B      Y���Y���>)˒       d    :http://ubuntu.pl/czytelnia/2016/04/22/ubuntu-16-04-wydane-kolejna-wersja-z-dlugim-okresem-wsparcia/ necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Server: nginx/1.12.0
+Date: Tue, 05 Sep 2017 15:21:18 GMT
+Content-Type: text/html; charset=UTF-8
+X-Pingback: http://ubuntu.pl/xmlrpc.php
+Link: <http://ubuntu.pl/wp-json/>; rel="https://api.w.org/", <http://ubuntu.pl/?p=22169>; rel=shortlink
+ original-response-headers Server: nginx/1.12.0
+Date: Tue, 05 Sep 2017 15:21:18 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: wfvt_2615001749=59aec0ee24955; expires=Tue, 05-Sep-2017 15:51:18 GMT; Max-Age=1800; path=/; httponly
+X-Pingback: http://ubuntu.pl/xmlrpc.php
+Link: <http://ubuntu.pl/wp-json/>; rel="https://api.w.org/"
+Link: <http://ubuntu.pl/?p=22169>; rel=shortlink
+ charset UTF-8 uncompressed-len 0 predictor::resource-count 69 predictor::http://fonts.googleapis.com/css?family=Ubuntu:400%7CUbuntu:400 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/plugins/uk-cookie-consent/assets/css/style.css?ver=19571d0e676e8ab0256f2b8d4f484181 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/assets/shared/fonts/fa/css/font-awesome.min.css?ver=4.0.6 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-includes/js/wp-emoji-release.min.js?ver=19571d0e676e8ab0256f2b8d4f484181 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/inc/assets/css/tc_common.min.css?ver=4.0.6 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr-ubupl/inc/assets/css/orange.min.css?ver=4.0.6 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr-ubupl/style.css?ver=4.0.6 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/fancybox/jquery.fancybox-1.3.4.min.css?ver=19571d0e676e8ab0256f2b8d4f484181 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/plugins/author-avatars/css/widget.css?ver=1.11 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/plugins/author-avatars/css/shortcode.css?ver=1.11 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-includes/js/jquery/jquery.js?ver=1.12.4 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/fancybox/jquery.fancybox-1.3.4.min.js?ver=4.0.6 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/inc/assets/js/tc-scripts.min.js?ver=4.0.6 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-pulpit-150x94.png 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-panel-150x94.png 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/uploads/2016/04/ubuntu-16.04-sklep-150x94.png 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=100&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/f0d4d3bc4d7866aab634fc264c0ac33b?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/3f9cb204dc307071095917762e3139d0?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/3d18d7c5d094f0d391f0a434018aca3b?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/9b6a0cb7c4d4f1baaf959c4552690b08?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://1.gravatar.com/avatar/a96bd2e2e2b445b45c89f0defe8220da?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/f13a542aea2572bf00412f9ac7f31be5?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/0175e2f4efe5a261d9ad25646573095d?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://2.gravatar.com/avatar/5c2d933305c3552fd1d78698c0af5fca?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/c583600131671aa2e006f2413898d40a?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/9b2b4ae5aeadef7b2df74cb4ac7a6856?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://1.gravatar.com/avatar/1070641648f24d9ed98c27e4f36f5ed1?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/3c0257dc3e96bd333bd44d252087a3b1?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://1.gravatar.com/avatar/79e17103a9f82bb6c42b21340e5c5f32?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://2.gravatar.com/avatar/50b60527cbb31f3d74375275d8c456f1?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://2.gravatar.com/avatar/e0fe5bdb1ddc88de24791bc1b7f686bc?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://1.gravatar.com/avatar/1f99855613e8b35b1bf220c39ba860f2?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://1.gravatar.com/avatar/1b88f2cfa0af0954095e2a4dd379a028?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://2.gravatar.com/avatar/8e6c894c72d82cf23d2ed2a9a555b4aa?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://1.gravatar.com/avatar/af0e33c269a63ba8f278e4779bd1af01?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/3d7dce9afb082f13bb701e518aa695c3?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://2.gravatar.com/avatar/e5c5a9e059939db566ee51ae2e665341?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/c07610fea5ace7956ca813618d55d1cf?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://1.gravatar.com/avatar/a74250c36bfcd3f40fcbc08671374007?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://2.gravatar.com/avatar/b78c256f2c7d8ee985995a331fadc84f?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://1.gravatar.com/avatar/aff099f5ea032876ff38ca7e92471b1c?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://2.gravatar.com/avatar/5522fcce6e834384c3d5a060e25dd936?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/c7c4e6de0e39c2c9c4d58497840c4890?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/06c84d1308534a086c124a551aa71f44?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://1.gravatar.com/avatar/11f4bddb8e7d0e17cf03584420dede09?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/c339669155e6d575979be7979c30df0b?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/90b150d32d1c7eb76991113ba4f056ed?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://0.gravatar.com/avatar/c5edfb29af70f8a9c08fa1e4ccce68a1?s=80&d=mm&r=g 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-includes/images/rss.png 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/plugins/uk-cookie-consent/assets/js/uk-cookie-consent-js.js?ver=2.3.0 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-includes/js/comment-reply.min.js?ver=19571d0e676e8ab0256f2b8d4f484181 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/modernizr.min.js?ver=4.0.6 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/plugins/wp-spamshield/js/jscripts-ftr2-min.js 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-includes/js/wp-embed.min.js?ver=19571d0e676e8ab0256f2b8d4f484181 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/plugins/akismet/_inc/form.js?ver=3.3.4 1,1,1504624863,4096 net-response-time-onstart 30295 net-response-time-onstop 122607 predictor::http://ubuntu.pl/wp-content/themes/customizr/style.css 1,1,1504624863,4096 predictor::http://www.google-analytics.com/analytics.js 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/inc/assets/img/glyphicons-halflings.png 1,1,1504624863,4096 predictor::http://fonts.gstatic.com/s/ubuntu/v10/4iCs6KVjbNBYlgoKfw72.woff2 1,1,1504624863,4096 predictor::http://fonts.gstatic.com/s/ubuntu/v10/4iCs6KVjbNBYlgoKcQ72j00.woff2 1,1,1504624863,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/assets/shared/fonts/fa/fonts/fontawesome-webfont.woff2?v=4.7.0 1,1,1504624863,4096 predictor::http://ubuntu.pl/?wordfence_logHuman=1&hid=7FF3550B91A9A0F9C5EB41561CDEECA4&r=0.33262959442819473 1,1,1504624863,4096 predictor::https://s.w.org/images/core/emoji/2.3/svg/1f609.svg 1,1,1504624863,4096 predictor::https://s.w.org/images/core/emoji/2.3/svg/1f600.svg 1,1,1504624863,4096 predictor::https://s.w.org/images/core/emoji/2.3/svg/1f641.svg 1,1,1504624863,4096 predictor::https://s.w.org/images/core/emoji/2.3/svg/1f642.svg 1,1,1504624863,4096  ~C

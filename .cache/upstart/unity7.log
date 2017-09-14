@@ -1,0 +1,11 @@
+1505402612240	addons.xpi	ERROR	Attempted to load bootstrap scope from missing directory /home/magda/.mozilla/firefox/kj2tzw3m.default/features/{8d1b8ad0-5b18-41e5-b245-1dc50a4ce69e}/clicktoplay-rollout@mozilla.org.xpi
+1505402612241	addons.xpi	WARN	Add-on clicktoplay-rollout@mozilla.org is missing bootstrap method startup
+1505402620861	addons.xpi	WARN	Add-on clicktoplay-rollout@mozilla.org is missing bootstrap method uninstall
+1505403125536	addons.update-checker	WARN	Update manifest for webcompat@mozilla.org did not contain an updates property
+1505403125580	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+1505403125601	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+1505403125623	addons.update-checker	WARN	Update manifest for clicktoplay-rollout@mozilla.org did not contain an updates property
+1505403125645	addons.update-checker	WARN	Update manifest for aushelper@mozilla.org did not contain an updates property
+1505403125779	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+1505403125847	addons.update-checker	WARN	Update manifest for followonsearch@mozilla.com did not contain an updates property
+console.log: install ADDON_INSTALL

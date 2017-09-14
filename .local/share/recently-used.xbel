@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///etc/apt/sources.list.save" added="2017-09-05T10:03:54Z" modified="2017-09-05T10:03:55Z" visited="2017-09-05T10:03:55Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2017-09-05T10:03:54Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2017-09-05T10:03:55Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///etc/apt/sources.list" added="2017-09-05T10:04:01Z" modified="2017-09-05T10:04:15Z" visited="2017-09-05T10:04:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-apt-sources-list"/>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;software-properties-gtk&apos;" modified="2017-09-05T10:04:15Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///etc/apt/sources.list.d/webupd8team-ubuntu-atom-xenial.list" added="2017-09-05T10:18:01Z" modified="2017-09-05T10:20:33Z" visited="2017-09-05T10:18:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2017-09-05T10:18:01Z" count="1"/>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2017-09-05T10:20:33Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/magda/Downloads/atom-amd64.deb" added="2017-09-05T10:32:53Z" modified="2017-09-05T10:32:53Z" visited="2017-09-05T10:32:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2017-09-05T10:32:53Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/mozilla_magda0/google-chrome-stable_current_amd64.deb" added="2017-09-05T12:39:22Z" modified="2017-09-05T16:35:16Z" visited="2017-09-05T12:39:23Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2017-09-05T16:35:16Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/mozilla_magda0/google-chrome-stable_current_amd64-1.deb" added="2017-09-05T14:45:48Z" modified="2017-09-05T16:35:16Z" visited="2017-09-05T14:45:48Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2017-09-05T16:35:16Z" count="2"/>
+          <bookmark:application name="nautilus" exec="&apos;gnome-software --local-filename=%f&apos;" modified="2017-09-05T14:47:34Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/mozilla_magda0/opera-stable_47.0.2631.55_amd64.deb" added="2017-09-05T14:56:25Z" modified="2017-09-05T15:17:40Z" visited="2017-09-05T14:56:25Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2017-09-05T14:56:25Z" count="1"/>
+          <bookmark:application name="nautilus" exec="&apos;gnome-software --local-filename=%f&apos;" modified="2017-09-05T15:17:40Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/mozilla_magda0/google-chrome-stable_current_amd64-2.deb" added="2017-09-05T15:17:22Z" modified="2017-09-05T15:17:23Z" visited="2017-09-05T15:17:22Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2017-09-05T15:17:22Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2017-09-05T15:17:23Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/magda/Downloads/google-chrome-42-0-2311-90-64-bit-multi-ubu.deb" added="2017-09-05T15:32:57Z" modified="2017-09-05T15:51:31Z" visited="2017-09-05T15:32:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2017-09-05T15:32:57Z" count="1"/>
+          <bookmark:application name="nautilus" exec="&apos;gnome-software --local-filename=%f&apos;" modified="2017-09-05T15:51:31Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/magda/Documents" added="2017-09-05T16:06:20Z" modified="2017-09-05T16:06:20Z" visited="2017-09-05T16:06:20Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;nautilus %u&apos;" modified="2017-09-05T16:06:20Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/magda/Documents/google-chrome-42-0-2311-90-64-bit-multi-ubu.deb" added="2017-09-05T16:06:26Z" modified="2017-09-05T16:06:26Z" visited="2017-09-05T16:06:27Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gnome-software --local-filename=%f&apos;" modified="2017-09-05T16:06:26Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/magda/Downloads/opera-stable_47.0.2631.55_amd64.deb" added="2017-09-05T17:40:14Z" modified="2017-09-05T17:40:14Z" visited="2017-09-05T17:40:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2017-09-05T17:40:14Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/magda/7D59-D5E8/przed_zajeciami/0.%20Przygotowanie%20do%20kursu/0.%20Przygotowanie%20do%20kursu/Przygotowanie_do_kursu%20Front-end%20v1.7.pdf" added="2017-09-06T10:58:31Z" modified="2017-09-11T13:04:18Z" visited="2017-09-06T10:58:31Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2017-09-11T13:04:18Z" count="4"/>
+          <bookmark:application name="nautilus" exec="&apos;evince %U&apos;" modified="2017-09-09T13:48:23Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/magda/7D59-D5E8/przed_zajeciami/01.%20Podstawy%20Linuxa%20lub%20Maca/1.%20Podstawy%20Linuxa%20lub%20Maca/Podstawy%20Linuxa%20lub%20Maca%20v1.0.pdf" added="2017-09-06T11:30:53Z" modified="2017-09-10T08:03:29Z" visited="2017-09-06T11:30:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2017-09-10T08:03:29Z" count="3"/>
+          <bookmark:application name="nautilus" exec="&apos;evince %U&apos;" modified="2017-09-08T15:59:29Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/magda/7D59-D5E8/przed_zajeciami/01.%20Podstawy%20Linuxa%20lub%20Maca/1.%20Podstawy%20Linuxa%20lub%20Maca/Podstawy%20Linuxa%20lub%20Maca%20-%20Zadania%20%20v1.2.pdf" added="2017-09-08T17:13:55Z" modified="2017-09-10T08:01:45Z" visited="2017-09-08T17:13:55Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2017-09-10T08:01:45Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/magda/7D59-D5E8/przed_zajeciami/02.%20System%20kontroli%20wersji%20-%20GIT/2.System%20kontroli%20wersji%20-%20GIT.v.2.1.pdf" added="2017-09-08T17:15:32Z" modified="2017-09-11T12:24:03Z" visited="2017-09-08T17:15:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2017-09-10T16:33:45Z" count="2"/>
+          <bookmark:application name="nautilus" exec="&apos;evince %U&apos;" modified="2017-09-11T12:24:03Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/magda/7D59-D5E8/przed_zajeciami/03.%20HTML%20i%20CSS/03.%20HTML%20i%20CSS/3.HTML%20i%20CSS-v.1.6.pdf" added="2017-09-10T09:29:54Z" modified="2017-09-11T12:59:07Z" visited="2017-09-10T09:29:55Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2017-09-11T12:59:07Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/magda/7D59-D5E8/przed_zajeciami/04.%20%20Podstawy%20JavaScript/4.%20%20Podstawy%20JavaScript/4.Javascript-podstawy-v.1.12(1).pdf" added="2017-09-10T09:31:59Z" modified="2017-09-12T11:34:26Z" visited="2017-09-10T09:31:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2017-09-12T11:34:26Z" count="2"/>
+          <bookmark:application name="nautilus" exec="&apos;evince %U&apos;" modified="2017-09-12T11:34:25Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///etc/group" added="2017-09-11T09:42:45Z" modified="2017-09-11T09:42:48Z" visited="2017-09-11T09:42:46Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2017-09-11T09:42:45Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2017-09-11T09:42:48Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/magda/7D59-D5E8/przed_zajeciami/05.%20Jak%20robi%C4%87%20zadania%20na%20githubie/05.%20Jak%20robi%C4%87%20zadania%20na%20githubie/5.Jak%20robi%C4%87%20zadania-v.1.4(1).pdf" added="2017-09-12T11:21:49Z" modified="2017-09-12T11:21:50Z" visited="2017-09-12T11:21:49Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;evince %U&apos;" modified="2017-09-12T11:21:49Z" count="1"/>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2017-09-12T11:21:50Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/magda/WAR_FER_W_12_Prework_HTML/01.Struktura_dokumentu/css" added="2017-09-12T14:40:10Z" modified="2017-09-12T14:40:10Z" visited="2017-09-12T14:40:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="atom" exec="&apos;atom %u&apos;" modified="2017-09-12T14:40:10Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/magda/WAR_FER_W_12_Prework_HTML" added="2017-09-12T14:40:38Z" modified="2017-09-12T14:40:38Z" visited="2017-09-12T14:40:39.181160Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="atom" exec="&apos;atom %u&apos;" modified="2017-09-12T14:40:38Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

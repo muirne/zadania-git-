@@ -1,0 +1,327 @@
+
+
+.modul_gazeta > div > div { padding: 11px; float: left;}
+.modul_gazeta > div > div em { color: #999; line-height: 35px; float:left}
+.modul_gazeta > div > div img {float:left; margin: 0 70px 0 10px;}
+
+
+
+/* BOX ROZLICZ SIÄ˜ Z PIT.PL */
+#main .lev1 article.zmiany .plain {padding:10px;}
+#main .lev1 article.zmiany .plain h6 a {font-size: 16px;font-weight: bold;margin: 0 0 0 0;font-family: 'SANS';color: #39C;line-height: 25px;}
+#main .lev1 article.zmiany .plain p {width:100%;}
+#main .lev1 article.zmiany .plain .epitysystem a img,
+#main .lev1 article.zmiany .plain .epitysystem a strong { float:left;line-height: 30px; }
+#main .lev1 article.zmiany .plain .epitysystem a {width: 95px;display: block;height: 30px;float: left;margin-right:10px;}
+#main .lev1 article.zmiany .plain .epitysystem a+a {width:72px;margin-right:10px;}
+#main .lev1 article.zmiany .plain .epitysystem a+a+a {width:70px;margin-right:none;}
+#main .lev1 article.zmiany .plain div.epitysystem + br +  p+ h6 a {font-size: 11px; line-height: 23px; color:#39C;}
+
+
+.modul_kalkulatory ul.menu_v {height: 74px; overflow: hidden;}
+
+/* TABELE pit_tabela */
+
+/*#main .td6 {border:none;background:none;}*/
+table select {margin-left:0;}
+
+
+table.pit_tabela                { margin:15px auto; width:100%;border-right:none; border-spacing:0px; border-color:gray;border-collapse: separate;border-top: 1px solid #CECECE;border-left:1px solid #cecece; clear: both;}
+table.pit_tabela_mid			{ width: 350px;}
+table.pit_tabela p              { text-align: left;}
+table.pit_tabela tbody,
+table.tf tbody td,
+table tfoot                     { background:#f5f5f5; }
+table.pit_tabela td,
+table.pit_tabela th,
+table.tf td                     { padding:6px; border-bottom:1px solid #CECECE;border-top:0px; text-align: left;line-height: 16px;}
+table.pit_tabela td             { border-right:1px solid #CECECE;}
+table.pit_tabela thead          { background:#EEEEEE;}
+table.pit_tabela thead  td,
+table.pit_tabela thead  th,
+table.pit_tabela tbody  th,
+table.tf thead td,
+table.tf tbody th               { background:#E6F3F9;color:#000000;text-align: center;font-weight: bold;font-size:12px;padding:6px;border-bottom:1px solid #CECECE;}
+table.tf input[type="text"]     { width:50px; }
+table.tf input[type="submit"]   { float:right; text-transform:uppercase; cursor:pointer;}
+table.tf                        { margin:0 auto; margin-top:15px; margin-bottom:15px; border-spacing:0px; border-collapse: separate;border-top: 1px solid #CECECE;border-left:1px solid #cecece;border-right:1px solid #cecece; min-width: 300px;}
+table.tf tr.row1,
+table.pit_tabela tr.row1               { background:#FFFFFF;}
+
+
+table.pit_tabela_urzedy td{padding:0;}
+
+table.pit_tabela table.pit_tabela_include th{ text-align:left;}
+table.pit_tabela table.pit_tabela_include td{border:none;padding:6px;border-top:1px solid #CECECE;}
+table.pit_tabela table thead th   {background:#E6F3F9;padding:6px;font-weight:bold;}
+table.pit_tabela table tr > td:first-child {width:32%;}
+
+
+.urzedy_legend_list { padding-left:18px; }
+.urzedy_legend_list li ul { list-style:square;}
+.urzedy_legend_list > li {font-weight: bold;}
+
+table.pit_tabela_urzedyspecjalne thead tr td+td {width:33%;}
+table.pit_tabela_urzedyspecjalne tbody tr td {width:33%;}
+
+ul.pdf_list { list-style: square; padding-left: 16px; }
+.plain span.empty {float:right;}
+
+#main .lev2 .plain p[align="right"] {text-align:right;}
+
+.pit_tabela .row1 span.szary {float: none;}
+
+.pit_tabela_zus_przedsiebiorcow tbody tr td,
+.pit_tabela_zus_dlanowychfirm tbody tr td                   { text-align:center; }
+.pit_tabela_zus_przedsiebiorcow tbody tr.row1 td,
+.pit_tabela_zus_dlanowychfirm tbody tr.row1 td              { text-align:right; }
+
+.pit_tabela_zus_odliczanieskladek tbody tr td               { text-align:center; }
+.pit_tabela_zus_odliczanieskladek tbody tr td+td            { text-align:right; }
+
+.pit_tabela_zus_ograniczanieskladek tbody tr td             { text-align:center; }
+.pit_tabela_zus_ograniczanieskladek tbody tr td+td          { text-align:right; }
+.pit_tabela_zus_ograniczanieskladek tbody tr td+td+td       { text-align:center; }
+.pit_tabela_zus_ograniczanieskladek tbody tr td+td+td+td    { text-align:right; }
+
+.pit_tabela_zus_ubezpieczeniawypadkowe tbody tr td          { text-align:center; }
+.pit_tabela_zus_ubezpieczeniawypadkowe tbody tr td+td       { text-align:left; }
+.pit_tabela_zus_ubezpieczeniawypadkowe tbody tr td+td+td    { text-align:center; }
+.pit_tabela_zus_ubezpieczeniawypadkowe tbody tr td+td+td+td { text-align:right; }
+
+.pit_tabela_zus_wynagrodzenieminimalne tbody tr td,
+.pit_tabela_zus_wynagrodzenieprzecietne tbody tr td         { text-align:right; }
+.pit_tabela_zus_wynagrodzenieminimalne tbody tr td+td,
+.pit_tabela_zus_wynagrodzenieprzecietne  tbody tr td+td     { text-align:center; }
+
+.pit_tabela_zus_wynagrodzenieuczniow tbody tr td            { text-align:right; }
+.pit_tabela_zus_wynagrodzenieuczniow tbody tr td+td+td+td           { text-align:center; }
+
+/*.pit_tabela_zus_zasilki tbody tr td:not[rowspan="5"]+td {text-align:right;}*/
+
+.pit_tabela_zus_zasilki tbody tr td+td                      { text-align:right; }
+.pit_tabela_zus_zasilki tbody tr td[rowspan="5"]+td         { text-align: left; }
+
+.pit_tabela_zus_emerytury,
+.pit_tabela_podatkowe_odsetki,
+.pit_tabela_podatkowe_skalapodatkowa1 tbody tr td                       { text-align: right;}
+
+.pit_tabela_zus_emerytury,
+.pit_tabela_podatkowe_odsetki tbody tr td+td+td                 { text-align: center;}
+
+.pit_tabela_podatkowe_skalapodatkowa1 tbody tr td+td+td                 { text-align: left;}
+
+.pit_tabela_podatkowe_skalapodatkowa2 thead tr td+td+td,
+.pit_tabela_podatkowe_koszty2 thead tr td+td+td,
+.pit_tabela_podatkowe_skalapodatkowa2 thead tr+tr td+td,
+.pit_tabela_podatkowe_koszty2 thead tr+tr td+td,
+.pit_tabela_podatkowe_skalapodatkowa2 tbody tr td+td,
+.pit_tabela_podatkowe_koszty2 tbody tr td+td,
+.pit_tabela_podatkowe_najem tbody tr td+td                      { text-align: right; }
+
+.pit_tabela_podatkowe_ryczalt tbody tr td,
+.pit_tabela_podatkowe_zryczaltowane tbody tr td,
+.pit_tabela_podatkowe_citosobyprawne tbody tr td                { text-align: right; }
+.pit_tabela_podatkowe_ryczalt tbody tr td+td,
+.pit_tabela_podatkowe_zryczaltowane tbody tr td+td,
+.pit_tabela_podatkowe_citosobyprawne tbody tr td+td             { text-align: left; }
+
+.pit_tabela_podatkowe_limitryczalt1 tbody tr+tr td+td,
+.pit_tabela_podatkowe_limitryczalt2 thead tr td+td { text-align: right; }
+
+.pit_tabela_podatkowe_koszty1 tbody tr td+td { text-align:right; }
+.pit_tabela_podatkowe_koszty1 tbody tr td+td+td { text-align:left; }
+
+
+.pit_tabela_podatkowe_ulgabudowlana tbody tr.row-ulga1 td+td+td,
+.pit_tabela_podatkowe_ulgabudowlana tbody tr.row-ulga5 td+td+td {text-align: right;}
+.pit_tabela_podatkowe_ulgabudowlana tbody tr.row-ulga2 {}
+.pit_tabela_podatkowe_ulgabudowlana tbody tr.row-ulga3 td,
+.pit_tabela_podatkowe_ulgabudowlana tbody tr.row-ulga4 td,
+.pit_tabela_podatkowe_ulgabudowlana tbody tr.row-ulga6 td,
+.pit_tabela_podatkowe_ulgabudowlana tbody tr.row-ulga7 td {text-align: right;}
+.pit_tabela_podatkowe_ulgabudowlana tbody tr.row-ulga3 td+td+td+td{text-align: left;}
+.pit_tabela_podatkowe_ulgabudowlana tbody tr.row-ulga4 {}
+
+
+.pit_tabela_podatkowe_malypodatnik tbody tr td,
+.pit_tabela_podatkowe_odsetki tbody tr td {text-align: right;}
+
+
+.pit_tabela_vat_limity tbody tr td  {text-align: right;}
+.pit_tabela_vat_limity tbody tr td+td  {text-align: left;}
+.pit_tabela_vat_malypodatnik tbody tr td  {text-align: right;}
+.pit_tabela_vat_vatue tbody tr td+td ,
+.pit_tabela_vat_sprzedaz tbody tr td+td {text-align: right;}
+.pit_tabela_vat_obciazenia tbody tr td{
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    white-space: pre-wrap;       /* css-3 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    word-break: break-all;
+    white-space: normal;
+}
+.pit_tabela_vat_progi tbody tr td+td {text-align: right;}
+.pit_tabela_vat_limitywnt tbody tr td {text-align: right;}
+.pit_tabela_vat_limitywnt tbody tr td+td+td {text-align: left;}
+
+
+.pit_tabela_dzialalnosc_odsetkiustawowe tbody tr td,
+.pit_tabela_dzialalnosc_odsetkimaksymalne tbody tr td {text-align: right;}
+.pit_tabela_dzialalnosc_odsetkiustawowe tbody tr td+td,
+.pit_tabela_dzialalnosc_odsetkimaksymalne tbody tr td+td {text-align: left;}
+.pit_tabela_dzialalnosc_rachunkowosc1  tbody tr td { text-align:right; }
+.pit_tabela_dzialalnosc_rachunkowosc1  tbody tr td+td+td{ text-align:left; }
+.pit_tabela_dzialalnosc_rachunkowosc2  tbody tr td+td { text-align:right; }
+.pit_tabela_dzialalnosc_sprawozdania1 tbody tr td+td {text-align:right; }
+.pit_tabela_dzialalnosc_sprawozdania2 tbody tr+tr td+td+td {text-align:right; }
+.pit_tabela_dzialalnosc_sprawozdania3 {}
+.pit_tabela_dzialalnosc_kwota {}
+.pit_tabela_dzialalnosc_zfss {}
+.pit_tabela_dzialalnosc_koszty1 {}
+.pit_tabela_dzialalnosc_koszty2 {}
+.pit_tabela_dzialalnosc_amortyzacja50 {}
+.pit_tabela_dzialalnosc_amortyzacja100 {}
+.pit_tabela_dzialalnosc_produkcjarolna {}
+
+
+.facebook { background: url("fb_pit.png") no-repeat scroll 0 0 transparent;display: block;float: right;height: 420px;padding: 0; position: fixed;left: -198px;top: 246px;width: 254px;z-index: 1002; cursor:pointer;}
+.facebook > div {padding-top: 6px;}
+
+.foot_menu {margin-left: 222px;}
+
+.newspit_banner {z-index: 10;background: #ffffff url("newspit_ext2.png") no-repeat center center;border: 1px solid #dedede; position: fixed;left: 0px;top: 97px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;}
+.newspit_banner a {display:block;width:46px; height:140px;}
+/*
+.pit_tabela_zus_zasilki tbody tr td:not[colspan="2"]+td+td {text-align:right;}
+.pit_tabela_zus_zasilki tbody tr td[colspan="2"]+td {text-align:right;}
+*/
+
+
+/* OSOBNO
+table.pit_tabela                { margin-top:15px; margin-bottom:15px; border-right:none; border-spacing:0px; border-color:gray;border-collapse: separate;border-top: 1px solid #CECECE;border-left:1px solid #cecece;}
+table.pit_tabela tbody          { background:#F5F5F5;}
+table.pit_tabela td             { padding:3px; border-bottom:1px solid #CECECE;border-right:1px solid #CECECE;border-top:0px; text-align: left;}
+table.tf td                     { padding:3px; border-bottom:1px solid #CECECE;border-top:0px; text-align: left;}
+table.pit_tabela thead          { background:#EEEEEE;}
+table.pit_tabela thead  td      { background:#4B4B4B;color:#F5F5F5;text-align: center;font-weight: bold;font-size:11px; }
+
+table.tf                        { margin-top:15px; margin-bottom:15px; border-right:none; border-spacing:0px; border-color:gray;border-collapse: separate;border-top: 1px solid #CECECE;border-left:1px solid #cecece;border-right:1px solid #cecece;}
+table.tf tbody td               { background:#F5F5F5}
+table.tf thead td,
+table.tf tbody th               { background:#4B4B4B;color:#F5F5F5;text-align: center;font-weight: bold;font-size:12px;padding:3px;}
+table tfoot                     { background:#f5f5f5; }
+table.tf input[type="text"]     { width:50px;}
+table.tf input[type="submit"]   {float:right;text-transform: uppercase;cursor: pointer;}
+*/
+
+
+
+@media screen and (max-width: 1100px) {
+    .facebook       { display:none; }
+    .newspit_banner { display:none; }
+}
+@media screen and (max-width: 1359px) {
+    .levSR          { display:none;}
+}
+
+
+#ramka #searcher input[type="submit"] { background-color: #3076d9; line-height: 20px; padding: 0 10px; margin: 0 0 0 10px; border-radius: 5px; color: #FFF; font-weight: bold; border: 1px solid #1e64c8; font-size:10px; text-transform: uppercase;  }
+
+.search_result .h3 { line-height: 16px; }
+.button_right { float:right;}
+
+.initium_sign { display: block; height: 60px; margin: 10px; }
+.initium_sign a, .initium_sign img { width:160px;}
+.initium_sign a, .initium_sign em { float: left; }
+.initium_sign em { margin: 15px; font-size: 0.8em; }
+.initium_sign img { border: 0; }
+
+#newsnl {margin: 15px 15px 15px 0px;}
+table.pit_tabela_half {width:50%;}
+table.pit_tabela_half input[type="text"],
+table.pit_tabela_half input[type="password"] {width: 98%;}
+table.pit_tabela_half input[type="submit"] {float:right;}
+
+.left_no #main .main .lev2 {width:100%;}
+
+.signform .payment {margin:20px 0 40px 0; padding-top:10px;border-top:1px solid #000;}
+.signform .payment > a {line-height:30px; text-align: center}
+.signform .payment table tr td {width:70%;text-align: center;}
+.signform .payment table tr td+td {width:30%;text-align: center;padding-left:0 !important}
+.signform .payment input[type="submit"] {background-color: #3076D9;line-height: 19px;padding: 0 10px;margin: 0 0 0 13px;border-radius: 5px;color: white;font-weight: bold;font-size: 10px;border: 1px solid #1E64C8;cursor:pointer; text-transform: uppercase;}
+
+.td3.signform #product .file {float:left;margin-top:20px;}
+table.pit_tabela.no_width {width:auto;margin-left:15px;}
+
+
+.ipopup-bg {width: 100%;position: fixed;height: 1000px;background: #000;opacity: 0.3;z-index: 900;}
+.ipopup-close {width: 500px;height: 30px;background: #3278dc;margin: 0 auto;position: fixed;left: 1%;right: 1%;top: 230px;z-index: 901;}
+.ipopup-close a { background: url('ikons.png');height: 30px;width: 30px;display: block;float: right;margin-right:10px;background-position: 0 -597px;}
+.ipopup {width:500px; height: 350px;background: #FFF;margin: 0 auto;position: fixed;left: 1%;right: 1%;top: 250px;z-index: 901;}
+.ipopup iframe {border:none;}
+body.popup {overflow-y: hidden;padding-top:10px}
+body.popup section.main {width:470px; padding:15px;}
+body.popup section.main .popup_tabela tbody tr td+td {width:60%;}
+body.popup section.main .popup_tabela input[type="text"] { width:98%;}
+body.popup section.main .popup_tabela input[type="button"] { float:right; }
+body.popup section.main .popup_tabela input[type="button"].button_left { float:left; }
+body.popup section.main .popup_tabela textarea { margin: 0; width: 97.5%; }
+
+body.popup section.main .popup_tabela input.error,
+body.popup section.main .popup_tabela textarea.error{border: 2px solid red;}
+
+a.icon_action       { color: #666666; float:right;font-weight: bold; text-transform: uppercase;font-size: 11px;line-height: 19px;display:block; height:20px;margin-bottom:20px;background:url('ikons.png') no-repeat; padding-left:25px;width:120px;}
+a.icon_comment      { background-position: -9px -635px;position: absolute; top: -32px;right: -257px;}
+a.icon_print        { background-position: -9px -666px;width:65px;position: absolute; top: -32px;right: -348px;}
+
+.lev1 a.icon_action {display:none;}
+table.results {width:50%;}
+table.results tbody tr td {padding:0;width:25%;}
+table.results tbody tr.names td {text-align:center;}
+
+
+
+table.pit_tabela_90 {margin:0 auto;width:90%;}
+table.pit_tabela_80 {margin:0 auto;width:80%;}
+table.pit_tabela_70 {margin:0 auto;width:70%;}
+table.pit_tabela_60 {margin:0 auto;width:60%;}
+table.pit_tabela_50 {margin:0 auto;width:50%;}
+table.pit_tabela_40 {margin:0 auto;width:40%;}
+table.pit_tabela_30 {margin:0 auto;width:30%;}
+table.pit_tabela_20 {margin:0 auto;width:20%;}
+
+fieldset.szukaj-eporady form { background:none;}
+fieldset.szukaj-eporady form input[type="text"] { width: 145px; margin: 0 5px 0 0;}
+fieldset.szukaj-eporady input.button   {margin:10px 5px;}
+fieldset.szukaj-eporady form td.bold {font-weight:bold; padding:17px 0 18px 0}
+fieldset.szukaj-eporady form input[type="text"].input-single {margin-left:61px;margin-left: 62px; width: 200px; }
+
+.modul_eporady header h2 span.blue_h2 { font-weight: inherit; color: #3399cc; font-size:18px;}ç×¯ÌO      Y¶’Y¶’>/6³Y¿`I   -    :http://www.vat.pl/cms/img/1/szablon_temp.css necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Server: Apache
+Last-Modified: Mon, 05 Jun 2017 05:27:09 GMT
+ETag: "2568b0-3d84-5512fc1208540"
+Content-Type: text/css
+Content-Length: 15748
+Date: Mon, 11 Sep 2017 13:39:32 GMT
+X-Varnish: 1783979841 1783159381
+Age: 27723
+Via: 1.1 varnish
+ original-response-headers Server: Apache
+Last-Modified: Mon, 05 Jun 2017 05:27:09 GMT
+ETag: "2568b0-3d84-5512fc1208540"
+Content-Type: text/css
+Content-Length: 15748
+Date: Mon, 11 Sep 2017 13:39:32 GMT
+X-Varnish: 1783979841 1783159381
+Age: 27723
+Via: 1.1 varnish
+Connection: keep-alive
+ uncompressed-len 0 net-response-time-onstart 1001 net-response-time-onstop 1069   =„

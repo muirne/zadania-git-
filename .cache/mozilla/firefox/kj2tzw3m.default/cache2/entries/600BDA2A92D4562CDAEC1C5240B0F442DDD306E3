@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7 no-js" lang="pl-PL">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8 no-js" lang="pl-PL">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html class="no-js" lang="pl-PL">
+<!--<![endif]-->
+					<head>
+				    <meta charset="UTF-8" />
+				    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+            				    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				    <link rel="profile" href="http://gmpg.org/xfn/11" />
+				    <link rel="pingback" href="http://ubuntu.pl/xmlrpc.php" />
+
+				   <!-- html5shiv for IE8 and less  -->
+				    <!--[if lt IE 9]>
+				      <script src="http://ubuntu.pl/wp-content/themes/customizr/inc/assets/js/html5.js"></script>
+				    <![endif]-->
+				    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Konsola nie gryzie &#8211; operacje na tekście (część pierwsza) &#8211; Ubuntu.pl</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Ubuntu.pl &raquo; Kanał z wpisami" href="http://ubuntu.pl/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Ubuntu.pl &raquo; Kanał z komentarzami" href="http://ubuntu.pl/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Ubuntu.pl &raquo; Konsola nie gryzie &#8211; operacje na tekście (część pierwsza) Kanał z komentarzami" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ubuntu.pl\/wp-includes\/js\/wp-emoji-release.min.js?ver=19571d0e676e8ab0256f2b8d4f484181"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='tc-gfonts-css'  href='//fonts.googleapis.com/css?family=Ubuntu:400%7CUbuntu:400' type='text/css' media='all' />
+<link rel='stylesheet' id='cookie-consent-style-css'  href='http://ubuntu.pl/wp-content/plugins/uk-cookie-consent/assets/css/style.css?ver=19571d0e676e8ab0256f2b8d4f484181' type='text/css' media='all' />
+<link rel='stylesheet' id='customizr-fa-css'  href='http://ubuntu.pl/wp-content/themes/customizr/assets/shared/fonts/fa/css/font-awesome.min.css?ver=4.0.7' type='text/css' media='all' />
+<link rel='stylesheet' id='customizr-common-css'  href='http://ubuntu.pl/wp-content/themes/customizr/inc/assets/css/tc_common.min.css?ver=4.0.7' type='text/css' media='all' />
+<link rel='stylesheet' id='customizr-skin-css'  href='http://ubuntu.pl/wp-content/themes/customizr-ubupl/inc/assets/css/orange.min.css?ver=4.0.7' type='text/css' media='all' />
+<style id='customizr-skin-inline-css' type='text/css'>
+
+                  .site-title,.site-description,h1,h2,h3,.tc-dropcap {
+                    font-family : 'Ubuntu';
+                    font-weight : 400;
+                  }
+
+                  body,.navbar .nav>li>a {
+                    font-family : 'Ubuntu';
+                    font-weight : 400;
+                  }
+table { border-collapse: separate; }
+                           body table { border-collapse: collapse; }
+                          
+.social-links .social-icon:before { content: none } 
+.sticky-enabled .tc-shrink-on .site-logo img {
+    					height:30px!important;width:auto!important
+    				}
+
+    				.sticky-enabled .tc-shrink-on .brand .site-title {
+    					font-size:0.6em;opacity:0.8;line-height:1.2em
+    				}
+
+#tc-push-footer { display: none; visibility: hidden; }
+         .tc-sticky-footer #tc-push-footer.sticky-footer-enabled { display: block; }
+        
+
+</style>
+<link rel='stylesheet' id='customizr-style-css'  href='http://ubuntu.pl/wp-content/themes/customizr-ubupl/style.css?ver=4.0.7' type='text/css' media='all' />
+<link rel='stylesheet' id='fancyboxcss-css'  href='http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/fancybox/jquery.fancybox-1.3.4.min.css?ver=19571d0e676e8ab0256f2b8d4f484181' type='text/css' media='all' />
+<link rel='stylesheet' id='author-avatars-widget-css'  href='http://ubuntu.pl/wp-content/plugins/author-avatars/css/widget.css?ver=1.11' type='text/css' media='all' />
+<link rel='stylesheet' id='author-avatars-shortcode-css'  href='http://ubuntu.pl/wp-content/plugins/author-avatars/css/shortcode.css?ver=1.11' type='text/css' media='all' />
+<script type='text/javascript' src='http://ubuntu.pl/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/fancybox/jquery.fancybox-1.3.4.min.js?ver=4.0.7'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var TCParams = {"_disabled":[],"FancyBoxState":"1","FancyBoxAutoscale":"1","SliderName":"","SliderDelay":"","SliderHover":"1","centerSliderImg":"1","SmoothScroll":{"Enabled":false,"Options":{"touchpadSupport":false}},"anchorSmoothScroll":"linear","anchorSmoothScrollExclude":{"simple":["[class*=edd]",".tc-carousel-control",".carousel-control","[data-toggle=\"modal\"]","[data-toggle=\"dropdown\"]","[data-toggle=\"tooltip\"]","[data-toggle=\"popover\"]","[data-toggle=\"collapse\"]","[data-toggle=\"tab\"]","[class*=upme]","[class*=um-]"],"deep":{"classes":[],"ids":[]}},"ReorderBlocks":"1","centerAllImg":"1","HasComments":"1","LeftSidebarClass":".span3.left.tc-sidebar","RightSidebarClass":".span3.right.tc-sidebar","LoadModernizr":"1","stickyCustomOffset":{"_initial":0,"_scrolling":0,"options":{"_static":true,"_element":""}},"stickyHeader":"1","dropdowntoViewport":"","timerOnScrollAllBrowsers":"1","extLinksStyle":"","extLinksTargetExt":"","extLinksSkipSelectors":{"classes":["btn","button"],"ids":[]},"dropcapEnabled":"","dropcapWhere":{"post":"","page":""},"dropcapMinWords":"50","dropcapSkipSelectors":{"tags":["IMG","IFRAME","H1","H2","H3","H4","H5","H6","BLOCKQUOTE","UL","OL"],"classes":["btn","tc-placeholder-wrap"],"id":[]},"imgSmartLoadEnabled":"","imgSmartLoadOpts":{"parentSelectors":[".article-container",".__before_main_wrapper",".widget-front"],"opts":{"excludeImg":[".tc-holder-img"]}},"goldenRatio":"1.618","gridGoldenRatioLimit":"350","isSecondMenuEnabled":"","secondMenuRespSet":"in-sn-before","isParallaxOn":"1","parallaxRatio":"0.55","pluginCompats":[],"frontHelpNoticesOn":"1","frontHelpNoticeParams":{"thumbnail":{"active":false,"args":{"action":"dismiss_thumbnail_help","nonce":{"id":"thumbnailNonce","handle":"365b1b88cf"},"class":"tc-thumbnail-help"}},"smartload":{"active":true,"args":{"action":"dismiss_img_smartload_help","nonce":{"id":"imgSmartLoadNonce","handle":"cc2da7ac0a"},"class":"tc-img-smartload-help"}},"sidenav":{"active":false,"args":{"action":"dismiss_sidenav_help","nonce":{"id":"sideNavNonce","handle":"0c4ee8216a"},"class":"tc-sidenav-help"}},"secondMenu":{"active":false,"args":{"action":"dismiss_second_menu_notice","nonce":{"id":"secondMenuNonce","handle":"ab223e41f4"},"class":"tc-menu-placeholder"}},"mainMenu":{"active":false,"args":{"action":"dismiss_main_menu_notice","nonce":{"id":"mainMenuNonce","handle":"03d263cd81"},"class":"tc-main-menu-notice"}},"slider":{"active":false,"args":{"action":"slider_notice_actions","nonce":{"id":"sliderNoticeNonce","handle":"853653b4c1"},"class":"tc-slider-notice"}},"fp":{"active":false,"args":{"action":"fp_notice_actions","nonce":{"id":"fpNoticeNonce","handle":"e98e256986"},"class":"tc-fp-notice"}},"widget":{"active":false,"args":{"action":"dismiss_widget_notice","nonce":{"id":"WidgetNonce","handle":"46d7864134"}}}},"adminAjaxUrl":"http:\/\/ubuntu.pl\/wp-admin\/admin-ajax.php","ajaxUrl":"http:\/\/ubuntu.pl\/?czrajax=1","frontNonce":{"id":"CZRFrontNonce","handle":"97ade6ffb7"},"isDevMode":"","isModernStyle":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/themes/customizr/inc/assets/js/tc-scripts.min.js?ver=4.0.7'></script>
+<link rel='https://api.w.org/' href='http://ubuntu.pl/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://ubuntu.pl/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://ubuntu.pl/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Ubuntu Weekly Newsletter #180' href='http://ubuntu.pl/czytelnia/2010/02/16/ubuntu-weekly-newsletter-180/' />
+<link rel='next' title='Ubuntu Weekly Newsletter #181' href='http://ubuntu.pl/czytelnia/2010/02/23/ubuntu-weekly-newsletter-181/' />
+
+<link rel="canonical" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/" />
+<link rel='shortlink' href='http://ubuntu.pl/?p=10766' />
+<link rel="alternate" type="application/json+oembed" href="http://ubuntu.pl/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fubuntu.pl%2Fczytelnia%2F2010%2F02%2F18%2Fkonsola_nie_gryzie_czesc1%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://ubuntu.pl/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fubuntu.pl%2Fczytelnia%2F2010%2F02%2F18%2Fkonsola_nie_gryzie_czesc1%2F&#038;format=xml" />
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-1206337-9', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+		<style id="ctcc-css" type="text/css" media="screen">
+				#catapult-cookie-bar {
+					box-sizing: border-box;
+					max-height: 0;
+					opacity: 0;
+					z-index: 99999;
+					overflow: hidden;
+					color: #ddd;
+					position: fixed;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					background-color: #464646;
+				}
+				#catapult-cookie-bar a {
+					color: #fff;
+				}
+				#catapult-cookie-bar .x_close span {
+					background-color: ;
+				}
+				button#catapultCookie {
+					background:;
+					color: ;
+					border: 0; padding: 6px 9px; border-radius: 3px;
+				}
+				#catapult-cookie-bar h3 {
+					color: #ddd;
+				}
+				.has-cookie-bar #catapult-cookie-bar {
+					opacity: 1;
+					max-height: 999px;
+					min-height: 30px;
+				}</style><script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//ubuntu.pl/?wordfence_logHuman=1&hid=10C0D1F1AF60A078D6A0051C913E067F');
+</script>		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+						</head>
+				
+	<body class="post-template-default single single-post postid-10766 single-format-standard tc-fade-hover-links tc-r-sidebar tc-center-images skin-orange tc-sticky-header sticky-disabled tc-transparent-on-scroll no-navbar tc-regular-menu tc-sticky-footer" itemscope itemtype="http://schema.org/WebPage">
+
+    
+    <div id="tc-page-wrap" class="">
+
+  		
+  	   	<header class="tc-header clearfix row-fluid tc-tagline-off tc-title-logo-on  tc-shrink-on tc-menu-on logo-left tc-second-menu-in-sn-before-when-mobile" role="banner">
+  			      <div class="brand span3 pull-left ">
+
+        <h1><a class="site-title" href="http://ubuntu.pl/" title="Ubuntu.pl | Polskie forum użytkowników Ubuntu">Ubuntu.pl</a></h1>
+      </div> <!-- brand span3 pull-left -->
+      <div class="container outside"><h2 class="site-description">Polskie forum użytkowników Ubuntu</h2></div>      	<div class="navbar-wrapper clearfix span9 tc-submenu-fade tc-submenu-move tc-open-on-hover pull-menu-left">
+        	<div class="navbar resp">
+          		<div class="navbar-inner" role="navigation">
+            		<div class="row-fluid">
+              		<div class="social-block span5"><div class="social-links"><a rel="nofollow" class="social-icon icon-feed-square"  title="Zapisz nasz kanał RSS" aria-label="Zapisz nasz kanał RSS" href="http://ubuntu.pl/feed/rss/"  target="_blank" ><i class="fa fa-rss-square"></i></a><a rel="nofollow" class="social-icon icon-facebook"  title="Obserwuj nas na Facebooku" aria-label="Obserwuj nas na Facebooku" href="https://www.facebook.com/ubuntupl/"  target="_blank" ><i class="fa fa-facebook"></i></a><a rel="nofollow" class="social-icon icon-stack-exchange"  title="Zajrzyj na nasze forum" aria-label="Zajrzyj na nasze forum" href="http://ubuntu.pl/forum"  ><i class="fa fa-stack-exchange"></i></a></div></div><h2 class="span7 inside site-description">Polskie forum użytkowników Ubuntu</h2><div class="nav-collapse collapse tc-hover-menu-wrapper"><div class="menu-glowne-container"><ul id="menu-glowne-2" class="nav tc-hover-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children dropdown menu-item-22064"><a href="http://ubuntu.pl/">Ubuntu.pl <strong class="caret"></strong></a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22088"><a href="http://ubuntu.pl/pobierz/">Pobierz</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22085"><a href="http://ubuntu.pl/o-ubuntu/">O Ubuntu</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22086"><a href="http://ubuntu.pl/manifest/">Manifest</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22084"><a href="http://ubuntu.pl/reklama/">Reklama</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22087"><a href="http://ubuntu.pl/pobierz/">Pobierz</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22065"><a href="http://ubuntu.pl/forum/">Forum</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children dropdown menu-item-22058"><a href="http://ubuntu.pl/czytelnia/">Czytelnia <strong class="caret"></strong></a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22046"><a href="http://ubuntu.pl/regulamin/">Regulamin</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22044"><a href="http://ubuntu.pl/jak-pisac/">Jak pisać</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22047"><a href="http://ubuntu.pl/napisz-artykul/">Napisz artykuł</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-22166"><a href="http://ubuntu.pl/czytelnia/2014/05/20/przewodnik-po-ubuntu-14-04-lts-trusty-tahr/">Przewodnik</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22045"><a href="http://ubuntu.pl/o-nas/">O nas</a></li>
+</ul></div></div><div class="btn-toggle-nav pull-right"><button type="button" class="btn menu-btn" data-toggle="collapse" data-target=".nav-collapse" title="Otwórz menu" aria-label="Otwórz menu"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </button><span class="menu-label">Menu</span></div>          			</div><!-- /.row-fluid -->
+          		</div><!-- /.navbar-inner -->
+        	</div><!-- /.navbar resp -->
+      	</div><!-- /.navbar-wrapper -->
+    	  		</header>
+  		<div id="tc-reset-margin-top" class="container-fluid" style="margin-top:103px"></div><div id="main-wrapper" class="container">
+
+    <div class="tc-hot-crumble container" role="navigation"><div class="row"><div class="span12"><div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><span class="trail-begin"><a href="http://ubuntu.pl" title="Ubuntu.pl" rel="home" class="trail-begin">Strona Główna</a></span> <span class="sep">&raquo;</span> <a href="http://ubuntu.pl/czytelnia/" title="Czytelnia">Czytelnia</a> <span class="sep">&raquo;</span> <a href="http://ubuntu.pl/czytelnia/category/poradniki/" title="Poradniki">Poradniki</a> <span class="sep">&raquo;</span> <span class="trail-end">Konsola nie gryzie &#8211; operacje na tekście (część pierwsza)</span></div></div></div></div>
+    <div class="container" role="main">
+        <div class="row column-content-wrapper">
+
+            
+                <div id="content" class="span9 article-container tc-gallery-style">
+
+                    
+                        
+                                                                                    
+                                                                    <article id="post-10766" class="row-fluid post-10766 post type-post status-publish format-standard hentry category-poradniki">
+                                                <header class="entry-header">
+          <h1 class="entry-title ">Konsola nie gryzie &#8211; operacje na tekście (część pierwsza) <span class="comments-link"><a href="#tc-comment-title" title="22 Komentarze do Konsola nie gryzie &#8211; operacje na tekście (część pierwsza)" data-disqus-identifier="javascript:this.page.identifier"><span class="tc-comment-bubble default-bubble">22 </span></a></span></h1><div class="entry-meta"><a href="http://ubuntu.pl/czytelnia/2010/02/18/" title="15:43" rel="bookmark"><time class="entry-date updated" datetime="2010-02-18T15:43:44+00:00">18 Lut, 2010</time></a> &nbsp;w <a class="" href="http://ubuntu.pl/czytelnia/category/poradniki/" title="Zobacz wszystkie wpisy z kategorii &#8222;Poradniki&#8221;"> Poradniki </a> <span class="by-author"> przez  <span class="author vcard"><a class="url fn n" href="http://ubuntu.pl/czytelnia/author/k2cl-thalcave/" title="Zobacz wszystkie wpisy opublikowane przez k2cl &#038; thalcave" rel="author">k2cl &#38; thalcave</a></span></span> </div><hr class="featurette-divider __before_content">        </header>
+                  <section class="entry-content ">
+              <p>Kilka miesięcy temu toczyliśmy kolejną luźną i niezobowiązującą dyskusję o systemach operacyjnych i aplikacjach, z których zazwyczaj korzystamy.  W czasie rozmowy zrodził się pomysł, by &#8222;sprzedać&#8221; szerszej publiczności część naszej wiedzy na temat lekkich menadżerów okien stworzonych na bazie Blackboksa &#8212; tak właśnie  powstał <a href="http://ubuntu.pl/czytelnia/2009/07/09/opebox-i-fluxbox-lekkie-menedzery-okien-dla-kazdego/">ten oto artykuł</a> napisany na użytek Czytelni. Ponieważ wspólne pisanie okazało się być całkiem interesującym doświadczeniem, postanowiliśmy je kontynuować. Przy okazji wyboru tematu naszego następnego artykułu zdecydowaliśmy się jednak pójść o krok dalej: tym razem będzie mowa tylko i wyłącznie o konsoli.<br />
+<span id="more-10766"></span></p>
+<p>Poruszane tutaj zagadnienie w logiczny sposób wiąże się z naszym poprzednim tekstem. Skoro była mowa o lekkich menedżerach okien, naturalnym następstwem ich obecności w systemie jest używanie &#8222;lekkich&#8221; programów i korzystanie z mniejszej ilość graficznych aplikacji czy konfiguratorów. Taka sytuacja prędzej lub później musi zaowocować zdecydowanie częstszym uruchamianiem konsoli.</p>
+<p>Konsola to narzędzie o olbrzymich możliwościach. Wie o tym niemal każdy, kto zetknął się z nią przez dłuższą chwilę. Mnogość aplikacji i &#8222;klepanych na piechotę&#8221; poleceń przyprawia jednak o zawrót głowy, często więc spotyka się reakcję typu: &#8222;Konsola? O nie, bardzo dziękuję&#8230;&#8221;. W tym artykule postanowiliśmy pokazać, że konsola nie gryzie i skupić się na czymś podstawowym, a dokładniej &#8212; na przetwarzaniu tekstu. System GNU/Linux to w większości pliki tekstowe, którymi można bardzo szybko i wygodnie zarządzać właśnie przy wykorzystaniu narzędzi konsolowych. Racjonalnym rozwiązaniem wydaje się więc rozpoczęcia &#8222;oswajania&#8221; konsoli od tego właśnie tematu. Poruszane tutaj zagadnienie było już po części omówione na łamach <strong>Czytelni Ubuntu.pl</strong> &#8212; w <a href="http://ubuntu.pl/czytelnia/2009/10/28/wiersz-polecen-przegladanie-plikow/">artykule <em>Bruce&#8217;a Byfielda</em></a>. Mimo to zdecydowaliśmy się napisać nasz artykuł &#8212; chociażby po to, żeby niektóre kwestie opisać obszerniej. Poniższy tekst można by uznać za uzupełnienie informacji z wspomnianego artykułu, przede wszystkim należy go jednak traktować jako niezależną i samodzielną całość.</p>
+<p><strong>WYŚWIETLANIE TEKSTU</strong><br />
+Chyba wystarczy już tego wstępu &#8212; pora przejść do działania i przywitać się z konsolą. Najprostszą komendą, jaką można wydać, jest &#8222;wyświetl&#8221; &#8212; do tego celu służy <em>echo</em>. Użycie tej komendy jest bardzo proste:</p>
+<p>Przykład 1.<br />
+<code>echo "Tekst wyświetlany"</code></p>
+<pre>Tekst wyświetlany</pre>
+<p>Sam tekst może być objęty cudzysłowem pojedynczym lub podwójnym &#8212; chociaż nie jest to konieczne do działania komendy. Co zatem zyskujemy w ten sposób? Zastosowanie cudzysłowu pozwala nam przenieść wyświetlany tekst na kilka linii (np. z powodu jego długości, czy też przez nasze widzimisię).</p>
+<p>Przykład 2.<br />
+<code>echo "To jest tekst<br />
+na dwie linie"</code></p>
+<pre>To jest tekst
+na dwie linie</pre>
+<p>Stosując backslash, możemy w trakcie podawania ciągu znaków do wyświetlania &#8222;załamać tekst&#8221; &#8212; będzie on jednak wyświetlany w jednej linii.</p>
+<p>Przykład 3.<br />
+<code>echo To jest tekst<br />
+na trzy linie, ale<br />
+efekt polecenia wyświetli tekst w jednej linii.</code></p>
+<pre>To jest tekst na trzy linie, ale efekt polecenia wyświetli tekst w jednej linii.</pre>
+<p>Uważny czytelnik spostrzegł zapewne, że nie każdy znak wypisany po komendzie <em>echo</em> jest wyświetlany na ekranie. Istnieje grupa znaków specjalnych (należą do nich m.in.: <strong>&#8222;</strong>, <strong>‚</strong> oraz <strong></strong>), które są interpretowane przez polecenia jako coś więcej aniżeli zwykły znak. Cudzysłów zawiera blok tekstu, natomiast <strong></strong> pozwala na załamanie linii &#8212; wciśnięcie ENTER-a bez zatwierdzenia wykonania komendy. Pojedynczy cudzysłów powoduje dodatkowo interpretowanie wszystkich znaków wewnątrz bloku dosłownie (warto spojrzeć, jak wyświetlane są zapisane w ten sposób zmienne). Podobny efekt dla pojedynczego znaku specjalnego można uzyskać, stawiając przed nim symbol backslasha.</p>
+<p>Przykład 4a.<br />
+<code>echo "Ten tekst \<br />
+zajmuje dwie linie. A oto przykład zmiennej - $HOME"</code></p>
+<pre>Ten tekst 
+zajmuje dwie linie. A oto przykład zmiennej - /home/k2cl</pre>
+<p>Przykład 4b.<br />
+<code>echo 'Ten tekst<br />
+zajmuje dwie linie. W tym cudzysłowu zmienna ta wygląda tak - $HOME'</code></p>
+<pre>Ten tekst 
+zajmuje dwie linie. W tym cudzysłowu zmienna ta wygląda tak - $HOME</pre>
+<p>Przykład 4c.<br />
+<code>echo Żeby wyświetlić znak specjalny, robimy coś takiego: "</code></p>
+<pre>Żeby wyświetlić znak specjalny, robimy coś takiego: "</pre>
+<p>Omawiając <em>echo</em>, warto wspomnieć o opcji <em>-e</em>, która interpretuje specjalne sekwencje takie jak <em>n</em> (znak nowej linii) oraz <em>t</em> (znak tabulacji). Odsyłamy do manuala <em>echo</em> po więcej informacji na ten temat (<em>man echo</em> jest stosunkowo krótki).</p>
+<p>Przykład 5a.<br />
+<code>echo -e "Ten tekst n jest wyświetlany w dwóch liniach"</code></p>
+<pre>Ten tekst
+ jest wyświetlany w dwóch liniach</pre>
+<p>Przykład 5b.<br />
+<code>echo "Ten kod n mimo, iż zawiera znak nowej linii, wyświetli się w jednej."</code></p>
+<pre>Ten kod n mimo, iż zawiera znak nowej linii, wyświetli się w jednej.</pre>
+<p><strong>ŁĄCZENIE PLIKÓW I ICH WYŚWIETLANIE</strong><br />
+Ponieważ kwestię wyświetlania wpisanego tekstu mamy już za sobą, możemy zająć się prezentowaniem danych, które znajdują się &#8222;gdzieś w systemie&#8221;. Podstawowym poleceniem jest &#8222;wyświetl zawartość plików&#8221; &#8212; <em>cat</em>, który łączy podane mu w argumentach pliki i wyświetla całość na ekranie. Komenda ta ma swoją bliźniaczą siostrę, mianowicie <em>tac</em>. Jej działanie polega na wypisaniu zawartości podanych plików na ekranie według kolejności z polecenia, jednak wiersze wypisywane są od ostatniego do pierwszego. Można uznać, że to &#8222;bajer&#8221;, ale okazuje się być całkiem przydatny, kiedy interesujące nas informacje znajdują się gdzieś na samym początku pliku o ciut większych rozmiarach.</p>
+<p><strong>PAGERY</strong><br />
+Skoro opisujemy rozmaite sposoby wyświetlenia zawartości danego pliku, pora chyba omówić pagery &#8212; programy, które można nazwać konsolowymi przeglądarkami plików tekstowych. Najbardziej podstawowym jest <em>more</em> &#8212; program domyślnie instalowany chyba w każdej dystrybucji GNU/Linuksa. Umożliwia on czytanie plików ekran po ekranie (wyświetla na raz taką część pliku na jaką pozwala wielkość konsoli) i zasadniczo umożliwia intuicyjne przewijanie tylko w jednym kierunku &#8212; w dół. Tutaj zdecydowanie lepiej wypada <em>less</em>, który także jest częścią domyślnej instalacji Ubuntu. Pozwala on strzałkami (oraz innymi klawiszami) swobodnie przemieszczać się po pliku we wszystkich kierunkach. Najbardziej intuicyjna próba przewijania tekstu strzałkami spowoduje przesuwanie zawartości pliku o pełny ekran na szerokość, bądź też o jedną linijkę w pionie. Cechą charakterystyczną <em>less</em> jest również fakt, że po dojściu do końca pliku wyświetli nam ładne <strong>END</strong>, ale nie zakończy działania &#8212; pozwalając na komfortowy powrót do wcześniejszych informacji. Z ciekawostek warto też wspomnieć o tym, że <em>less</em> wyświetla pierwszy ekranu tekstu natychmiast po jego odczytaniu, a nie po otwarciu całego pliku. Jest to szczególnie przydatne, kiedy operujemy na naprawdę dużych plikach i nie mamy ochoty na zbyt długie oczekiwanie. Jeżeli naszego Czytelnika nie satysfakcjonuje tak pobieżny opis  tych dwóch programów, zapraszamy do bardziej szczegółowych informacji zawartych we <a href="http://ubuntu.pl/czytelnia/2009/10/28/wiersz-polecen-przegladanie-plikow/">wspominanym już wcześniej artykule</a>.</p>
+<p>Alternatywą dla tych dwóch narzędzi może być mało popularny <em>most</em>. Nie jest on domyślnie instalowany w większości dystrybucji GNU/Linuksa &#8212; Ubuntu nie jest więc tutaj żadnym wyjątkiem. Jego największą zaletą w stosunku do <em>less</em> jest fakt, że <em>most</em> ustawiony jako domyślny pager wyświetla w X-terminalu strony manuala z kolorowaniem składni. Taki efekt można wprawdzie uzyskać również wykorzystując w roli pagera <em>less</em>, wymaga to jednak ustawienia w systemie kilku dodatkowych zmiennych. Oprócz tego <em>most</em> na dole ekranu przedstawia czytelny status ekranu &#8212; położenie kursora oraz procent przejrzanego już pliku/tekstu. Jeszcze niżej wyświetlana jest minipomoc &#8212; opis najważniejszych skrótów klawiszowych, służących do obsługi programu.</p>
+<p>Domyślny pager możemy ustawić przy pomocy zmiennej <em>PAGER</em> &#8212; wystarczy przypisać jej nazwę programu (bądź efektywniej ścieżkę dostępu do pliku wykonywalnego.</p>
+<p>Przykład 6.<br />
+Aby ustawić domyślny pager na <em>most</em> musimy wykonać polecenie:<br />
+<code>PAGER="most"</code><br />
+Natomiast aby ustawienie takie zapisać na stałe powyższą linijkę należy zapisać w pliku konfiguracyjnym powłoki, w przypadku Basha &#8212; <em>~/.bashrc</em>.</p>
+<p><strong>WYŚWIETLANIE POCZĄTKU LUB KOŃCA PLIKU</strong><br />
+Wyświetlanie tekstu mamy już za sobą &#8212; zacznijmy dostosowywać otrzymany wynik do naszych potrzeb. Pierwszymi narzędziami jakie omówimy, będą <em>head</em> oraz <em>tail</em>. Już ich nazwy sugerują sposób działania &#8212; wyświetlają one jedynie początek (<em>head</em>) lub koniec (<em>tail</em>) plików podanych jako argumenty polecenia. Domyślnie wyświetlany wynik ograniczony jest do dziesięciu linii tekstu, jednak przy pomocy parametru <em>-n liczba</em> można ustawić ilość podawanych informacji.</p>
+<p>Przykład 7.<br />
+<code>tail -n 2 /etc/passwd /etc/group</code></p>
+<pre>==&gt; /etc/passwd &lt;==
+dbus:x:81:81:System message bus:/:/bin/false
+hal:x:82:82:HAL daemon:/:/bin/false
+
+==&gt; /etc/group &lt;==
+hal:x:82:
+rfkill:x:24:</pre>
+<p>Powyższe polecenie pokaże nam na przykład dwóch ostatnio dodanych użytkowników systemu oraz dwie ostatnio utworzone grupy. Dodatkowo wyniki są gustownie podzielone nagłówkami informującymi o tym, jakiego pliku dotyczą informacje. To jedna z cech, które odróżniają <em>cat</em> od <em>head</em> &#8212; ten pierwszy łączy dane z różnych plików i wyświetla je bez żadnego podziału.</p>
+<p>Komendy <em>head</em> oraz <em>tail</em> mają jeszcze jedną przydatny parametr &#8212; <em>-c liczba</em> pozwala na wyświetlenie zadanej liczby znaków z początku lub końca pliku. Coś takiego przydaje się zwłaszcza przy pisaniu skryptów.</p>
+<p><strong>POTOK &#8212; ŁĄCZENIE POLECEŃ</strong><br />
+Polecenia <em>head</em> oraz <em>tail</em> często przydają się do filtrowania wyniku innych komend. Zanim jednak zaczniemy omawiać to zagadnienie, musimy  poruszyć jeszcze jedną kwestię &#8212; potoki. Ten miły wynalazek, zwany czasem &#8222;składaniem klocków Lego&#8221;, pozwala łączyć polecenia w szereg &#8212; filtrując jednym poleceniem wynik poprzedniego. Jak łatwo się domyślić, coś takiego będzie szczególnie przydatne przy przetwarzania tekstu, kiedy to z dużej ilości informacji dostarczonej przez pierwsze polecenie potrzebujemy jednego, za to precyzyjnie określonego drobiazgu. Żeby całość zadziałała tak, jak sobie tego życzymy, polecenia łączymy znakiem <em>|</em>. Ten symbol informuje powłokę systemu, że wynik polecenia nie będzie wyświetlony na ekranie, zostanie natomiast przekierowany do drugiego polecenia.</p>
+<p>Jak to działa w praktyce? Przyjmijmy, że interesuje nas zawartość ósmej od końca linii z pliku /etc/passwd. Wyświetlenie całego wyrzuci na ekran sporo niepotrzebnych danych &#8212; komu chciałoby się jeszcze liczyć, który wiersz jest ósmym od końca? Użycie samego <em>tail</em> ułatwi nam sprawę, ale mocno zapaskudzi ekran. Zgrabne połączenie dwóch komend pozwoli nam uzyskać estetyczny efekt pokazany w Przykładzie 8.</p>
+<p>Przykład 8.<br />
+<code>tail -n 8 /etc/passwd | head -n 1</code></p>
+<pre>daemon:x:2:2:daemon:/sbin:/bin/false</pre>
+<p>Prawda, że proste? <em>tail</em> wycina z interesującego nas pliku osiem ostatnich linii i przekierowuje je do następnego polecenia. Użyty później <em>head</em> wybiera początkowe wiersze (w tym wypadku zażyczyliśmy sobie tylko jeden) i wyświetla interesującą nas informację.</p>
+<p class="info">Korzystając z potoków nie powinno się nadużywać polecenia <em>cat</em>. Jest to tylko marnowanie swojego czasu i zasobów komputera &#8212; musi on uruchomić zbędny program. Jeśli coś można wykonać bez użycia tej komendy &#8212; należy tak zrobić.</p>
+<p><strong>WYŚWIETLANIE POSZCZEGÓLNYCH ZNAKÓW LUB PÓL</strong><br />
+Narzędzia <em>head</em>/<em>tail</em> pozwalają nam wyświetlić lub też skierować do dalszej obróbki wybrane linie z konkretnego pliku. Co jednak zrobić, kiedy potrzebujemy &#8222;wypreparować&#8221; mniejszą porcję informacji? Jeśli interesuje nas pojedyncze słowo czy znak każdej lini, możemy je po prostu wyciąć &#8212; czyli posłużyć się narzędziem <em>cut</em>. Sposób jego działania jest prosty &#8212; wyświetla zadane informacje z każdej linii pliku, na którym operujemy. Od nas zależy, jakie &#8222;porcje&#8221; danych chcemy wycinać (<em>-b</em> to bity, <em>-c</em> oznacza znaki, <em>-f</em> wytnie nam pola kolumn) oraz ile ich potrzebujemy. Zasięg działania polecenia ustalamy, podając konkretną liczbę (wtedy otrzymamy bit, znak lub słowo znajdujące się na zadanej pozycji w linii) lub też zakres &#8212; zdefiniowany jako przedział zamknięty <em>a-b</em> lub też przedział otwarty (<em>a-</em> lub <em>-b</em>).</p>
+<p>Ponieważ  plik <em>/etc/passwd</em> jest dość obszerny, dla oszczędności miejsca i większej przejrzystości artykułu utworzyliśmy plik <em>passwd</em>, zawierający jedynie trzy pierwsze linie oryginału:</p>
+<p><code>cat passwd</code></p>
+<pre>root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/bin/false
+daemon:x:2:2:daemon:/sbin:/bin/false</pre>
+<p>I bierzemy się do wycinanek:</p>
+<p>Przykład 9a.<br />
+<code>cut -c -6 passwd</code></p>
+<pre>root:x
+bin:x:
+daemon</pre>
+<p>Przykład 9b.<br />
+<code>cut -c 2-5 passwd</code></p>
+<pre>oot:
+in:x
+aemo</pre>
+<p>W powyższych przykładach zaprezentowaliśmy wycinanie konkretnych znaków. W pierwszym przypadku interesowała nas treść od początku linii do szóstego jej znaku, w drugim poleceniu był to już przedział od drugiego do piątego znaku.</p>
+<p>Kilka akapitów wcześniej wspomnieliśmy o wycinaniu &#8222;pól&#8221; &#8211; w normalnych okolicznościach są one rozdzielone tabulatorem lub spacją, tak więc na dobrą sprawę pola to nic innego jak słowa. W razie potrzeby można jednak zdefiniować własny separator &#8212; przyda się do tego parametr <em>-d znak</em>. Dzięki jego wykorzystaniu możemy sprawnie przetwarzać tekst, w którym słowa porozdzielane są trochę bardziej nietypowym symbolem &#8212; w przypadku <em>/etc/passwd</em> jest to <strong>:</strong>.</p>
+<p>Przyjmijmy, że z jakiegoś powodu chcemy wyświetlić informacje o kilku użytkownikach (nazwa użytkownika, numery UID oraz GID), ale nie chcemy prezentować informacji o ich katalogach domowych oraz wykorzystywanej powłoce. Skoro wiemy, że interesujące nas informacje to pierwsze cztery pola (ignorujemy w tym przykładzie pole hasła &#8212; drugie), możemy łatwo się z tym uporać w taki oto sposób:</p>
+<p>Przykład 10.<br />
+<code>cut -d : -f -4 passwd</code></p>
+<pre>root:x:0:0
+bin:x:1:1
+daemon:x:2:2</pre>
+<p>Chociaż dotychczas nie prezentowaliśmy takiego rozwiązania, przedziałów do wycinania może być więcej &#8212; w takiej sytuacji informacje te rozdzielamy przecinkami. Tym razem wyświetlimy listę użytkowników pozbawioną numerów GID oraz UID &#8212; zatem chcemy wyrzucić z wyniku trzecie i czwarte pole. Można to zrobić w taki oto sposób:</p>
+<p>Przykład 11.<br />
+<code>cut -d : -f -2,5- passwd</code></p>
+<pre>root:x:root:/root:/bin/bash
+bin:x:bin:/bin:/bin/false
+daemon:x:daemon:/sbin:/bin/false</pre>
+<p class="info">Należy pamiętać, że jeśli w pliku pola oddzielane są różną ilością spacji, jak to często ma miejsce w pliku <em>/etc/fstab</em> korzystanie z <em>cut</em> będzie możliwe, aczkolwiek może być trochę trudniejsze &#8212; dwie spacje to przejście nie o jedną lecz o dwie kolumny, itd.</p>
+<p><strong>ZLICZANIE</strong><br />
+Czasem nie interesuje nas wyświetlenie zawartości danego pliku, interesuje nas natomiast jego wielkość pliku &#8212; i nie chodzi tu o jego rozmiar w MB czy KB, lecz o ilość linii, słów czy też znaków. Oczywiście, możemy liczyć to &#8222;na piechotę&#8221;, ale konsola potrafi nas w tym wyręczyć, oddając do dyspozycji użytkownika całkiem przyjemne narzędzie <em>wc</em>. Uprzedzając pytania &#8212; jego nazwa tylko przypadkowo brzmi tak jak skrót toalety&#8230; Tak naprawdę jest to akronim słów <em>word counter</em> (z języka ang. <em>licznik słów</em>). Podając komendę bez żadnych opcji otrzymamy jako wynik trzy liczby &#8212; ilość linii, słów i znaków oraz nazwę pliku, który został przetworzony. Podając jako argument więcej niż jeden plik otrzymamy wyniki zliczeń poszczególnych plików oraz wynik całkowity.</p>
+<p>Przykład 12.<br />
+<code>wc /etc/passwd /etc/group</code></p>
+<pre> 10  13 382 /etc/passwd
+ 32  32 516 /etc/group
+ 42  45 898 razem</pre>
+<p>Spośród parametrów z którymi można uruchomić narzędzie <em>wc</em>, z całą pewnością trzeba wspomnieć o <em>-c</em> (zliczanie tylko ilości znaków), <em>-w</em> (policzy wyłącznie słowa) oraz <em>-l</em> (poda jedynie liczbę linii). Dodatkowo <em>-L</em> wypisuje ilość znaków w najdłuższym wierszu pliku.</p>
+<p>Przykład 13.<br />
+<code>wc -l /etc/passwd</code></p>
+<pre> 10 /etc/passwd</pre>
+<p><strong>ZAMIANA ZNAKÓW</strong><br />
+Skoro już potrafimy wyświetlić tekst, wyciągnąć z niego poszczególne linie czy policzyć znaki, pora zainteresować się jego przekształcaniem. Może nam do tego posłużyć chociażby <em>tr</em> (od angielskiego &#8222;translate&#8221;) &#8212; komenda, która potrafi według określonego schematu zamienić znaki na inne. Zadanie w sumie proste, więc i komenda nie jest zbyt skomplikowana &#8212; trzeba jednak pamiętać o tym, że <em>tr</em> nie pobierze danych z pliku, a jedynie czyta informacje ze standardowego wejścia. Pisząc bardziej &#8222;po ludzku&#8221;, <em>tr</em> zasadniczo korzysta z tekstu, który dostarczy mu np. wcześniejsze polecenie w potoku.</p>
+<p>Przykład 14.<br />
+<code>echo "mała" | tr 'm' 'p'</code></p>
+<pre>pała</pre>
+<p>Jak widać, składnia polecenia jest prosta: <em>tr ‚znak oryginalny’ ‚znak docelowy po zamianie’</em>. Żeby było wygodniej, zamiast pojedynczych znaków możemy korzystać z grup znaków:</p>
+<p>Przykład 15.<br />
+<code>echo "mała" | tr 'amł' 'AMŁ'</code></p>
+<pre>MAŁA</pre>
+<p>Reguła zamiany jest prosta: pierwszy znak z pierwszej grupy zamienił się w pierwszy znak drugiej grupy, drugi znak pierwszej grupy &#8212; w drugi drugiej, itd.</p>
+<p>Znaki do zamiany można podawać też przedziałami (np. <em>‚a-z’</em>) lub też skorzystać ze specjalnych sekwencji rozpoznawanych przez to polecenie. Jeśli ktoś chce poznać je wszystkie, najlepiej będzie zajrzeć do <em>man tr</em>, natomiast tutaj dwa proste przykłady:</p>
+<p>Przykład 16a.<br />
+<code>echo "abcdefgh" | tr [:lower:] [:upper:]</code></p>
+<pre>ABCDEFGH</pre>
+<p>Przykład 16b.<br />
+<code>echo "a b c d" | tr ' ' 'n'</code></p>
+<pre>a
+b
+c
+d</pre>
+<p>Dotychczas wszystkie przekształcenia wykonywane przy pomocy <em>tr</em> oznaczały zamianę znaków. Komenda ta potrafi też coś więcej, mianowicie usuwać wybrane znaki z ciągu danych dostarczonych na wejściu.</p>
+<p>Przykład 17.<br />
+<code>echo "tekst testowy" | tr -d 't'</code></p>
+<pre>eks esowy</pre>
+<p><strong>SORTOWANIE</strong><br />
+Czasem zdarza się, że informacje z jakiegoś pliku trzeba uszeregować w konkretnej (np. alfabetycznej) kolejności. Do takiego działania wykorzystujemy polecenie <em>sort</em>. Jego użycie nie jest zbyt skomplikowane &#8212; w najprostszym wariancie wystarczy zdefiniować plik do sortowania. Dla wygody i przejrzystości znów posłużymy się krótkim, spreparowanym plikiem <em>passwd</em>:</p>
+<p><code>cat passwd</code></p>
+<pre>root:x:0:0:root:/root:/bin/bash
+bin:x:1:0:bin:/bin:/bin/false
+daemon:x:10:2:daemon:/sbin:/bin/false</pre>
+<p>&#8230;a oto najprostsze możliwe zastosowanie komendy <em>sort</em>:</p>
+<p>Przykład 18.<br />
+<code>sort passwd</code></p>
+<pre>bin:x:1:0:bin:/bin:/bin/false
+daemon:x:10:2:daemon:/sbin:/bin/false
+root:x:0:0:root:/root:/bin/bash</pre>
+<p>Ułożyliśmy linie w kolejności alfabetycznej ich pierwszych znaków.<br />
+Jeśli chcemy działać w bardziej precyzyjny sposób, wystarczy zdefiniować sposób szeregowania wierszy (według następujących po sobie liczb czy też liter alfabetu), a także ustalić pole bądź znak, który będzie brany pod uwagę podczas sortowania. Poszczególne pola znów domyślnie rozdziela spacja lub tabulator, tak więc w normalnym układzie są to zwyczajnie kolejne słowa. W przypadku /etc/passwd pola rozdzielone są dwukropkiem, więc powtarza się sytuacja znana z opisu polecenia <em>cut</em> &#8212; przy pomocy parametru <em>-t znak</em> musimy zdefiniować separator.</p>
+<p>Wystarczy tej teorii, możemy prezentować dalsze możliwości polecenia <em>sort</em>:</p>
+<p>Przykład 19.<br />
+<code>sort -t : -k 5 passwd</code></p>
+<pre>bin:x:1:0:<strong>bin</strong>:/bin:/bin/false
+daemon:x:10:2:<strong>daemon</strong>:/sbin:/bin/false
+root:x:0:0:<strong>root</strong>:/root:/bin/bash</pre>
+<p>Ułożyliśmy kolejne linie testowego pliku w kolejności alfabetycznej, przy czym polecenie brało pod uwagę tekst rozpoczynający się od piątego pola (dla większej czytelności zaznaczone pogrubieniem).</p>
+<p>Wspomnieliśmy już o możliwości sortowania alfabetycznego lub numerycznego. Różnicę pokażą kolejne dwa przykłady.</p>
+<p>Przykład 20a.<br />
+<code>sort -t : -k 3 passwd</code></p>
+<pre>root:x:<strong>0</strong>:0:root:/root:/bin/bash
+daemon:x:<strong>10</strong>:2:daemon:/sbin:/bin/false
+bin:x:<strong>1</strong>:0:bin:/bin:/bin/false</pre>
+<p>Przykład 20b.<br />
+<code>sort -t : -k 3n passwd</code></p>
+<pre>root:x:<strong>0</strong>:0:root:/root:/bin/bash
+bin:x:<strong>1</strong>:0:bin:/bin:/bin/false
+daemon:x:<strong>10</strong>:2:daemon:/sbin:/bin/false</pre>
+<p>W Przykładzie 20b użyliśmy sortowania numerycznego i jak widać, <em>sort</em> ułożył linie w kolejności 0-1-10, zamiast &#8222;alfabetycznego&#8221; 0-10-1.<br />
+Na etapie prostego użycia komendy możemy też pokazać możliwość sortowania w odwróconej kolejności numerycznej &#8211; zamiast <em>-k 3n</em> z Przykładu 20b. wystarczy podstawić <em>-k 3nr</em>:</p>
+<p>Przykład 20c.<br />
+<code>sort -t : -k 3nr passwd</code></p>
+<pre>daemon:x:<strong>10</strong>:2:daemon:/sbin:/bin/false
+bin:x:<strong>1</strong>:0:bin:/bin:/bin/false
+root:x:<strong>0</strong>:0:root:/root:/bin/bash</pre>
+<p>Oczywiście, może się zdarzyć, że w niektórych liniach wartość pola według którego chcemy szeregować informacje jest identyczna. Nic nie stoi na przeszkodzie, żeby w takiej sytuacji podać kolejne kryterium sortowania. W poprzednim przykładzie wartości czwartego pola były dla dwóch linii identyczne (&#8222;0&#8221;), przesortowaliśmy plik <em>passwd</em> względem czwartej kolumny, a następnie &#8212; trzeciej.</p>
+<p>Przykład 21a.<br />
+<code>sort -t : -k 4n -k 3n passwd</code></p>
+<pre>root:x:<strong>0</strong>:<strong>0</strong>:root:/root:/bin/bash
+bin:x:<strong>1</strong>:<strong>0</strong>:bin:/bin:/bin/false
+daemon:x:10:<strong>2</strong>:daemon:/sbin:/bin/false</pre>
+<p>Przykład 21b.<br />
+<code>sort -t : -n -k  4 -k 3 passwd</code></p>
+<pre>root:x:<strong>0</strong>:<strong>0</strong>:root:/root:/bin/bash
+bin:x:<strong>1</strong>:<strong>0</strong>:bin:/bin:/bin/false
+daemon:x:10:<strong>2</strong>:daemon:/sbin:/bin/false</pre>
+<p>Opcji <em>-n</em> oraz <em>-r</em> można używać zarówno przy definiowaniu klucza do sortowania (Przykłady 20b&#8211;c, 21a) jak i uruchomić ją &#8222;globalnie&#8221; (Przykład 21b).</p>
+<p>Poza sortowaniem według wartości całego pola, wyniki można też ułożyć w kolejności wyznaczonej przez dany znak któregoś z pól (w tym konkretnym przypadku &#8211; trzeci znak piątego pola):</p>
+<p>Przykład 22.<br />
+<code>sort -t : -k 5.3 passwd</code></p>
+<pre>daemon:x:10:2:da<strong>e</strong>mon:/sbin:/bin/false
+bin:x:1:0:bi<strong>n</strong>:/bin:/bin/false
+root:x:0:0:ro<strong>o</strong>t:/root:/bin/bash</pre>
+<p><strong>POWTARZAJĄCE SIĘ LINIE</strong><br />
+Oprócz sortowania informacji w pliku, przydatna bywa też możliwość zarządzania liniami, które wielokrotnie się powtarzają. Z pomocą przyjdzie nam komenda <em>uniq</em>, a przy prezentacji jej możliwości pomoże nam kolejny spreparowany plik <em>test</em>:</p>
+<p><code>cat test</code></p>
+<pre>root
+root
+bin</pre>
+<p>Zamiast teorii zacznijmy od prezentacji najprostszego zastosowania polecenia:</p>
+<p>Przykład 23.<br />
+<code>uniq test</code></p>
+<pre>root
+bin</pre>
+<p><em>Uniq</em> użyty bez żadnych parametrów po prostu usuwa z pliku powtarzające się informacje. To polecenia ma jednak znacznie większe możliwości: parametr <em>-c</em> poda nam informację, ile razy powtórzyła się dana linia, <em>-d</em> pokaże na wyjściu jedynie te linie, które się powtarzają, natomiast <em>-u</em> zrobi coś odwrotnego &#8212; zaprezentuje wyłącznie linie unikatowe (Przykład 24).</p>
+<p>Przykład 24a.<br />
+<code>uniq -c test</code></p>
+<pre>      2 root
+      1 bin</pre>
+<p>Przykład 24b.<br />
+<code>uniq -d test</code></p>
+<pre>root</pre>
+<p>Przykład 24c.<br />
+<code>uniq -u test</code></p>
+<pre>bin</pre>
+<p class="info">Należy mieć na uwadze, że <em>sort</em> umie porównać ze sobą jedynie wiersze sąsiadujące &#8212; z tego powodu należy plik pierw posortować.</p>
+<p><strong>ZAPISANIE DANYCH DO PLIKU I JEGO DALSZA OBRÓBKA</strong><br />
+Czasami przydatna jest możliwość zapisania wyniku jakiegoś polecenia do pliku i jego dalsza obróbka &#8212; taką funkcjonalność zapewnia polecenie <em>tee</em>. Potrafi ono zapisać interesujące nas dane do nowego pliku, lub też dodać je do pliku który już istnieje (w tym celu należy posłużyć się opcją <em>-a</em>). Prostą prezentacją działania polecenia może być przekształcenie ostatniego przykładu dla polecenia <em>uniq</em>:</p>
+<p>Przykład 25.<br />
+<code>uniq -u test | tee test1</code></p>
+<pre>bin</pre>
+<p>Wyświetlony wynik nie różni się w niczym od tego otrzymanego w Przykładzie 24c, ale w tym przypadku identyczne dane zostały zapisane w pliku <em>test1</em> znajdującym się w katalogu, w którym operujemy.</p>
+<p><strong>WYSZUKIWANIE</strong><br />
+Ostatnim opisywanym dziś narzędziem będzie <em>grep</em>. Służy on do wyszukiwania danego ciągu znaków w plikach. Przykład 26 pokazuje w jaki sposób można sprawdzić do jakich grup należy użytkownik o danej nazwie (tutaj &#8222;root&#8221;) &#8212; oczywiście podobny efekt uzyskamy poleceniem <em>groups</em> lub <em>id</em>.</p>
+<p>Przykład 26.<br />
+<code>grep root /etc/group</code></p>
+<pre>root::0:root
+bin::1:root,bin,daemon
+daemon::2:root,bin,daemon
+sys::3:root,bin
+adm::4:root,daemon
+disk::6:root,krzysztof
+wheel::10:root,krzysztof
+log::19:root</pre>
+<p>Gdybyśmy chcieli poszukiwać ciągu kilku słów musielibyśmy je objąć w cudzysłów lub&#8230; zapisać frazę do pliku i użyć polecenia:</p>
+<p><code>grep -f plik_z_fraza przeszukiwany_plik</code></p>
+<p>W odczytywaniu wyniku <em>grep</em> przydaje się opcja <em>&#45;&#45;color[=KIEDY]</em>. Dostępne wartości to:</p>
+<ul>
+<li><em>always</em> &#8212; włącza kolorowanie i w takiej postaci jest wyświetlany wynik na ekranie i przesyłany dalej (np. przez potok),</li>
+<li><em>auto</em> &#8212; opcja domyślna w przypadku zastosowania samego <em>&#45;&#45;color</em>, wyświetla na ekranie wynik pokolorowany, jednak przy jego zapisie do pliku (o czym później), lub przesłaniu przez potok do innego polecenia kolorowanie nie jest już aktywne,</li>
+<li><em>never</em> &#8212; wyłącza możliwość kolorowania wyniku polecenia <em>grep</em>, włączone domyślnie bez użycia tej opcji</li>
+</ul>
+<p>Przykład 27.<br />
+<code>grep --color=auto root /etc/group</code></p>
+<pre><span style="color: #ff0000;">root</span>::0:<span style="color: #ff0000;">root</span>
+bin::1:<span style="color: #ff0000;">root</span>,bin,daemon
+daemon::2:<span style="color: #ff0000;">root</span>,bin,daemon
+sys::3:<span style="color: #ff0000;">root</span>,bin
+adm::4:<span style="color: #ff0000;">root</span>,daemon
+disk::6:<span style="color: #ff0000;">root</span>,krzysztof
+wheel::10:<span style="color: #ff0000;">root</span>,krzysztof
+log::19:<span style="color: #ff0000;">root</span></pre>
+<p>Kolorowe wyróżnienie w wynikach zwracanych przez <em>grep</em> można dowolnie zmieniać dzięki zmiennej środowiskowej <em>GREP_COLOR</em>. Odpowiada ona za definicję podświetlenia i  przyjmuje wartości liczb dwucyfrowych oddzielonych średnikami. Więcej na temat ustawiania kolorów można znaleźć <a href="http://ubuntu.pl/czytelnia/2008/09/01/powloka-bash-latwiej-przyjemniej/">w tym artykule</a> (część &#8222;Kolorowanie komendy ls&#8221;). Ustawienie w pliku <em>.bashrc</em> zmiennej jak w Przykładzie 28 spowoduje kolorowanie tła znalezionego tekstu na niebiesko oraz pogrubienie tekstu.</p>
+<p>Przykład 28.<br />
+<code>GREP_COLOR="01;44"</code></p>
+<p>Kolejnymi przydatnymi opcjami narzędzia <em>grep</em> są: <em>-A liczba</em>, <em>-B liczba</em> oraz <em>-C liczba</em>. Pierwsza z nich oprócz linii z szukaną frazą, wyświetli nam <em>liczbę</em> wierszy występujących po niej. Druga &#8212; <em>liczbę</em> wierszy przed nią. Trzecia natomiast działa jak połączenie obu powyższych &#8212; tak więc obydwie komendy z Przykładu 29. dadzą ten sam wynik.</p>
+<p>Przykład 29a.<br />
+<code>grep -A 3 -B 3 root /etc/passwd</code></p>
+<pre>root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/bin/false
+daemon:x:2:2:daemon:/sbin:/bin/false
+mail:x:8:12:mail:/var/spool/mail:/bin/false</pre>
+<p>Przykład 29b.<br />
+<code>grep -C 3 root /etc/passwd</code></p>
+<pre>root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/bin/false
+daemon:x:2:2:daemon:/sbin:/bin/false
+mail:x:8:12:mail:/var/spool/mail:/bin/false</pre>
+<p>Warto zauważyć, że jeżeli w szukanym pliku kilkukrotnie występuje szukana fraza wyniki zostaną od siebie elegancko oddzielone. Przekonamy się o tym wykonując Przykład 30.</p>
+<p>Przykład 30.<br />
+<code>grep -C 1 root /etc/group</code></p>
+<pre>root::0:root
+bin::1:root,bin,daemon
+daemon::2:root,bin,daemon
+sys::3:root,bin
+adm::4:root,daemon
+tty::5:krzysztof
+disk::6:root,krzysztof
+lp::7:daemon
+--
+kmem::9:
+wheel::10:root,krzysztof
+ftp::11:
+--
+uucp:x:14:
+log::19:root
+smmsp::25:</pre>
+<p>W praktyce często stosuje się <em>grep</em> do wyszukiwania wierszy, w których podana fraza <strong>nie</strong> występuje &#8212; taki tryb działania uruchamia opcja <em>-v</em>. Przykład 31 wyświetli wszystkie linie z pliku <em>/etc/group</em> nie zawierające słowa &#8222;false&#8221;.</p>
+<p>Przykład 31.<br />
+<code>grep -v false /etc/passwd</code></p>
+<pre>root:x:0:0:root:/root:/bin/bash
+krzysztof:x:1000:100:,,,:/home/krzysztof:/bin/bash</pre>
+<p class="info">Bardzo często w przypadku kont systemowych jako ścieżkę do powłoki stosuje się <em>/bin/false</em>, uniemożliwiając tym samym logowanie do systemu i utrudniając ewentualne włamania. Przykład 31 został napisany po to by wyświetlić wszystkich użytkowników nie mających powłoki ustawionej na <em>/bin/false</em>.</p>
+<p>Chociaż opcje <em>-n</em> oraz <em>-c</em> opisujemy na końcu, są one całkiem przydatne. Pierwsza z nich przed linią w której podany tekst występuje wypisuje numer wiersza. Zauważmy, że jeśli nakażemy <em>grep</em>owi przeszukać dwa lub więcej plików, przed wszystkim (bez względu na włączenie opcji <em>-n</em>) wyświetli nazwę pliku, w którym podana linia występuje.</p>
+<p>Przykład 32.<br />
+<code>grep -n root /etc/passwd</code></p>
+<pre>1:root:x:0:0:root:/root:/bin/bash</pre>
+<p><code>grep -n root /etc/group /etc/passwd</code></p>
+<pre>/etc/group:1:root::0:root
+/etc/group:2:bin::1:root,bin,daemon
+/etc/group:3:daemon::2:root,bin,daemon
+/etc/group:4:sys::3:root,bin
+/etc/group:5:adm::4:root,daemon
+/etc/group:7:disk::6:root,krzysztof
+/etc/group:11:wheel::10:root,krzysztof
+/etc/group:15:log::19:root
+/etc/passwd:1:root:x:0:0:root:/root:/bin/bash</pre>
+<p>Druga opcja, <em>-c</em>, działa analogicznie jak połączenie potokiem komendy <em>grep</em> z <em>wc -l</em> &#8212; zlicza ilość wierszy, w których występuje szukana fraza.</p>
+<p>Przykład 33.<br />
+<code>grep root /etc/group | wc -l</code></p>
+<pre>8</pre>
+<p><code>grep -c root /etc/group</code></p>
+<pre>8</pre>
+<p class="info">Oczywiście tak samo jak nadużycia <em>cat</em> łączenia <em>grep</em> z <em>wc -l</em> powinno się unikać.</p>
+<p>Przedstawione w tym artykule informacje nie wyczerpują oczywiście całego zagadnienia. Ze względu na komfort Czytelnika postanowiliśmy jednak zakończyć pisanie w tym miejscu &#8212; dalsze &#8222;konsolowe wynurzenia&#8221; znajdą się już <a href="http://ubuntu.pl/czytelnia/2010/02/24/konsola-nie-gryzie-operacje-na-tekscie-czesc-druga/">w kolejnej części artykułu</a>.</p>
+                                      </section><!-- .entry-content -->
+                                            </article>
+                                
+                            
+                        
+                    <hr class="featurette-divider __after_loop">
+<div id="comments" class="comments-area" >
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Dodaj komentarz <small><a rel="nofollow" id="cancel-comment-reply-link" href="/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#respond" style="display:none;">Anuluj pisanie odpowiedzi</a></small></h3>			<form action="http://ubuntu.pl/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Twój adres email nie zostanie opublikowany.</span> Pola, których wypełnienie jest wymagane, są oznaczone symbolem <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Komentarz</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Podpis <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Witryna internetowa</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Opublikuj komentarz" /> <input type='hidden' name='comment_post_ID' value='10766' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="af23f8e255" /></p>
+<script type='text/javascript'>
+/* <![CDATA[ */
+r3f5x9JS=escape(document['referrer']);
+hf1N='a89fedfd8e68a321a6b6234083d2daee';
+hf1V='c069a59a665754864bd6c4a411e4958a';
+document.write("<input type='hidden' name='r3f5x9JS' value='"+r3f5x9JS+"' /><input type='hidden' name='"+hf1N+"' value='"+hf1V+"' />");
+/* ]]> */
+</script>
+<noscript><input type="hidden" name="JS04X7" value="NS1" /></noscript>
+<noscript><p><strong>Currently you have JavaScript disabled. In order to post comments, please make sure JavaScript and Cookies are enabled, and reload the page.</strong> <a href="http://enable-javascript.com/" rel="nofollow external" >Click here for instructions on how to enable JavaScript in your browser.</a></p></noscript>
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="208"/></p>			</form>
+			</div><!-- #respond -->
+	<h2 id="tc-comment-title" class="comments-title">22 komentarzy do &ldquo;<span>Konsola nie gryzie &#8211; operacje na tekście (część pierwsza)</span>&rdquo;</h2>              <ul class="commentlist">
+                        <li class="comment even thread-even depth-1" id="li-comment-10625">
+
+            <article id="comment-10625" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/42771c9d31f25864d41649754c6c5c43?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/42771c9d31f25864d41649754c6c5c43?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10625#respond' onclick='return addComment.moveForm( "comment-10625", "10625", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi mastr'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">mastr  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10625"><time datetime="2010-02-19T05:54:19+00:00">19 lutego 2010 o 05:54</time></a></header>  <section class="comment-content comment"><p>Pytanie: do czego potrzebne polecenie &#8222;echo&#8221;? Bo na razie od n00ba do kompilacji doszedłem w półtora roku i jeszcze przenigdy nie musiałem ani tego używać, ani układać jakichś list. Byście dali lepiej naprawdę przydatne komendy.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-thalcave odd alt thread-odd thread-alt depth-1" id="li-comment-10626">
+
+            <article id="comment-10626" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/e46b641fab9bd29037cce4018674d993?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e46b641fab9bd29037cce4018674d993?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10626#respond' onclick='return addComment.moveForm( "comment-10626", "10626", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi thalcave'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">thalcave  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10626"><time datetime="2010-02-19T08:25:01+00:00">19 lutego 2010 o 08:25</time></a></header>  <section class="comment-content comment"><p>echo przydaje się tak samo jak prinft w C &#8211; wypisuje tekst na ekranie, lub można je przekierować do pliku tworząc coś w stylu &#8222;Ilość słów w pliku opowiadanie: 1250&#8221;.<br />
+Bardzo przydaje się przy pisaniu skryptów &#8211; widać nie pisujesz owych.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-10627">
+
+            <article id="comment-10627" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/1c5f5e9a9d7a2a33b4da0ec6f4010bfd?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1c5f5e9a9d7a2a33b4da0ec6f4010bfd?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10627#respond' onclick='return addComment.moveForm( "comment-10627", "10627", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi Yelonek'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Yelonek  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10627"><time datetime="2010-02-19T08:56:29+00:00">19 lutego 2010 o 08:56</time></a></header>  <section class="comment-content comment"><p>Co zrobić jeśli chciałbym zamienić dwa znaki na jeden? np. 12 = a</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-thalcave odd alt thread-odd thread-alt depth-1" id="li-comment-10628">
+
+            <article id="comment-10628" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/e46b641fab9bd29037cce4018674d993?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e46b641fab9bd29037cce4018674d993?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10628#respond' onclick='return addComment.moveForm( "comment-10628", "10628", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi thalcave'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">thalcave  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10628"><time datetime="2010-02-19T09:09:25+00:00">19 lutego 2010 o 09:09</time></a></header>  <section class="comment-content comment"><p>Polecałbym zastosowanie seda, który jest na tyle rozbudowany, że można o nim napisać osobny artykuł.<br />
+Nie wnikając w składnie takie polecenie rozwiązuje Twoje zagadnienie:<br />
+<code>sed s/12/a/g plik</code></p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-epul even thread-even depth-1" id="li-comment-10629">
+
+            <article id="comment-10629" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/234eb9fbf28391c6ceebd96eed57411b?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/234eb9fbf28391c6ceebd96eed57411b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10629#respond' onclick='return addComment.moveForm( "comment-10629", "10629", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi epul'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">epul  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10629"><time datetime="2010-02-19T09:35:24+00:00">19 lutego 2010 o 09:35</time></a></header>  <section class="comment-content comment"><p>A gdy chcemy, aby sed zapisywał zmiany w pliku warto nie zapominać o parametrze ‚-i’ (bez tego parametru zmiany zostaną tylko wyświetlone w konsoli bez wprowadzania w pliku):<br />
+<code>sed -i s/12/a/g plik</code></p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-10630">
+
+            <article id="comment-10630" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/9055ded5fa903c7170d24f718356ab77?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9055ded5fa903c7170d24f718356ab77?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10630#respond' onclick='return addComment.moveForm( "comment-10630", "10630", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi Barman'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Barman  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10630"><time datetime="2010-02-19T15:39:23+00:00">19 lutego 2010 o 15:39</time></a></header>  <section class="comment-content comment"><p>Na końcu pierwszego akapitu jest (jak się wydaje) przypadkowe słowo &#8222;rzut&#8221;.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-k2cl even thread-even depth-1" id="li-comment-10631">
+
+            <article id="comment-10631" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/0e20d451b881d7bade9976adaddfb53f?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0e20d451b881d7bade9976adaddfb53f?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10631#respond' onclick='return addComment.moveForm( "comment-10631", "10631", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi k2cl'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">k2cl  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10631"><time datetime="2010-02-19T15:55:33+00:00">19 lutego 2010 o 15:55</time></a></header>  <section class="comment-content comment"><p>@ Barman<br />
+Poprawione&#8230; jak widać, nikt nie jest doskonały&#8230;</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-10632">
+
+            <article id="comment-10632" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/f5164cfacaefab1229c72cfe2e2ea9fd?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f5164cfacaefab1229c72cfe2e2ea9fd?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10632#respond' onclick='return addComment.moveForm( "comment-10632", "10632", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi lukas'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">lukas  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10632"><time datetime="2010-02-19T19:43:02+00:00">19 lutego 2010 o 19:43</time></a></header>  <section class="comment-content comment"><p>Do autora, a przy okazji, komentującego master, który nie wie do czego użyć &#8222;echo&#8221;</p>
+<p>Do @master<br />
+OPTIONS=$( zenity (&#8230;) &#8211;list &#8211;checklist,  FALSE ‚Zmień nazwę&#8230;)</p>
+<p>echo &#8222;$OPTIONS&#8221; | grep -q ‚Zmień nazwę&#8230;’<br />
+	&amp;&amp; NAZWA=$( zenity*)</p>
+<p>Do autora.<br />
+grep -q przydaje się bardzo jeśli ktoś preferuje instrukcje [ coś tam zwróci kod 0 ] &amp;&amp; zrob || nie rob zamiast if [ coś tam ] ; then ; elif ; else ; fi. Dokładnie, to grep zwraca tylko kod zakończenia 0,1 itp.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-10633">
+
+            <article id="comment-10633" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/f4c4b6a5df5b18f2587522332fee6dfa?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f4c4b6a5df5b18f2587522332fee6dfa?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10633#respond' onclick='return addComment.moveForm( "comment-10633", "10633", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi PlayRoll'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">PlayRoll  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10633"><time datetime="2010-02-19T21:20:03+00:00">19 lutego 2010 o 21:20</time></a></header>  <section class="comment-content comment"><p>Artykuł godny pochwały, ja osobiście nie wyobrażam sobie korzystania z konsoli bez znajomości wyrażeń regularnych, nie widzę aby było tu wspomniane przy okazji grepa a to właściwie chyba jego główne zastosowanie. I domyślam się, że sed i awk zostaną poruszone w osobnym artykule. Każde z tych poleceń jest na tyle zaawansowane iż można by książkę napisać. To tyle co mi się rzuciło w oczy, czekam na ciąg dalszy 🙂</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-k2cl odd alt thread-odd thread-alt depth-1" id="li-comment-10634">
+
+            <article id="comment-10634" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/0e20d451b881d7bade9976adaddfb53f?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0e20d451b881d7bade9976adaddfb53f?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10634#respond' onclick='return addComment.moveForm( "comment-10634", "10634", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi k2cl'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">k2cl  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10634"><time datetime="2010-02-20T07:31:19+00:00">20 lutego 2010 o 07:31</time></a></header>  <section class="comment-content comment"><p>@ PlayRoll<br />
+Wyrażenia regularne &#8211; będą&#8230; niedługo&#8230;</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-10635">
+
+            <article id="comment-10635" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/ea3d991cf58ae981bc9846ff2dfefeaf?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ea3d991cf58ae981bc9846ff2dfefeaf?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10635#respond' onclick='return addComment.moveForm( "comment-10635", "10635", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi Elche'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Elche  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10635"><time datetime="2010-02-20T12:24:03+00:00">20 lutego 2010 o 12:24</time></a></header>  <section class="comment-content comment"><p>Nuda, dłużyzna, nie doczytałem do końca i w żaden sposób nie zachęciło mnie do korzystania z konsoli. 99 % potrzebuje systemu do korzystania a nie do dlubania.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-10636">
+
+            <article id="comment-10636" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3db885eda9a74d9acdb737f16a0cc273?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3db885eda9a74d9acdb737f16a0cc273?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10636#respond' onclick='return addComment.moveForm( "comment-10636", "10636", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi u99'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">u99  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10636"><time datetime="2010-02-20T17:14:15+00:00">20 lutego 2010 o 17:14</time></a></header>  <section class="comment-content comment"><p>na kacu jestem ale chyba powinno byc cos takiego w tej poradzie:</p>
+<p>echo [quote post=&#8221;10766&#8243;]Należy mieć na uwadze, że sort umie porównać ze sobą jedynie wiersze sąsiadujące — z tego powodu należy plik pierw posortować.[/quote] | tr &#8222;sort&#8221; &#8222;uniq&#8221;</p>
+<p>Fajny artykul</p>
+<p>Pozdrawiam 🙂</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-10637">
+
+            <article id="comment-10637" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/659c98c103bd16a3dc2f4ae82ed7e315?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/659c98c103bd16a3dc2f4ae82ed7e315?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10637#respond' onclick='return addComment.moveForm( "comment-10637", "10637", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi darek'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">darek  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10637"><time datetime="2010-02-20T17:14:23+00:00">20 lutego 2010 o 17:14</time></a></header>  <section class="comment-content comment"><p>Bardzo dobry tekst. Czekam na następne.<br />
+Nie zniechęcajcie się.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-10638">
+
+            <article id="comment-10638" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/3db885eda9a74d9acdb737f16a0cc273?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3db885eda9a74d9acdb737f16a0cc273?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10638#respond' onclick='return addComment.moveForm( "comment-10638", "10638", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi u99'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">u99  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10638"><time datetime="2010-02-20T17:15:19+00:00">20 lutego 2010 o 17:15</time></a></header>  <section class="comment-content comment"><p>na kacu jestem ale chyba trzeba zrobic cos takiego w tej poradzie:</p>
+<p>echo [quote post=&#8221;10766&#8243;]Należy mieć na uwadze, że sort umie porównać ze sobą jedynie wiersze sąsiadujące — z tego powodu należy plik pierw posortować.[/quote] | tr &#8222;sort&#8221; &#8222;uniq&#8221;</p>
+<p>Fajny artykul</p>
+<p>Pozdrawiam 🙂</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-epul even thread-even depth-1" id="li-comment-10639">
+
+            <article id="comment-10639" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/234eb9fbf28391c6ceebd96eed57411b?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/234eb9fbf28391c6ceebd96eed57411b?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10639#respond' onclick='return addComment.moveForm( "comment-10639", "10639", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi epul'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">epul  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10639"><time datetime="2010-02-20T17:43:59+00:00">20 lutego 2010 o 17:43</time></a></header>  <section class="comment-content comment"><p>[quote comment=&#8221;41415&#8243;]Nuda, dłużyzna, nie doczytałem do końca i w żaden sposób nie zachęciło mnie do korzystania z konsoli. 99 % potrzebuje systemu do korzystania a nie do dlubania.[/quote]<br />
+A ja lubię czasami korzystać z konsoli mimo tego, że mój system służy do korzystania na co dzień, a nie do dłubania. Czasem jest dużo szybciej, dużo wygodniej, a nawet łatwiej.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-10640">
+
+            <article id="comment-10640" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/9620fdd99b9123eb452aa17b5c5554de?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9620fdd99b9123eb452aa17b5c5554de?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10640#respond' onclick='return addComment.moveForm( "comment-10640", "10640", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi AMartin'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">AMartin  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10640"><time datetime="2010-02-22T20:07:00+00:00">22 lutego 2010 o 20:07</time></a></header>  <section class="comment-content comment"><p>Fajny artykuł. Znam konsolę jak i linuksa od ok. 2 lat dlatego że zaczynałem z Debianem, ale z lenistwa i pewnych problemów przerzuciłem się na Ubuntu. I mimo to kilka poleceń/parametrów było pouczających i z niecierpliwością czekam na kolejną odsłonę.</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="pingback even thread-even depth-1" id="comment-10641">
+          <article id="comment-10641" class="comment">
+            <p>Pingback: <a href='http://flaker.pl/f/3889654' rel='external nofollow' class='url'>ffatman: Teraz ogladam: czytelnia.ubuntu.pl/ | flaker.pl</a>                            </p>
+          </article>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-10642">
+
+            <article id="comment-10642" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/b4fd9a4035b9937679bfd96e0db47641?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b4fd9a4035b9937679bfd96e0db47641?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10642#respond' onclick='return addComment.moveForm( "comment-10642", "10642", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi Korri'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">Korri  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10642"><time datetime="2010-03-06T16:36:17+00:00">6 marca 2010 o 16:36</time></a></header>  <section class="comment-content comment"><p>Thx chłopaki, przydało mi się na zajęciach 🙂</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-10643">
+
+            <article id="comment-10643" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://1.gravatar.com/avatar/7b0cb78468fb27f07e6c3bb1374d0228?s=80&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7b0cb78468fb27f07e6c3bb1374d0228?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10643#respond' onclick='return addComment.moveForm( "comment-10643", "10643", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi !wR0NG'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">!wR0NG  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10643"><time datetime="2010-03-07T20:16:26+00:00">7 marca 2010 o 20:16</time></a></header>  <section class="comment-content comment"><p>[quote comment=&#8221;41415&#8243;]Nuda, dłużyzna, nie doczytałem do końca i w żaden sposób nie zachęciło mnie do korzystania z konsoli. 99 % potrzebuje systemu do korzystania a nie do dlubania.[/quote]</p>
+<p>Heheh. Więc po co krytykujesz? Kiedyś może się okazać, że będziesz musiał SKORZYSTAĆ z konsoli… wtedy – w przypadku gdy artykuł okaże się słaby, będziesz mógł napisać &#8222;Nuda, dłużyzna (&#8230;)&#8221;<br />
+Więcej rozsądku proponuję!</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-10644">
+
+            <article id="comment-10644" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/03d65afeeba26937bb4cdf483910602e?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/03d65afeeba26937bb4cdf483910602e?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10644#respond' onclick='return addComment.moveForm( "comment-10644", "10644", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi sir_herrbatka'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">sir_herrbatka  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10644"><time datetime="2010-07-20T16:58:30+00:00">20 lipca 2010 o 16:58</time></a></header>  <section class="comment-content comment"><p>Świetny artykuł!</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-10645">
+
+            <article id="comment-10645" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://0.gravatar.com/avatar/35cfd533d3b7031bdf728feada757ab3?s=80&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/35cfd533d3b7031bdf728feada757ab3?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10645#respond' onclick='return addComment.moveForm( "comment-10645", "10645", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi przema5'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">przema5  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10645"><time datetime="2010-10-12T22:04:44+00:00">12 października 2010 o 22:04</time></a></header>  <section class="comment-content comment"><p>Bardzo fajny i rzeczowy artykul &#8211; zaraz zabieram sie za druga czesc.<br />
+Gratuluje!</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-10646">
+
+            <article id="comment-10646" class="comment"><div class="row-fluid"><div class="comment-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/56066c5d1aca067eef737ce3dd7f336c?s=80&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/56066c5d1aca067eef737ce3dd7f336c?s=160&amp;d=mm&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' /></div><div class="span10"><div class="reply btn btn-small"><a rel='nofollow' class='comment-reply-link' href='http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/?replytocom=10646#respond' onclick='return addComment.moveForm( "comment-10646", "10646", "respond", "10766" )' aria-label='Odpowiedz użytkownikowi sfp'>Odpowiedz <span>&darr;</span></a></div> <header class="comment-meta comment-author vcard"><cite class="fn">sfp  </cite> <a class="comment-date" href="http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/#comment-10646"><time datetime="2012-10-02T21:19:11+00:00">2 października 2012 o 21:19</time></a></header>  <section class="comment-content comment"><p>&#8222;Należy mieć na uwadze, że sort umie porównać ze sobą jedynie wiersze sąsiadujące — z tego powodu należy plik pierw posortować.&#8221;<br />
+Chyba &#8222;uniq umie &#8230;&#8221;</p>
+</section></div></div></article>          <!-- //#comment-## -->
+        </li><!-- #comment-## -->
+              </ul><!-- .commentlist -->
+            </div><!-- //#comments .comments-area -->
+
+        
+          <hr class="featurette-divider __after_loop">
+        <nav id="nav-below" class="navigation" role="navigation">
+
+              <h3 class="assistive-text">
+                Przeglądanie Wpisów              </h3>
+
+              <ul class="pager">
+                                  <li class="previous">
+                    <span class="nav-previous">
+                      <a href="http://ubuntu.pl/czytelnia/2010/02/16/ubuntu-weekly-newsletter-180/" rel="prev"><span class="meta-nav">&larr;</span> Ubuntu Weekly Newsletter #180</a>                    </span>
+                  </li>
+                                                  <li class="next">
+                    <span class="nav-next">
+                        <a href="http://ubuntu.pl/czytelnia/2010/02/23/ubuntu-weekly-newsletter-181/" rel="next">Ubuntu Weekly Newsletter #181 <span class="meta-nav">&rarr;</span></a>                    </span>
+                  </li>
+                              </ul>
+
+          </nav><!-- //#nav-below .navigation -->
+
+        
+        
+                </div><!--.article-container -->
+
+           
+        <div class="span3 right tc-sidebar">
+           <div id="right" class="widget-area" role="complementary">
+              <aside id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://ubuntu.pl/">
+				<div>
+					<label class="screen-reader-text" for="s">Szukaj:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Szukaj" />
+				</div>
+			</form></aside><aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="http://ubuntu.pl/wp-login.php?action=register">Zarejestruj się</a></li>			<li><a href="http://ubuntu.pl/wp-login.php">Zaloguj się</a></li>
+			<li><a href="http://ubuntu.pl/feed/">Kanał <abbr title="Really Simple Syndication">RSS</abbr> z wpisami</a></li>
+			<li><a href="http://ubuntu.pl/comments/feed/">Kanał <abbr title="Really Simple Syndication">RSS</abbr> z komentarzami</a></li>
+			<li><a href="https://pl.wordpress.org/" title="Ta strona jest oparta na WordPressie &mdash; nowoczesnej, semantycznej, osobistej platformie publikacyjnej.">WordPress.org</a></li>			</ul>
+			</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Kategorie</h3>		<ul>
+	<li class="cat-item cat-item-2"><a href="http://ubuntu.pl/czytelnia/category/aktualnosci/" title="Czyli co nowego w wielkim świecie?">Aktualności</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://ubuntu.pl/czytelnia/category/bibliotekarz-poleca/" title="Czyli wszystko to, na czym kurz osiadać nie powinien.  ">Bibliotekarz Poleca</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://ubuntu.pl/czytelnia/category/czytelnia/" title="Co nowego w czytelni?">Czytelnia</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://ubuntu.pl/czytelnia/category/felietony/" title="Czyli radosna twórczość wokół Ubuntu.">Felietony</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://ubuntu.pl/czytelnia/category/gry/" title="Czyli życie to nie tylko praca.">Gry</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://ubuntu.pl/czytelnia/category/poradniki/" title="Przepisy gotowe do użycia!">Poradniki</a>
+</li>
+		</ul>
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Najnowsze wpisy</h3>		<ul>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/">GIMP to nie wszystko &#8211; jest jeszcze Krita</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/05/19/bug-squad-mozesz-pomoc-w-rozwoju-ubuntu/">Bug Squad &#8211; możesz pomóc w rozwoju Ubuntu</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/05/15/w-czerwcu-2017-zakonczy-sie-wsparcie-dla-ubuntu-phone/">W czerwcu 2017 zakończy się wsparcie dla Ubuntu Phone</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/04/21/fonty-zgodne-z-calibri-i-cambria-aby-dokumenty-wygladaly-jak-trzeba/">Fonty zgodne z Calibri i Cambria &#8211; aby dokumenty wyglądały jak trzeba</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/04/18/samouczki-ubuntu-zrobmy-sobie-pakiet-snap/">Samouczki Ubuntu &#8211; zróbmy sobie pakiet snap</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Najnowsze komentarze</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">mario_7</span> o <a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/#comment-16710">GIMP to nie wszystko &#8211; jest jeszcze Krita</a></li><li class="recentcomments"><span class="comment-author-link">Czesław</span> o <a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/#comment-16709">GIMP to nie wszystko &#8211; jest jeszcze Krita</a></li><li class="recentcomments"><span class="comment-author-link">tadeusz</span> o <a href="http://ubuntu.pl/czytelnia/2017/04/06/ubuntu-18-04-nie-z-unity-lecz-z-gnome-projekt-ubuntu-phone-konczy-swoj-zywot/#comment-16708">Ubuntu 18.04 nie z Unity lecz z GNOME, projekt Ubuntu Phone kończy swój żywot</a></li><li class="recentcomments"><span class="comment-author-link">user</span> o <a href="http://ubuntu.pl/czytelnia/2008/07/30/wstep-do-programowania-w-linuksie-na-przykladzie-ubuntu/#comment-16707">Wstęp do programowania w Linuksie na przykładzie Ubuntu</a></li><li class="recentcomments"><span class="comment-author-link">mario_7</span> o <a href="http://ubuntu.pl/czytelnia/2009/02/17/zaawansowana-instalacja-ubuntu-1-software-raid/#comment-16706">Zaawansowana instalacja Ubuntu #1 &#8211; Software RAID</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archiwa</h3>		<label class="screen-reader-text" for="archives-dropdown-2">Archiwa</label>
+		<select id="archives-dropdown-2" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			
+			<option value="">Wybierz miesiąc</option>
+				<option value='http://ubuntu.pl/czytelnia/2017/08/'> Sierpień 2017 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/05/'> Maj 2017 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/04/'> Kwiecień 2017 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/02/'> Luty 2017 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/12/'> Grudzień 2016 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/10/'> Październik 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/08/'> Sierpień 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/04/'> Kwiecień 2016 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/03/'> Marzec 2016 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/02/'> Luty 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/10/'> Październik 2014 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/09/'> Wrzesień 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/08/'> Sierpień 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/07/'> Lipiec 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/06/'> Czerwiec 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/05/'> Maj 2014 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/04/'> Kwiecień 2014 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/03/'> Marzec 2014 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/02/'> Luty 2014 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/01/'> Styczeń 2014 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/12/'> Grudzień 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/11/'> Listopad 2013 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/10/'> Październik 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/09/'> Wrzesień 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/07/'> Lipiec 2013 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/06/'> Czerwiec 2013 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/05/'> Maj 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/04/'> Kwiecień 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/03/'> Marzec 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/02/'> Luty 2013 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/01/'> Styczeń 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/12/'> Grudzień 2012 &nbsp;(12)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/11/'> Listopad 2012 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/10/'> Październik 2012 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/09/'> Wrzesień 2012 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/08/'> Sierpień 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/07/'> Lipiec 2012 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/06/'> Czerwiec 2012 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/05/'> Maj 2012 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/04/'> Kwiecień 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/03/'> Marzec 2012 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/02/'> Luty 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/01/'> Styczeń 2012 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/12/'> Grudzień 2011 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/11/'> Listopad 2011 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/10/'> Październik 2011 &nbsp;(12)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/09/'> Wrzesień 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/08/'> Sierpień 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/07/'> Lipiec 2011 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/06/'> Czerwiec 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/05/'> Maj 2011 &nbsp;(13)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/04/'> Kwiecień 2011 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/03/'> Marzec 2011 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/02/'> Luty 2011 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/12/'> Grudzień 2010 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/11/'> Listopad 2010 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/10/'> Październik 2010 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/08/'> Sierpień 2010 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/07/'> Lipiec 2010 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/06/'> Czerwiec 2010 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/05/'> Maj 2010 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/04/'> Kwiecień 2010 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/03/'> Marzec 2010 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/02/'> Luty 2010 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/01/'> Styczeń 2010 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/12/'> Grudzień 2009 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/11/'> Listopad 2009 &nbsp;(15)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/10/'> Październik 2009 &nbsp;(15)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/09/'> Wrzesień 2009 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/08/'> Sierpień 2009 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/07/'> Lipiec 2009 &nbsp;(14)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/06/'> Czerwiec 2009 &nbsp;(17)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/05/'> Maj 2009 &nbsp;(22)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/04/'> Kwiecień 2009 &nbsp;(19)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/03/'> Marzec 2009 &nbsp;(33)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/02/'> Luty 2009 &nbsp;(30)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/01/'> Styczeń 2009 &nbsp;(18)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/12/'> Grudzień 2008 &nbsp;(18)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/11/'> Listopad 2008 &nbsp;(19)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/10/'> Październik 2008 &nbsp;(35)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/09/'> Wrzesień 2008 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/08/'> Sierpień 2008 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/07/'> Lipiec 2008 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/06/'> Czerwiec 2008 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/05/'> Maj 2008 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/04/'> Kwiecień 2008 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/03/'> Marzec 2008 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/02/'> Luty 2008 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/01/'> Styczeń 2008 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/12/'> Grudzień 2007 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/11/'> Listopad 2007 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/10/'> Październik 2007 &nbsp;(14)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/09/'> Wrzesień 2007 &nbsp;(13)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/08/'> Sierpień 2007 &nbsp;(27)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/07/'> Lipiec 2007 &nbsp;(23)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/06/'> Czerwiec 2007 &nbsp;(35)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/05/'> Maj 2007 &nbsp;(53)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/04/'> Kwiecień 2007 &nbsp;(48)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/03/'> Marzec 2007 &nbsp;(42)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/02/'> Luty 2007 &nbsp;(25)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/01/'> Styczeń 2007 &nbsp;(29)</option>
+
+		</select>
+		</aside><aside id="rss-2" class="widget widget_rss"><h3 class="widget-title"><a class="rsswidget" href="http://ubuntu.pl/forum/feed.php"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="http://ubuntu.pl/wp-includes/images/rss.png" alt="RSS" /></a> <a class="rsswidget" href="http://ubuntu.pl/forum/index.php">Ostatnio na forum</a></h3><ul><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182530&#038;p=1022470#p1022470'>Instalacja, aktualizacja i konfiguracja Ubuntu • Re: Ubuntu 16 i 17 wykrzacza obraz podczas instalacji</a> <cite>Luqas</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182524&#038;p=1022469#p1022469'>Przedszkole Linuksa • Re: Aktualizacja z 10.04 do16.04 [solved]</a> <cite>Xue-buntu</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182529&#038;p=1022467#p1022467'>Przedszkole Linuksa • Re: Czerwony głośnik</a> <cite>Xue-buntu</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182526&#038;p=1022466#p1022466'>Przedszkole Linuksa • Re: Uruchamianie ubuntu na laptopie acer</a> <cite>Xue-buntu</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182530&#038;p=1022465#p1022465'>Instalacja, aktualizacja i konfiguracja Ubuntu • Re: Ubuntu 16 i 17 wykrzacza obraz podczas instalacji</a> <cite>Arkosake</cite></li></ul></aside>            </div><!-- //#left or //#right -->
+        </div><!--.tc-sidebar -->
+
+        
+        </div><!--.row -->
+    </div><!-- .container role: main -->
+
+    <div id="tc-push-footer"></div>
+</div><!-- //#main-wrapper -->
+
+  		<!-- FOOTER -->
+  		<footer id="footer" class="">
+  		 					<div class="container footer-widgets ">
+                    <div class="row widget-area" role="complementary">
+												
+							<div id="footer_one" class="span4">
+																
+										<aside id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://ubuntu.pl/">
+				<div>
+					<label class="screen-reader-text" for="s">Szukaj:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Szukaj" />
+				</div>
+			</form></aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Kategorie</h3>		<ul>
+	<li class="cat-item cat-item-2"><a href="http://ubuntu.pl/czytelnia/category/aktualnosci/" title="Czyli co nowego w wielkim świecie?">Aktualności</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://ubuntu.pl/czytelnia/category/bibliotekarz-poleca/" title="Czyli wszystko to, na czym kurz osiadać nie powinien.  ">Bibliotekarz Poleca</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://ubuntu.pl/czytelnia/category/czytelnia/" title="Co nowego w czytelni?">Czytelnia</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://ubuntu.pl/czytelnia/category/felietony/" title="Czyli radosna twórczość wokół Ubuntu.">Felietony</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://ubuntu.pl/czytelnia/category/gry/" title="Czyli życie to nie tylko praca.">Gry</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://ubuntu.pl/czytelnia/category/poradniki/" title="Przepisy gotowe do użycia!">Poradniki</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="http://ubuntu.pl/wp-login.php?action=register">Zarejestruj się</a></li>			<li><a href="http://ubuntu.pl/wp-login.php">Zaloguj się</a></li>
+			<li><a href="http://ubuntu.pl/feed/">Kanał <abbr title="Really Simple Syndication">RSS</abbr> z wpisami</a></li>
+			<li><a href="http://ubuntu.pl/comments/feed/">Kanał <abbr title="Really Simple Syndication">RSS</abbr> z komentarzami</a></li>
+			<li><a href="https://pl.wordpress.org/" title="Ta strona jest oparta na WordPressie &mdash; nowoczesnej, semantycznej, osobistej platformie publikacyjnej.">WordPress.org</a></li>			</ul>
+			</aside>
+																							</div><!-- .{$key}_widget_class -->
+
+						
+							<div id="footer_two" class="span4">
+																
+												<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Najnowsze wpisy</h3>		<ul>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/">GIMP to nie wszystko &#8211; jest jeszcze Krita</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/05/19/bug-squad-mozesz-pomoc-w-rozwoju-ubuntu/">Bug Squad &#8211; możesz pomóc w rozwoju Ubuntu</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/05/15/w-czerwcu-2017-zakonczy-sie-wsparcie-dla-ubuntu-phone/">W czerwcu 2017 zakończy się wsparcie dla Ubuntu Phone</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/04/21/fonty-zgodne-z-calibri-i-cambria-aby-dokumenty-wygladaly-jak-trzeba/">Fonty zgodne z Calibri i Cambria &#8211; aby dokumenty wyglądały jak trzeba</a>
+						</li>
+					<li>
+				<a href="http://ubuntu.pl/czytelnia/2017/04/18/samouczki-ubuntu-zrobmy-sobie-pakiet-snap/">Samouczki Ubuntu &#8211; zróbmy sobie pakiet snap</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Najnowsze komentarze</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">mario_7</span> o <a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/#comment-16710">GIMP to nie wszystko &#8211; jest jeszcze Krita</a></li><li class="recentcomments"><span class="comment-author-link">Czesław</span> o <a href="http://ubuntu.pl/czytelnia/2017/08/27/gimp-to-nie-wszystko-jest-jeszcze-krita/#comment-16709">GIMP to nie wszystko &#8211; jest jeszcze Krita</a></li><li class="recentcomments"><span class="comment-author-link">tadeusz</span> o <a href="http://ubuntu.pl/czytelnia/2017/04/06/ubuntu-18-04-nie-z-unity-lecz-z-gnome-projekt-ubuntu-phone-konczy-swoj-zywot/#comment-16708">Ubuntu 18.04 nie z Unity lecz z GNOME, projekt Ubuntu Phone kończy swój żywot</a></li><li class="recentcomments"><span class="comment-author-link">user</span> o <a href="http://ubuntu.pl/czytelnia/2008/07/30/wstep-do-programowania-w-linuksie-na-przykladzie-ubuntu/#comment-16707">Wstęp do programowania w Linuksie na przykładzie Ubuntu</a></li><li class="recentcomments"><span class="comment-author-link">mario_7</span> o <a href="http://ubuntu.pl/czytelnia/2009/02/17/zaawansowana-instalacja-ubuntu-1-software-raid/#comment-16706">Zaawansowana instalacja Ubuntu #1 &#8211; Software RAID</a></li></ul></aside><aside id="rss-3" class="widget widget_rss"><h3 class="widget-title"><a class="rsswidget" href="http://ubuntu.pl/forum/feed.php"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="http://ubuntu.pl/wp-includes/images/rss.png" alt="RSS" /></a> <a class="rsswidget" href="http://ubuntu.pl/forum/index.php">Ostatnio na forum</a></h3><ul><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182530&#038;p=1022470#p1022470'>Instalacja, aktualizacja i konfiguracja Ubuntu • Re: Ubuntu 16 i 17 wykrzacza obraz podczas instalacji</a> <cite>Luqas</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182524&#038;p=1022469#p1022469'>Przedszkole Linuksa • Re: Aktualizacja z 10.04 do16.04 [solved]</a> <cite>Xue-buntu</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182529&#038;p=1022467#p1022467'>Przedszkole Linuksa • Re: Czerwony głośnik</a> <cite>Xue-buntu</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182526&#038;p=1022466#p1022466'>Przedszkole Linuksa • Re: Uruchamianie ubuntu na laptopie acer</a> <cite>Xue-buntu</cite></li><li><a class='rsswidget' href='http://ubuntu.pl/forum/viewtopic.php?t=182530&#038;p=1022465#p1022465'>Instalacja, aktualizacja i konfiguracja Ubuntu • Re: Ubuntu 16 i 17 wykrzacza obraz podczas instalacji</a> <cite>Arkosake</cite></li></ul></aside>
+																							</div><!-- .{$key}_widget_class -->
+
+						
+							<div id="footer_three" class="span4">
+																
+										<aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archiwa</h3>		<label class="screen-reader-text" for="archives-dropdown-2">Archiwa</label>
+		<select id="archives-dropdown-2" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			
+			<option value="">Wybierz miesiąc</option>
+				<option value='http://ubuntu.pl/czytelnia/2017/08/'> Sierpień 2017 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/05/'> Maj 2017 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/04/'> Kwiecień 2017 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2017/02/'> Luty 2017 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/12/'> Grudzień 2016 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/10/'> Październik 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/08/'> Sierpień 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/04/'> Kwiecień 2016 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/03/'> Marzec 2016 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2016/02/'> Luty 2016 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/10/'> Październik 2014 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/09/'> Wrzesień 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/08/'> Sierpień 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/07/'> Lipiec 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/06/'> Czerwiec 2014 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/05/'> Maj 2014 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/04/'> Kwiecień 2014 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/03/'> Marzec 2014 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/02/'> Luty 2014 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2014/01/'> Styczeń 2014 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/12/'> Grudzień 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/11/'> Listopad 2013 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/10/'> Październik 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/09/'> Wrzesień 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/07/'> Lipiec 2013 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/06/'> Czerwiec 2013 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/05/'> Maj 2013 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/04/'> Kwiecień 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/03/'> Marzec 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/02/'> Luty 2013 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2013/01/'> Styczeń 2013 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/12/'> Grudzień 2012 &nbsp;(12)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/11/'> Listopad 2012 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/10/'> Październik 2012 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/09/'> Wrzesień 2012 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/08/'> Sierpień 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/07/'> Lipiec 2012 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/06/'> Czerwiec 2012 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/05/'> Maj 2012 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/04/'> Kwiecień 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/03/'> Marzec 2012 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/02/'> Luty 2012 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2012/01/'> Styczeń 2012 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/12/'> Grudzień 2011 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/11/'> Listopad 2011 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/10/'> Październik 2011 &nbsp;(12)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/09/'> Wrzesień 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/08/'> Sierpień 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/07/'> Lipiec 2011 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/06/'> Czerwiec 2011 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/05/'> Maj 2011 &nbsp;(13)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/04/'> Kwiecień 2011 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/03/'> Marzec 2011 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2011/02/'> Luty 2011 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/12/'> Grudzień 2010 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/11/'> Listopad 2010 &nbsp;(1)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/10/'> Październik 2010 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/08/'> Sierpień 2010 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/07/'> Lipiec 2010 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/06/'> Czerwiec 2010 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/05/'> Maj 2010 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/04/'> Kwiecień 2010 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/03/'> Marzec 2010 &nbsp;(4)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/02/'> Luty 2010 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2010/01/'> Styczeń 2010 &nbsp;(10)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/12/'> Grudzień 2009 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/11/'> Listopad 2009 &nbsp;(15)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/10/'> Październik 2009 &nbsp;(15)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/09/'> Wrzesień 2009 &nbsp;(9)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/08/'> Sierpień 2009 &nbsp;(11)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/07/'> Lipiec 2009 &nbsp;(14)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/06/'> Czerwiec 2009 &nbsp;(17)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/05/'> Maj 2009 &nbsp;(22)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/04/'> Kwiecień 2009 &nbsp;(19)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/03/'> Marzec 2009 &nbsp;(33)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/02/'> Luty 2009 &nbsp;(30)</option>
+	<option value='http://ubuntu.pl/czytelnia/2009/01/'> Styczeń 2009 &nbsp;(18)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/12/'> Grudzień 2008 &nbsp;(18)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/11/'> Listopad 2008 &nbsp;(19)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/10/'> Październik 2008 &nbsp;(35)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/09/'> Wrzesień 2008 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/08/'> Sierpień 2008 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/07/'> Lipiec 2008 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/06/'> Czerwiec 2008 &nbsp;(2)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/05/'> Maj 2008 &nbsp;(3)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/04/'> Kwiecień 2008 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/03/'> Marzec 2008 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/02/'> Luty 2008 &nbsp;(6)</option>
+	<option value='http://ubuntu.pl/czytelnia/2008/01/'> Styczeń 2008 &nbsp;(7)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/12/'> Grudzień 2007 &nbsp;(8)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/11/'> Listopad 2007 &nbsp;(5)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/10/'> Październik 2007 &nbsp;(14)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/09/'> Wrzesień 2007 &nbsp;(13)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/08/'> Sierpień 2007 &nbsp;(27)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/07/'> Lipiec 2007 &nbsp;(23)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/06/'> Czerwiec 2007 &nbsp;(35)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/05/'> Maj 2007 &nbsp;(53)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/04/'> Kwiecień 2007 &nbsp;(48)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/03/'> Marzec 2007 &nbsp;(42)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/02/'> Luty 2007 &nbsp;(25)</option>
+	<option value='http://ubuntu.pl/czytelnia/2007/01/'> Styczeń 2007 &nbsp;(29)</option>
+
+		</select>
+		</aside><aside id="calendar-2" class="widget widget_calendar"><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>Luty 2010</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="poniedziałek">P</th>
+		<th scope="col" title="wtorek">W</th>
+		<th scope="col" title="środa">Ś</th>
+		<th scope="col" title="czwartek">C</th>
+		<th scope="col" title="piątek">P</th>
+		<th scope="col" title="sobota">S</th>
+		<th scope="col" title="niedziela">N</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://ubuntu.pl/czytelnia/2010/01/">&laquo; Sty</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next"><a href="http://ubuntu.pl/czytelnia/2010/03/">Mar &raquo;</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr><td>1</td><td><a href="http://ubuntu.pl/czytelnia/2010/02/02/" aria-label="Wpisy opublikowane dnia 2 February 2010">2</a></td><td>3</td><td><a href="http://ubuntu.pl/czytelnia/2010/02/04/" aria-label="Wpisy opublikowane dnia 4 February 2010">4</a></td><td><a href="http://ubuntu.pl/czytelnia/2010/02/05/" aria-label="Wpisy opublikowane dnia 5 February 2010">5</a></td><td>6</td><td>7</td>
+	</tr>
+	<tr>
+		<td><a href="http://ubuntu.pl/czytelnia/2010/02/08/" aria-label="Wpisy opublikowane dnia 8 February 2010">8</a></td><td><a href="http://ubuntu.pl/czytelnia/2010/02/09/" aria-label="Wpisy opublikowane dnia 9 February 2010">9</a></td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+	</tr>
+	<tr>
+		<td>15</td><td><a href="http://ubuntu.pl/czytelnia/2010/02/16/" aria-label="Wpisy opublikowane dnia 16 February 2010">16</a></td><td>17</td><td><a href="http://ubuntu.pl/czytelnia/2010/02/18/" aria-label="Wpisy opublikowane dnia 18 February 2010">18</a></td><td>19</td><td>20</td><td>21</td>
+	</tr>
+	<tr>
+		<td>22</td><td><a href="http://ubuntu.pl/czytelnia/2010/02/23/" aria-label="Wpisy opublikowane dnia 23 February 2010">23</a></td><td><a href="http://ubuntu.pl/czytelnia/2010/02/24/" aria-label="Wpisy opublikowane dnia 24 February 2010">24</a></td><td><a href="http://ubuntu.pl/czytelnia/2010/02/25/" aria-label="Wpisy opublikowane dnia 25 February 2010">25</a></td><td>26</td><td>27</td><td>28</td>
+	</tr>
+	</tbody>
+	</table></div></aside>
+																							</div><!-- .{$key}_widget_class -->
+
+																	</div><!-- .row.widget-area -->
+				</div><!--.footer-widgets -->
+				    				 <div class="colophon">
+			 	<div class="container">
+			 		<div class="row-fluid">
+					    <div class="span3 social-block pull-left"><span class="social-links"><a rel="nofollow" class="social-icon icon-feed-square"  title="Zapisz nasz kanał RSS" aria-label="Zapisz nasz kanał RSS" href="http://ubuntu.pl/feed/rss/"  target="_blank" ><i class="fa fa-rss-square"></i></a><a rel="nofollow" class="social-icon icon-facebook"  title="Obserwuj nas na Facebooku" aria-label="Obserwuj nas na Facebooku" href="https://www.facebook.com/ubuntupl/"  target="_blank" ><i class="fa fa-facebook"></i></a><a rel="nofollow" class="social-icon icon-stack-exchange"  title="Zajrzyj na nasze forum" aria-label="Zajrzyj na nasze forum" href="http://ubuntu.pl/forum"  ><i class="fa fa-stack-exchange"></i></a></span></div><div class="span6 credits"><p>&middot; <span class="tc-copyright-text">&copy; 2017</span> <a href="http://ubuntu.pl" title="Ubuntu.pl" rel="bookmark">Ubuntu.pl</a> &middot; <span class="tc-credits-text">Designed by</span> <a href="http://presscustomizr.com/">Press Customizr</a> &middot; <span class="tc-wp-powered-text">Napędzany</span> <a class="icon-wordpress" target="_blank" href="https://wordpress.org" title="Ta strona jest oparta na WordPressie"></a> &middot;</p></div>	      			</div><!-- .row-fluid -->
+	      		</div><!-- .container -->
+	      	</div><!-- .colophon -->
+	    	  		</footer>
+    </div><!-- //#tc-page-wrapper -->
+		
+<script type='text/javascript'>
+/* <![CDATA[ */
+r3f5x9JS=escape(document['referrer']);
+hf4N='a89fedfd8e68a321a6b6234083d2daee';
+hf4V='c069a59a665754864bd6c4a411e4958a';
+cm4S="form[action='http://ubuntu.pl/wp-comments-post.php']";
+jQuery(document).ready(function($){var e="#commentform, .comment-respond form, .comment-form, "+cm4S+", #lostpasswordform, #registerform, #loginform, #login_form, #wpss_contact_form";$(e).submit(function(){$("<input>").attr("type","hidden").attr("name","r3f5x9JS").attr("value",r3f5x9JS).appendTo(e);return true;});var h="form[method='post']";$(h).submit(function(){$("<input>").attr("type","hidden").attr("name",hf4N).attr("value",hf4V).appendTo(h);return true;});});
+/* ]]> */
+</script> 
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ctcc_vars = {"expiry":"30","method":"1","version":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/plugins/uk-cookie-consent/assets/js/uk-cookie-consent-js.js?ver=2.3.0'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-includes/js/comment-reply.min.js?ver=19571d0e676e8ab0256f2b8d4f484181'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/modernizr.min.js?ver=4.0.7'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/plugins/wp-spamshield/js/jscripts-ftr2-min.js'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-includes/js/wp-embed.min.js?ver=19571d0e676e8ab0256f2b8d4f484181'></script>
+<script type='text/javascript' src='http://ubuntu.pl/wp-content/plugins/akismet/_inc/form.js?ver=3.3.4'></script>
+			
+				<script type="text/javascript">
+					jQuery(document).ready(function($){
+												if(!catapultReadCookie("catAccCookies")){ // If the cookie has not been set then show the bar
+							$("html").addClass("has-cookie-bar");
+							$("html").addClass("cookie-bar-bottom-bar");
+							$("html").addClass("cookie-bar-bar");
+													}
+																	});
+				</script>
+			
+			<div id="catapult-cookie-bar" class=""><div class="ctcc-inner "><span class="ctcc-left-side">Serwis wykorzystuje pliki cookies. Korzystając ze strony wyrażasz zgodę na wykorzystywanie plików cookies. <a class="ctcc-more-info-link" tabindex=0 target="_blank" href="http://wszystkoociasteczkach.pl/">Dowiedz się więcej.</a></span><span class="ctcc-right-side"><button id="catapultCookie" tabindex=0 onclick="catapultAcceptCookies();">Ok, rozumiem</button></span></div><!-- custom wrapper class --></div><!-- #catapult-cookie-bar --><div id="tc-footer-btt-wrapper" class="tc-btt-wrapper right"><i class="btt-arrow"></i></div>	</body>
+	</html>Ը��&      Y�6�Y�6�>.E�       A    :http://ubuntu.pl/czytelnia/2010/02/18/konsola_nie_gryzie_czesc1/ necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Server: nginx/1.12.0
+Date: Sun, 10 Sep 2017 12:56:44 GMT
+Content-Type: text/html; charset=UTF-8
+X-Pingback: http://ubuntu.pl/xmlrpc.php
+Link: <http://ubuntu.pl/wp-json/>; rel="https://api.w.org/", <http://ubuntu.pl/?p=10766>; rel=shortlink
+ original-response-headers Server: nginx/1.12.0
+Date: Sun, 10 Sep 2017 12:56:44 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: wfvt_2615001749=59b5368cc3f86; expires=Sun, 10-Sep-2017 13:26:44 GMT; Max-Age=1800; path=/; httponly
+X-Pingback: http://ubuntu.pl/xmlrpc.php
+Link: <http://ubuntu.pl/wp-json/>; rel="https://api.w.org/"
+Link: <http://ubuntu.pl/?p=10766>; rel=shortlink
+ uncompressed-len 0 predictor::resource-count 47 predictor::http://fonts.googleapis.com/css?family=Ubuntu:400%7CUbuntu:400 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/plugins/uk-cookie-consent/assets/css/style.css?ver=19571d0e676e8ab0256f2b8d4f484181 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/assets/shared/fonts/fa/css/font-awesome.min.css?ver=4.0.7 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/inc/assets/css/tc_common.min.css?ver=4.0.7 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr-ubupl/inc/assets/css/orange.min.css?ver=4.0.7 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr-ubupl/style.css?ver=4.0.7 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/fancybox/jquery.fancybox-1.3.4.min.css?ver=19571d0e676e8ab0256f2b8d4f484181 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/plugins/author-avatars/css/widget.css?ver=1.11 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/plugins/author-avatars/css/shortcode.css?ver=1.11 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-includes/js/jquery/jquery.js?ver=1.12.4 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/fancybox/jquery.fancybox-1.3.4.min.js?ver=4.0.7 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-includes/js/wp-emoji-release.min.js?ver=19571d0e676e8ab0256f2b8d4f484181 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/inc/assets/js/tc-scripts.min.js?ver=4.0.7 1,1,1505048204,4096 predictor::http://1.gravatar.com/avatar/42771c9d31f25864d41649754c6c5c43?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://2.gravatar.com/avatar/e46b641fab9bd29037cce4018674d993?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://1.gravatar.com/avatar/1c5f5e9a9d7a2a33b4da0ec6f4010bfd?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://2.gravatar.com/avatar/234eb9fbf28391c6ceebd96eed57411b?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://0.gravatar.com/avatar/9055ded5fa903c7170d24f718356ab77?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://0.gravatar.com/avatar/0e20d451b881d7bade9976adaddfb53f?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://0.gravatar.com/avatar/f5164cfacaefab1229c72cfe2e2ea9fd?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://0.gravatar.com/avatar/f4c4b6a5df5b18f2587522332fee6dfa?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://2.gravatar.com/avatar/ea3d991cf58ae981bc9846ff2dfefeaf?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://0.gravatar.com/avatar/3db885eda9a74d9acdb737f16a0cc273?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://0.gravatar.com/avatar/659c98c103bd16a3dc2f4ae82ed7e315?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://0.gravatar.com/avatar/9620fdd99b9123eb452aa17b5c5554de?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://2.gravatar.com/avatar/b4fd9a4035b9937679bfd96e0db47641?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://1.gravatar.com/avatar/7b0cb78468fb27f07e6c3bb1374d0228?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://0.gravatar.com/avatar/03d65afeeba26937bb4cdf483910602e?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://0.gravatar.com/avatar/35cfd533d3b7031bdf728feada757ab3?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://2.gravatar.com/avatar/56066c5d1aca067eef737ce3dd7f336c?s=80&d=mm&r=g 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/style.css 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-includes/images/rss.png 1,1,1505048204,4096 net-response-time-onstart 410 net-response-time-onstop 730 predictor::http://ubuntu.pl/wp-content/plugins/uk-cookie-consent/assets/js/uk-cookie-consent-js.js?ver=2.3.0 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-includes/js/comment-reply.min.js?ver=19571d0e676e8ab0256f2b8d4f484181 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/assets/front/js/libs/modernizr.min.js?ver=4.0.7 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/plugins/wp-spamshield/js/jscripts-ftr2-min.js 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-includes/js/wp-embed.min.js?ver=19571d0e676e8ab0256f2b8d4f484181 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/plugins/akismet/_inc/form.js?ver=3.3.4 1,1,1505048204,4096 predictor::http://www.google-analytics.com/analytics.js 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/inc/assets/img/glyphicons-halflings.png 1,1,1505048204,4096 predictor::http://fonts.gstatic.com/s/ubuntu/v10/4iCs6KVjbNBYlgoKfw72.woff2 1,1,1505048204,4096 predictor::http://fonts.gstatic.com/s/ubuntu/v10/4iCs6KVjbNBYlgoKcQ72j00.woff2 1,1,1505048204,4096 predictor::http://ubuntu.pl/wp-content/themes/customizr/assets/shared/fonts/fa/fonts/fontawesome-webfont.woff2?v=4.7.0 1,1,1505048204,4096 predictor::http://ubuntu.pl/?wordfence_logHuman=1&hid=10C0D1F1AF60A078D6A0051C913E067F&r=0.5125851035449721 1,1,1505048204,4096 predictor::https://s.w.org/images/core/emoji/2.3/svg/1f642.svg 1,1,1505048204,4096  �v

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Alior Bank - konto lokacyjne</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="application-name" content="Alior Bank">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-square70x70logo" content="../img/msapplication-icon-70x70.png">
+	<meta name="msapplication-square150x150logo" content="../img/msapplication-icon-150x150.png">
+	<meta name="msapplication-wide310x150logo" content="../img/msapplication-icon-310x150.png">
+	<meta name="msapplication-square310x310logo" content="../img/msapplication-icon-310x310.png">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="robots" content="index, follow">
+	<link href="../css/reset.css" rel="stylesheet" type="text/css">
+	<link href="../css/main.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<!--[if lte IE 8]>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:500&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <![endif]-->
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../img/apple-touch-icon-152x152-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../img/apple-touch-icon-120x120-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="../img/apple-touch-icon-76x76-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../img/apple-touch-icon-57x57-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="../img/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+	<!-- Google Tag Manager -->
+
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start':
+
+					new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+
+		})(window, document, 'script', 'dataLayer', 'GTM-PVK8PSL');
+	</script>
+	<!-- End Google Tag Manager -->
+
+	<div class="container">
+		<header><img src="../img/logo.png" alt="logo"></header>
+		<div id="content">
+			<div class="main">
+				<img class="img-nadwyzki" src="../img/nadwyzki.png" alt="Nadwyżki środków zwiększają zyski... z oszczędności" width="100%">
+				<h1>Zyskuj więcej z nowym kontem lokacyjnym.</h1>
+				<p><span><strong>Masz nadwyżkę środków? Załóż nowe, bezpłatne konto lokacyjne w Alior Banku.</strong></span><br>
+					<span>Otrzymasz wyższe oprocentowanie dla nowych środków i zyskasz więcej.</span></p>
+				<ul>
+					<li>Atrakcyjne oprocentowanie <span>2,5%</span> (dla nowych środków do 100 tys. zł przez 4 miesiące)</li>
+					<li>Wpłacasz i wypłacasz <span>kiedy chcesz</span></li>
+					<li>Nie musisz mieć konta osobistego w Alior Banku</li>
+				</ul>
+				
+				<p class="btn">
+					<a href="https://wnioski.aliorbank.pl/directcreditsystem-frontend-account-application/cms/?partnerID=KAM_OSZCZ&applicationID=lght" id="btn-application"
+					    target="_blank" onclick="gemius_hit('ofgw5D9pb1j0nxLh1wwg73Z2nKQNfQw9CfGT4WuVvG7.r7');dataLayer.push({'event': 'wniosek'});">Złóż wniosek on-line</a>
+				</p>
+				
+				<div class="info">
+					<p>Jeśli jesteś już klientem Alior Banku, załóż konto w <a href="https://login.aliorbank.pl/" target="_blank">bankowości internetowej</a> – wystarczy potwierdzić umowę kodem SMS.</p>
+					<p>Konto lokacyjne możesz także założyć w dowolnej <a href="https://www.aliorbank.pl/placowki-i-bankomaty.html" target="_blank">placówce banku</a>.<p>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="callback">
+			<img id="scale" class="center" src="../img/waga.png" alt="waga">
+			<img class="gif" src="../img/oszczednosci.gif" alt="oszczednosci - gif">
+		</div>
+
+	</div>
+
+
+	<div class="container_100 container_100--grey">
+
+		<div class="tab_con container visible">
+			<img src="../img/jak-to-dziala.png" alt="Jak to działa?">
+			<p><span>Na nowym koncie lokacyjnym <strong>otrzymujesz podwyższone oprocentowanie od nowych środków</strong>,<br>
+							które wpłacasz do banku.</span></p>
+			<div class="center-block">
+				<div class="tab_con3">
+					<div class="tab_con3_3">
+						<table><tr><td><div class="border"><img src="../img/ico1.png" alt="" ></div>
+						</td><td><span>Każdego dnia weryfikujemy saldo,
+													<strong>a&nbsp;nowe środki zyskują podwyższone oprocentowanie</strong></span></td>
+				</tr>
+				</table>
+		</div>
+	</div>
+	<div class="tab_con3">
+		<div class="tab_con3_3">
+			<table>
+				<tr>
+					<td>
+						<div class="border"><img src="../img/ico2.png" alt=""></div>
+					</td>
+					<td><span>Wszystkie środki na koncie pracują codziennie, <strong>a&nbsp;nowe zarabiają dodatkowo!</strong></td></tr></table>
+					</div>
+				</div>
+			</div>
+			<p>Konto lokacyjne możesz także założyć za pośrednictwem <a href="https://login.aliorbank.pl" target="_blank" onclick="gemius_hit('.F4wQnfkb6H5f7L0clSYT5ZVnIPdFAwtqgqzycMLJGj.07');dataLayer.push({'event': 'logowanie'});">bankowości internetowej</a> i w dowolnej <a href="https://www.aliorbank.pl/placowki-i-bankomaty.html" target="_blank" onclick="gemius_hit('ofI65j7HSztU1TSNP32R28QL.M4KH8x9L1Dj1ek2PIT.B7');dataLayer.push({'event': 'oddziały'});">placówce banku</a>.</p>
+		</div>		
+	</div>
+	
+	<div class="container_100 container_100--dark_grey container_100--no_pad">  
+		<div class="container">
+			<div id="footer">
+				<div id="disclaimer">
+					<p>
+						Odsetki kapitalizowane są na koniec okresu promocji (po 4 miesiącach od daty otwarcia Konta Lokacyjnego). Do promocyjnego oprocentowania w wysokości 2,5% (w skali roku) na Koncie Lokacyjnym uprawnieni są klienci deponujący w Banku nowe środki, tj. środki ponad łączne saldo z 1.08.2017 r. środków zgromadzonych na należących do nich rachunkach oszczędnościowych, oszczędnościowo-rozliczeniowych i lokat terminowych, prowadzonych w złotych i walutach, do kwoty 100 tys. zł. Promocyjne oprocentowanie dostępne jest przez okres 4 miesięcy od otwarcia Konta Lokacyjnego. Klient może posiadać tylko jedno Konto Lokacyjne. Dla środków niestanowiących nowych środków oraz po okresie promocyjnym oprocentowanie ustalane jest co miesiąc w oparciu o stawkę WIBID 1M z 10. dnia kalendarzowego danego miesiąca (lub poprzedniego dnia roboczego), pomniejszoną o 0,5 p.p. Zmienione oprocentowanie obowiązuje od 11. dnia kalendarzowego danego miesiąca. Po okresie promocji odsetki kapitalizowane są miesięcznie. Szczegóły w Regulaminie Promocji „Konto Lokacyjne” oraz Tabeli Oprocentowania. Informacja handlowa wg stanu na 4.08.2017 r. Aktualne warunki na <a href="http://www.aliorbank.pl" target="_blank">www.aliorbank.pl</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+    </div>
+	<script src="js/1505_poz_droga.js"></script>
+	<script type="text/javascript">
+	  var cookieName = 'ablp50',
+		cookieValue = '50', 
+		cookieDays = 7, 
+		cookieDomain = '.aliorbank.pl' 
+	  $(document).ready(function() {
+		function setCookie(cookieName, cookieValue, cookieDays, cookieDomain) {
+		  var d = new Date(),
+		  expires = '';
+		  d.setTime(d.getTime() + (cookieDays*24*60*60*1000));
+		  expires = "expires=" + d.toUTCString();
+		  document.cookie = cookieName + "=" + cookieValue + "; " + expires + ";domain=" + cookieDomain + ";path=/";
+		}
+		setCookie(cookieName, cookieValue, cookieDays, cookieDomain);
+	  });
+</script>
+
+	<!-- (C)2000-2017 Gemius SA - gemiusTraffic / ver 11.1 / konto-lokacyjne-aliorbank-pl-sg -->
+	<script type="text/javascript">
+		<!--//--><![CDATA[//><!--
+		var gemius_identifier = new String('dwCbuQNsAA_PDoqb0DEuzcQ6TDMKTewH_PxDbharxJj.n7');
+		//--><!]]>
+	</script>
+	<script type="text/javascript" src="https://www.aliorbank.pl/static/js/gemius.js"></script>
+
+  </body>
+</html>Et�cź      Y���Y���>0ZY���   *    :http://konto-lokacyjne.aliorbank.pl/lght/ necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Tue, 12 Sep 2017 11:28:31 GMT
+Last-Modified: Mon, 11 Sep 2017 09:14:01 GMT
+ETag: "c128-21d0-558e658e9e840"
+Accept-Ranges: bytes
+Content-Length: 8656
+Content-Type: text/html
+ original-response-headers Date: Tue, 12 Sep 2017 11:28:31 GMT
+Last-Modified: Mon, 11 Sep 2017 09:14:01 GMT
+ETag: "c128-21d0-558e658e9e840"
+Accept-Ranges: bytes
+Content-Length: 8656
+Keep-Alive: timeout=15, max=100
+Connection: Keep-Alive
+Content-Type: text/html
+Set-Cookie: TS01101114=01eeb70fb9b22f22e73a5da028ff7012cc007662b1abea7aa6eeab7476e7b8e70589651437219e31eb7a6a8dcf802795c737f8913a; Path=/
+ uncompressed-len 0 net-response-time-onstart 148 net-response-time-onstop 165 predictor::resource-count 23 predictor::http://konto-lokacyjne.aliorbank.pl/css/reset.css 1,1,1505215711,4096 predictor::http://konto-lokacyjne.aliorbank.pl/css/main.css 1,1,1505215711,4096 predictor::https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=latin,latin-ext 1,1,1505215711,4096 predictor::http://konto-lokacyjne.aliorbank.pl/img/logo.png 1,1,1505215711,4096 predictor::http://konto-lokacyjne.aliorbank.pl/img/nadwyzki.png 1,1,1505215711,4096 predictor::http://konto-lokacyjne.aliorbank.pl/img/waga.png 1,1,1505215711,4096 predictor::http://konto-lokacyjne.aliorbank.pl/img/oszczednosci.gif 1,1,1505215711,4096 predictor::http://konto-lokacyjne.aliorbank.pl/img/jak-to-dziala.png 1,1,1505215711,4096 predictor::http://konto-lokacyjne.aliorbank.pl/img/ico1.png 1,1,1505215711,4096 predictor::http://konto-lokacyjne.aliorbank.pl/img/ico2.png 1,1,1505215711,4096 predictor::http://konto-lokacyjne.aliorbank.pl/lght/js/1505_poz_droga.js 1,1,1505215711,4096 predictor::https://www.aliorbank.pl/static/js/gemius.js 1,1,1505215711,4096 predictor::http://konto-lokacyjne.aliorbank.pl/img/1024x548.png 1,1,1505215711,4096 predictor::https://www.googletagmanager.com/gtm.js?id=GTM-PVK8PSL 1,1,1505215711,4096 predictor::https://fonts.gstatic.com/s/roboto/v16/CWB0XYA8bzo0kSThX0UTuA.woff2 1,1,1505215711,4096 predictor::https://fonts.gstatic.com/s/roboto/v16/Fcx7Wwv8OzT71A3E1XOAjvesZW2xOQ-xsNqO47m55DA.woff2 1,1,1505215711,4096 predictor::https://fonts.gstatic.com/s/roboto/v16/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2 1,1,1505215711,4096 predictor::https://fonts.gstatic.com/s/roboto/v16/Pru33qjShpZSmG3z6VYwnRJtnKITppOI_IvcXXDNrsc.woff2 1,1,1505215711,4096 predictor::https://fonts.gstatic.com/s/roboto/v16/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2 1,1,1505215711,4096 predictor::https://fonts.gstatic.com/s/roboto/v16/oOeFwZNlrTefzLYmlVV1UBJtnKITppOI_IvcXXDNrsc.woff2 1,1,1505215711,4096 predictor::http://pro.hit.gemius.pl/_1505215722475/redot.gif?l=20&id=dwCbuQNsAA_PDoqb0DEuzcQ6TDMKTewH_PxDbharxJj.n7&fr=1&fv=-&tz=-120&href=http%3A//konto-lokacyjne.aliorbank.pl/lght/&ref=&screen=1366x768&col=24 1,1,1505215711,4096 predictor::http://www.google-analytics.com/analytics.js 1,1,1505215711,4096 predictor::http://www.google-analytics.com/r/collect?v=1&_v=j61&a=181732382&t=pageview&_s=1&dl=http%3A%2F%2Fkonto-lokacyjne.aliorbank.pl%2Flght%2F&ul=en-us&de=UTF-8&dt=Alior%20Bank%20-%20konto%20lokacyjne&sd=24-bit&sr=1366x768&vp=1197x594&je=0&_u=YEBAAAABI~&jid=1666222638&gjid=235163198&cid=180616330.1505215725&tid=UA-62838847-2&_gid=589541035.1505215725&_r=1&gtm=GTM-PVK8PSL&z=1826242977 1,1,1505215711,4096   !�

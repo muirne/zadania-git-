@@ -1,0 +1,379 @@
+function AcquisitionLanding(config) {
+
+	this.elementsData = new Array(); 
+	var thisThis = this;
+	
+	this.isFieldValid = isFieldValid;
+	this.isFieldValidating = isFieldValidating;
+
+	constructor();
+	
+	function constructor() {
+		
+		var streetNamesForCityNames=new Array();
+		var cityNamesForZipNames = new Array();
+		
+		for (var index in config['fieldNames']['NAME']) {
+			var fieldName = config['fieldNames']['NAME'][index];
+			thisThis.elementsData[fieldName] = {valid:false, validating:false};
+			setAutocompleterForName(fieldName);
+		}
+		
+		for (var index in config['fieldNames']['ADDRESS']) {
+			var cityFieldName = config['fieldNames']['ADDRESS'][index]['CITY'];
+			var streetFieldName = config['fieldNames']['ADDRESS'][index]['STREET'];
+			var zipHeadFieldName = config['fieldNames']['ADDRESS'][index]['ZIPHEAD'];
+			var zipTailFieldName = config['fieldNames']['ADDRESS'][index]['ZIPTAIL'];
+			thisThis.elementsData[cityFieldName] = {valid:false, validating:false};
+			thisThis.elementsData[streetFieldName] = {valid:false, validating:false};
+			streetNamesForCityNames[cityFieldName] = streetFieldName;
+			cityNamesForZipNames[zipHeadFieldName] = cityFieldName;
+			cityNamesForZipNames[zipTailFieldName] = cityFieldName;
+			
+			setAutocompleterForCity(cityFieldName, zipHeadFieldName, zipTailFieldName);
+			setAutocompleterForStreet(streetFieldName, cityFieldName, zipHeadFieldName, zipTailFieldName);
+			
+			jQuery('[name="'+config['fieldNames']['ADDRESS'][index]['ZIPHEAD']+'"], [name="'+config['fieldNames']['ADDRESS'][index]['ZIPTAIL']+'"]').change(function() {
+				var cityField = cityNamesForZipNames[jQuery(this).attr('name')];
+				var streetField = streetNamesForCityNames[cityField];
+				
+				if (getFieldValueByName(cityField)!="") {
+				  jQuery('[name="'+cityField+'"]').val('');
+				  setFieldAsInvalid(cityField);
+				}
+			
+				if (getFieldValueByName(streetField)!="") {
+				  jQuery('[name="'+streetField+'"]').val('');			  
+				  setFieldAsInvalid(streetField);
+				}
+			});
+			
+			jQuery('[name="'+cityFieldName+'"]').change(function() {
+				var streetField = streetNamesForCityNames[jQuery(this).attr('name')];
+
+				if (getFieldValueByName(streetField)!="") {
+				  jQuery('[name="'+streetField+'"]').val('');
+				  setFieldAsInvalid(streetField);
+				}
+			});
+		}
+		
+	}
+
+	function setAutocompleterForName(fieldName) {
+		var field = getFieldByName(fieldName);
+
+		field.autocomplete({
+		    minLength: 3,
+			source: function( request, response ) {
+				var fieldValue = getFieldValueByName(fieldName);
+		        makeAjaxRequestForAutocompleter(config['ajaxCisNameUrl'], response, {nameMatch: fieldValue});
+		      },
+		      select: function( event, ui ) {
+		      },
+				   change: function(event, ui) {
+				
+					if (ui.item) {  //wybral cos z listy, a wiec jest OK
+						setFieldAsValid(fieldName);
+					} else { //wpisal cos z palca. Czy jest OK? Trzeba sprawdzic!
+						setFieldAsValidating(fieldName);
+						validateNameField(fieldName);
+					}
+				}
+
+		});			
+	}
+	
+	
+	function setAutocompleterForCity(fieldName, zipHeadFieldName, zipTailFieldName) {
+
+		var field = getFieldByName(fieldName);
+
+		field.autocomplete({
+		    minLength: 3,
+			source: function( request, response ) {
+				var fieldValue = getFieldValueByName(fieldName) + '%';
+				var zip = getZipValue(zipHeadFieldName, zipTailFieldName);
+				
+				
+				if (isZipValidForWebService(zip)) {
+					makeAjaxRequestForAutocompleter(config['ajaxCisCityUrl'], response, {nameMatch: fieldValue, zip:zip});
+				}
+		      },
+		      select: function( event, ui ) {
+		      },
+				   change: function(event, ui) {
+				
+					if (ui.item) {  //wybral cos z listy, a wiec jest OK
+						setFieldAsValid(fieldName);
+					} else { //wpisal cos z palca. Czy jest OK? Trzeba sprawdzic!
+						setFieldAsValidating(fieldName);
+						validateCityField(fieldName, zipHeadFieldName, zipTailFieldName);
+					}
+				}
+
+		});			
+	}
+	
+	function setAutocompleterForStreet(streetFieldName, cityFieldName, zipHeadFieldName, zipTailFieldName) {
+
+		var field = getFieldByName(streetFieldName);
+		
+		field.autocomplete({
+		    minLength: 3,
+			source: function( request, response ) {
+				var fieldValue = getFieldValueByName(streetFieldName) + '%';
+				var zip = getZipValue(zipHeadFieldName, zipTailFieldName);
+				var city = getFieldValueByName(cityFieldName);
+				
+				if (isZipValidForWebService(zip)) {
+					makeAjaxRequestForStreetAutocompleter(config['ajaxCisStreetUrl'], response, {nameMatch: fieldValue, city:city, zip:zip});
+				}
+		      },
+		      select: function( event, ui ) {
+		    	  var fieldId = jQuery("input[name='"+streetFieldName+"']").attr('id');
+		    	  jQuery('#' + fieldId + '_prefix').val(ui.item.streetPrefix);
+		    	  jQuery.uniform.update('#' + fieldId + '_prefix');
+		      },
+				   change: function(event, ui) {
+				
+					if (ui.item) {  //wybral cos z listy, a wiec jest OK
+						setFieldAsValid(streetFieldName);
+					} else { //wpisal cos z palca. Czy jest OK? Trzeba sprawdzic!
+						setFieldAsValidating(streetFieldName);
+						validateStreetField(streetFieldName, cityFieldName, zipHeadFieldName, zipTailFieldName);
+					}
+				}
+
+		});			
+	}
+	
+	function validateNameField(fieldName) {
+		var fieldValue = getFieldValueByName(fieldName);
+		var paramsHash = {
+				nameMatch: fieldValue,
+				maxResults: 100
+		};		
+		
+		if (fieldValue.length<2) {
+			setFieldAsInvalid(fieldName);
+		}
+		else {
+			makeAjaxRequestForNameValidation(fieldName, config['ajaxCisNameUrl'], paramsHash);
+		}
+	}
+	
+	function validateCityField(fieldName, zipHeadFieldName, zipTailFieldName) {
+		var city = getFieldValueByName(fieldName);
+		var zip = getZipValue(zipHeadFieldName, zipTailFieldName);
+		
+		var paramsHash = {
+				zip : zip,
+				nameMatch: city,
+				maxResults: 1
+		};		
+
+		if (city.length<2 || !isZipValidForWebService(zip)) {
+			setFieldAsInvalid(fieldName);
+		}
+		else {
+			makeAjaxRequestForValidation(fieldName, config['ajaxCisCityUrl'], paramsHash);
+		}
+		
+	}
+	
+	function validateStreetField(streetFieldName, cityFieldName, zipHeadFieldName, zipTailFieldName) {
+		var city = getFieldValueByName(cityFieldName);
+		var zip = getZipValue(zipHeadFieldName, zipTailFieldName);
+		var street = getFieldValueByName(streetFieldName);
+		
+		var paramsHash = {
+				zip : zip,
+				city : city,
+				nameMatch: street,
+				maxResults: 1
+		};		
+		
+		if (street.length<2 || city.length<2 || !isZipValidForWebService(zip)) {
+			setFieldAsInvalid(streetFieldName);
+		}
+		else {
+			makeAjaxRequestForValidation(streetFieldName, config['ajaxCisStreetUrl'], paramsHash);
+		}
+		
+	}
+	
+	function makeAjaxRequestForStreetAutocompleter(ajaxUrl, response, paramsHash) {
+		makeAjaxRequest(ajaxUrl, paramsHash, 3000, function( data ) {
+			var responseArray = new Array();
+
+			for (var i=0; i<data.length; i++) {
+				responseArray.push({
+					label: data[i].streetPrefix!="" ? data[i].streetPrefix+" "+data[i].name : data[i].name,
+					value: data[i].name,
+					streetPrefix: data[i].streetPrefix
+				});
+			}
+
+            response(responseArray);
+          });		
+	}
+	
+	function makeAjaxRequestForAutocompleter(ajaxUrl, response, paramsHash) {
+		makeAjaxRequest(ajaxUrl, paramsHash, 3000, function( data ) {
+			var responseArray = new Array();
+
+			for (var i=0; i<data.length; i++) {
+				responseArray.push({
+					label: data[i].name,
+					value: data[i].name,
+					streetPrefix: data[i].streetPrefix
+				});
+			}
+
+            response(responseArray);
+          });		
+	}
+	
+	function makeAjaxRequestForValidation(fieldName, ajaxUrl, paramsHash) {
+		makeAjaxRequest(ajaxUrl, paramsHash, 10000, function( data ) {
+			
+			if (data.length>0) {
+				setFieldAsValid(fieldName);
+			}
+			else {
+				setFieldAsInvalid(fieldName);
+			}
+          });
+	}
+	
+	function makeAjaxRequestForNameValidation(fieldName, ajaxUrl, paramsHash) {		
+		makeAjaxRequest(ajaxUrl, paramsHash, 10000, function( data ) {
+			
+				var fieldValue = getFieldValueByName(fieldName).toUpperCase().trim();
+				var result = false;
+
+				for (var i=0; i<data.length; i++) {
+
+					if (data[i].name.toUpperCase().trim()==fieldValue) {
+					
+						result = true;
+						break;
+					}
+				}
+			
+				if (result) {
+					setFieldAsValid(fieldName);
+				}
+				else {
+					setFieldAsInvalid(fieldName);
+				}
+			
+          });
+	}
+	
+	function makeAjaxRequest(ajaxUrl, paramsHash, timeout, successFunction) {
+        jQuery.ajax({
+	          timeout: timeout,
+	          url: ajaxUrl,
+	          data: paramsHash,
+	          type: 'POST',
+			  cache: false,
+	          processData: true,
+	          dataType: "json",
+	          success: successFunction
+	        });		
+	}
+	
+	function setFieldAsValidating(fieldName) {
+		//console.log("validating: "+fieldName);
+		thisThis.elementsData[fieldName]['valid'] = null;
+		thisThis.elementsData[fieldName]['validating'] = true;
+		
+		var functionName = config['fieldValidatingCallback'];
+		
+		if (typeof functionName == 'function') {
+			functionName(fieldName);
+		}
+		
+		//window.Validator.checkTypes(jQuery('[name="'+config['fieldNames'][fieldNameConst]+'"]'), config['fieldNames'][fieldNameConst]);
+	}
+
+	function setFieldAsValid(fieldName) {
+		//console.log("valid: "+fieldName);
+		thisThis.elementsData[fieldName]['valid'] = true;
+		thisThis.elementsData[fieldName]['validating'] = false;
+		
+		var functionName = config['fieldValidCallback'];
+		
+		if (typeof functionName == 'function') {
+			functionName(fieldName);
+		}
+		//window.Validator.checkTypes(jQuery('[name="'+config['fieldNames'][fieldNameConst]+'"]'), config['fieldNames'][fieldNameConst]);
+	}
+	
+	function setFieldAsInvalid(fieldName) {
+		//console.log("invalid: "+fieldName);
+		thisThis.elementsData[fieldName]['valid'] = false;
+		thisThis.elementsData[fieldName]['validating'] = false;
+		
+		var functionName = config['fieldInvalidCallback'];
+		
+		if (typeof functionName == 'function') {
+			functionName(fieldName);
+		}
+		
+		//window.Validator.checkTypes(jQuery('[name="'+config['fieldNames'][fieldNameConst]+'"]'), config['fieldNames'][fieldNameConst]);
+	}	
+	
+	
+	function isZipValidForWebService(zip) {
+		zip = zip.trim();
+		
+		return zip!=null && zip.match(/^\d{2}-\d{3}$/);
+	}
+	
+	function isFieldValid(fieldName) {
+		return thisThis.elementsData[fieldName]['valid'];
+	}
+	
+	function isFieldValidating(fieldName) {
+		return thisThis.elementsData[fieldName]['validating'];
+	}
+	
+	function getFieldValueByName(name) {
+		var fieldValue = jQuery("input[name='" + name + "']").val();
+		
+		return fieldValue;
+	}
+	
+	function getFieldByName(name) {
+		var field = jQuery("input[name='" + name + "']");
+		
+		return field;
+	}
+	
+	function getZipValue(headFieldName, tailFieldName) {
+		return getFieldValueByName(headFieldName) + '-' + getFieldValueByName(tailFieldName);
+	}
+	
+}‰®·%},      YÆﬂéYÆﬂè>)‡÷Y∏   U    :https://e-bank.credit-agricole.pl/wniosek/landing-pages/698/js/AcquisitionLanding.js necko:classified 1 strongly-framed 1 security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojH6pBabDSgSnsfLHeAAQAAgAAAAAAAAAAAAAAAAAAAAAB4vFIJp5wRkeyPxAQ9RJGKPqbqVvKO0mKuIl8ec8o/uhmCjImkVxP+7sgiYWmMt8FvcOXmlQiTNWFiWlrbpbqgwAAAAAAAAcOMIIHCjCCBfKgAwIBAgIQHuPTCXmY3z7yX5taPWiQSDANBgkqhkiG9w0BAQsFADB3MQswCQYDVQQGEwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xHzAdBgNVBAsTFlN5bWFudGVjIFRydXN0IE5ldHdvcmsxKDAmBgNVBAMTH1N5bWFudGVjIENsYXNzIDMgRVYgU1NMIENBIC0gRzMwHhcNMTUxMDAxMDAwMDAwWhcNMTcwOTMwMjM1OTU5WjCCARAxEzARBgsrBgEEAYI3PAIBAxMCUEwxHTAbBgNVBA8TFFByaXZhdGUgT3JnYW5pemF0aW9uMRMwEQYDVQQFEwowMDAwMDM5ODg3MQswCQYDVQQGEwJQTDEPMA0GA1UEEQwGNTMtNjA1MRUwEwYDVQQIDAxEb2xub3NsYXNraWUxEDAOBgNVBAcMB1dyb2NsYXcxHzAdBgNVBAkMFlBsYWMgT3JsYXQgTHdvd3NraWNoIDExKTAnBgNVBAoMIENyZWRpdCBBZ3JpY29sZSBCYW5rIFBvbHNrYSBTLkEuMQ4wDAYDVQQLDAVERFVJVDEiMCAGA1UEAwwZZS1iYW5rLmNyZWRpdC1hZ3JpY29sZS5wbDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKQeen7PtfLshz09XlLmoCNuUZ6mkTaDsAOWiTSVCFyirRWGxprCWSq1bg3ncIRb3YtsYuEzSlQ8aQXhu/Q5DoTYnwRnzR1HBdj0kBSqpaX4cB83Qw86LEmuDY9MYPE1KQ5ajHV3m2MtUHq7YkDxMe3Cf91PTdLp7WhJCds9jXBBoNTm1BEOerZTjzYanf7De6Q6aTOUZM8smS7owD3q8mnIgvBmqMvGrSh17E2tpwKHwfMEgoYdmVshvHtQ79JiiXS/+rLe3LuUXEYxqiXqjBwMcTxI1D6m47hB6x7TYVZryPKcUZFT9R7DttLfr3zYkgEKBDPVSSxJWDB+0LBg89kCAwEAAaOCAvUwggLxMCQGA1UdEQQdMBuCGWUtYmFuay5jcmVkaXQtYWdyaWNvbGUucGwwCQYDVR0TBAIwADAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMGYGA1UdIARfMF0wWwYLYIZIAYb4RQEHFwYwTDAjBggrBgEFBQcCARYXaHR0cHM6Ly9kLnN5bWNiLmNvbS9jcHMwJQYIKwYBBQUHAgIwGRoXaHR0cHM6Ly9kLnN5bWNiLmNvbS9ycGEwHwYDVR0jBBgwFoAUAVmr5906C1mmZGPWzyAHV9WR52owKwYDVR0fBCQwIjAgoB6gHIYaaHR0cDovL3NyLnN5bWNiLmNvbS9zci5jcmwwVwYIKwYBBQUHAQEESzBJMB8GCCsGAQUFBzABhhNodHRwOi8vc3Iuc3ltY2QuY29tMCYGCCsGAQUFBzAChhpodHRwOi8vc3Iuc3ltY2IuY29tL3NyLmNydDCCAX4GCisGAQQB1nkCBAIEggFuBIIBagFoAHYA3esdK3oNT6Ygi4GtgWhwfi6OnQHVXIiNPRHEzbbsvswAAAFQIoLxggAABAMARzBFAiEA+/uaiWB97Acy+B/lYxxr3bfN12byYMJdhtjpboYmZQ8CIGKYJp9H5queoC4Qb0Lut8+NaC8LKGi0pxrzi/L4cUflAHYApLkJkLQYWBSHuxOizGdwCjw1mAT5G9+443fNDsgN3BAAAAFQIoLxwgAABAMARzBFAiEA2gyyQHt79kv9lSiG+j3vGC+RVyY8TnDjIumqvcHdqpoCIEo6dNfGLz1GiZXjd8bxhmpwN2ibXg56Ue3PDNoGL8UbAHYAaPaY+B9kgr46jO65KB1M/HFRXWeT1ETRCmesu09P+8QAAAFQIoLxzAAABAMARzBFAiEAp0cd86xERtkgUKQdocaoa5kGckyqDXpsP6DXNhsDmi8CIFsK8T/o12b2Nlt8W/UMFxns/AqFPfHcfO9Skw1FLT6+MA0GCSqGSIb3DQEBCwUAA4IBAQBOPLNb7bUcL2VBvoOiEEM1NRLlmokjLPQGVPjZ0iDuVXakr3oBbGmjicuqwYRECTSd1WPM4De451bTzo8LC+otGVP7YqQvPtMJ1E+3LIIooKeDc4ORkmtIw0GxvjqsPx7bGJ6BlfwBAsmXyXTWb3jqPYoUfZsW4xdG8IlAwO75rPkedqddimUESGDG7WWz7dC5TywzoLPKfRfU4Ho958GCoHKL6OMtNWPEHq5CktwEHutF/MoO0XLsLRy8Fs8qznkUrgV/OI5xCyBwQpUrLWrK7R17TsYCkbvFLQylFQ5xEn72F8bE4uCLabF6rwDswEYeWTrlQASugr7nK4pQM4vZADMBAwAAAAEBAQAAAAA= request-method GET response-head HTTP/1.1 200 OK
+Date: Tue, 05 Sep 2017 17:31:58 GMT
+Server: Apache-Coyote/1.1
+Accept-Ranges: bytes
+Etag: W/"10669-1498204818000"
+Last-Modified: Fri, 23 Jun 2017 08:00:18 GMT
+Content-Type: application/javascript;charset=UTF-8
+Content-Language: pl-PL
+Content-Length: 10669
+ original-response-headers Date: Tue, 05 Sep 2017 17:31:58 GMT
+Server: Apache-Coyote/1.1
+Accept-Ranges: bytes
+Etag: W/"10669-1498204818000"
+Last-Modified: Fri, 23 Jun 2017 08:00:18 GMT
+Content-Type: application/javascript;charset=UTF-8
+Content-Language: pl-PL
+Content-Length: 10669
+Keep-Alive: timeout=15, max=96
+Connection: Keep-Alive
+ uncompressed-len 0 net-response-time-onstart 362 net-response-time-onstop 365   )≠

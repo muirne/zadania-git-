@@ -1,0 +1,1924 @@
+
+  var MPlayer = null ;
+  var LPlayer = null ;
+  var currPlayer = "" ;
+  var isLiveStream = false ;
+  var vastTimeout = 5000 ;
+  var vastScheme = 1 ; // 0 -first , 1-pseudorandom
+  var vastSchemeTimeout = 2500 ; // 0-500 , 1-2500 , 2 = 500 
+  var prevVol = 0.5 ;
+  var waitforinit = false ;
+  var userclickplay = false ;
+
+  var LPBack = null ;
+  var LPBackTxt = null ;
+  var seekbar = null ;
+  var bufferedbar = null ;    
+  var playerbar = null ;  
+  var controlsbar = null ;
+  var playbutton = null ;
+  var playtime = null ;
+  var volm = null ;
+  var volumeslider = null ;
+  var volumehandle = null ;
+  var volumetrack = null ;
+  var volumepanel = null ;
+  var fullscreenc = null ;
+  var sdhd = null ;
+  var logo = null ;
+  var menu = null ;
+  var playclick = null ;
+  var playclicks = null ;
+  var title = null ;
+  var sdhdTime = 0 ;
+  var sdhdPaused = true ;
+  var sdhdP = false ;
+  var linkbutton = null ;
+  var skipContainer = null ;
+  var skipAction = null ;
+  var skipIcon = null ;
+  var preSkipContainer = null ;
+  var preSkipButton = null ;
+  var preSkipTxt = null ;
+  var prevVid = null ;
+  var nextVid = null ;
+  var allContainer = null ;
+  var minAdVol = 0 ;
+  var minMvVol = 0 ;
+  var manualVol = 0 ;
+
+  var down = false ;  
+  var rangeLeft = 0 ;
+  var rangeWidth = 0 ;
+  var draggerWidth = 4 ;
+  var mobile = 0 ;
+  var titlescrolldirection = 0 ;
+  var mouseoutvolume = 0 ;
+  var logsignals = false ;
+  var lastvol = 0 ;
+
+  var ppreroll = 1 ;
+  var pmidroll = 1 ;
+  var ppostroll = 1 ;
+
+  var playingad = false ;
+  var playingnl = false ;
+  var adpaused = false ;
+  var adDisplayContainer = null ;
+  var adsLoader = null ;
+  var intervalTimer ;
+  var storedMVolume = 0 ;
+  var VastToCheck = 0 ;
+  var VastPlaying = 0 ;
+  var userinitplay = false ;
+  var vastsource = 0 ;
+  var adsLoaded = false ;
+  var contentInitialized = false ;
+  var singleAd = true ;
+  var epreroll = false ;
+  var emidroll = false ;
+  var epostroll = false ;
+  var postroll_started = false ;
+  var postroll_complete = false ;
+  var imaloaded = 1 ;
+  var showPermCount = 1 ;
+  var hdFirst = 0 ;
+  var liveRequestWait = 0 ;
+  var lsNetError = 0 ;
+  var lsMediaError = 0 ;
+  var noAdReported = false ;
+
+  var exVastReading = false ;
+  var exVastUrl = "" ;
+  var exVastReadStatus = 0 ;
+  var exVastReadTimer = 0 ;
+  var exVastResponse = "" ;
+  var exVastReadStart = null ;
+  var exVastText = "" ;
+  var exVastTimeoutV = 2000 ;
+  var exVastPassback = "" ;
+  var showSkip = false ;
+  var skipTime = 5 ;
+  var prevnextShow = 0 ;
+  var playMuted = 0 ;
+
+  function mousePositionDocument(e) { var posx = 0; var posy = 0; if (!e) { var e = window.event; } 
+    if (e.pageX || e.pageY) { posx = e.pageX; posy = e.pageY; }
+    else if (e.clientX || e.clientY) { posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+    posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop; }
+    return { x : posx, y : posy };
+  }
+
+  function findPos(obj) { var curleft = curtop = 0; if (obj.offsetParent) { do { curleft += obj.offsetLeft; curtop += obj.offsetTop; } while (obj = obj.offsetParent); 	}
+    return { left : curleft, top : curtop };
+  }
+
+  function tvn_pagef(){
+    if ((typeof(tvn_page)=="string") && (tvn_page.length>0)){ return tvn_page; }
+    var string = document.referer ;
+    string = decodeURIComponent(string);
+    if (string.indexOf("://")>=0){ string = string.slice(string.indexOf("://")); }
+    if ((string.indexOf("/")>0) && (string.indexOf("/")<string.length-1)){ string = string.slice(string.indexOf("/")); }
+    string = string.replace(/[^a-zA-Z0-9]/g, '_');
+    string = string.replace(/\_([\_]+)/g, '_');
+    string = string.toLowerCase();
+    string = string.replace(/^\_/g, '');
+    string = string.replace(/\_$/g, '');
+    return string ;
+  }
+
+  function replaceRandomString(b){ 
+    if (typeof(b)=="string"){ var c=Math.round(new Date().getTime()/1000); b=b.replace("[time]",c); b=b.replace("[timestamp]",c); b=b.replace("[time_stamp]",c);
+    b=b.replace("[rand]",c); b=b.replace("[random]",c); b=b.replace("[TIME]",c); b=b.replace("[TIMESTAMP]",c); b=b.replace("[TIME_STAMP]",c); b=b.replace("[CACHE_BREAKER]",c); b=b.replace("[RAND]",c); 
+    b=b.replace("[IID]",iid); b=b.replace("[RANDOM]",c); b=b.replace("[gwdTagDataAdGroup]",gwdTagDataAdGroup); b=b.replace("[gwdTagDataBlob]",gwdTagDataBlob); b=b.replace("[gwdTagDataAdserver]",gwdTagDataAdserver); 
+    b=b.replace("<%%TIMESTAMP%%>",c);
+    try{ b=b.replace("[vs]",vastsource); } catch(e){} 
+    try{ b=b.replace("[playerStart]",playerStart); } catch(e){} 
+    try{ b=b.replace("[playerVisible]",playerVisible); } catch(e){} 
+    try{ b=b.replace("[ASPQ_yrCyL1]",ASPQ_yrCyL1); } catch(e){} 
+    try{ b=b.replace("[ASPQ_9o4W2K]",ASPQ_9o4W2K); } catch(e){} 
+    try{ b=b.replace("[PQ_yrCyL1]",ASPQ_yrCyL1); } catch(e){} 
+    try{ b=b.replace("[PQ_9o4W2K]",ASPQ_9o4W2K); } catch(e){} 
+    b=b.replace("[LR_URL]",encodeURIComponent(document.referrer)) ; 
+    b=b.replace("[referrer_url]",encodeURIComponent(document.referrer)) ; 
+    b=b.replace("[description_url]",encodeURIComponent(document.referrer)) ; 
+    try{ b=b.replace("[DeviceType]",DeviceType); } catch(e){}     
+    try{ b=b.replace("[PlayerWidth]",parseInt( allContainer.offsetWidth )); } catch(e){}
+    try{ b=b.replace("[tvn_page]",tvn_pagef()); } catch(e){}
+    try{ b=b.replace("[tvn_partner]",tvn_partner); } catch(e){}
+    try{ b=b.replace("[predur46]",Math.min(MPlayer.iOptions.videos[MPlayer.videoNb].duration*1,46)); } catch(e){}
+    return b ; } else { return "" ; }
+  }
+
+  function stripCDATA(b){ if (typeof(b)=="string"){ b=b.replace("<![CDATA[",""); b=b.replace("]]>",""); b=b.replace(/^\s+|\s+$/g,""); return b ; }else{ return "" ; } }
+
+  function replaceWhitespaces(b){ b=b.replace(/^\s+|\s+$/g,""); return b ; }
+
+  function trackLoaded( e ){ var targ = evtTarget(e); if (typeof(targ)=="object"){ var c=document.getElementById("vasttracking"); c.removeChild( targ ); } }
+
+  function trackEvent(d){ var c=document.getElementById("vasttracking"); var b=document.createElement("img"); b.addEventListener("load",trackLoaded,false); b.src=d; c.appendChild(b); }
+
+  function evtTarget(e) { try{ var targ; if (!e) var e = window.event; if (e.target) targ = e.target; else if (e.srcElement) targ = e.srcElement;
+    if (targ.nodeType == 3) targ = targ.parentNode; // defeat Safari bug 
+    } catch(e) { return 0 ; }
+    return targ; 
+  }
+  
+  function deb( s ){
+//    console.log( s );
+  }
+  
+  function getXo(evt,obj){ var containerX = obj.offsetLeft; var isTouchSupported = 'ontouchstartnie' in window; 
+    if(isTouchSupported){ return evt.clientX-containerX; } // for touch devices
+    else if(evt.offsetX || evt.offsetX == 0){ return evt.offsetX; } //for webkit browser like safari and chrome
+    else if(evt.layerX || evt.layerX == 0){ return evt.layerX; } // for mozilla firefox
+  }
+
+  function initAds(){    
+    try{
+    google.ima.settings.setVpaidMode(google.ima.ImaSdkSettings.VpaidMode.INSECURE);
+    google.ima.settings.setDisableCustomPlaybackForIOS10Plus( false );
+    google.ima.settings.setLocale("pl");
+    adDisplayContainer =  new google.ima.AdDisplayContainer( document.getElementById('icont'), MPlayer );
+    adsLoader = new google.ima.AdsLoader(adDisplayContainer);
+    adsLoader.addEventListener( google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED, onAdsManagerLoaded, false);
+    adsLoader.addEventListener( google.ima.AdErrorEvent.Type.AD_ERROR, onAdError, false);
+    } catch(e) {
+      imaloaded = 0 ;
+    }
+  }
+
+
+function onAdError(adErrorEvent) {
+  // Handle the error logging and destroy the AdsManager
+  deb( "onAdError" );
+  console.log( adErrorEvent );
+  playingad = false ;
+  playingnl = false ;
+  try{
+  adsManager.destroy();
+  } catch(e) {} 
+  adsLoader.contentComplete();
+  if (exVastPassback!=""){
+    deb( "exVast process error. Using passback" );
+    requestAd( exVastPassback );
+    exVastPassback = "" ;
+    return ;    
+  }
+  VastToCheck++ ;   
+  for (i=VastToCheck;i<vasts.length;i++){
+    if (vasts[i].nr==0){    
+      VastToCheck = i ;
+      vastsource = vasts[i].vs ;
+      requestAd( vasts[i].url );
+      return ;    
+    }
+  }
+  VastToCheck = 0 ;
+  console.log( "onaderror - no vasts" );
+  adsLoaded = false ;
+  if (CheckForLive()){ UpdateInterface( "live" ); } else { UpdateInterface( "movie" ); }
+  MPlayer.addEventListener('ended', MPlayerCompleted);
+  StartPlayback( 2 );
+}
+
+function onAdsManagerLoaded(adsManagerLoadedEvent) {
+  deb( "onAdsManagerLoaded" );
+  var adsRenderingSettings = new google.ima.AdsRenderingSettings();
+  adsRenderingSettings.restoreCustomPlaybackStateOnAdBreakComplete = true;
+//  adsRenderingSettings.useStyledNonLinearAds = true ;
+  adsRenderingSettings.useStyledLinearAds = false ;
+  if ((mobile>0)) {  
+    adsRenderingSettings.useStyledLinearAds = true ;
+    adsRenderingSettings.uiElements = [google.ima.UiElements.COUNTDOWN,google.ima.AD_ATTRIBUTION] ; 
+  }
+  adsRenderingSettings.enablePreloading = true;
+  // Get the ads manager.
+  adsManager = adsManagerLoadedEvent.getAdsManager( MPlayer , adsRenderingSettings );  // See API reference for contentPlayback
+  setVolume( MPlayer.volume );
+            
+// Add listeners to the required events.
+  adsManager.addEventListener( google.ima.AdErrorEvent.Type.AD_ERROR, onAdError);
+  adsManager.addEventListener( google.ima.AdEvent.Type.CONTENT_PAUSE_REQUESTED, AdEventFunc);
+  adsManager.addEventListener( google.ima.AdEvent.Type.CONTENT_RESUME_REQUESTED, AdEventFunc);
+  adsManager.addEventListener( google.ima.AdEvent.Type.IMPRESSION, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.FIRST_QUARTILE, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.MIDPOINT, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.THIRD_QUARTILE, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.COMPLETE, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.CLICK, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.STARTED, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.LINEAR_CHANGED, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.AD_BREAK_READY, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.SKIPPED, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.LOADED, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.PAUSED, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.RESUMED, AdEventFunc );
+  adsManager.addEventListener( google.ima.AdEvent.Type.USER_CLOSE, AdEventFunc );
+                        
+  var cuePoints = adsManager.getCuePoints(); 
+  epreroll = false ;
+  emidroll = false ;
+  epostroll = false ;
+  if ((typeof(cuePoints)=="object") && (cuePoints.length>0)){  
+    singleAd = false ;
+    for (i=0;i<cuePoints.length;i++){
+      if (cuePoints[i]==0) { epreroll = true ; }
+      if (cuePoints[i]>0) { emidroll = true ; }
+      if (cuePoints[i]==-1) { epostroll = true ; }      
+    }
+  } else {
+    singleAd = true ;
+  }
+  vasts[VastToCheck].nr = vasts[VastToCheck].nrc ;
+  console.log( "ManagerLoaded"+epreroll );
+  console.log( vasts[VastToCheck].url );
+  VastToCheck++ ; 
+  postroll_started = false ;
+  postroll_complete = false ;
+  adsLoaded = true ;
+  if (!singleAd && (ppreroll==0) && (epreroll) && (emidroll || epostroll)) { adsManager.discardAdBreak(); }
+  if ((contentInitialized)&&(!playingad)&&(!playingnl)) { startAds(); }
+}
+
+function startAds(){
+  deb( "startAds" );
+  UpdateInterface( "ima" );
+  if ((playingad) && (!playingnl)) return ;
+  if ( singleAd && (ppreroll==0) && (MPlayer.currentTime<2) && !postroll_started ) { StartMPlayer(); return ; }
+  try {
+    // Initialize the ads manager. Ad rules playlist will start at this time.
+    var w = parseInt( document.getElementById('icont').offsetWidth ) ;
+    var h = parseInt( document.getElementById('icont').offsetHeight ) ;
+    adsManager.init( w , h , google.ima.ViewMode.NORMAL);
+    // Call start to show ads. Single video and overlay ads will
+    // start at this time; this call will be ignored for ad rules, as ad rules
+    // ads start when the adsManager is initialized.
+    if (playMuted==1){ adsManager.setVolume( 0 ); }
+    adsManager.start();
+    if ( (!singleAd && (ppreroll==0) && (emidroll || epostroll)) && (MPlayer.currentTime<2) && !postroll_started ) { StartMPlayer(); return ; }
+  } catch (adError) {
+    VastToCheck = 0 ;
+    console.log( "Vast creative error" );
+    if (CheckForLive()){ UpdateInterface( "live" ); } else { UpdateInterface( "movie" ); }
+    MPlayer.addEventListener('ended', MPlayerCompleted);
+    StartPlayback( 2 );
+  }
+}
+
+
+function AdEventFunc(adEvent){
+  deb( "AdEventFunc" );  
+  var ad = adEvent.getAd();
+  deb( adEvent.type );
+  switch(adEvent.type){
+    case google.ima.AdEvent.Type.USER_CLOSE:
+      adsManager.stop();
+      resetViewTime();
+      break ;
+    case google.ima.AdEvent.Type.SKIPPED:
+      ShowHidePreSkip( false , 0 );
+      ShowHideSkip( false );
+      resetViewTime();
+      break ;
+    case google.ima.AdEvent.Type.CONTENT_PAUSE_REQUESTED:
+      adpaused = false ;
+      resetViewTime();
+      UpdateInterface( "ima" );
+      if (ad.isLinear()){
+        if (!MPlayer.paused) { MPlayer.pause(); }
+        if (!LPlayer.paused) { LPlayer.pause(); }
+        UpdateInterface( "ima" );
+        MPlayer.removeEventListener('ended', MPlayerCompleted);
+        playingad = true ;
+        playingnl = false ;
+      } else {
+        if (!MPlayer.paused) { MPlayer.pause(); }
+        if (!LPlayer.paused) { LPlayer.pause(); }
+        hidePlayClick();
+        MPlayer.removeEventListener('ended', MPlayerCompleted);
+        playingad = true ;
+        playingnl = true ;
+      }
+      break ;
+    case google.ima.AdEvent.Type.LINEAR_CHANGED:
+      adpaused = false ;
+      UpdateInterface( "ima" );
+      resetViewTime();
+      if (ad.isLinear()){
+        playingad = true ;
+        playingnl = false ;
+        intervalTimer = setInterval( function(){
+          if (!playingad) { return ; }
+          hidePlayClick();
+          var vdr = ad.getDuration() ;
+          var rt = adsManager.getRemainingTime();
+          if ((vdr>0) && (!adsManager.getAdSkippableState()) && showSkip) {
+            if (rt>0){
+              if (rt>vdr-skipTime){
+                ShowHidePreSkip( true , vdr-rt-skipTime );
+                ShowHideSkip( false );
+              } else {
+                ShowHidePreSkip( false , 0 );
+                ShowHideSkip( true );
+              }
+            } else {
+              ShowHidePreSkip( false , 0 );
+              ShowHideSkip( false );
+            }
+          }else{
+            ShowHidePreSkip( false , 0 );
+            ShowHideSkip( false );
+          }
+          if ((vdr>0) && (rt>=0)){
+            var ctm = vdr - rt ;
+            var pla = 100 * ctm / vdr ;
+            if (pla>100) { pla = 100 ; }
+            if (playedbar) { playedbar.style.width = pla+"%" ; }
+            if (playtime){ playtime.innerHTML = sec2MS(ctm)+" / "+sec2MS(vdr) ; }
+            if (typeof(title)!="undefined"){ 
+              title.style.display = "block" ;              
+              title.innerHTML = '<div class="titin">Reklama '+Math.floor(rt)+' s</div>' ;
+            }
+          }        
+          signalViewTime();
+        } , 50 );
+      } else {
+        playingad = true ;
+        playingnl = true ;
+      }      
+      hidePlayClick();
+      break ;
+    case google.ima.AdEvent.Type.CONTENT_RESUME_REQUESTED:
+      playingad = false ;
+      if (CheckForLive()){ UpdateInterface( "live" ); } else { UpdateInterface( "movie" ); }      
+      showPlayClick();
+      MPlayer.addEventListener('ended', MPlayerCompleted);      
+//      StartPlayback( 1 );
+//      if ((!postroll_started) && (!postroll_complete)) { MPlayer.play(); }
+      break ;
+    case google.ima.AdEvent.Type.IMPRESSION:
+      adpaused = false ;
+      setVolume( lastvol );
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].sapix)!="undefined"){
+        SignalInternal(MPlayer.iOptions.videos[MPlayer.videoNb].sapix);
+      }
+      ASignal( "Tracking" , "start" , ad );      
+      break ;
+    case google.ima.AdEvent.Type.FIRST_QUARTILE:
+      adpaused = false ;
+      ASignal( "Tracking" , "firstQuartile" , ad );
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].fapix)!="undefined"){
+        SignalInternal(MPlayer.iOptions.videos[MPlayer.videoNb].fapix);
+      }
+      break ;
+    case google.ima.AdEvent.Type.MIDPOINT:
+      adpaused = false ;
+      ASignal( "Tracking" , "midpoint" , ad );
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].mapix)!="undefined"){
+        SignalInternal(MPlayer.iOptions.videos[MPlayer.videoNb].mapix);
+      }
+      break ;
+    case google.ima.AdEvent.Type.THIRD_QUARTILE:
+      adpaused = false ;
+      ASignal( "Tracking" , "thirdQuartile" , ad );
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].tapix)!="undefined"){
+        SignalInternal(MPlayer.iOptions.videos[MPlayer.videoNb].tapix);
+      }
+      break ;
+    case google.ima.AdEvent.Type.COMPLETE:
+      if (ad.isLinear()) {
+        clearInterval(intervalTimer);
+        ASignal( "Tracking" , "complete" , ad );
+        if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].capix)!="undefined"){
+          SignalInternal(MPlayer.iOptions.videos[MPlayer.videoNb].capix);
+        }
+        ShowHidePreSkip( false , 0 );
+        ShowHideSkip( false );
+        if (CheckForLive()){ UpdateInterface( "live" ); } else { UpdateInterface( "movie" ); }      
+        showPlayClick();
+        MPlayer.addEventListener('ended', MPlayerCompleted);      
+        if (mobile==0){ StartPlayback( 1 ); } else { setTimeout( "StartMPlayer();" , 1000 ); }
+      }
+      break ;
+    case google.ima.AdEvent.Type.CLICK:          
+      ASignal( "ClickTracking" , "" , ad );    
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].kapix)!="undefined"){
+        SignalInternal(MPlayer.iOptions.videos[MPlayer.videoNb].kapix);
+      }
+      if ((vasts.length>VastPlaying) && (vasts[VastPlaying].clkpause==1)){ adsManager.pause(); }
+      break ;    
+    case google.ima.AdEvent.Type.PAUSED:          
+      adpaused = true ;
+      showPlayClick();
+      setPPBPlay();
+      resetViewTime();
+      break ;    
+    case google.ima.AdEvent.Type.RESUMED:          
+      adpaused = false ;
+      hidePlayClick();
+      setPPBPause();
+      setViewTime();
+      break ;    
+    case google.ima.AdEvent.Type.STARTED:
+      adpaused = false ;    
+      if (ad.isLinear()) {
+        hidePlayClick();
+        setPPBPause();
+        intervalTimer = setInterval( function(){
+          if (mobile>0){ title.style.height = "0px" ; }
+          if (!playingad) { return ; }
+          var vdr = ad.getDuration() ;
+          var rt = adsManager.getRemainingTime();
+          if ((vdr>0) && (!adsManager.getAdSkippableState()) && showSkip) {
+            if (rt>0){
+              if (skipTime>vdr-rt){
+                ShowHidePreSkip( true , skipTime-(vdr-rt) );
+                ShowHideSkip( false );
+              } else {
+                ShowHidePreSkip( false , 0 );
+                ShowHideSkip( true );
+              }
+            } else {
+              ShowHidePreSkip( false , 0 );
+              ShowHideSkip( false );
+            }
+          }else{
+            ShowHidePreSkip( false , 0 );
+            ShowHideSkip( false );
+          }
+          if (playMuted==1){ showUnmuteClick(); }
+          if ((vdr>0) && (rt>=0)){
+            var ctm = vdr - rt ;
+            var pla = 100 * ctm / vdr ;
+            if (pla>100) { pla = 100 ; }
+            if (playedbar) { playedbar.style.width = pla+"%" ; }
+            if (playtime){ playtime.innerHTML = sec2MS(ctm)+" / "+sec2MS(vdr) ; }
+            if (typeof(title)!="undefined"){ 
+              title.style.display = "block" ;              
+              title.innerHTML = '<div class="titin">Reklama '+Math.floor(rt)+' s</div>' ;
+            }
+          }
+          signalViewTime();
+        } , 50 );
+      } else {
+        playingad = false ;
+        playingnl = true ;
+        if (CheckForLive()){ UpdateInterface( "live" ); } else { UpdateInterface( "movie" ); }
+        showPlayClick();
+        MPlayer.addEventListener('ended', MPlayerCompleted);
+//        if ((!postroll_started) && (!postroll_complete)) { MPlayer.play(); }
+      }
+      break ;
+  }
+}
+
+  function exVastTimeout(){
+    var cd = new Date();
+    if (exVastReadStatus!=1){
+      deb( "exVast read complete" );
+      clearInterval( exVastReadTimer );
+      requestAd( exVastUrl );
+      return ;
+    }
+    if (cd.getTime()>exVastReadStart.getTime()+exVastTimeoutV){    
+      deb( "exVast read timeout" );
+      clearInterval( exVastReadTimer );
+      exVastReadStatus = -1 ;
+      requestAd( exVastUrl );
+      return ;
+    }
+  }
+
+  function loadVAST1( url ){
+    var sd = new Date ;
+    exVastReadStart = new Date();
+    exVastReadTimer = setInterval( "exVastTimeout()" , 100 );
+    try{    
+      var b=new XMLHttpRequest();
+      if("withCredentials" in b){ 
+        b.open("GET",replaceRandomString(url),true)
+      } else { 
+        if(typeof XDomainRequest!="undefined"){
+          b=new XDomainRequest();
+          b.open("GET",replaceRandomString(url))
+        }else{
+          exVastStatus = 9 ;
+          return ;
+        } 
+      }
+      b.onload=function(){
+        if (b.status==200){ 
+          exVastResponse = b.response ;
+          exVastReadStatus = 10 ;
+        } else {        
+          exVastReadStatus = -1 ;
+        }
+      };
+      b.onerror=function(){       
+        exVastReadStatus = -1 ;
+      }
+//          b.withCredentials = vasts[vnb].wc ;
+      b.withCredentials = true ;
+      console.log( "final url:" + replaceRandomString(url) );
+      b.send() 
+    }catch(c){    
+      exVastReadStatus = 9 ;
+      return ;      
+    }
+  }
+
+function requestAd( url ){
+  var RunNoAds = false ; 
+  exVastText = "" ;
+  if ((exVastReading) && (exVastReadStatus==1)){ deb( "waiting for exVast" ); return ; }
+  if (exVastReading){
+    if (exVastReadStatus==-1){ exVastReading=false; 
+      deb( "exVast read error" ); 
+      VastToCheck++ ;   
+      for (i=VastToCheck;i<vasts.length;i++){
+        if (vasts[i].nr==0){    
+          VastToCheck = i ;
+          vastsource = vasts[i].vs ;
+          requestAd( vasts[i].url );
+          return ;    
+        }
+      }
+      VastToCheck = 0 ;      
+      RunNoAds = true ;
+    }
+    if (exVastReadStatus==10){ exVastText = exVastResponse; exVastReading=false; deb( "exVast read successfully" ); }
+    if (exVastReadStatus==9){ exVastReading = false ; deb( "no exVast" ); }
+  } else {
+    if (vasts[VastToCheck].exvast){
+      deb( "reading exVast:"+url );
+      exVastReading = true ;
+      exVastReadStatus = 1 ;        
+      exVastUrl = url ;
+      exVastTimeoutV = 2000 ;
+      exVastPassback = "" ;
+      loadVAST1( url );
+      return ;
+    }
+  }
+  if ((imaloaded) && (!RunNoAds)){    
+    adDisplayContainer.initialize();  
+    if ((typeof(MPlayer.src)=="undefined") ||
+        (MPlayer.src!=MPlayer.toplayurl)){
+      MPlayer.src = MPlayer.toplayurl ;
+    }
+    MPlayer.load();
+    var adsRequest = new google.ima.AdsRequest();
+    deb( url );
+    adsRequest.linearAdSlotWidth = parseInt( document.getElementById('icont').offsetWidth );
+    adsRequest.linearAdSlotHeight = parseInt( document.getElementById('icont').offsetHeight );
+    adsRequest.forceNonLinearFullSlot = false ;
+    adsRequest.vastLoadTimeout = 2000 ;
+    if (MPlayer.iOptions.autoplay>0) { adsRequest.setAdWillAutoPlay( true ); }
+    adsLoader.getSettings().setAutoPlayAdBreaks(true);
+    if (exVastText==""){ adsRequest.adTagUrl = replaceRandomString( url ); console.log( "final url:" + adsRequest.adTagUrl ); }
+    else {       
+      deb( "setting exVast" );
+      exVastPassback = "" ;
+      exVastTimeoutV = 2000 ;
+      var pm = exVastText.match( /passback(.*?)passback/img );
+      var pm = exVastText.match( /<passback((.|\n|\f|\r)*?)<\/passback>/im );
+      if ((pm) && (pm.length>0)){
+        var purl = pm[0].match( /<\!\[CDATA\[(.*?)\]\]>/im );
+        if ((purl) && (purl.length>1)){
+          exVastPassback = purl[1] ;
+        }
+        var pt = pm[0].match( /<time>(\d*?)<\/time>/im );
+        if ((pt) && (pt.length>1)){
+          exVastTimeoutV = pt[1]*1000 ;
+        }        
+      }
+      deb( "exVast passback:" + exVastPassback );
+      deb( "exVast timeout:" + exVastTimeoutV );
+      adsRequest.adsResponse = exVastText; 
+      adsRequest.adTagUrl =""; 
+    } 
+    VastPlaying = VastToCheck ;
+    adsLoader.requestAds(adsRequest);
+  } 
+  if ((!imaloaded) || (RunNoAds)){
+    VastToCheck = 0 ;
+    console.log( "no ima loaded" );
+    if (CheckForLive()){ UpdateInterface( "live" ); } else { UpdateInterface( "movie" ); }
+    MPlayer.addEventListener('ended', MPlayerCompleted);
+    StartPlayback( 2 );
+  }
+}
+
+function requestAds() {
+  deb( "requestAds" );
+  if (vasts.length>0){
+    for (i=VastToCheck;i<vasts.length;i++){
+      if (vasts[i].nr==0){    
+        VastToCheck = i ; 
+        vastsource = vasts[i].vs ;
+        requestAd( vasts[i].url );
+        return ;    
+      }
+    }
+  }
+  console.log( "no vasts in list" );
+  VastToCheck = 0 ;
+  if (CheckForLive()){ UpdateInterface( "live" ); } else { UpdateInterface( "movie" ); }
+  MPlayer.addEventListener('ended', MPlayerCompleted);
+  StartPlayback( 2 );
+}
+
+function MPlayerMetaData(){
+  deb( "MPlayerMetaData" );
+  contentInitialized = true;
+  if (sdhdP){ return ; }
+  if ((adsLoaded)&&(!playingad)) {    
+    startAds();
+  }
+}
+
+  function createControls(){
+    seekbar = document.getElementById( "seekbar" );
+    bufferedbar = document.getElementById( "bufferedbar" );
+    playedbar = document.getElementById( "playedbar" );
+    controlsbar = document.getElementById( "controlsbar" );
+    playbutton = document.getElementById( "playbutton" );
+    playtime = document.getElementById( "playtime" );
+    volm = document.getElementById( "volm" );
+    vp = document.getElementById( "volume-panel" );
+    volumepanel = document.getElementById( "volume-panel" );    
+    volumeslider = document.getElementById( "volume-slider" );   
+    volumehandle = document.getElementById( "volume-handle" );
+    volumetrack = document.getElementById( "volume-track" );
+//    volumeslider.addEventListener("mousedown",OControlsHandleDown,false);
+    fullscreenc = document.getElementById( "fullscreenc" );
+    sdhd = document.getElementById( "sdhd" );
+    skipContainer = document.getElementById( "skipContainer" );
+    skipAction = document.getElementById( "skipAction" );
+    skipIcon = document.getElementById( "skipIcon" );
+    preSkipContainer = document.getElementById( "preskipcontainer" );
+    preSkipButton = document.getElementById( "preskipbutton" );
+    preSkipTxt = document.getElementById( "preskiptxt" );
+    prevVid = document.getElementById( "prevvid" );
+    nextVid = document.getElementById( "nextvid" );    
+    document.addEventListener("mousemove",OControlsHandleMove,false);
+    document.addEventListener("mouseup", OControlsHandleUp,false );
+  }
+  
+  function createMenu(items){
+    var m = document.getElementById( "rightmenu" );
+    if (m) {
+      m.parentNode.removeChild( m );
+      menu = null ;
+    }
+    var c = document.getElementById( MPlayer.cId );    
+    if ((typeof(items)=="object") && (items.length>0)){
+      menu = document.createElement( "DIV" );
+      menu.className = "rmenu" ;
+      menu.id = "rightmenu" ;
+      menu.addEventListener( "mouseleave" , function(){ var m = document.getElementById("rightmenu"); if (m) { m.style.display="none" ;} } , false );
+      for (var i=0;i<items.length;i++){
+        if ((items[i].url) && (items[i].url!="")){
+          var mi = document.createElement( "A" );
+          mi.href = items[i].url ;
+          mi.innerHTML = items[i].title ;
+          mi.target = "_blank" ;
+          menu.appendChild( mi );
+        } else {
+          var mi = document.createElement( "DIV" );
+          mi.innerHTML = items[i].title ;
+          menu.appendChild( mi );
+        }
+      }
+      c.insertBefore( menu , c.childNodes[0] );
+    }
+  }
+  
+  function titlescroll(){
+    if ((title) && (title.childNodes.length>0) && (title.childNodes[0].className=="titin")){
+      if ((title.clientWidth>0) && (title.childNodes[0].clientWidth>title.clientWidth)){
+        if (titlescrolldirection==0){
+          if (title.childNodes[0].offsetLeft+title.childNodes[0].clientWidth>title.clientWidth-10){
+            title.childNodes[0].style.left = (title.childNodes[0].offsetLeft - 2) + "px" ;
+          } else {
+            titlescrolldirection=1 ;
+          }
+        } else {
+          if (title.childNodes[0].offsetLeft<10){
+            title.childNodes[0].style.left = (title.childNodes[0].offsetLeft + 2) + "px" ;
+          } else {
+            titlescrolldirection=0 ;
+          }
+        }
+        setTimeout( "titlescroll();" , 50 );
+      }
+    }
+  }
+ 
+  function setPPBPlay(){
+    if (playbutton) { playbutton.className = "play" ; }
+  }
+  
+  function setPPBPause(){
+    if (playbutton) { playbutton.className = "play pause" ; }
+  }
+  
+  function ShowHidePreSkip( show , v ){
+    if (preSkipContainer){
+      if (show){ 
+        preSkipContainer.style.display = "block" ; 
+        if (preSkipTxt){ preSkipTxt.innerHTML = "MoÅ¼esz pominÄ…Ä‡ tÄ™ reklamÄ™ za "+Math.floor(v)+" s" ; }
+      }
+      else{ preSkipContainer.style.display = "none" ; }
+    }    
+  }
+
+  function ShowHideSkip( show ){
+    if (skipContainer){
+      if (show){ skipContainer.style.display = "block" ; }
+      else{ skipContainer.style.display = "none" ; }
+    }    
+  }
+
+  function OControlsLinkClick(e){
+    deb( "OControlsLinkClick" );
+    if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].button.blink)=="string") && (MPlayer.iOptions.videos[MPlayer.videoNb].button.blink!="")) {
+      window.open( MPlayer.iOptions.videos[MPlayer.videoNb].button.blink , "_BLANK" );
+    }
+    if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].lpix)!="undefined"){
+      SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].lpix );
+    }
+  }
+
+  function SignalInternal( sigitem ){
+    if ((typeof(sigitem)!="string") && 
+        (typeof(sigitem.length)!="undefined") && 
+        (sigitem.length>0)){
+      for (var ci=0;ci<sigitem.length;ci++){
+        if (sigitem[ci]!=""){
+          trackEvent( replaceRandomString( sigitem[ci] ));
+        }
+      }
+    } else 
+    if (sigitem!=""){
+      trackEvent( replaceRandomString( sigitem ));
+    }
+  }
+
+
+  function setVolume( vol ){
+    vol = Math.max( Math.min( vol , 1 ) , 0 );
+    lastvol = vol ;
+    
+    if (playMuted==1){
+      if (typeof(adsManager)=="object"){ try{ adsManager.setVolume( 0 ); } catch(e){} }
+      if (typeof(MPlayer)=="object"){ MPlayer.volume = 0 ; }    
+      if (typeof(LPlayer)=="object"){ LPlayer.volume = 0 ; }
+      return ;
+    }
+    
+    if (manualVol){
+      if (typeof(adsManager)=="object") { try{ adsManager.setVolume( vol/2 ); } catch(e){} }
+      if (typeof(MPlayer)=="object"){ MPlayer.volume = vol ; }    
+      if (typeof(LPlayer)=="object"){ LPlayer.volume = vol ; }
+    } else {
+      if (typeof(adsManager)=="object") { try{ adsManager.setVolume( Math.min( 1 , Math.max( 0 , vol/2 , minAdVol/2 , vasts[VastPlaying].minadvol/2 ) ) ); } catch(e){} }
+      if (typeof(MPlayer)=="object"){ MPlayer.volume = Math.min( 1 , Math.max( vol , minMvVol ) ); }    
+      if (typeof(LPlayer)=="object"){ LPlayer.volume = Math.min( 1 , Math.max( vol , minMvVol ) ); }
+    }
+    if ((typeof(volumehandle)=="object") && (typeof(volumeslider)=="object") && (typeof(volumetrack)=="object")) {
+      var v = Math.floor( vol * volumeslider.offsetWidth );
+      volumetrack.style.width = v+"px";
+      volumehandle.style.left = v + 'px';      
+    }
+    if (typeof(volm)=="object") {
+      if (vol>0){ if (vol>0.67){ volm.className = "volm66" ; } else if (vol>0.33){ volm.className = "volm33" ; } else { volm.className = "volm0" ; } }        
+      else { volm.className = "mute" }
+    }
+    if ((typeof(MPlayer)=="object") && (typeof(MPlayer.iOptions.svf)=="function")) { MPlayer.iOptions.svf( vol ); }      
+  }
+
+  function setDefVolume( vol ){
+    MPlayer.iOptions.movv = vol ;
+    mouseoutvolume = vol ;
+  }
+
+  function getVolume(){
+    if ((playingad) && (typeof(adsManager)=="object")) { return Math.min( 2*adsManager.getVolume() , 1 ); }
+    else if (typeof(MPlayer)=="object"){ return MPlayer.volume ; }
+    else return 0 ;
+  }
+
+  function OControlsHandleDown(e){ rangeWidth = volumeslider.offsetWidth ; rangeLeft = findPos(volumeslider).left ; down = true; updateDragger(e); return false; };
+
+  function OControlsHandleMove(e){ updateDragger(e); };  
+
+  function OControlsHandleUp(e){ down = false ; }
+
+  function updateDragger(e) { if (down){ var p = mousePositionDocument( e ); setVolume( (p.x-rangeLeft)/rangeWidth ); setDefVolume( (p.x-rangeLeft)/rangeWidth ); } }
+  
+  function containerMouseOver(e){
+    if (!e.isTrusted) { return ; }
+    setViewTimeIFRAME();
+    controlsbar.style.top = "7px" ;
+    try{
+      if (currPlayer==MPlayer){ OControls.style.height = "32px" ; } else { OControls.style.height = "28px" ; controlsbar.style.top = "2px" ; }
+      if (mobile==0) { title.style.height = "22px" ; }
+    } catch(f) {} 
+    if (typeof(MPlayer.iOptions.movv)!="undefined"){
+      mouseoutvolume = getVolume();
+      setVolume( MPlayer.iOptions.movv );
+      e.preventDefault();
+    }
+  } 
+  
+  function containerMouseOut(e){
+    if (!e.isTrusted) { return ; }
+    try{
+      OControls.style.height = "0px" ;
+      if ((showPermCount==0) || (mobile>0) || (!playingad)){ title.style.height = "0px" ; }
+    } catch(f) {} 
+    if ((typeof(MPlayer.iOptions.movv)!="undefined")){
+      setVolume( mouseoutvolume );
+      e.preventDefault();
+    }
+  }
+ 
+  function trackHDOn(){
+    if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].honpix)!="undefined"){
+      SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].honpix );
+    }
+    ASignal( "Tracking" , "HDON" , null );
+  }
+
+  function trackHDOff(){
+    if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].hoffpix)!="undefined"){
+      SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].hoffpix );
+    }
+    ASignal( "Tracking" , "HDOFF" , null );
+  }
+  
+  function OControlsSDHD(){
+    if (playingad) return ;
+    if (currPlayer==LPlayer){
+      if ((LPlayer) && (LPlayer.ontvhls)){
+        if (LPlayer.ontvhls.currentLevel!=1){ LPlayer.ontvhls.currentLevel=1; sdhd.innerHTML = "SD" ; }
+        else if (LPlayer.ontvhls.currentLevel!=2){ LPlayer.ontvhls.currentLevel=2; sdhd.innerHTML = "HD" ; }
+      }
+      return ;
+    }
+    deb( "sdhd" );
+    if ((MPlayer.src==MPlayer.iOptions.videos[MPlayer.videoNb].url) && 
+        (MPlayer.iOptions.videos[MPlayer.videoNb].urlhd!="")) { 
+      MPlayer.toplayurl = MPlayer.iOptions.videos[MPlayer.videoNb].urlhd ;
+    } else if ((MPlayer.src==MPlayer.iOptions.videos[MPlayer.videoNb].urlhd) && 
+          (MPlayer.iOptions.videos[MPlayer.videoNb].url!="")) { 
+      MPlayer.toplayurl = MPlayer.iOptions.videos[MPlayer.videoNb].url ;      
+    }    
+    sdhdTime = MPlayer.currentTime ;
+    sdhdPaused = MPlayer.paused ;
+    sdhdP = true ;
+    if (!MPlayer.paused){
+      MPlayer.pause();
+      return ;
+    }else {
+      MPlayer.src = MPlayer.toplayurl ;
+      MPlayer.load();
+    }
+  }
+  
+  function MPlayerData(){
+    deb( "MPlayerData" );
+    if (sdhdP){
+      console.log( "sdhdP" );
+      MPlayer.currentTime = sdhdTime ;
+      if (!sdhdPaused){
+        MPlayer.play();
+        sdhdPaused = true ;
+      }
+      sdhdTime = 0 ;
+      sdhdP = false ;
+      if (MPlayer.src==MPlayer.iOptions.videos[MPlayer.videoNb].url){
+        sdhd.innerHTML = "SD" ; 
+        trackHDOff();
+      }
+      if (MPlayer.src==MPlayer.iOptions.videos[MPlayer.videoNb].urlhd){
+        sdhd.innerHTML = "HD" ; 
+        trackHDOn();
+      }
+    }
+  }
+  
+
+  function FullScreen(e){
+    var cont = document.getElementById( MPlayer.cId ).parentElement ;
+    if ((document.fullscreenElement==cont) ||
+	(document.webkitFullscreenElement==cont) ||
+	(document.mozFullScreenElement==cont) ||
+	(document.msFullscreenElement==cont)){
+      screenfull.exit();
+    } else {
+      screenfull.request( cont );
+      if ((title) && (title.childNodes.length>0) && (title.childNodes[0].className=="titin")){
+        title.childNodes[0].style.left = "10px" ;
+      }
+    }
+  }
+
+  function FullScreenEvent(){
+    MPlayerResize();
+    if (screenfull.isFullscreen && (MPlayer.iOptions.videos[MPlayer.videoNb].signals.fullscreensignaled==false)){
+      MPlayer.iOptions.videos[MPlayer.videoNb].signals.fullscreensignaled=true ;
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].fspix)!="undefined"){
+        SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].fspix );
+      }
+    }
+    if (screenfull.isFullscreen){ 
+      if (currPlayer==LPlayer){ LPlayer.ontvhls.currentLevel=2; sdhd.innerHTML = "HD" ; }
+      ASignal( "Tracking" , "FSON" , null ); 
+    } else { 
+      if (currPlayer==LPlayer){ LPlayer.ontvhls.currentLevel=1; sdhd.innerHTML = "SD" ; }
+      ASignal( "Tracking" , "FSOFF" , null ); 
+    }
+  }
+   
+  function showPlayClick(){
+    deb( "showPlayClick" );
+    if (playclick){
+      if (playclicks){ playclicks.style.background = "url( img/play_white.png )" ; }
+      playclick.style.display = "block" ;
+    }
+  }
+
+  function showUnmuteClick(){
+    deb( "showPlayClick" );
+    if (playclick){
+      if (playclicks){ playclicks.style.background = "url( img/unmute1.png ) no-repeat center center" ; }
+      playclick.style.display = "block" ;
+    }
+  }
+
+  function hidePlayClick(){
+    if (playclick){
+      playclick.style.display = "none" ;
+    }
+  }
+
+  function StartMPlayer(){
+    deb( "StartMPlayer" );
+    if ((typeof(MPlayer.src)=="undefined") ||
+        (MPlayer.src!=MPlayer.toplayurl)){
+      MPlayer.src = MPlayer.toplayurl ;
+    }
+    MPlayer.play();
+  }
+
+  function StartLPlayer(){
+    deb( "StartLPlayer" );
+    startStream( MPlayer.iOptions.livestream );
+  }
+
+  function ShowMPlayer(){
+    deb( "StartMPlayer" );
+    if ((typeof(MPlayer.src)=="undefined") ||
+        (MPlayer.src!=MPlayer.toplayurl)){
+      MPlayer.src = MPlayer.toplayurl ;
+    }
+  }
+
+  function ASignal( track , event , ad ){
+    var mid = 0 ;
+    if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].id)=="undefined"){ mid="unknown" ; } 
+    else { mid = MPlayer.iOptions.videos[MPlayer.videoNb].id ; }
+    if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].title)!="undefined") { mid = mid + " " + MPlayer.iOptions.videos[MPlayer.videoNb].title ; }
+    if (typeof(MPlayer.iOptions.msignalfunc)=="function"){    
+      MPlayer.iOptions.msignalfunc( track+event , mid , ad ); 
+    }
+  }
+
+
+  function MPlayerCompleted(){
+    deb( "MPlayerCompleted" );
+    if (MPlayer.iOptions.videos[MPlayer.videoNb].signals.mcompletesignaled==false){
+      MPlayer.iOptions.videos[MPlayer.videoNb].signals.mcompletesignaled=true ;
+      ASignal( "moviecompleted" , "" , null );
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].cpix)!="undefined"){
+        SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].cpix );
+      }
+    }
+    if (!singleAd && epostroll){
+      postroll_started = true ;
+      postroll_complete = false ;
+      try{ adsLoader.contentComplete(); } catch(e) { }
+      if (!epostroll) { setNextMovie(); }
+    } else 
+    if (singleAd && (ppreroll==0)){
+      postroll_started = true ;
+      postroll_complete = false ;
+      try{ adsLoader.contentComplete(); } catch(e) { }
+      startAds();
+    } else {
+      try{ adsLoader.contentComplete(); } catch(e) { }
+      setNextMovie();
+    }
+  }
+  
+  function setNextMovie(){
+    deb( "setNextMovie" );  
+    MPlayer.pause();
+    setPPBPlay();
+    waitforinit = false ;
+    userclickplay = false ;
+    VastToCheck = 0 ;
+    MPlayer.iOptions.videos[MPlayer.videoNb].signals = { mstartsignaled:false, mfirstsignaled:false, mmidsignaled:false, mthirdsignaled:false, mcompletesignaled:false, fullscreensignaled:false } ;
+    if (typeof(MPlayer.iOptions.pn)!="undefined"){
+      if ((MPlayer.iOptions.pn==-1) && (!isLiveStream)){
+        if (typeof(MPlayer.iOptions.pnf)=="function"){
+          MPlayer.iOptions.pnf( MPlayer.iOptions.videos[MPlayer.videoNb].id );
+        }
+      } else {
+        MPlayer.videoNb++ ;
+        if (MPlayer.videoNb>=MPlayer.iOptions.videos.length){
+          if (((typeof(MPlayer.iOptions.loop)!="undefined") && (MPlayer.iOptions.loop==1)) || (isLiveStream)) { 
+            MPlayer.videoNb=0 ; 
+          } else { 
+            MPlayer.videoNb-- ;
+            waitforinit = true ;
+            showPlayClick();
+            return ;
+          }
+        }
+        MPlayer.iOptions.autoplay = MPlayer.iOptions.pn ;
+        startNextMovie();
+      }
+    } else {
+      waitforinit = true ;
+      showPlayClick();
+    }
+  }
+
+  function sec2MS( sec ){
+    var M = Math.floor(sec/60);
+    if (isNaN(M)) { M = 0 ; }
+    var S = Math.floor(Math.round(sec - M*60));
+    if (isNaN(S)) { S = 0 ; }
+    var r = ":" ;
+    if (M<10) { r = "0"+M+r ; } else { r = M + r ; }
+    if (S<10) { r = r+"0"+S ; } else { r = r + S ; }
+    return r ;
+  }
+
+  function signalLinkButton(){
+    if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].button.bpixel)=="string") && (MPlayer.iOptions.videos[MPlayer.videoNb].button.bpixel!="")) {
+      trackEvent( replaceRandomString( MPlayer.iOptions.videos[MPlayer.videoNb].button.bpixel ));
+    }
+    if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].bpix)!="undefined"){
+      SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].bpix );
+    }
+  }
+
+  function MPlayerTimeUpdate(){
+    deb( "MPlayerTimeUpdate " );
+    if (playingad) { try{ c = document.getElementById( MPlayer.cId ); if (c) { c.style.backgroundImage = "" ; } } catch(e) {} return ; }
+    if (!MPlayer.paused) { 
+      hidePlayClick(); 
+      try{ c = document.getElementById( MPlayer.cId ); if (c) { c.style.backgroundImage = "" ; } } catch(e) {} 
+      if (playMuted==1){ showUnmuteClick(); }
+      ShowHidePreSkip( false , 0 );
+      ShowHideSkip( false );
+    }
+    if (typeof(MPlayer)=="object"){
+      if ((MPlayer.iOptions.videos[MPlayer.videoNb].signals.mstartsignaled==false) && (MPlayer.currentTime>0)){
+        MPlayer.iOptions.videos[MPlayer.videoNb].signals.mstartsignaled=true ;
+        if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].spix)!="undefined"){
+          SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].spix );
+        }
+        ASignal( "moviestarted" , "" , null ); 
+      }
+      if ((MPlayer.iOptions.videos[MPlayer.videoNb].signals.mfirstsignaled==false) && (MPlayer.currentTime>=Math.round(MPlayer.duration/4))){
+        MPlayer.iOptions.videos[MPlayer.videoNb].signals.mfirstsignaled=true ;
+        if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].fpix)!="undefined"){
+          SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].fpix );
+        }
+      }
+      if ((MPlayer.iOptions.videos[MPlayer.videoNb].signals.mmidsignaled==false) && (MPlayer.currentTime>=Math.round(MPlayer.duration/2))){
+        MPlayer.iOptions.videos[MPlayer.videoNb].signals.mmidsignaled=true ;
+        if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].mpix)!="undefined"){
+          SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].mpix );
+        }
+      }
+      if ((MPlayer.iOptions.videos[MPlayer.videoNb].signals.mthirdsignaled==false) && (MPlayer.currentTime>=Math.round(3*MPlayer.duration/4))){
+        MPlayer.iOptions.videos[MPlayer.videoNb].signals.mthirdsignaled=true ;
+        if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].tpix)!="undefined"){
+          SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].tpix );
+        }
+      }
+      if (MPlayer.buffered.length>0){ var btr = MPlayer.buffered.end(0); } else { var btr = 0 ; }
+      var vdr = MPlayer.duration ;
+      if (vdr>0){
+        var buf = 100 * btr / vdr ;
+        if (buf>100) { buf = 100 ; }
+        if (bufferedbar) { bufferedbar.style.width = buf+"%" ; }
+      }
+      var ctm = MPlayer.currentTime ;
+      if (vdr>0){
+        var pla = 100 * ctm / vdr ;
+        if (pla>100) { pla = 100 ; }
+        if (playedbar) { playedbar.style.width = pla+"%" ; }
+      }
+      if (playtime){ 
+          playtime.innerHTML = sec2MS(ctm)+" / "+sec2MS(vdr) ; 
+          if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].title)!="undefined") && (MPlayer.iOptions.videos[MPlayer.videoNb].title!=""))  {
+            if (typeof(title)!="undefined"){
+              title.style.display = "block" ;              
+              if (title.innerHTML.indexOf(MPlayer.iOptions.videos[MPlayer.videoNb].title)<=0){
+                title.innerHTML = '<div class="titin">'+MPlayer.iOptions.videos[MPlayer.videoNb].title+'</div>' ;
+                setTimeout( "titlescroll()" , 5000 );
+              }
+            }
+          } else {
+            if (typeof(title)!="undefined"){
+              title.style.display = "none" ;
+            }
+          }
+      }
+    }
+    if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].button)!="undefined") && (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].button.bclass)!="undefined") &&
+        (MPlayer.iOptions.videos[MPlayer.videoNb].button.bclass>0) && (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].button.btime)!="undefined") )  {
+      if ((linkbutton) && (linkbutton.style.display=="none")) {
+        if (MPlayer.iOptions.videos[MPlayer.videoNb].button.btime<0){
+          if (ctm>vdr+MPlayer.iOptions.videos[MPlayer.videoNb].button.btime) {
+            linkbutton.style.display = "block" ;
+            signalLinkButton();
+          }
+        } else {
+          if (ctm>MPlayer.iOptions.videos[MPlayer.videoNb].button.btime) {
+            linkbutton.style.display = "block" ;
+            signalLinkButton();
+          }
+        }
+      }
+    }
+  }
+
+  function LPlayerTimeUpdate(){
+    deb( "LPlayerTimeUpdate" );
+    if (!LPlayer.paused) { hidePlayClick(); } else { showPlayClick(); }
+    if (typeof(title)!="undefined"){
+      title.style.display = "block" ;              
+      if (title.innerHTML.indexOf(MPlayer.iOptions.livetitle)<=0){ title.innerHTML = '<div class="titin">'+MPlayer.iOptions.livetitle+'</div>' ; }
+    } else { if (typeof(title)!="undefined"){ title.style.display = "none" ; } }
+  }
+
+  function MPlayerContextMenu(e){
+    if (playingad) return ;
+    if (menu){
+      var p = mousePositionDocument( e );
+      var c = findPos( MPlayer );
+      menu.style.left = Math.max( p.x - c.left , 0 )+"px";
+      menu.style.top = Math.max( p.y - c.top , 0 )+"px" ;
+      menu.style.display = "block" ;
+    }
+    return false ;
+  }
+
+  function MPlayerPause(){  
+    deb( "MPlayerPause" );
+    if (sdhdP){
+      MPlayer.src = MPlayer.toplayurl ;
+      MPlayer.load();
+      return ;
+    }
+    showPlayClick();
+    setPPBPlay();
+    ASignal( "pause" , "" , null ); 
+  }
+
+  function MPlayerError(){  
+    deb( "MPlayerError" );
+    setPPBPlay();
+    ASignal( "error" , "" , null ); 
+  }
+
+  function MPlayerPlay(){  
+    deb( "MPlayerPlay" );
+    hidePlayClick();
+    setPPBPause();
+    ASignal( "play" , "" , null ); 
+  }
+
+  function MPlayerCanPlay(){
+    deb( "MPlayerCanPlay" );
+    ASignal( "canplay" , "" , null );
+  }
+
+  function IsicontChild( o ){
+    try{
+      if ((typeof(o)=="object") && (typeof(o.parentElement)=="object")){
+        if (o.parentElement == document.getElementById( 'icont' )){
+          return true ;
+        } else {
+          return IsicontChild( o.parentElement );
+        }
+      } else {
+        return false ;
+      }
+    } catch(e) { return false ; }
+  }
+  
+  function PausePlayer(){
+    deb( "PausePlayer" );
+    if (currPlayer=="imasdk"){
+      if ((playingad) && (!playingnl) && (!adpaused)){
+        try{       
+          adsManager.pause(); 
+          showPlayClick(); 
+          setPPBPlay();
+        }
+        catch(e){
+        }
+      }
+      return ; 
+    }
+    if ((currPlayer==LPlayer) && (LPlayer) && (!LPlayer.paused)){
+      LPlayer.pause();
+      setPPBPlay();
+      showPlayClick();
+    } 
+    if ((currPlayer==MPlayer) && (MPlayer) && (!MPlayer.paused)){    
+      MPlayer.pause();
+      setPPBPlay();
+      showPlayClick();
+    }
+  }
+
+  function ResumePlayer(){
+    deb( "ResumePlayer" );
+    if (currPlayer=="imasdk"){
+      if ((playingad) && (!playingnl) && (adpaused)){
+        try{       
+          adsManager.resume(); 
+          setPPBPause();
+          hidePlayClick(); 
+        }
+        catch(e){
+        }
+      }
+      return ; 
+    }
+    if ((currPlayer==LPlayer) && (LPlayer) && (LPlayer.paused)){
+      LPlayer.play();
+      setPPBPause();
+      hidePlayClick();
+    } 
+    if ((currPlayer==MPlayer) && (MPlayer) && (MPlayer.paused)){    
+      MPlayer.play();
+      setPPBPause();
+      hidePlayClick();
+    }
+  }
+  
+  function IsPlaying(){
+    return playingad || (LPlayer && !LPlayer.paused) || (MPlayer && !MPlayer.paused) ;
+  }
+  
+  function nextVideoPlay(){
+    if (playingad) return ;
+    try{ adsLoader.contentComplete(); } catch(e) { }
+    MPlayer.pause();
+    setPPBPlay();
+    waitforinit = false ;
+    userclickplay = false ;
+    VastToCheck = 0 ;
+    MPlayer.iOptions.videos[MPlayer.videoNb].signals = { mstartsignaled:false, mfirstsignaled:false, mmidsignaled:false, mthirdsignaled:false, mcompletesignaled:false, fullscreensignaled:false } ;
+    MPlayer.videoNb++ ;
+    if (MPlayer.videoNb>=MPlayer.iOptions.videos.length){ MPlayer.videoNb=0 ; }
+    MPlayer.iOptions.autoplay = MPlayer.iOptions.pn ;
+    startNextMovie();
+  }
+
+  function prevVideoPlay(){
+    if (playingad) return ;
+    try{ adsLoader.contentComplete(); } catch(e) { }
+    MPlayer.pause();
+    setPPBPlay();
+    waitforinit = false ;
+    userclickplay = false ;
+    VastToCheck = 0 ;
+    MPlayer.iOptions.videos[MPlayer.videoNb].signals = { mstartsignaled:false, mfirstsignaled:false, mmidsignaled:false, mthirdsignaled:false, mcompletesignaled:false, fullscreensignaled:false } ;
+    MPlayer.videoNb-- ;
+    if (MPlayer.videoNb<0){ MPlayer.videoNb=MPlayer.iOptions.videos.length-1 ; }
+    MPlayer.iOptions.autoplay = MPlayer.iOptions.pn ;
+    startNextMovie();
+  }
+
+  function OControlsPlayClick(e){
+    deb( "OControlsPlayClick" );
+    var targ = evtTarget(e);
+    setViewTimeIFRAME();
+// seekbar    
+    if ((targ) && ((targ==seekbar) || (targ==bufferedbar) || (targ==playedbar))){
+      if (playingad) return ;
+      var x = getXo(e,seekbar);
+      var seekp = (x * MPlayer.duration) / seekbar.clientWidth ;
+      MPlayer.currentTime = seekp ;
+      return ;
+    }
+// preskip
+    if ((targ) && ((targ==preSkipContainer) || (targ==preSkipButton) || (targ==preSkipTxt))){
+      return ;
+    }
+// skip    
+    if ((targ) && ((targ==skipContainer) || (targ==skipAction) || (targ==skipIcon))){
+      if (playingad){ adsManager.stop(); ShowHidePreSkip( false , 0 ); ShowHideSkip( false ); if (mobile==0){ StartPlayback(1); } else { setTimeout( "StartMPlayer();",1000 ); } }
+      if (playMuted==1){
+        playMuted = 0 ;
+        hidePlayClick();
+        setVolume( MPlayer.iOptions.volume );            
+      }
+      ShowHidePreSkip( false , 0 );
+      ShowHideSkip( false );
+      console.log( "skip" );
+      return ;
+    }
+// nextVideo    
+    if ((targ) && (targ==nextVid)){
+      nextVideoPlay();
+      return ;
+    }
+// prevVideo    
+    if ((targ) && (targ==prevVid)){
+      prevVideoPlay();
+      return ;
+    }
+// volume mute    
+    if ((targ) && ((targ==volm))){
+      manualVol = 1 ;
+      if (MPlayer.volume==0){ if (prevVol>0){ setVolume( prevVol ); setDefVolume( prevVol ); } else { setVolume( 0.5 ); setDefVolume( 0.5 ); } }
+      else { prevVol = getVolume() ; setVolume( 0 ); setDefVolume( 0 ); }
+      e.preventDefault();      
+      return ;
+    }
+// volume click
+    if ((targ) && ((targ==volumeslider) || (targ==volumetrack) || (targ==volumepanel))){
+      manualVol = 1 ;
+      setVolume( getXo(e,volumeslider) / volumeslider.clientWidth ); setDefVolume( getXo(e,volumeslider) / volumeslider.clientWidth ); 
+      e.preventDefault();
+      return ;
+    }
+// SDHD
+    if ((targ) && ((targ==sdhd))){
+      OControlsSDHD();
+      e.preventDefault();
+      return ;
+    }
+// fullscreen 
+    if ((targ) && ((targ==fullscreenc))){
+      var cont = document.getElementById( MPlayer.cId ).parentElement ;
+      if ((document.fullscreenElement==cont) || (document.webkitFullscreenElement==cont) ||
+	  (document.mozFullScreenElement==cont) || (document.msFullscreenElement==cont)){
+        screenfull.exit();
+      } else {
+        screenfull.request( cont );
+        if ((title) && (title.childNodes.length>0) && (title.childNodes[0].className=="titin")){ title.childNodes[0].style.left = "10px" ; }
+      }
+      return ;
+    }
+// unmute 
+    if ((targ) && ((targ==playclicks)) && (playMuted==1)){
+      playMuted = 0 ;
+      hidePlayClick();
+      setVolume( MPlayer.iOptions.volume );            
+      return ;
+    }    
+    if (currPlayer=="imasdk"){
+      if ((playingad) && (adpaused)){
+        try{       
+          adsManager.resume(); 
+          hidePlayClick(); }
+        catch(e){
+        }
+        return ;
+      }
+      if ((playingad) && (!playingnl)){
+        if ((!adpaused) && (vasts.length>VastPlaying) && (vasts[VastPlaying].clkpause==1)){
+          try{       
+            adsManager.pause(); 
+            hidePlayClick(); 
+            setPPBPause();
+          }
+          catch(e){
+          }
+        }
+        return ; 
+      }
+      return ; 
+    }
+    if (currPlayer==LPlayer){
+      if (LPlayer){
+        if (LPlayer.paused){
+          LPlayer.play();
+          showPlayClick();
+        } else {
+          LPlayer.pause();
+          hidePlayClick();
+        }
+      }      
+    } 
+    if (currPlayer==MPlayer){    
+    if ((e!=12) && (e.target!=playbutton) && (e.target!=MPlayer) && (e.target!=playclick) && (e.target!=playclicks) &&
+        (e.target!=document.getElementById('icont')) && (!IsicontChild(e.target)) ) { return ; } 
+    if ((playingad) && (!playingnl)) return true ;
+    if (waitforinit){
+      waitforinit = false ;
+      if (e!=12) { userinitplay = true ; }
+      if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].na)=="undefined") || (MPlayer.iOptions.videos[MPlayer.videoNb].na!=1)){
+        requestAds();
+      } else {
+        StartMPlayer();
+        setPPBPause();
+      }
+    } else 
+      if (MPlayer.paused){
+        StartMPlayer();
+        setPPBPause();
+      } else {
+        MPlayer.pause();
+        setPPBPlay();
+        if ((e.target!=playclick) && (e.target!=playclicks) && (e.target!=playbutton) && (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].movielink)=="string") && (MPlayer.iOptions.videos[MPlayer.videoNb].movielink.trim().length>11)){
+          window.open( MPlayer.iOptions.videos[MPlayer.videoNb].movielink , "_BLANK" );
+          if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].mlpix)!="undefined"){
+            SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].mlpix );
+          }
+        }
+      }
+    }
+    return true ;
+  }
+
+  function startNextMovie(){
+    deb( "startNextMovie" );
+    waitforinit = false ;
+    userclickplay = false ;
+    adsLoaded = false ;
+    contentInitialized = false ;
+    MPlayer.muted = false ;
+    UpdateInterface( "movie" );    
+    MPlayer.iOptions.videos[MPlayer.videoNb].signals = { mstartsignaled:false, mfirstsignaled:false, mmidsignaled:false, mthirdsignaled:false, mcompletesignaled:false, fullscreensignaled:false } ;
+    setTimeout( 'window.parent.postMessage( "excmw'+MPlayer.iOptions.videos[MPlayer.videoNb].id+' " , "*" );' , 1000 );
+    if (hdFirst!=1){
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].url)!="undefined"){
+        MPlayer.toplayurl = MPlayer.iOptions.videos[MPlayer.videoNb].url ;
+        if ((typeof(MPlayer.iOptions.st)=="undefined") || (MPlayer.iOptions.st!=1)) { MPlayer.src = MPlayer.iOptions.videos[MPlayer.videoNb].url ; }
+      } else 
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].urlhd)!="undefined"){
+        MPlayer.toplayurl = MPlayer.iOptions.videos[MPlayer.videoNb].urlhd ;
+        if ((typeof(MPlayer.iOptions.st)=="undefined") || (MPlayer.iOptions.st!=1)) { MPlayer.src = MPlayer.iOptions.videos[MPlayer.videoNb].urlhd ; }
+      } else {
+        return ;
+      }
+    } else {
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].urlhd)!="undefined"){
+        MPlayer.toplayurl = MPlayer.iOptions.videos[MPlayer.videoNb].urlhd ;
+        if ((typeof(MPlayer.iOptions.st)=="undefined") || (MPlayer.iOptions.st!=1)) { MPlayer.src = MPlayer.iOptions.videos[MPlayer.videoNb].urlhd ; }
+      } else 
+      if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].url)!="undefined"){
+        MPlayer.toplayurl = MPlayer.iOptions.videos[MPlayer.videoNb].url ;
+        if ((typeof(MPlayer.iOptions.st)=="undefined") || (MPlayer.iOptions.st!=1)) { MPlayer.src = MPlayer.iOptions.videos[MPlayer.videoNb].url ; }
+      } else {
+        return ;
+      }
+    }
+      if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].poster)!="undefined") && (MPlayer.iOptions.videos[MPlayer.videoNb].poster!="")){
+        MPlayer.setAttribute( "poster" , MPlayer.iOptions.videos[MPlayer.videoNb].poster );
+      }
+      MPlayer.load();
+      if (sdhd){
+        if ((MPlayer.toplayurl==MPlayer.iOptions.videos[MPlayer.videoNb].url)) { sdhd.innerHTML = "SD" ; }
+        if ((MPlayer.toplayurl==MPlayer.iOptions.videos[MPlayer.videoNb].urlhd)) { sdhd.innerHTML = "HD" ; }
+        if ( (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].url)!="undefined") && 
+             (MPlayer.iOptions.videos[MPlayer.videoNb].url!="") && 
+             (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].urlhd)!="undefined") &&
+             (MPlayer.iOptions.videos[MPlayer.videoNb].urlhd!="")){
+          sdhd.style.color = "rgba(255,255,255,1)";       
+        } else {
+          sdhd.style.color = "rgba( 140 , 140 , 140 , 1 )";       
+        }
+      }
+      if (MPlayer.iOptions.videos[MPlayer.videoNb].menu){
+        createMenu( MPlayer.iOptions.videos[MPlayer.videoNb].menu );
+      } else {
+        var m = document.getElementById( "rightmenu" );
+        if (m) {
+          m.parentNode.removeChild( m );
+          menu = null ;
+        }
+      }
+      if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].title)!="undefined") && (MPlayer.iOptions.videos[MPlayer.videoNb].title!=""))  {
+        if (title){
+          title.style.display = "block" ;
+          title.innerHTML = '<div class="titin">'+MPlayer.iOptions.videos[MPlayer.videoNb].title+'</div>' ;
+          setTimeout( "titlescroll()" , 5000 );
+        }
+      } else {
+        if (title){
+          title.style.display = "none" ;
+        }
+      }
+      if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].button)!="undefined") && (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].button.bclass)!="undefined") &&
+          (MPlayer.iOptions.videos[MPlayer.videoNb].button.bclass>0) )  {
+        if (linkbutton){
+          linkbutton.className = "linkbutton" + MPlayer.iOptions.videos[MPlayer.videoNb].button.bclass ;
+          linkbutton.style.display = "none" ;
+        }
+      } else {
+        if (linkbutton){
+          linkbutton.style.display = "none" ;
+        }
+      }
+      showPlayClick();
+      StartPlayback( 0 );
+  }
+  
+  function StartPlayback( wasAd ){
+    deb( "startplayback "+wasAd );
+    ShowHidePreSkip( false , 0 );
+    ShowHideSkip( false );
+    if (CheckForLive() && (mobile>0)){
+      UpdateInterface( "live" ); 
+      StartLPlayer();
+      return ;
+    }
+    if (wasAd==1){ if (CheckForLive()){ UpdateInterface( "live" ); StartLPlayer(); } else { UpdateInterface( "movie" ); StartMPlayer(); } }
+    if (wasAd==0){
+      if (CheckForLive()){
+        UpdateInterface( "ima" );
+        requestAds();
+      } else 
+      if (MPlayer.iOptions.autoplay==1){
+        if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].na)=="undefined") || (MPlayer.iOptions.videos[MPlayer.videoNb].na!=1)){ 
+          UpdateInterface( "ima" );
+          requestAds();
+        }else if (MPlayer.iOptions.videos[MPlayer.videoNb].na==1){ 
+          UpdateInterface( "movie" ); 
+          StartMPlayer();
+        }
+      } else 
+      if (MPlayer.iOptions.autoplay==3){
+        if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].na)=="undefined") || (MPlayer.iOptions.videos[MPlayer.videoNb].na!=1)){ 
+          UpdateInterface( "ima" );
+          requestAds(); 
+        } else { 
+          UpdateInterface( "movie" );
+          waitforinit = true ;
+          showPlayClick() ;
+        }
+      } else 
+      {
+        UpdateInterface( "movie" );
+        waitforinit = true ;
+        showPlayClick() ;
+      }
+    }
+    if (wasAd==2){
+      if (CheckForLive()){ UpdateInterface( "live" ); StartLPlayer(); }
+      else {
+        UpdateInterface( "movie" );
+        if ((MPlayer.iOptions.autoplay==1) || (MPlayer.iOptions.autoplay==2) || (userinitplay)){ UpdateInterface( "movie" ); StartMPlayer(); }
+        else {
+          if (!noAdReported){ 
+            noAdReported = true ; 
+            if (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].napix)!="undefined"){
+              SignalInternal( MPlayer.iOptions.videos[MPlayer.videoNb].napix );
+            }    
+          };
+          waitforinit = true ;
+          showPlayClick() ;
+          if (typeof(MPlayer.iOptions.dbf)=="function"){ MPlayer.iOptions.dbf(); }
+        }
+      }
+    }
+  }
+
+  function MPlayerResize(){
+    if (playingad) {
+      var w = parseInt( document.getElementById('icont').offsetWidth ) ;
+      var h = parseInt( document.getElementById('icont').offsetHeight ) ;
+      try{
+        adsManager.resize( w , h , google.ima.ViewMode.NORMAL ); 
+      } catch (e) {} 
+    }
+  }
+
+  function UpdateInterface(toPlayer){
+    deb( "UpdateInterface:"+toPlayer );
+    if (toPlayer==""){
+    }
+    if (toPlayer=="ima"){
+      document.getElementById( "icont" ).style.display = "block" ;
+      if (ios==0) { MPlayer.style.display = "none" ; }
+      LPlayer.style.display = "none" ;    
+      LPBack.style.display = "none" ;    
+      MPlayer.pause();
+      LPlayer.pause();
+      hidePlayClick();
+      if (logo) { logo.style.display = "none" ; }
+      if (sdhd) { sdhd.style.display = "none" ; }
+      if (seekbar) { seekbar.style.display = "none" ; }
+      if (playtime) { playtime.style.display = "none" ; }
+      title.style.height = "22px" ;       
+      currPlayer = "imasdk" ;        
+    }
+    if (toPlayer=="live"){
+      LPlayer.style.display = "block" ;    
+      LPBack.style.display = "block" ;    
+      document.getElementById( "icont" ).style.display = "none" ;
+      MPlayer.style.display = "none" ;    
+      MPlayer.pause();      
+      if (logo) { logo.style.display = "block" ; }
+      if (sdhd) { sdhd.style.display = "block" ; }
+      if (seekbar) { seekbar.style.display = "none" ; }
+      if (playtime) { playtime.style.display = "none" ; }
+      if (parseInt( OControls.style.height )>0){ title.style.height = "22px" ; } else { title.style.height = "0px" ; } 
+      currPlayer = LPlayer ;    
+      sdhd.style.color = "rgba(255,255,255,1)";             
+    }
+    if (toPlayer=="movie"){
+      MPlayer.style.display = "block" ;    
+      document.getElementById( "icont" ).style.display = "none" ;
+      if (LPlayer){
+        LPlayer.style.display = "none" ;    
+        LPBack.style.display = "none" ;    
+        if (typeof(LPlayer.pause)=="function"){ LPlayer.pause(); }        
+      }
+      if (logo) { logo.style.display = "block" ; }
+      if (sdhd) { sdhd.style.display = "block" ; }
+      currPlayer = MPlayer ;
+      if (parseInt( OControls.style.height )>0){ title.style.height = "22px" ; } else { title.style.height = "0px" ; } 
+      if (seekbar) { seekbar.style.display = "block" ; }
+      if (playtime) { playtime.style.display = "block" ; }
+    }
+    if (mobile>0){ 
+      title.style.height = "0px" ; 
+      OControls.style.height = "32px" ; 
+      if (sdhd) { sdhd.style.display = "none" ; }      
+    }    
+  }
+
+  function CheckForLive(){
+    if (!isLiveStream) return false ;    
+    var ct = new Date();
+    if (ct.getTime()<MPlayer.iOptions.livestart){ LPBackTxt.innerHTML = "Transmisja jeszcze siÄ™ nie rozpoczÄ™Å‚a" ; }
+    else if (ct.getTime()>MPlayer.iOptions.liveend){ LPBackTxt.innerHTML = "Transmisja juÅ¼ siÄ™ zakoÅ„czyÅ‚a" ; }
+    else { LPBackTxt.innerHTML = "Trwa pobieranie danych" ; }
+    if (ct.getTime()<liveRequestWait){ console.log( "liveRequestWait" ); return false ; }
+    if ((MPlayer.iOptions.livestart>0) && (ct.getTime()>=MPlayer.iOptions.livestart) &&
+        (MPlayer.iOptions.liveend>0) && (ct.getTime()<=MPlayer.iOptions.liveend)){       
+      return true ; 
+    }
+    return false ;
+  }
+
+  function startStream(streamUrl) {
+    if (ios>0){
+      LPlayer.src = streamUrl ;
+      LPlayer.load();
+      return ;
+    }
+    console.log( "startStream" );
+    if (Hls.isSupported() && (LPlayer)) {
+      console.log( "hlssupp" );
+      if (typeof(LPlayer.ontvhls)=="object"){ try{ LPlayer.ontvhls.destroy(); }catch(e){} LPlayer.ontvhls=null; }
+      try {
+        LPlayer.ontvhls = new Hls({debug: false,
+          maxBufferLength:60,
+          maxBufferSize:100,
+          startLevel:1,
+          fragLoadingTimeOut:3000,
+          manifestLoadingTimeOut:5000,
+          levelLoadingTimeOut:3000,
+          fragLoadingMaxRetryTimeout:10000,
+          manifestLoadingMaxRetryTimeout:10000,
+          levelLoadingMaxRetryTimeout:10000});
+        LPlayer.ontvhls.loadSource(streamUrl);
+        LPlayer.ontvhls.attachMedia(LPlayer);
+        LPlayer.ontvhls.on(Hls.Events.MANIFEST_PARSED, function() {
+          console.log( "manifest parsed" );
+          lsNetError = 0 ;
+          lsMediaError = 0 ;        
+          LPlayer.ontvhls.currentLevel=1; 
+          sdhd.innerHTML = "SD" ;
+          LPlayer.play();
+        });
+        LPlayer.ontvhls.on(Hls.Events.FRAG_BUFFERED, function(){
+          if (lsNetError>0){ lsNetError--; }
+          if (lsMediaError>0){ lsMediaError--; }
+        });
+        LPlayer.ontvhls.on(Hls.Events.ERROR, function(event, data) {
+          console.log( data );
+          if (data.fatal) {       
+            var ct = new Date();
+            try{ LPlayer.ontvhls.destroy(); }catch(e){} 
+            LPlayer.ontvhls=null;
+            liveRequestWait = ct.getTime()+3*1000 ;
+            UpdateInterface( "movie" );
+            initAds();            
+            startNextMovie();
+          } else 
+          if (data.type==Hls.ErrorTypes.NETWORK_ERROR){
+            lsNetError++ ;
+            if (lsNetError==2){ LPlayer.ontvhls.startLoad(); }
+            else 
+            if (lsNetError>3){
+              var ct = new Date();   
+              try{ LPlayer.ontvhls.destroy(); }catch(e){} 
+              LPlayer.ontvhls=null;
+              liveRequestWait = ct.getTime()+3*1000 ;
+              UpdateInterface( "movie" );
+              initAds();            
+              startNextMovie();
+            }
+          } else
+          if (data.type==Hls.ErrorTypes.MEDIA_ERROR){
+            lsMediaError++ ;
+            if (lsMediaError==1){ LPlayer.ontvhls.recoverMediaError(); }
+            else if (lsMediaError==2){ LPlayer.ontvhls.swapAudioCodec();  LPlayer.ontvhls.recoverMediaError(); }
+            else { 
+              var ct = new Date();   
+              try{ LPlayer.ontvhls.destroy(); }catch(e){} 
+              LPlayer.ontvhls=null;
+              liveRequestWait = ct.getTime()+3*1000 ;
+              UpdateInterface( "movie" );
+              initAds();            
+              startNextMovie();
+            }
+          }            
+        });
+        LPlayer.onerror = function(event) {
+          console.log('video_error_' + LPlayer.error.code);
+        };
+      } catch(err) {
+        console.log('exception');
+      }
+    } else {
+      console.log('notSupported');
+    }
+  }
+
+  function createPlayer( cId , options ){
+    var c = document.getElementById( cId );
+    if (c){
+      allContainer = c.parentNode ;
+      MPlayer = document.getElementById( "MPlayer" );
+      MPlayer.cId = cId ;
+      MPlayer.videoNb = 0 ;
+      LPlayer = document.getElementById( "LPlayer" );
+      LPBack = document.getElementById( "LPlayerBack" );
+      LPBackTxt = document.getElementById( "LPBackTxt" );
+      if ((typeof(options.videos)=="undefined") || (options.videos.length<1) ) { return ; }
+      if (typeof(options.volume)=="undefined"){ options.volume = MPlayer.volume ; }
+      if (typeof(options.autoplay)=="undefined"){ options.autoplay = 0 ; } else { options.autoplay = 1*options.autoplay ; }
+      MPlayer.iOptions = options ;
+      if (typeof(MPlayer.iOptions.livestream)=="string"){
+        isLiveStream = true ;
+        MPlayer.iOptions.livestart = MPlayer.iOptions.livestart*1 ;
+        MPlayer.iOptions.liveend = MPlayer.iOptions.liveend*1 ;
+      }
+      createControls() ;
+      prevVol = MPlayer.volume ;      
+      setVolume( options.volume );
+      if ((typeof(options.ll)!="undefined") && (options.ll!="")){
+        logo = document.createElement( "A" );
+        logo.href = options.ll ;
+        logo.target = "_blank" ;
+      } else {
+        logo = document.createElement( "DIV" );
+      }
+      logo.className = "logo" ;
+      c.parentElement.appendChild(logo);      
+      title = document.getElementById( "MovieTitle" );
+      playclick = document.getElementById( "playclick" );
+      playclicks = document.createElement( "DIV" );
+      if (mobile>0){ 
+        if (ios>0) { 
+          if (!isLiveStream){ playclicks.style.background = "none" ; }
+          if ((typeof(MPlayer.iOptions.videos[MPlayer.videoNb].poster)!="undefined") && (MPlayer.iOptions.videos[MPlayer.videoNb].poster!="")){
+            c.style.backgroundImage = "url('"+MPlayer.iOptions.videos[MPlayer.videoNb].poster+"')" ;
+            c.style.backgroundRepeat = "no-repeat" ;
+            c.style.backgroundPosition = "50% 50%" ;
+          }
+        }
+      }
+      playclick.appendChild( playclicks );
+      linkbutton = document.getElementById( "linkbutton" );
+      linkbutton.addEventListener("click",OControlsLinkClick,false);      
+      if ((ios!=0) && (typeof(MPlayer.iOptions.videos[MPlayer.videoNb].poster)!="undefined") && (MPlayer.iOptions.videos[MPlayer.videoNb].poster!="")){
+        MPlayer.setAttribute( "poster" , MPlayer.iOptions.videos[MPlayer.videoNb].poster );
+        MPlayer.load();
+      }
+      MPlayer.addEventListener("ended",MPlayerCompleted,false);      
+      MPlayer.addEventListener("pause",MPlayerPause,false);      
+      MPlayer.addEventListener("error",MPlayerError,false);      
+      MPlayer.addEventListener("play",MPlayerPlay,false);      
+      MPlayer.addEventListener("playing",MPlayerPlay,false);      
+      MPlayer.addEventListener("timeupdate",MPlayerTimeUpdate,false);      
+      MPlayer.addEventListener("contextmenu",MPlayerContextMenu,false);
+      c.parentElement.addEventListener("click",OControlsPlayClick,false);
+      MPlayer.addEventListener("canplay",MPlayerCanPlay,false);
+      MPlayer.addEventListener("loadedmetadata", MPlayerMetaData,false );
+      MPlayer.addEventListener("loadeddata", MPlayerData,false );
+      MPlayer.addEventListener("resize", MPlayerResize,false );
+      c.parentElement.addEventListener("resize", MPlayerResize,false );
+      window.addEventListener("orientationchange", MPlayerResize,false );
+      window.addEventListener("resize", MPlayerResize,false );
+      LPlayer.addEventListener("timeupdate",LPlayerTimeUpdate,false);      
+      if (mobile==0){ 
+          try{ document.addEventListener(screenfull.raw.fullscreenchange,FullScreenEvent,false); } catch(e){} 
+          c.parentElement.addEventListener("mouseover",containerMouseOver,false);
+          c.parentElement.addEventListener("mouseout",containerMouseOut,false);
+      }
+      tracking = document.createElement( "DIV" );
+      tracking.style.display = "none" ;
+      tracking.id = "vasttracking" ;
+      var b = document.getElementsByTagName( "BODY" )[0];
+      b.appendChild( tracking );     
+      if (prevVid && nextVid && prevnextShow && (MPlayer.iOptions.videos.length>1)){
+        var c = document.getElementById( "namecontainer" );
+        if (c){
+          c.style.background = "#000000" ;
+          c.style.display = "inline-block" ;
+        }
+      }
+      if (CheckForLive() && (mobile>0)){
+        StartPlayback(1);
+      } else {
+        initAds();
+        startNextMovie();
+      }
+    }  
+  }
+
+
+R>B±_+      Y¸ÿsY¸ÿt>0ågY¸ÿ}   .    :http://mr1-5a.exs.pl/player64.js?s=1503996546 necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Wed, 13 Sep 2017 09:50:44 GMT
+Server: XO.webservant
+Cache-Control: max-age=10
+Expires: Wed, 13 Sep 2017 09:50:54 GMT
+Last-Modified: Tue, 29 Aug 2017 08:49:06 GMT
+ETag: "5dd4270-11a2f-59a52a82"
+Accept-Ranges: bytes
+Content-Length: 72239
+Content-Type: application/x-javascript
+ original-response-headers Date: Wed, 13 Sep 2017 09:50:44 GMT
+Server: XO.webservant
+Cache-Control: max-age=10
+Expires: Wed, 13 Sep 2017 09:50:54 GMT
+Last-Modified: Tue, 29 Aug 2017 08:49:06 GMT
+ETag: "5dd4270-11a2f-59a52a82"
+Accept-Ranges: bytes
+Content-Length: 72239
+Keep-Alive: timeout=20, max=50
+Connection: Keep-Alive
+Content-Type: application/x-javascript
+ uncompressed-len 0 net-response-time-onstart 99 net-response-time-onstop 281  /

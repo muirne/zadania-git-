@@ -1,0 +1,596 @@
+.hidden-xs {
+  display: none; }
+
+.toggle-menu {
+  cursor: pointer;
+  position: absolute;
+  text-indent: -5000px; }
+  .toggle-menu span {
+    height: 3px;
+    width: 26px;
+    display: block;
+    background: #333;
+    margin: 5px 0; }
+
+@media (max-width: 991px) {
+  #head {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+    background: #fff; }
+    #head #logo {
+      width: 65px;
+      height: 39px;
+      margin: 10px 0;
+      background-size: cover; }
+    #head .lev2 .facebook, #head .lev2 .newspit_banner, #head .lev2 .menu_h, #head .lev2 #szukaj {
+      display: none; }
+    #head .lev3, #head .lev4, #head .lev5, #head .path {
+      display: none; } }
+
+@media (max-width: 991px) {
+  .aside-open {
+    cursor: pointer;
+    outline: none;
+    top: 16px;
+    border: 0;
+    right: 20px;
+    width: 24px;
+    padding: 0;
+    background: none;
+    position: absolute; }
+    .aside-open span {
+      height: 3px;
+      margin: 4px 0;
+      display: block;
+      background: #333; }
+    .aside-open.sub-menu-toggle {
+      color: #fff;
+      background: #3399cc;
+      top: 59px;
+      width: auto;
+      padding: 10px 24px;
+      right: 0; }
+      .aside-open.sub-menu-toggle:before {
+        color: #fff;
+        float: left;
+        content: "Menu";
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0 10px 0 0;
+        line-height: 18px; }
+      .aside-open.sub-menu-toggle span {
+        float: right;
+        background: #fff;
+        width: 16px;
+        height: 2px;
+        margin: 2px 0;
+        clear: right; } }
+
+@media (max-width: 991px) {
+  .main-sidebar {
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    z-index: 1000;
+    position: fixed;
+    overflow: hidden;
+    background: #1e282c;
+    transition: left ease-out .2s; }
+    .main-sidebar > div {
+      padding-right: 40px;
+      height: 100%;
+      width: 100%;
+      overflow-y: scroll; }
+      .main-sidebar > div > div {
+        width: 280px; }
+    .main-sidebar.show {
+      left: 0; }
+    .main-sidebar .aside-close {
+      border: 0;
+      background: none;
+      width: 100%;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 30px;
+      text-align: right;
+      padding: 0 10px;
+      text-transform: uppercase; }
+    .main-sidebar nav li, .main-sidebar nav li {
+      float: none;
+      clear: both;
+      padding: 0;
+      border-bottom: 1px dashed #4b646e; }
+      .main-sidebar nav li a, .main-sidebar nav li a {
+        color: #fff;
+        padding: 10px;
+        display: block;
+        font-size: 10px;
+        text-align: center;
+        background: #2c3b41;
+        text-transform: uppercase; }
+      .main-sidebar nav li .menusub a, .main-sidebar nav li .menusub a {
+        background: #364950; }
+    .main-sidebar #szukaj {
+      float: none;
+      clear: both; }
+      .main-sidebar #szukaj fieldset {
+        margin: 0;
+        border-radius: 0; }
+      .main-sidebar #szukaj input.text {
+        margin-left: 25px;
+        max-width: 140px; }
+    .main-sidebar article header, .main-sidebar nav h2, .main-sidebar article header h1 {
+      color: #666;
+      font-size: 12px;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 30px;
+      margin: 0;
+      font-weight: bold; } }
+.main-sidebar.sub-menu nav li a {
+  padding: 7px 10px;
+  text-align: left; }
+
+@media (max-width: 991px) {
+  body {
+    padding-top: 75px; }
+
+  .hidden-xs {
+    display: block; }
+
+  #werbung, .banner.type1 {
+    display: none; }
+
+  section#main, section.main, section.head {
+    width: 100%;
+    box-sizing: border-box; }
+
+  section#main section.main {
+    padding: 0 15px; }
+    section#main section.main section.lev1 {
+      float: none; }
+    section#main section.main section.lev2 {
+      top: 0;
+      margin-top: 60px !important; }
+      section#main section.main section.lev2 .td1:first-of-type header {
+        bottom: 100%;
+        top: auto;
+        margin-left: -15px;
+        margin-bottom: 15px; }
+        section#main section.main section.lev2 .td1:first-of-type header h1, section#main section.main section.lev2 .td1:first-of-type header h2 {
+          line-height: 1.2em; }
+    .bd0 section#main section.main {
+      padding: 0; }
+      .bd0 section#main section.main .lev1, .bd0 section#main section.main .lev2, .bd0 section#main section.main .lev3, .bd0 section#main section.main .lev15, .bd0 section#main section.main .lev16, .bd0 section#main section.main .lev17 {
+        padding: 0 15px;
+        box-sizing: border-box; }
+      .bd0 section#main section.main .lev1 {
+        width: 100%; }
+      .bd0 section#main section.main .lev2 {
+        width: 100%;
+        margin-left: 0; }
+        .bd0 section#main section.main .lev2 .lev21, .bd0 section#main section.main .lev2 .lev22 {
+          width: 100%;
+          padding: 15px 0;
+          margin: 0 0 15px 0;
+          box-sizing: border-box; }
+        .bd0 section#main section.main .lev2 .lev21 {
+          height: auto !important; }
+          .bd0 section#main section.main .lev2 .lev21 > article {
+            width: 50%;
+            float: left;
+            clear: none;
+            padding: 0 15px;
+            box-sizing: border-box; } }
+          @media (max-width: 991px) and (max-width: 767px) {
+            .bd0 section#main section.main .lev2 .lev21 > article {
+              width: 100%; } }
+@media (max-width: 991px) {
+            .bd0 section#main section.main .lev2 .lev21 > article header {
+              margin-bottom: 15px; }
+        .bd0 section#main section.main .lev2 .lev22 {
+          padding-bottom: 20px;
+          height: auto !important; }
+          .bd0 section#main section.main .lev2 .lev22 #calendar2, .bd0 section#main section.main .lev2 .lev22 nav.menu_v {
+            float: left;
+            clear: none;
+            padding: 0 15px;
+            box-sizing: border-box; } }
+          @media (max-width: 991px) and (max-width: 767px) {
+            .bd0 section#main section.main .lev2 .lev22 #calendar2, .bd0 section#main section.main .lev2 .lev22 nav.menu_v {
+              width: 100% !important;
+              padding-bottom: 15px; } }
+@media (max-width: 991px) {
+          .bd0 section#main section.main .lev2 .lev22 .modul_kalendarz header {
+            padding: 0 15px; }
+          .bd0 section#main section.main .lev2 .lev22 #calendar2 {
+            width: 35%; }
+            .bd0 section#main section.main .lev2 .lev22 #calendar2 .ui-datepicker-calendar {
+              margin: 0 auto; }
+              .bd0 section#main section.main .lev2 .lev22 #calendar2 .ui-datepicker-calendar span.ui-state-default {
+                text-align: center !important; } }
+          @media (max-width: 991px) and (max-width: 767px) {
+            .bd0 section#main section.main .lev2 .lev22 #calendar2 {
+              float: none;
+              width: 300px !important;
+              margin: 0 auto 20px auto; } }
+@media (max-width: 991px) {
+          .bd0 section#main section.main .lev2 .lev22 nav.menu_v {
+            width: 65%; }
+      .bd0 section#main section.main .lev15, .bd0 section#main section.main .lev16 {
+        margin: 0;
+        width: 50%; } }
+      @media (max-width: 991px) and (max-width: 767px) {
+        .bd0 section#main section.main .lev15, .bd0 section#main section.main .lev16 {
+          width: 100%; }
+          .bd0 section#main section.main .lev15 .modul_liderksiegowosci p, .bd0 section#main section.main .lev16 .modul_liderksiegowosci p {
+            text-align: left !important; } }
+@media (max-width: 991px) {
+      .bd0 section#main section.main .lev17 {
+        width: 100%; }
+        .bd0 section#main section.main .lev17 .modul_liderksiegowosci {
+          display: none; }
+        .bd0 section#main section.main .lev17 .modul_liderksiegowosci, .bd0 section#main section.main .lev17 .banner {
+          width: 33.33%;
+          float: left;
+          padding: 0 15px;
+          box-sizing: border-box; } }
+      @media (max-width: 991px) and (max-width: 767px) {
+        .bd0 section#main section.main .lev17 .modul_liderksiegowosci, .bd0 section#main section.main .lev17 .banner {
+          width: 100%;
+          margin-bottom: 20px; } }
+@media (max-width: 991px) {
+    .bd1 section#main section.main {
+      width: 100%; }
+      .bd1 section#main section.main .lev1 {
+        width: 100%; }
+        .bd1 section#main section.main .lev1 article:first-child,
+        .bd1 section#main section.main .lev1 .td17 {
+          display: none; }
+      .bd1 section#main section.main .lev2 {
+        float: none;
+        width: 100%;
+        clear: both;
+        margin: 0; }
+        .bd1 section#main section.main .lev2 .logoros {
+          display: none;
+          width: 100%;
+          padding: 0 15px;
+          box-sizing: border-box; }
+          .bd1 section#main section.main .lev2 .logoros table th, .bd1 section#main section.main .lev2 .logoros table td {
+            display: block;
+            text-align: center !important; }
+        .bd1 section#main section.main .lev2 footer.more {
+          height: auto;
+          overflow: hidden; }
+      .bd1 section#main section.main .lev21, .bd1 section#main section.main .lev22 {
+        width: 100%;
+        clear: both;
+        float: none; }
+      .bd1 section#main section.main .lev22, .bd1 section#main section.main .modul_zobacz {
+        padding: 0 15px;
+        box-sizing: border-box;
+        display: none; }
+      .bd1 section#main section.main a.icon_print {
+        right: auto;
+        display: none !important;
+        position: relative; }
+    .bd9 section#main section.main .lev1 article:first-child {
+      display: none; } }
+@media (max-width: 991px) and (max-width: 991px) {
+  .bd9 #main .lev2 {
+    width: 100%; }
+    .bd9 #main .lev2 .td1:first-child {
+      margin: 15px !important; }
+  .bd9 .pittab {
+    box-shadow: none;
+    padding: 10px;
+    border: none; }
+    .bd9 .pittab, .bd9 .pittab table {
+      width: 100%; }
+    .bd9 .pittab td {
+      padding: 0 10px; }
+      .bd9 .pittab td td {
+        padding: 0; }
+    .bd9 .pittab > tbody > tr > td {
+      border-bottom: 0;
+      background-color: #fff; }
+  .bd9 .pittab .onas {
+    padding: 15px 0;
+    margin-bottom: 20px; }
+    .bd9 .pittab .onas > table > tbody tr:last-child td {
+      border-bottom: 0; }
+    .bd9 .pittab .onas table .cl {
+      padding-top: 10px; }
+  .bd9 .td6 {
+    width: 100% !important;
+    margin: 0 0 15px 0 !important; } }
+
+@media (max-width: 991px) {
+  .interpretacje p {
+    padding: 10px 0;
+    border-bottom: 1px dashed #999; }
+    .interpretacje p a {
+      float: none;
+      display: block; }
+    .interpretacje p span {
+      margin: 5px 0;
+      float: none !important;
+      display: block;
+      text-align: left;
+      font-weight: bold; }
+
+  #nbSLMenuBox .boxContent {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px; }
+  #nbSLMenuBox ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #nbSLMenuBox ul li {
+      float: left;
+      margin: 5px; } }
+@media (max-width: 991px) {
+  author {
+    border: 1px solid #ccc;
+    border-width: 1px 0;
+    padding: 10px 0; }
+    author p {
+      font-weight: bold;
+      margin-bottom: 10px; }
+    author ul {
+      margin-left: 0;
+      padding-left: 0; } }
+
+@media (max-width: 767px) {
+  .modul_eporady p {
+    font-size: 12px;
+    background-size: 250px;
+    padding: 12px 0 0 60px; } }
+
+@media (max-width: 991px) {
+  article.td2 table {
+    width: 100% !important;
+    text-align: left !important; }
+    article.td2 table td {
+      text-align: inherit !important; } }
+
+@media (max-width: 991px) {
+  #foot .foot {
+    width: 100%; }
+  #foot .foottop {
+    height: auto;
+    overflow: hidden;
+    padding: 15px 0; }
+    #foot .foottop .lev2 {
+      width: 100%; }
+      #foot .foottop .lev2 .left, #foot .foottop .lev2 .right {
+        float: left;
+        width: 100%;
+        clear: both;
+        display: block; }
+      #foot .foottop .lev2 .skroter {
+        display: none; }
+      #foot .foottop .lev2 .newspit {
+        display: block;
+        width: 50%;
+        float: left;
+        text-align: center; }
+      #foot .foottop .lev2 #facebook {
+        width: 50%;
+        float: left;
+        clear: none; }
+        #foot .foottop .lev2 #facebook a {
+          width: 120px;
+          margin: 0 auto;
+          display: block; }
+          #foot .foottop .lev2 #facebook a img {
+            width: 100%; }
+  #foot .lev3 {
+    width: 100%; }
+    #foot .lev3 .foot_menu {
+      margin: 0; }
+      #foot .lev3 .foot_menu ul {
+        text-align: center; }
+      #foot .lev3 .foot_menu ul li {
+        display: inline-block;
+        float: none; }
+  #foot .lev5 #gb-satelity {
+    padding-top: 10px;
+    height: auto; }
+    #foot .lev5 #gb-satelity > span {
+      display: block;
+      margin: 0 auto;
+      float: none; }
+  #foot .lev6 {
+    padding-top: 20px; }
+    #foot .lev6 .plain > nav > ul {
+      overflow: hidden;
+      padding-top: 20px !important; }
+    #foot .lev6 .plain > nav {
+      padding-top: 0;
+      display: none; }
+    #foot .lev6 .plain > nav > ul > li {
+      width: 20%;
+      float: left;
+      clear: none;
+      padding: 0 15px 15px 15px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #eaeaea; }
+      #foot .lev6 .plain > nav > ul > li:last-child {
+        border-bottom: 0;
+        margin-bottom: 0; }
+      #foot .lev6 .plain > nav > ul > li a {
+        width: 100%;
+        display: block; }
+      #foot .lev6 .plain > nav > ul > li > a, #foot .lev6 .plain > nav > ul > li > .menusub {
+        width: 100%;
+        float: none; }
+      #foot .lev6 .plain > nav > ul > li ul li, #foot .lev6 .plain > nav > ul > li ul li a {
+        float: none; } }
+@media (max-width: 767px) {
+  #foot .foottop .lev2 .newspit {
+    display: block;
+    width: 100%;
+    float: none;
+    text-align: center; }
+  #foot .foottop .lev2 #facebook {
+    width: 100%;
+    float: none;
+    clear: both; }
+  #foot .lev3 .foot_menu ul li {
+    display: block;
+    float: none; }
+    #foot .lev3 .foot_menu ul li a {
+      border-left: none; }
+  #foot .lev4 .foot_txt p:first-child a {
+    display: block;
+    float: none;
+    margin: 0 auto 15px auto; }
+  #foot .lev6 .plain > nav > ul > li {
+    width: 100%;
+    float: none;
+    text-align: center; } }
+
+@media (max-width: 767px) {
+  #us-search #us-address-input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0; }
+  #us-search #us-search-button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0 0 3px 3px; }
+  #us-search + #map {
+    height: 350px !important; }
+  #us-search + #map + #us-list .address-item {
+    width: 100% !important;
+    float: none !important; } }
+
+@media (max-width: 991px) {
+  article table, div table {
+    width: 100%; }
+    article table tbody tr td, article table tbody tr td *, div table tbody tr td, div table tbody tr td * {
+      text-align: left !important; } }
+
+@media (max-width: 500px) {
+  .table-wrapper {
+    overflow-x: scroll; }
+    .table-wrapper .pit_tabela, .table-wrapper .pittab {
+      width: 100%;
+      min-width: 500px; } }
+
+@media (min-width: 992px) {
+  .foot .lev6 .footer-toggle {
+    display: none; } }
+@media (max-width: 991px) {
+  .foot .lev6 .plain {
+    padding: 0 15px;
+    margin-bottom: 20px; }
+  .foot .lev6 .footer-toggle {
+    border: 0;
+    width: 100%;
+    padding: 10px;
+    color: #ffffff;
+    display: block;
+    text-align: center;
+    background: #3399cc; }
+  .foot .lev6 .footer-toggle + nav {
+    padding-top: 20px;
+    border: 1px solid #eaeaea;
+    background: white; }
+    .foot .lev6 .footer-toggle + nav > ul > li > a {
+      color: #3399cc;
+      margin-bottom: 5px; } }
+
+@media (max-width: 767px) {
+  fieldset.cms_comments form.cms_comments > div {
+    box-sizing: border-box; }
+    fieldset.cms_comments form.cms_comments > div input[type="text"], fieldset.cms_comments form.cms_comments > div textarea {
+      width: 100%;
+      float: none;
+      box-sizing: border-box; } }
+
+body #main .pomoc {
+  background: #ffffff;
+  border-color: #cecece; }
+  @media (max-width: 991px) {
+    body #main .pomoc header {
+      width: 100%;
+      font-size: 14px; }
+    body #main .pomoc.open header:after {
+      content: "-";
+      top: 8px; }
+    body #main .pomoc.open ul {
+      display: block; }
+    body #main .pomoc header {
+      cursor: pointer;
+      position: relative; }
+      body #main .pomoc header:after {
+        top: 10px;
+        right: 15px;
+        content: "+";
+        height: 30px;
+        line-height: 40px;
+        color: #ffffff;
+        font-size: 36px;
+        position: absolute; }
+    body #main .pomoc ul {
+      display: none; }
+    body #main .pomoc ul li {
+      padding: 0 15px; }
+      body #main .pomoc ul li a {
+        border: 0;
+        margin: 0 0 5px 0;
+        background-repeat: no-repeat; }
+      body #main .pomoc ul li a span, body #main .pomoc ul li a em {
+        font-size: 13px; } }
+  @media (max-width: 767px) {
+    body #main .pomoc {
+      height: auto;
+      overflow: hidden; }
+      body #main .pomoc header {
+        width: 100%; }
+      body #main .pomoc ul {
+        clear: both;
+        padding-top: 10px; }
+      body #main .pomoc ul li {
+        float: none;
+        display: block; }
+      body #main .pomoc .edoradca {
+        border-right: none; }
+      body #main .pomoc .eszkolenia em, body #main .pomoc .eszkolenia input {
+        display: none; } }
+
+/*# sourceMappingURL=responsive.css.map */
+#BºZü      Y¶’Y¶’>/6³Y¿=–   /    :http://www.vat.pl/cms/img/1/css/responsive.css necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Server: Apache
+Last-Modified: Mon, 05 Jun 2017 08:39:14 GMT
+ETag: "267637-4465-5513270121080"
+Content-Type: text/css
+Content-Length: 17509
+Date: Mon, 11 Sep 2017 13:39:33 GMT
+X-Varnish: 1783979854 1783090125
+Age: 36606
+Via: 1.1 varnish
+ original-response-headers Server: Apache
+Last-Modified: Mon, 05 Jun 2017 08:39:14 GMT
+ETag: "267637-4465-5513270121080"
+Content-Type: text/css
+Content-Length: 17509
+Date: Mon, 11 Sep 2017 13:39:33 GMT
+X-Varnish: 1783979854 1783090125
+Age: 36606
+Via: 1.1 varnish
+Connection: keep-alive
+ uncompressed-len 0 net-response-time-onstart 2108 net-response-time-onstop 2266   De

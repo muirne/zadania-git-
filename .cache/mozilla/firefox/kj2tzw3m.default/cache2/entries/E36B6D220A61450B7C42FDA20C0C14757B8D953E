@@ -1,0 +1,661 @@
+// skrypty do obs³ugi infoTip
+function checkSubmit(waitSec)
+{
+    if(submitStarted)
+    {
+        no_submit_block = false;
+        return false;
+    }
+    else
+    {
+        if(!no_submit_block)
+        {
+            submitStarted = true;
+            window.setTimeout('submitStarted=false', waitSec*1000);
+        }
+        no_submit_block = false;
+        return true;
+    }
+}
+
+function placeFocus()
+{
+    if(disable_focus_placing)
+        return;
+    if(!document.forms || !document.forms[0] || !document.forms[0].elements)
+        return;
+    var elems = document.forms[0].elements;
+    for(var i = 0; i < elems.length; i++)
+    {
+        if(elems[i].className && elems[i].className == 'errFormField'
+          && elems[i].type != 'hidden' && elems[i].type != 'image'
+          && !elems[i].disabled)
+        {
+            elems[i].focus();
+            return;
+        }
+    }
+    for(var i = 0; i < elems.length; i++)
+    {
+        if(elems[i].type != 'hidden' && elems[i].type != 'image'
+          && !elems[i].disabled)
+        {
+            elems[i].focus();
+            break;
+        }
+    }
+}
+
+// menu
+function clickMenu(name, doChSub)
+{
+    if(document.forms[0].elements['button'])
+       document.forms[0].elements['button'].value='';
+    document.forms[0].elements['menu'].value=name;
+
+    if (doChSub) {
+        if (checkSubmit(15)) document.forms[0].submit();
+    } else {
+        document.forms[0].submit();
+    }
+}
+
+// przycisk
+// doChSub - ustawienie na true powoduje wywolanie metody checkSubmit
+function clickButton(name, doChSub)
+{
+    if(document.forms[0].elements['menu'])
+        document.forms[0].elements['menu'].value='';
+    document.forms[0].elements['button'].value=name;
+    if (doChSub) {
+        if (checkSubmit(15)) document.forms[0].submit();
+    } else {
+        document.forms[0].submit();
+    }
+}
+
+// INFO TIP
+function closeInfoTip()
+{
+  if(infoTipWindow && infoTipWindow.close)
+    infoTipWindow.close();
+}
+
+function infoTip(tipContent, tipTitle, tipType)
+{
+    var maxSmallTipSize = 240;
+    if(tipContent.length > maxSmallTipSize)
+    {
+        var tipHeight = 352;
+        var tipWidth = 226;
+        var tipLeft = eval(screen.availWidth-250);
+        var tipTop = eval(screen.availHeight-360);
+        var tipScrollbars = "yes";
+    }
+    else
+    {
+        var tipHeight = 182;
+        var tipWidth = 210;
+        var tipLeft = eval(screen.availWidth-250);
+        var tipTop = eval(screen.availHeight-230);
+        var tipScrollbars = "no";
+    }
+
+    closeInfoTip();
+    window.tipContent = tipContent;
+	window.tipTitle = tipTitle;
+	if (tipType == 'info')
+	{
+         window.tipType = "#1E72DE";
+    }
+	else
+	{
+	     window.tipType = "#BF1400";
+	}
+
+    params = "width=" + tipWidth+ ",height=" + tipHeight
+        + ",toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars="
+        + tipScrollbars + ",resizable=yes,left=" + tipLeft + ",top=" + tipTop;
+    if(tipContent.length > maxSmallTipSize)
+        infoTipWindow = window.open('../html/web/infoTip2.html', 'infoTipWindow', params);
+    else
+        infoTipWindow = window.open('../html/web/infoTip.html', 'infoTipWindow', params);
+}
+
+function rawWindow(url, title, width, height, resizable)
+{
+    if (!resizable) resizable="no";
+    params = "width=" + width + ", height=" + height
+      + ",toolbar=no,location=no,directories=no,status=no"
+      + ",menubar=no,resizable=" + resizable + ", left=100, top=100,scrollbars=yes";
+    window.open(url, title, params);
+    return false;
+}
+
+function makePos(obj, divWidth)
+{
+  var leftpos = 0;
+  var toppos = 0;
+
+  aTag = obj;
+  do {
+    aTag = aTag.offsetParent;
+    leftpos += aTag.offsetLeft;
+    toppos += aTag.offsetTop;
+  } while(aTag.tagName!="BODY");
+
+  var dLineStyle = document.getElementById('dynaLine').style;
+  dLineStyle.width= '' + divWidth + 'px';
+  dLineStyle.top = '' + (toppos + 21) +'px';
+  dLineStyle.left = '' + leftpos + 'px';
+  dLineStyle.visibility = 'visible';
+}
+
+function hide() {
+  var dLineStyle = document.getElementById('dynaLine').style;
+  dLineStyle.visibility = 'hidden';
+}
+
+// do obslugi checkbox'a i disablowania podanego pola (tekstowego)
+function checkboxClick(chbox, objToChange) {
+    if (!chbox) return;
+    if (!chbox.checked) {
+        //objToChange.disabled='disabled';
+        //objToChange.style.backgroundColor = '#ddd';
+		jQuery(objToChange).removeClass('textfield');
+		jQuery(objToChange).addClass('disabled');
+		jQuery(objToChange).parent().removeClass('textfield');
+		jQuery(objToChange).parent().addClass('disabled');
+        if ((objToChange.type == "select-one")||(objToChange.type == "radio")) {
+            elementDisabled(objToChange);
+        } else if (objToChange.type != "hidden"){
+            objToChange.readOnly = true;
+        }
+    } else {
+        //objToChange.disabled='';
+        //objToChange.style.backgroundColor = '#ffffff';
+		jQuery(objToChange).removeClass('disabled');
+		jQuery(objToChange).addClass('textfield');
+		jQuery(objToChange).parent().removeClass('disabled');
+		jQuery(objToChange).parent().addClass('textfield');
+        if ((objToChange.type == "select-one")||(objToChange.type == "radio")) {
+            elementEnabled(objToChange);
+        } else if (objToChange.type != "hidden"){
+            objToChange.readOnly = false;
+        }
+    }
+}
+
+/*
+    funkcja aktywuje i deaktywuje podane pola
+    objsOn  - lista obiektow do aktywacji
+    objsOff - lista obiektow do deaktywacji
+
+    onlyOff - bedzie jedynie obsluga wylaczania pol
+*/
+function switchOnOff(objsOn, objsOff, onlyOff) {
+    //obj = onOffList[0][0].type;
+    if (!onlyOff)
+        for (var i=0; i < objsOn.length; i++)
+        {
+            var obj = onOffListObject(objsOn[i]);
+            if (obj) {
+                if (obj.type != "hidden") {
+                   if (obj.type == "text" && obj.className!="errFormField") {
+                        //obj.style.backgroundColor = '#fff';
+					
+                   }
+                   if ((obj.type == "select-one")||(obj.type == "radio")) {
+					   
+                      elementEnabled(obj);
+                   } else {
+					  jQuery(obj).removeClass('disabled');
+					  jQuery(obj).addClass('textfield');
+					  jQuery(obj).parent().removeClass('disabled');
+					  jQuery(obj).parent().addClass('textfield');					   
+                      obj.readOnly = false;
+                   }
+                }
+            }
+        }
+    for (i=0; i < objsOff.length; i++) {
+        var obj = onOffListObject(objsOff[i]);
+        if (obj) {
+            if (obj.type != "hidden") {
+                if (obj.type == "text" && obj.className!="errFormField") {
+                    //obj.style.backgroundColor = '#ddd';
+					
+                }
+               if ((obj.type == "select-one")||(obj.type == "radio")) {
+				 
+                  elementDisabled(obj);
+               } else {
+				  jQuery(obj).removeClass('textfield');
+				  jQuery(obj).addClass('disabled');
+				  jQuery(obj).parent().removeClass('textfield');
+				  jQuery(obj).parent().addClass('disabled');
+                  obj.readOnly = true;
+               }
+            }
+        }
+    }
+}
+
+function elementEnabled (selectObj) {
+   var selName = selectObj.name;
+
+    if (selectObj.type == "radio")
+        elementEnabledByName("div_" + selName + "_" + selectObj.value);
+    else
+        elementEnabledByName("div_" + selName);
+}
+
+function elementEnabledByName (name) {
+    var sObj = document.getElementById(name);
+    if (!sObj) return;
+
+    var selStr = sObj.innerHTML;
+    selStr = removeString (selStr, "disabled=\"disabled\"");
+    selStr = removeString (selStr, "disabled=\"\"");
+    selStr = removeString (selStr, "disabled");
+
+    sObj.innerHTML = selStr;
+}
+
+function elementDisabled (selectObj) {
+   var selName = selectObj.name;
+
+    if (selectObj.type == "radio")
+        elementDisabledByName("div_" + selName + "_" + selectObj.value, true);
+    else
+        elementDisabledByName("div_" + selName);
+}
+
+function elementDisabledByName (name, isRadio) {
+    var sObj = document.getElementById(name);
+    if (!sObj) return;
+    var selStr = sObj.innerHTML;
+
+    selStr = removeString (selStr, "disabled");
+
+    if (selStr.indexOf("disabled>") >= 0) return;
+
+//    if (isRadio) {
+//        selStr = removeString (selStr, "checked=\"checked\"");
+//        selStr = removeString (selStr, "CHECKED");
+//    }
+    var ind = selStr.indexOf(">");
+
+    var s1 = selStr.substring(0,ind);
+    var s2 = selStr.substring(ind+1);
+
+    sObj.innerHTML = s1 + " disabled>" + s2;
+}
+
+function removeString (str, strToRem)
+{
+    var ind = str.indexOf(strToRem);
+    if (ind != -1) {
+        var s1 = str.substring(0,ind);
+        var s2 = str.substring(ind+strToRem.length);
+        str=s1+s2;
+    }
+    return str;
+}
+
+/*
+    obsluga grupy aktywnych, nieaktywnych elementow w formularzu
+    mainObj - obiekt ktory wywoluje aktywacje, deaktywacje grupy
+    lista - struktura opisujaca grupy (tablica):
+    onlyOff - jesli ustawiona, to bedzie wlaczana tylko opcja 'Off' componentow
+    [ obiektSwitcha(np.radio button), [obiekt_do aktywacji, ...], [obiekt_do_deaktywacji, ...] ] , ...
+*/
+function switcher (mainObj, lista, onlyOff) {
+    var i = 0;
+    var j = 0;
+    for (i=0; i < lista.length; i++) {
+        var objOnList0 = onOffListObject(lista[i][0]);
+        if (objOnList0 == mainObj) {
+            switchOnOff (lista[i][1], lista[i][2], onlyOff);
+            for (j=0; j < lista[i][1].length; j++) {
+                if (lista[i][1][j]) {
+                    var objOnList1 = onOffListObject(lista[i][1][j]);
+                    if (objOnList1 && objOnList1.type == "radio") {
+                        if (objOnList1.checked) {
+                            switcher (objOnList1, lista, false);
+                            break;
+                        } else {
+                            switcher (objOnList1, lista, true);
+                        }
+                    }
+                }
+            }
+            break;
+        }
+    }
+}
+
+/*
+    funkcja pomocnicza, do wyluskiwania obiektow ze struktury DOM
+    uzywana przy oblsuge OnOff listy
+    jesli 'obj' jest Stringiem, to traktowany jest jako id obiektu (pobierany przez getElementById)
+*/
+function onOffListObject (obj)
+{
+    if (typeof(obj) == 'string') {
+        var obj1 = document.getElementById(obj);
+        return obj1;
+    }
+    return obj;
+}
+
+
+function findOffListForElement(mainElement, lista)
+{
+    for (i=0; i < lista.length; i++) {
+            if (lista[i][0]) {
+                var listai0 = onOffListObject(lista[i][0]);
+                if (listai0 == mainElement) return lista[i][2];
+            }
+	}
+	return null;
+}
+
+/*
+ lista   - struktura onOffList zawierajaca pola z mapa wlaczania/wylaczania
+ */
+function switcherInit (mainObj, lista) {
+    var i = 0;
+    var j = 0;
+    var noSwitched = true;
+
+    if (!lista) return;
+    if (mainObj) {
+        switcher(mainObj, lista, false);
+        return;
+    }
+
+    // Specjalnie Mozilla dwa razy
+    for (k=0; k < 2; k++) {
+      for (i=0; i < lista.length; i++) {
+        if (lista[i] && lista[i][0]) {
+            var listai0 = onOffListObject(lista[i][0]);
+            switcher(listai0, lista, true);
+        }
+      }//for
+
+      for (i=0; i < lista.length; i++) {
+        if (lista[i] && lista[i][0]) {
+            var listai0 = onOffListObject(lista[i][0]);
+            if (listai0.type == "radio" && listai0.checked) {
+                switcher(listai0, lista, false);
+            }
+        }
+      }//for
+    }
+}
+
+
+function insert_spaces(x)
+{
+   right_str=x.slice(-3);
+   left_str=x.slice(0,-3);
+   x=right_str;
+   x=left_str.slice(-3).concat(x);
+   x=" ".concat(x);
+   for(i=3;i < left_str.length ; i=i+3)
+	{
+	   x=left_str.slice(-(i+3),-i).concat(x);
+       x=" ".concat(x);
+    }
+	return x;
+}
+
+function precision(x,d)
+{
+	with(Math)
+	var y = Math.pow(10,d);
+    var x = Math.round(x*y);
+	return insert_spaces(parseInt(x/y) +'.'+('0'+x).slice(-d));
+}
+
+function amount_update(field_array)
+{
+    var amount_total = 0;
+    
+    for ( i=0; i < field_array.length; i++) {
+    	var field_name = field_array[i];
+    	
+    	var v = document.forms[0].elements[field_name].value;
+        v = v.replace(" ",""); v = v.replace(",",".");
+        document.forms[0].elements[field_name].value=v;
+
+        if ((!isNaN(v))&&((v)!='')) {
+          amount_total = amount_total + parseFloat(v);
+    	}
+
+    }
+
+    document.getElementById("dynamic_amount").innerHTML=precision(amount_total,2);
+}
+
+function onload_amount_total(x)
+{
+    var reg = / /g;
+	x=x.toString();
+    x = x.replace(" ", "");
+	document.getElementById("dynamic_amount").innerHTML=precision(x,2);
+}
+
+function radiobutton_checked (radio_name,radio_value)
+{
+    document.forms[0].elements[radio_name][radio_value].checked=true;
+}
+
+function set_focus(button, force_focus)
+{
+    if (force_focus) {
+        var fel = document.getElementById(force_focus);
+        if (fel) fel.focus();
+    } else {
+
+        var i;
+        var j;
+
+        j=0;
+        for (i=0;i<document.forms[0].length;i++)
+        {
+            if (j==0)
+            {
+                if (document.forms[0].elements[i].type!='hidden' && !(document.forms[0].elements[i].readOnly==true || document.forms[0].elements[i].disabled))
+                {
+                    document.forms[0].elements[i].focus();
+                    j=1;
+                }
+            }
+        }
+
+        if (j==0)
+        {
+            var fel = document.getElementById(button);
+            if (fel) fel.focus();
+/*          for (i=0;i<document.all.length;i++)
+            {
+                if (document.all[i].type=='image' && document.all[i].name && document.all[i].name==button && j==1)
+                {
+                    document.all[i].focus();
+                    j++;
+                }
+                if (document.all[i].type=='image' && document.all[i].name && document.all[i].name==button && j==0)
+                {
+                    j++;
+                }
+            } */
+        }
+    }
+    // przesuniecie okna do gory
+    document.body.scrollTop = 0;
+}
+
+function isIE()
+{
+    var ie = navigator.userAgent;
+    if (ie.indexOf("MSIE") < 0) return false;
+    return true;
+}
+
+function submitOnEnter(evt)
+{
+   evt = (evt) ? evt : event;
+   var charC = (evt.which) ? evt.which : event.keyCode;
+   if (charC == 13) {
+      document.forms[0].submit();
+      return false;
+   }
+   return true;
+}
+
+function toggleEnabled(id, state, doClear) {
+    var obj = document.getElementById(id);
+    if (obj) {
+        obj.disabled = !state;
+        if (doClear && obj.disabled) {
+            clear(id);
+        }
+    }
+}
+
+function clear(id) {
+    var obj = document.getElementById(id);
+    if (obj) {
+        if (obj.value != null) {
+            obj.value = "";
+        }
+        if (obj.selectedIndex != null) {
+            obj.selectedIndex = -1;
+        }
+        if (obj.checked != null) {
+            obj.checked = false;
+        }
+    }
+}
+
+
+function popLayer( layer_name ) {
+	  var popped_layer;
+	  var browserType = "other";
+	  
+	  if (document.layers) {
+	  	browserType = "nn4";
+	  }
+	  if (document.all) {
+	  	browserType = "ie";
+	  }
+	  if (window.navigator.userAgent.toLowerCase().match("gecko")) {
+	   browserType= "gecko";
+	  }	  
+		
+	  if (browserType == "gecko") {
+		  popped_layer = eval('document.getElementById(layer_name)');
+	  } else if (browserType == "ie") {
+		  popped_layer = eval('document.getElementById(layer_name)');
+	  } else if (browserType == "nn4" ) {
+		  popped_layer = eval('document.layers[layer_name]');
+	  } else {
+		  popped_layer = eval('document.getElementById(layer_name)');
+	  }
+
+	  return popped_layer;
+}
+
+function hide_layer(layer_name) {
+	popLayer( layer_name ).style.display = 'none';
+}
+
+function show_layer(layer_name) {
+	popLayer( layer_name ).style.display = 'inline';
+}
+
+function show_hide_layer(layer_name) {
+	var popped_layer = popLayer( layer_name )
+  
+  if (popped_layer != null) {
+	  if (popped_layer.style.display == 'none') {
+		  popped_layer.style.display = 'inline';
+	  } else {
+		  popped_layer.style.display = 'none';
+	  }
+  }
+}
+
+function switch_true_false(element_name) {
+	if(document.forms[0].elements[element_name].value != null) {
+   		if(document.forms[0].elements[element_name].value == 0) {
+			document.forms[0].elements[element_name].value = 1;
+   		} else {
+			document.forms[0].elements[element_name].value = 0;
+   		}
+	}
+}
+
+function checkboxAllByPrefixSelect (namePrefix) {
+
+    if (!namePrefix) return;
+    
+    var elems = document.forms[0].elements;
+    for(var i = 0; i < elems.length; i++)
+    {
+        if(elems[i].type == 'checkbox' && elems[i].name.indexOf(namePrefix) == 0)
+        {
+            if (elems[i].checked == false) 
+            { 
+               elems[i].checked = true;
+            }
+        }
+    }
+}
+
+function checkboxAllByPrefixDeselect (namePrefix) {
+
+    if (!namePrefix) return;
+    
+    var elems = document.forms[0].elements;
+    for(var i = 0; i < elems.length; i++)
+    {
+        if(elems[i].type == 'checkbox' && elems[i].name.indexOf(namePrefix) == 0)
+        {
+            if (elems[i].checked == true) 
+            { 
+               elems[i].checked = false;
+            }
+        }
+    }
+}
+
+
+function toggleCheckgroup(name, state) {
+    var objarr = document.getElementsByName(name);
+    if (objarr.length > 0) {
+        for (var i = 0; i < objarr.length; ++i) {
+            objarr[i].checked = state;
+        }
+    }
+}
+z½ý­Ô      Y®ßÅY®ßÅ>)ç*Y°—<   8    :https://e-bank.credit-agricole.pl/scripts/web/common.js necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Date: Tue, 05 Sep 2017 17:31:14 GMT
+Server: Apache
+Last-Modified: Wed, 23 Aug 2017 16:43:27 GMT
+Etag: "61162-43d6-5576e693a49c0"
+Accept-Ranges: bytes
+Content-Length: 17366
+Content-Type: text/javascript
+ original-response-headers Date: Tue, 05 Sep 2017 17:31:14 GMT
+Server: Apache
+Last-Modified: Wed, 23 Aug 2017 16:43:27 GMT
+Etag: "61162-43d6-5576e693a49c0"
+Accept-Ranges: bytes
+Content-Length: 17366
+Keep-Alive: timeout=15, max=100
+Connection: Keep-Alive
+Content-Type: text/javascript
+ uncompressed-len 0 net-response-time-onstart 3778 net-response-time-onstop 3782   CÖ

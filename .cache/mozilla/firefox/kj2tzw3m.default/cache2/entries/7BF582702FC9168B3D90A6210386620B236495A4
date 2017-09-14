@@ -1,0 +1,1475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  
+  <meta content="text/html; charset=ISO-8859-2" http-equiv="content-type">
+
+  
+  <title>HTML-podstawy, przykłady tworzenia stron</title>
+</head>
+
+
+<body>
+
+<!-- Beginning of: /etc/httpd/conf-users/wstawka/wstawka_google_darmowe_strefa.pl -->
+
+<script type="text/javascript" id="cintpl_loader" src="//w.iplsc.com/internal/inpl.intad/inpl.intad.jssc"></script><!-- Begin DOTSRV -->
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var pp_gemius_identifier = "0nJF._e.GUanfXqR4NZDC8Wnj_gZxRscrVlo4ElDjIT.a7";
+function gemius_pending(i) { window[i] = window[i] || function() {var x = window[i+'_pdata'] = window[i+'_pdata'] || []; x[x.length]=arguments;};};
+gemius_pending('gemius_hit'); gemius_pending('gemius_event'); gemius_pending('pp_gemius_hit'); gemius_pending('pp_gemius_event');
+(function(d,t) {try {var gt=d.createElement(t),s=d.getElementsByTagName(t)[0],l='http'+((location.protocol=='https:')?'s':''); gt.setAttribute('async','async');
+gt.setAttribute('defer','defer'); gt.src=l+'://iwa.iplsc.com/xgemius.js?v=3'; s.parentNode.insertBefore(gt,s);} catch (e) {}})(document,'script');
+//--><!]]>
+</script>
+
+
+
+<script>
+var gfkSstConf = {
+    "url": "config.sensic.net/pl1-sst-w.js",
+    "media" : "strefaPL",
+    "content" : "Strefa-users_pages"
+};
+(function (w, d, c, s, id) {
+    if (d.getElementById(id)) {return;}
+    w[id] = w[id] || function () {
+        if ("undefined" == typeof gfkSstApi) {w[id].queue.push(arguments[0]);
+        } else {gfkSstApi.impression(arguments[0]);}
+    };
+    w[id].queue = w[id].queue || [];
+    var tag = d.createElement(s); var el = d.getElementsByTagName(s)[0];
+    tag.id = id; tag.async = true; tag.src = '//' + c.url;
+    el.parentNode.insertBefore(tag, el);
+})(window, document, gfkSstConf, 'script', 'gfkSst');
+</script>
+
+<script>
+        function inpl_partial_pageview(params){
+            if(typeof params != 'undefined' && typeof params.gfk != 'undefined'){
+                gfkSst(params.gfk);
+            }
+
+        }
+</script>
+
+<!-- End DOTSRV -->
+<!-- IWA -->
+<script>(function(i,n,t,e,r,j,a){i['IWAObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)};j=n.createElement(t),a=n.getElementsByTagName(t)[0];j.async=1;l='http'+((location.protocol=='https:')?'s:':':');j.src=l+e;a.parentNode.insertBefore(j,a)})(window,document,'script','//iwa.iplsc.com/iwa.js','iwa');iwa('create', 2);iwa('set', 'sessionDomain', 'strefa.pl');iwa("plugin","register","performance",{"unloadEvent":"p_unload_evt","redirect":"p_redirect","domainLookup":"p_domain_lookup","connect":"p_connect","request":"p_request","response":"p_response","parse":"p_parse","domContentLoaded":"p_dom_cnt_load","domContentLoadedEvent":"p_dom_cnt_load_evt","pageload":"p_load","pageloadEvent":"p_load_evt"});iwa("plugin","register","scroll",{"scrollToVar":"scroll"});iwa("plugin","register","pageheight",{"pageHeightVar":"pageheight"});iwa('send', 'pageview');</script>
+<!-- End IWA -->
+<script src="//js.iplsc.com/inpl.measure/inpl.measure.jssc" async></script>
+<!-- AdServer CID: INTERIA/hosting PID: main -->
+<script type="text/javascript">
+<!-- <![CDATA[
+if(location.protocol.substr(0,4)=='http')document.write(unescape('%3C')+'script id="INTERIA.PL.SPECJALNE.hosting.main" src="'+location.protocol+'//hub.com.pl/_'+(new Date()).getTime()+'/ad.js?id=jmMGG.YakhqC6lYwZksm_UVVEl99F73_kmJNoUkRFYX.c7/x='+screen.width+'/y='+screen.height+Inpl.Ad.getKeywords("/key=")+'" type="text/javascript"'+unescape('%3E%3C')+'/script'+unescape('%3E'));
+// ]]> -->
+</script>
+<script type="text/javascript">
+<!-- <![CDATA[
+Inpl.Ad.init({'skyscraper':'adoceanhubrndoblqfvb'});
+if(location.hash.indexOf('#inpltesterad')>-1&&location.hash.replace(/[^0-9a-z=]/g,"").length==45){document.write(unescape('%3C')+'script id="kodmaster" src="http://reklama.interia.pl/testuj/inpltester?'+location.hash.replace(/[^0-9a-z=]/g,"")+'" type="text/javascript"'+unescape('%3E%3C')+'/script'+unescape('%3E'));}
+// ]]> -->
+</script>
+<!-- Wygenerowano dla: userspages.strefa.pl, INTERIA/hosting/main | 2015-10-27 02:41:02 -->
+<!	-- GA2.1 -->
+<script type="text/javascript">
+<!-- <![CDATA[
+var _gaq = _gaq || [];
+_gaq.push(['b._setAccount', 'UA-2540319-29']);
+_gaq.push(['b._addOrganic', 'google.interia','q']);
+if(-1!=location.hash.indexOf("utm_"))_gaq.push(['b._setAllowAnchor', true]);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['b._trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+// ]]> --> 
+</script>
+<!-- /GA2.1 -->
+<!-- Wygenerowano dla: userspages.strefa.pl | 2015-10-27 02:41:01 -->
+
+<!-- End of: /etc/httpd/conf-users/wstawka/wstawka_google_darmowe_strefa.pl -->
+
+
+
+<h2>HTML</h2>
+<br>
+<span style="font-weight: bold;">HTML</span> jest "językiem"&nbsp;przeglądarki.. HTML został wynaleziony w 1990 przez naukowcę Tima Berners-Lee. <br>
+
+Celem było ułatwienie naukowcom na r&oacute;żnych uniwersytetach
+dostępu do dokument&oacute;w badawczych innych naukowc&oacute;w. <br>
+
+Projekt okazał się wielkim sukcesem, większym niż wyobrażał sobie to Tim Berners-Lee. <br>
+
+Poprzez wynalezienie języka HTML, położył on fundamenty internetu takiego jaki znamy dziś.<br>
+
+<br>
+
+HTML jest językiem, kt&oacute;ry umożliwia prezentację informacji (np. badań naukowych) w Internecie. <br>
+
+To co widzimy kiedy przeglądamy strony to interpretacja kodu HTML przez przeglądarkę.<br>
+
+Aby zobaczyć kod HTML strony w internecie, po prostu kliknij "Widok" w
+g&oacute;rnym menu przeglądarki i wybierz "Źr&oacute;dło".<br>
+
+Do czego można używać kodu HTML?<br>
+
+<br>
+
+Jeżeli chcemy robić strony internetowe, nie ma innej drogi niż HTML. <br>
+Nawet jeżeli korzystamy z programu do robienia stron, takiego jak np.
+Dreamweaver, podstawowa wiedzia na temat języka HTML ułatwia&nbsp;
+życie i ulepszy&nbsp; stronę internetową. <br>
+
+HTML jest łatwy do nauczenia i użycia. <br>
+
+<br>
+
+HTML jest używany do tworzenia stron internetowych.&nbsp;<br>
+
+HTML jest skr&oacute;tem od "HyperText Mark-up Language" - już teraz wiesz więcej niż potrzeba na tym etapie.&nbsp;<br>
+
+Hyper jest odwrotnością słowa liniowy. W dawnych dobrych czasach
+-&nbsp; programy komputerowe działały liniowo: kiedy program uruchomił
+jedną akcję szedł do następnej linii,<br>
+
+ zaraz po tym do kolejnej i tak dalej. <br>
+
+Ale HTML jest inny - możesz iść gdziekolwiek chcesz i kiedy chcesz. Na
+przykład, nie trzeba odwiedzić MSN.com zanim wejdziesz na HTML.net.<br>
+
+Text - tekst.<br>
+
+Mark-up (podnosić) oznacza to co robisz z tekstem. Podnosisz standard
+tekstu tak jak to robisz za pomocą edytor&oacute;w tekstowych z
+tytułami, wypunktowaniem lub pogrubianiem i tak dalej.<br>
+
+Language (język) to czym jest HTML. Używa wielu Angielskich wyraz&oacute;w.<br>
+
+<br>
+
+<span style="font-weight: bold;">&nbsp;XHTML</span> (Extensible HyperText Mark-up Language) kt&oacute;ry, w
+skr&oacute;cie, jest nową i bardziej strukturalną wersją języka HTML.<br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h3>Elementy i znaczniki języka HTML</h3>
+
+<span style="font-weight: bold;">Elementy</span> tworzą strukturę w
+kodzie dokumentu HTML i informują przeglądarkę w jaki spos&oacute;b
+strona internetowa ma prezentować informację. <br>
+
+Generalnie element składa się ze znacznika otwierającego, treści, i znacznika zamykającego.<br>
+
+<br>
+
+<span style="font-weight: bold;">Znaczniki</span> to etykiety używane do zaznaczania początku i końca elementu.<br>
+
+<br>
+
+Wszystkie znaczniki mają ten sam format: zaczynają się znakiem mniejszości <span style="font-weight: bold;">"&lt;"</span> i kończą znakiem większości <span style="font-weight: bold;">"&gt;". </span><br>
+
+<br>
+
+Generalnie m&oacute;wiąc, są dwa rodzaje znacznik&oacute;w -<span style="text-decoration: underline;"> otwierające: &lt;html&gt; i zamykające: &lt;/html&gt;.</span> <br>
+
+Jedyną r&oacute;żnicą jest znak ukośnik "/" dodawany przy znacznikach
+zamykających. Zawartość elementu umieszczasz między znacznikiem
+zamykającym i otwierającym.<br>
+
+<br>
+
+Ok, element b używamy aby pogrubić litery. <br>
+
+Cały tekst pomiędzy znacznikiem otwierającym &lt;b&gt; i znacznikiem
+zmykającym &lt;/b&gt; zostanie pogrubiony w oknie przeglądarki. ("b"
+jest skr&oacute;tem od "bold" czyli wyraźny.)<br>
+
+<br>
+
+<span style="text-decoration: underline;">Przykład 1:</span><br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;b&gt;Ten tekst musi zostać pogrubiony.&lt;/b&gt;</span><br>
+
+<br>
+
+Będzie tak wyglądał w przeglądarce:<br>
+
+<span style="font-weight: bold; background-color: rgb(255, 255, 153);">Ten tekst musi zostać pogrubiony. </span><br>
+
+<br>
+
+Elementy<span style="font-weight: bold;"> h1, h2, h3, h4, h5 i h6 </span>są
+używane do robienia nagł&oacute;wk&oacute;w (h oznaczna "heading" czyli
+nagł&oacute;wek), gdzie h1 jest pierwszym poziomem tak więc wynikiem
+jest tekst największy, <br>
+
+h2 jest drugim poziomem i wynikiem będzie trochę mniejszy tekst, a h6
+jest sz&oacute;stym poziomem i jednocześnie ostatnim w hierarchii
+nagł&oacute;w&oacute;w - tekst będzie najmniejszy.<br>
+
+<br>
+
+<span style="text-decoration: underline;">Przykład 2:</span><br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;h1&gt;To jest nagł&oacute;wek&lt;/h1&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;h2&gt;To jest pod-nagł&oacute;wek&lt;/h2&gt;</span><br>
+
+<br>
+
+Będzie tak wyglądał w przeglądarce:<br>
+
+<h1 style="background-color: rgb(255, 255, 153);">To jest nagł&oacute;wek</h1>
+
+<h2 style="background-color: rgb(255, 255, 153);">To jest pod-nagł&oacute;wek</h2>
+
+Zawsze trzeba otwierać i zamykać znaczniki?<br>
+
+<br>
+
+Tak jak m&oacute;wią, są wyjątki w regułach i w HTML wyjątkiem jest to,
+że istnieje kilka element&oacute;w, dla kt&oacute;rych znacznik
+zamykający i otwierający ma to samo znaczenie. <br>
+
+Te tak zwane <span style="text-decoration: underline;">puste elementy</span>
+nie są połączone w żaden spos&oacute;b z tekstem, a jedynie tworzą
+oddzielne etykiety, na przykład, znacznik nowej linii wygląda tak: <span style="font-weight: bold;">&lt;br /&gt;.</span><br>
+
+Znaczniki lepiej pisać z dużej czy małej litery?<br>
+
+<br>
+
+Większość przeglądarek nie patrzą na wielkość liter znacznik&oacute;w.
+&lt;HTML&gt;, &lt;html&gt; lub &lt;HtMl&gt; normalnie da ten sam
+rezultat. Jednak, poprawnie znaczniki pisze się małą literą. <br>
+
+Umieszczamy znaczniki w dokumencie HTML. Strona internetowa zawiera
+jeden lub więcej dokument&oacute;w HTML. Serfując po internecie, prawie
+za każdym razem otwierasz inne dokumenty HTML.<br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;"><br>
+
+<h3><span style="font-weight: bold;">Tworzymy swoją pierwszą stronę internetową</span></h3>
+
+<br>
+
+Potrzebny edytor, np. Notatnik i przeglądarka Internetowa do tworzenia stron internetowych<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);"></span><br>
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;head&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;title&gt;Moja pierwsza strona internetowa &lt;/title&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/head&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;body&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;p&gt;Hurrah! To jest moja pierwsza strona internetowa.&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/body&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/html&gt;</span><br>
+
+<br>
+
+P w znaczniku &lt;p&gt; jest skr&oacute;tem od "paragraph" co traktujemy dosłownie - paragraf (akapit) tekstu.<br>
+
+<br>
+
+Zapisujemy, np. str1.htm (lub rozszerzenie html)<br>
+
+<br>
+
+<br>
+
+&lt;p&gt;Jest używany przy akapitach.&lt;/p&gt;<br>
+
+&lt;b&gt;Wyświetla tekst pogrubiony.&lt;/b&gt;<br>
+
+&lt;h1&gt;Nagł&oacute;wek&lt;/h1&gt;<br>
+
+&lt;h2&gt;Podnagł&oacute;wek&lt;/h2&gt;<br>
+
+&lt;h3&gt;Pod-podnagł&oacute;wek&lt;/h3&gt; <br>
+
+<br>
+
+Przykład 2.&nbsp; str2.htm<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;html&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;head&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;title&gt;Moja strona internetowa&lt;/title&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/head&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;body&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;h1&gt;Nagł&oacute;wek&lt;/h1&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;p&gt;tekst, tekst tekst, tekst&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;h2&gt;Podnagł&oacute;wek&lt;/h2&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;p&gt;tekst, tekst tekst, tekst&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/body&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/html&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br>
+
+<br>
+
+Nowe elementy: &lt;i&gt;,. &lt;b&gt;,&nbsp; &lt;i&gt;, &lt;small&gt;, &lt;br&gt;, &lt;hr&gt;<br>
+
+<br>
+
+Pochylanie tekstu - używając znacznika otwierającego <span style="font-weight: bold;">&lt;i&gt;</span> i zamykającego <span style="font-weight: bold;">&lt;/i&gt;.</span> Tak, "i" jest skr&oacute;tem od "italic" czyli styl liter pochylonych.<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;i&gt;To powinno być pochylone.&lt;/i&gt;</span><br>
+
+<span style="font-style: italic; background-color: rgb(255, 255, 153);">To powinno być pochylone.<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;small&gt;To powinno być małe.&lt;/small&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<small>To powinno być małe.</small><br>
+
+<br>
+
+</span><br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;b&gt;&lt;i&gt;Tekst jest pogrubiony i pochylony&lt;/i&gt;&lt;/b&gt;</span><br>
+
+<span style="background-color: rgb(255, 255, 153); font-weight: bold; font-style: italic;">Tekst jest pogrubiony i pochylony</span><br style="font-weight: bold; text-decoration: underline;">
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">Tekst&lt;br /&gt; i trochę tekstu w nowej linii </span><br>
+
+<span style="background-color: rgb(255, 255, 153);">Tekst</span><br style="background-color: rgb(255, 255, 153);">
+
+<span style="background-color: rgb(255, 255, 153);">i trochę tekstu w nowej linii</span><br>
+
+<br>
+
+Kolejny element, kt&oacute;ry zamykamy i otwieramy w jednym znaczniku
+to &lt;hr /&gt;. Używamy go do rysowania linii poziomej ("hr" oznacza
+"horizontal rule" czyli wyliniowanie poziome):<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;hr /&gt;</span><br>
+
+<hr style="width: 100%; height: 2px;"><br>
+
+<h3><span style="font-weight: bold;">Listy:</span></h3>
+
+Przykłady element&oacute;w wymagających otwierającego i zamykającego
+znacznika - tak jak większość element&oacute;w - to ul, ol i li. <br>
+
+Te elementy są używane do tworzenia listy.<br>
+
+<br>
+
+ul jest skr&oacute;tem od "unordered list" czyli lista nie uporządkowana i wstawia kulę przed każdą pozycją w liście.<br>
+
+ ol jest skr&oacute;tem od "ordered list" czyli lista uporządkowana i numeruje każdą pozycję w liście. <br>
+
+Aby umieszczać elementy w liście używaj znacznika li("list item" - element listy).<br>
+
+Przykłady:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;ul&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;li&gt;Element 1 listy&lt;/li&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;li&gt;Element 2 listy&lt;/li&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/ul&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br>
+
+<ul>
+
+  <li>Element 1 listy</li>
+
+  <li>Element 2 listy</li>
+
+</ul>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;ol&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;li&gt;Pierwszy element listy&lt;/li&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;li&gt;Drugi element listy&lt;/li&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/ol&gt;</span><br>
+
+<br>
+
+<ol>
+
+  <li>Pierwszy element listy</li>
+
+  <li>Drugi element listy</li>
+
+</ol>
+
+Przykład 3. str3.htm<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;i&gt;Przetłuszczony&lt;/i&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;small&gt;Mały tekst&lt;/small&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;br /&gt; Koniec linii</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;hr /&gt; Linia pozioma</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;ul&gt;Lista&lt;/ul&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;ol&gt;Lista uporządkowana&lt;/ol&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;li&gt;Elment listy&lt;/li&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h3>Atrybuty</h3>
+
+Elementy tworzą strukturę w dokumentach HTML i informują przeglądarkę jak ma wyglądać strona internetowa <br>
+
+(na przykład, &lt;br /&gt; informuje przeglądarkę o utworzeniu nowej linii). <br>
+
+Niekt&oacute;re elementy mogą zawierać więcej informacji. Te dodatkowe informacje nazywane są atrybutami.<br>
+
+np.<br>
+
+&lt;h2 style="background-color:#ff0000;"&gt;Moja przyjaźń z HTML&lt;/h2&gt;<br>
+
+<br>
+
+&lt;html&gt;<br>
+
+&nbsp; &nbsp; &lt;head&gt;<br>
+
+&nbsp; &lt;/head&gt;<br>
+
+&nbsp; &lt;body&gt;<br>
+
+&nbsp; &lt;<span style="background-color: rgb(153, 255, 153);">h2 style="background-color:#ff0000;"&gt;Moja przyjaźń z HTML&lt;/h2&gt;</span><br>
+
+&nbsp; &nbsp; &lt;/body&gt;<br>
+
+&lt;/html&gt;<br>
+
+<br>
+
+Atrybuty są zawsze umieszczane w znaczniku otwierającym a wartość
+atrybutu umieszczana jest w cudzysłowiu. Średnik używamy do oddzielenia
+wartości dla atrybutu style<br>
+
+Jest wiele r&oacute;żnych atrybut&oacute;w. Pierwszy&nbsp; to atrybut stylu. <br>
+
+Za pomocą atrybutu stylu możesz dodać układ graficzny do swojej strony internetowej. <br>
+
+Dla przykładu kolor tła:<br>
+
+<br>
+
+html&gt;<br>
+
+&nbsp;&nbsp; &lt;head&gt;<br>
+
+&nbsp; &lt;/head&gt;<br style="background-color: rgb(255, 102, 102);">
+
+<span style="background-color: rgb(255, 0, 0);">&nbsp;<span style="background-color: rgb(255, 102, 102);"> &lt;body style="background-color:#ff0000;"&gt;</span></span><br>
+
+&nbsp; &lt;/body&gt;<br>
+
+&lt;/html&gt;<br>
+
+<br>
+
+W powyższym przykładzie, prosiliśmy o kolor tła o kodzie "#ff0000". To
+jest kod koloru czerwonego zapisany za pomocą numer&oacute;w
+szesnastkowych (HEX). <br>
+
+Każdy kolor ma sw&oacute;j własny numer w kodzie szesnastkowym.Np.<br>
+
+Biały: #ffffff<br>
+
+Czarny: #000000 (zeros)<br>
+
+Czerwony: #ff0000<br>
+
+Niebieski: #0000ff<br>
+
+Zielony: #00ff00<br>
+
+Ż&oacute;łty: #ffff00<br>
+
+<br>
+
+Kod szesnastkowy koloru zapisany jest za pomocą znaku # i sześciu
+liter. Jest ponad 1000 kod&oacute;w HEX i nie jest łatwe kt&oacute;ry
+kod odpowiada za dany kolor.<br>
+
+Można także używać angielskich nazw popularnych kolor&oacute;w (biały -
+white, czarny - black, czerwony - red, niebieski - blue, zielony -
+green i ż&oacute;łty - yellow).<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;body style="background-color: red;"&gt;<br>
+
+<br>
+
+<span style="background-color: rgb(255, 255, 255); font-style: italic; font-weight: bold;">Og&oacute;lnie
+element składa się ze znacznika otwierającego z lub bez wielu
+atrybut&oacute;w, zawartości oraz znacznika zamykającego. Proste jak
+drut :). Patrz na ilustrację poniżej.</span><br>
+
+<img style="width: 508px; height: 122px;" alt="Element" src="element.png"><br>
+
+</span>
+<hr style="width: 100%; height: 2px;"><span style="background-color: rgb(153, 255, 153);"><span style="background-color: rgb(255, 255, 255);"></span></span>
+<h3><span style="background-color: rgb(153, 255, 153);"><span style="background-color: rgb(255, 255, 255);">Odnośniki</span></span></h3>
+
+<span style="background-color: rgb(153, 255, 153);"></span>Do zrobienia
+odnośnika będziemy używać tego samego co zawsze używamy w kodzie HTML:
+elementu. Prosty element z jednym atrybutem i już możesz umieścić
+odnośnik na swojej stronie. Tutaj przedstawie przykład jak może
+wyglądać odnośnik do strony HTML.net:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">a href="http://www.html.net/"&gt;Oto odnośnik do HTML.net&lt;/a&gt;</span><br>
+
+<br>
+
+Będzie wyglądał następująco w przeglądarce:<br>
+
+<a href="www.html.net">Oto odnośnik do HTML.net</a><br>
+
+<br>
+
+Element a oznacza "anchor" czyli kotwica. Natomiast atrybut href jest
+skr&oacute;tem od "hypertext reference" czli odnośnik hyper tekstowy,
+określający do kąd prowadzi odnośnik - najczęściej adres pliku w
+internecie.<br>
+
+W powyższym przykładzie atrybut href posiada wartość
+"http://www.html.net", kt&oacute;ra jest pełnym adresem prowadzącym do
+HTML.net i nazywa się URL (Uniform Resource Locator). <br>
+
+&nbsp;"http://" musi zawsze zawierać się w URLu.<br>
+
+Zdanie "Oto odnośnik do HTML.net"jest tekstem ukazującym się jako
+odnośnik. Pamiętaj aby zamknąć element kotwicy znacznikiem &lt;/a&gt;<br>
+
+<br>
+
+Jeżeli chcemy umieścić odnośnik do swoich własnych stron Internetowych, nie musisz picać pełnego adresu (URL) dokumentu. <br>
+
+Na przykład, jeżeli zrobiłeś dwie strony (nazwijmy je strona1.htm i
+strona2.htm) i zapisałeś je w tym samym katalogu możesz utworzyć
+odnośnik na jednej stronie do drugiej poprzez wpisanie tylko nazwy
+pliku jako adres strony. W takich okolicznościach odnośnik ze strony
+strona1.htm do strona2.htm może wyglądać następująco:<br>
+
+<br>
+
+Przykład 2:<br>
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;a href="strona2.htm"&gt;Kliknij tutaj aby przejść do strony 2&lt;/a&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+Jeżeli strona 2 została umieszczona w podfolderze (nazwanym "podfolder"), odnośnik może wyglądać tak:<br>
+
+&lt;a href="podfolder/strona2.htm"&gt;Kliknij tutaj aby przejść do strony 2&lt;/a&gt;<br>
+
+<br>
+
+Natomiast gdy strona 2 (umieszczona w podfolderze) ma posiadać odnośnik do strony 1, odnośnik będzie wyglądał tak:<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;a href="../strona1.htm"&gt;Odnośnik do strony 1&lt;/a&gt;<br>
+
+<br>
+
+<span style="background-color: rgb(255, 255, 255);">"../" wskazuje na
+folder o jeden poziom wyższy od folderu, w kt&oacute;rym znajduje się
+dokument z odnośnikiem. Tym samym sposobem, możesz wskazać plik dwa lub
+trzy poziomy wyżej poprzez wielokrotne powtarzanie sekwencji "../" (np.
+dla odnośnika w folderze dwa poziomy wyżej należy napisać "../../").</span><br>
+
+</span><br>
+
+Co z wewnętrznymi odnośnikami na stronie?<br>
+
+Możesz także utworzyć wewnętrzny odnośnik we wnętrzu strony - na
+przykład tabelę ze spisem odnośnik&oacute;w do nagł&oacute;wk&oacute;w
+na stronie. <br>
+
+Wszystko co musisz użyć to atrybut id (identyfikator) i symbol "#".<br>
+
+Używaj atrybutu id aby oznaczyć element do kt&oacute;rego chcesz zrobić odnośnik<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;h1 id="heading1"&gt;nagł&oacute;wek 1&lt;/h1&gt;</span><br>
+
+<br>
+
+Możesz teraz utworzyć odnośnik do elementu przy wykorzystaniu "#" w atrybucie odnośnika. <br>
+
+Za symbolem "#" musi być umieszczona wartość atrybutu id elementu dla kt&oacute;rego zrobiłeś odnośnik. <br>
+
+Na przykład:<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;a href="#heading1"&gt;Odnośnik do nagł&oacute;wka 1&lt;/a&gt;</span><br>
+
+<br>
+
+Przykład z odnośnikami:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;html&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp; &lt;head&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/head&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;body&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;<span style="font-weight: bold;">&nbsp; &lt;p&gt;&lt;a href="#naglowek1"&gt;Odnośnik do nagł&oacute;wka 1&lt;/a&gt;&lt;/p&gt;</span></span><br style="background-color: rgb(153, 255, 153); font-weight: bold;">
+
+<span style="background-color: rgb(153, 255, 153); font-weight: bold;">&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;a href="#naglowek2"&gt;Odnośnik do nagł&oacute;wka 2&lt;/a&gt;&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; background-color: rgb(102, 255, 153);">&lt;h1 id="naglowek1"&gt;Nagł&oacute;wek 1&lt;/h1&gt;</span></span><br style="font-weight: bold; background-color: rgb(102, 255, 153);">
+
+<span style="font-weight: bold; background-color: rgb(102, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;p&gt;Tekst tekst tekst tekst&lt;/p&gt;</span><br style="font-weight: bold; background-color: rgb(102, 255, 153);">
+
+<br style="font-weight: bold; background-color: rgb(102, 255, 153);">
+
+<span style="font-weight: bold; background-color: rgb(102, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;h1 id="naglowek2"&gt;Nagł&oacute;wek 2&lt;/h1&gt;</span><br style="font-weight: bold; background-color: rgb(102, 255, 153);">
+
+<span style="font-weight: bold; background-color: rgb(102, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;p&gt;Tekst tekst tekst tekst&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; </span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/body&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/html&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br>
+
+<br>
+
+będzie wyglądał tak w przeglądarce (kliknij na oba odnośniki):<br>
+
+<br>
+
+<span style="background-color: rgb(255, 255, 255); color: rgb(51, 102, 255);">Odnośnik do nagł&oacute;wka 1</span><br style="background-color: rgb(51, 204, 255);">
+
+<span style="color: rgb(51, 102, 255);">Odnośnik do nagł&oacute;wka 2</span><br>
+
+<h1>Nagł&oacute;wek 1</h1>
+
+Tekst tekst tekst tekst<br>
+
+<h1>Nagł&oacute;wek 2</h1>
+
+Tekst tekst tekst tekst<br>
+
+<br>
+
+Możesz także zrobić odnośnik do adresu e-mail. Robisz to prawie tak samo jak dla dokumentu HTML:<br>
+
+Przykład:<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;a href="mailto:nobody@html.net"&gt;Wyślij e-mail do nikogo w HTML.net&lt;/a&gt;</span><br>
+
+<br>
+
+Będzie tak wyglądał w przeglądarce:<br>
+
+<br>
+
+<span style="color: rgb(51, 51, 255);">Wyślij e-mail do nikogo w HTML.net</span><br>
+
+<br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h3>Obrazki</h3>
+
+Wstawianie obrazk&oacute;w, np.<br>
+
+&lt;img src="david.jpg" alt="David" /&gt;<br>
+
+<br>
+
+Jedyne co musisz zrobić to powiedzieć przeglądarce, że chcesz umieścić
+obrazek (img) i gdzie obrazek jest zlokalizowany (src, skr&oacute;t od
+"Źr&oacute;dło"). <br>
+
+Element img jest otwierany i zamykany przy użyciu tego zamego
+znacznika. Tak jak znacznik &lt;br /&gt; , nie jest on związany z
+tekstem.<br>
+
+<br>
+
+"david.jpg" to nazwa pliku obrazka kt&oacute;ry chcemy umieścić na stronie. ".jpg" to typ obrazka. <br>
+
+Tak jak rozszerzenie ".htm" oznacza dokument HTML, tak ".jpg"
+m&oacute;wi przeglądarce że plikiem jest obrazek. Istnieją trzy
+r&oacute;żne typy plik&oacute;w obrazk&oacute;w kt&oacute;re możesz
+umieścić na stronie:<br>
+
+GIF (Graphics Interchange Format)<br>
+
+JPG / JPEG (Joint Photographic Experts Group)<br>
+
+PNG (Portable Network Graphics)<br>
+
+<br>
+
+Obrazki GIF są często najlepszym rozwiązaniem dla orzedstawiania
+grafiki i rysunk&oacute;w, podczas gdy JPEG wykorzystywany jest przy
+fotografiach. Istnieją dwa powody takiego zachowania: Po pierwsze,
+obrazki GIF mogą składać się z maksymalnie 256 kolor&oacute;w, podczas
+gdy obrazki JPEG mogą zawierać miliony kolor&oacute;w. Po drugie,
+format GIF lepiej kompresuje prostą grafikę, natomiast format JPEG jest
+optymalny dla złożonych obrazk&oacute;w. Im większa kompresja, tym
+mniejsza wielkość pliku obrazka, i mniejszy czas ładowania strony.
+Pewnie wiesz z własnego doświadczenia, że 'ciężkie' strony potrafią być
+bardzo męczące dla użytkownika.<br>
+
+Tradycyjnie, formaty GIF i JPEG są dominującymi typami obrazk&oacute;w,
+ale prawdopodobnie, format PNG staje się coraz bardziej popularny
+(przede wszystkim z powodu koszt&oacute;w formatu GIF). Format PNG
+zawiera pod wieloma względami cechy formatu JPEG oraz GIF: miliony
+kolor&oacute;w i efektywna kompresja.<br>
+
+<br>
+
+<br>
+
+Można&nbsp; umieścić obrazek w innym folderze, lub nawet obrazek zamieszczony na innej stronie Internetowej:<br>
+
+<br>
+
+&lt;<span style="background-color: rgb(153, 255, 153);">img src="images/logo.png" /&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;img src="http://www.html.net/logo.png" /&gt;</span><br>
+
+<br>
+
+Obrazek może być odnośnikiem:<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;a href="http://www.html.net"&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;img src="logo.png" /&gt;&lt;/a&gt;</span><br>
+
+Zawsze musisz używać atrybutu src, kt&oacute;ry określa położenie
+obrazka umieszczanego na stronie. Poza tym, jest parę innych
+atrybut&oacute;w kt&oacute;re mogą być użyteczne podczas umieszczania
+obrazk&oacute;w.<br>
+
+<br>
+
+Atrybut alt używamy aby dodać alternatywny opis do obrazka,
+wykorzystywany w przypadku, gdy z jakiegoś powodu obrazek nie zostanie
+pokazany na stronie. To jest wyjątkowo ważne dla użytkownik&oacute;w z
+gorszym wzrokiem, lub gdy strona ładuje się bardzo wolno. Z tego
+powodu, zawsze używaj atrybutu alt:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;img src="logo.png" alt="Logo HTML.net" /&gt;</span><br>
+
+<br>
+
+Niekt&oacute;re przeglądarki w przypadku najechania kursorem myszy na
+obrazek wyświetlają małe okienko z wartością tego atrybutu umieszczoną
+jako tekst w tym okienku. Proszę zapamiętaj że celem atrybutu alt jest
+dostarczenie alternatywnego opisu obrazka. Atrybut alt nie powinien być
+używany do wyświetlania specjalnej wiadomości typu pop-up
+(wyskakującej) gdyż użytkownicy o słabym wzroku usłyszą tą wiadomość
+ale nie będą wiedzieć co przedstawia obrazek.<br>
+
+<br>
+
+Atrybut title może być używany aby dodawać informację do obrazka:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;img src="logo.png" title="Ucz się języka HTML na stronie HTML.net" /&gt;</span><br>
+
+<br>
+
+<span style="text-decoration: underline;">Dwa dodatkowe ważne atrybuty to </span><span style="font-weight: bold; text-decoration: underline;">width</span><span style="text-decoration: underline;"> i </span><span style="font-weight: bold; text-decoration: underline;">height</span><span style="text-decoration: underline;">:</span><br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;img src="logo.png" width="141" height="32" /&gt;</span><br>
+
+<br>
+
+Atrybuty width i height mogą zostać użyte do określenia szerokości oraz
+wysokości obrazka. Wartość użyta w tych atrybutach wyrażona jest w
+pikselach. <br>
+
+Piksele to jednostka miary używana do określania rozdzielczości ekranu. (Najczęściej używamy rozdzielczości: 1024x768 pikseli). <br>
+
+Odwrotnie niż w przypadku centymetr&oacute;w, piksele to relatywna
+jednostka miary kt&oacute;ra zależna jest od rozdzielczości ekranu. <br>
+
+Dla użytkownika z wysoką rozdzielczością ekranu, 25 pikseli może
+oznaczać 1 centymetr na ekranie, podczas gdy te same 25 pikseli w
+przypadku małej rozdzielczości<br>
+
+ mogą oznaczać 1.5 centymetra na ekranie.<br>
+
+<br>
+
+Jeżeli nie ustawisz szerokości i wysokości, obrazek zostanie
+umieszczony z aktualną wielkością. Dzięki szerokości i wysokości możesz
+manipulować wielkością:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;img src="logo.png" width="32" height="32" /&gt;</span><br>
+
+<br>
+
+akże, warto zapamiętać że wielkość pliku obrazka będzie taka sama i nie
+zmieni szybkości ładowania strony, nawet jeżeli zmniejszysz rozmiar
+obrazka na stronie. Z tego powodu, nie powinieneś nigdy zmniejszać
+rozmiaru obrazka za pomocą atrybut&oacute;w width oraz height. Zamiast
+tego, powinieneś zawsze zmieniać rozmiar obrazka w edytorze graficznym
+jeżeli chcesz żeby strona ładowała się szybciej.<br>
+
+<br>
+
+Tak jak powiedziałem, nadal dobrym pomysłem jest używanie
+atrybut&oacute;w width oraz height ponieważ przeglądarka będzie mogła
+wykryć ile miejsca potrzebuje na umieszczenie obrazka zanim załaduje do
+końca plik obrazka. To pozwala przeglądarce ustawić stronę ładnie i w
+szybki spos&oacute;b.<br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h3>Tabele</h3>
+
+Tabele są używane do przedstawiania "danych tabelarycznych" tzn., informacji logicznie zaprezentowanych w kolumnach i wierszach.<br>
+
+Budowanie tabel w HTML może na początku wydawać się skomplikowane ale
+jeżeli spokojnie i dokładnie przeanalizujesz przykłady, zauważysz ich
+logikę i prostotę - tak jak wszędzie w języku HTML.<br>
+
+<br>
+
+Przykład 1:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;table&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 1&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 2&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 3&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 4&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/table&gt;</span><br>
+
+<br>
+
+Będzie tak wyglądał w przeglądarce:<br>
+
+<span style="background-color: rgb(255, 255, 153);">Kom&oacute;rka 1&nbsp;&nbsp;&nbsp; Kom&oacute;rka 2</span><br style="background-color: rgb(255, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);"><span style="background-color: rgb(255, 255, 153);">Kom&oacute;rka 3&nbsp;&nbsp;&nbsp; Kom&oacute;rka 4</span><br>
+
+<br>
+
+<span style="background-color: rgb(255, 255, 255);">Jaka jest r&oacute;żnica między &lt;tr&gt; i &lt;td&gt;?</span><span style="background-color: rgb(255, 255, 255);"></span><br style="background-color: rgb(255, 255, 255);">
+
+<span style="background-color: rgb(255, 255, 255);">3 r&oacute;żne elementy są używane do wstawiania tabel:</span><br style="background-color: rgb(255, 255, 255);">
+
+<span style="background-color: rgb(255, 255, 255);">Znacznik otwierający &lt;table&gt; i zamykający &lt;/table&gt; rozpoczyna i kończy definicję tabeli. Logiczne.</span><br style="background-color: rgb(255, 255, 255);">
+
+<span style="background-color: rgb(255, 255, 255);"><span style="font-weight: bold;">&lt;tr&gt; oznacza "table row"</span> (wiersz tabeli) i rozpoczyna oraz kończy wiersze poziome. Nadal logiczne.</span><br style="background-color: rgb(255, 255, 255);">
+
+<span style="background-color: rgb(255, 255, 255);"><span style="font-weight: bold;">&lt;td&gt; jest skr&oacute;tem dla "table data"</span> (dane tabeli). Ten znacznik zaczyna i kończy każdą kom&oacute;rkę w wierszu twojej tabeli. Wszystko proste i logiczne.</span><br style="background-color: rgb(255, 255, 255);">
+
+<br style="background-color: rgb(255, 255, 255);">
+
+<span style="background-color: rgb(255, 255, 255);">Oto co się dzieje w Przykładzie 1: tabeli zaczyna się znacznikiem <span style="font-weight: bold;">&lt;table&gt;</span>, następny jest &lt;tr&gt;, kt&oacute;ry informuje o rozpoczęciu wiersza. <br>
+
+Dwie kom&oacute;rki są wstawione w wierszu: &lt;td&gt;Kom&oacute;rka 1&lt;/td&gt; i &lt;td&gt;Kom&oacute;rka 2&lt;/td&gt;. <br>
+
+Wiersz dalej jest zamknięty znacznikiem &lt;/tr&gt; i natychmiast za
+nim &lt;tr&gt; rozpoczyna nowy wiersz. Nowy wiersz także zawiera dwie
+kom&oacute;rki. <br>
+
+Tabela zostaje zamknięta znacznikiem &lt;/table&gt;.</span><br style="background-color: rgb(255, 255, 255);">
+
+<span style="background-color: rgb(255, 255, 255);">Dla jasności: wiersz jest poziomym zbiorem kom&oacute;rek a kolumny to pionowy zbi&oacute;r kom&oacute;rek:</span><br>
+
+<br>
+
+<span style="background-color: rgb(255, 255, 255);">Przykład 2:</span><br>
+
+<br>
+
+&lt;table&gt;<br>
+
+&nbsp; &lt;tr&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 1&lt;/td&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 2&lt;/td&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 3&lt;/td&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 4&lt;/td&gt;<br>
+
+&nbsp; &lt;/tr&gt;<br>
+
+&nbsp; &lt;tr&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 5&lt;/td&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 6&lt;/td&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 7&lt;/td&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 8&lt;/td&gt;<br>
+
+&nbsp; &lt;/tr&gt;<br>
+
+&nbsp; &lt;tr&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 9&lt;/td&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 10&lt;/td&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 11&lt;/td&gt;<br>
+
+&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 12&lt;/td&gt;<br>
+
+&nbsp; &lt;/tr&gt;<br>
+
+&lt;/table&gt;<br>
+
+</span><br>
+
+Będzie tak wyglądał w przeglądarce:<br>
+
+<span style="background-color: rgb(255, 255, 153);">Kom&oacute;rka 1&nbsp;&nbsp;&nbsp; Kom&oacute;rka 2&nbsp;&nbsp;&nbsp; Kom&oacute;rka 3&nbsp;&nbsp;&nbsp; Kom&oacute;rka 4</span><br style="background-color: rgb(255, 255, 153);">
+
+<span style="background-color: rgb(255, 255, 153);">Kom&oacute;rka 5&nbsp;&nbsp;&nbsp; Kom&oacute;rka 6&nbsp;&nbsp;&nbsp; Kom&oacute;rka 7&nbsp;&nbsp;&nbsp; Kom&oacute;rka 8</span><br style="background-color: rgb(255, 255, 153);">
+
+<span style="background-color: rgb(255, 255, 153);">Kom&oacute;rka 9&nbsp;&nbsp;&nbsp; Kom&oacute;rka 10&nbsp;&nbsp;&nbsp; Kom&oacute;rka 11&nbsp;&nbsp;&nbsp; Kom&oacute;rka 12</span><br>
+
+<br>
+
+<span style="text-decoration: underline;">Atrybuty tabeli</span><br>
+
+Na przykład, atrybut border określa grubość obramowania wok&oacute;ł tabeli:<br>
+
+<br>
+
+Przykład 3:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;table border="1"&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 1&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 2&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 3&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 4&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/table&gt;</span><br>
+
+<br>
+
+Tak jak z obrazkami, możesz także ustawić szerokość tabeli w pikselach - lub alternatywnie w procentach ekranu:<br>
+
+&lt;table border="1" width="30%"&gt;<br>
+
+<br>
+
+Jest wiele atrybut&oacute;w dla tabel. <br>
+
+Tutaj są kolejne dwa:<br>
+
+<span style="font-weight: bold;">align:</span> określa poziome
+położenie zawartości dla całej tabeli, wiersza lub pojedyńczej
+kom&oacute;rki. Wartości: left (lewo), center (środek) lub right
+(prawo).<br>
+
+<span style="font-weight: bold;">valign</span>: określa pionowe
+położenie zawartości w kom&oacute;rkach tabeli. Wartości, top
+(g&oacute;ra), middle (środek) lub bottom (d&oacute;ł).<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;td align="right" valign="top"&gt;Kom&oacute;rka 1&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+Dwa atrybuty <span style="font-weight: bold;">colspan</span> i rowspan są używane kiedy chcesz stworzyć zaawansowane tabele.<br>
+
+Colspan jest skr&oacute;tem od "column span" (rozciągnięcie kolumny).
+Colspan jest używany w znaczniku &lt;td&gt; do określania na ile kolumn
+ma się rozciągnąć kom&oacute;rka:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;table border="1"&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td colspan="3"&gt;Kom&oacute;rka 1&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 2&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 3&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 4&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/table&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br>
+
+Wynik:<br>
+
+<span style="background-color: rgb(255, 255, 153);">Kom&oacute;rka 1</span><br style="background-color: rgb(255, 255, 153);">
+
+<span style="background-color: rgb(255, 255, 153);">Kom&oacute;rka 2&nbsp;&nbsp;&nbsp; Kom&oacute;rka 3&nbsp;&nbsp;&nbsp; Kom&oacute;rka 4<br>
+
+<span style="background-color: rgb(255, 255, 255);"><br>
+
+Poprzez ustawienie colspan na "3", kom&oacute;rka w pierwszym wierszu
+rozciągnie się na trzy kolumny. Jeżeli zamiast tego ustawili byśmy
+colspan na "2", kom&oacute;rka rozciągnęła by się tylko na dwie kolumny
+i było by konieczne umieszczenie dodatkowej kom&oacute;rki w pierwszym
+wierszu tak by liczba kolumn była jednakowa w obu wierszach.</span><br>
+
+<br>
+
+<span style="background-color: rgb(255, 255, 255);">Inny przykład:</span><br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;table border="1"&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td colspan="2"&gt;Kom&oacute;rka 1&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 2&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 3&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 4&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 5&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/table&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+</span><br style="background-color: rgb(153, 255, 153);">
+
+Będzie tak wyglądał w przeglądarce:<br>
+
+<span style="background-color: rgb(255, 255, 153);">Kom&oacute;rka 1&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Kom&oacute;rka 2</span><br style="background-color: rgb(255, 255, 153);">
+
+<span style="background-color: rgb(255, 255, 153);">Kom&oacute;rka 3&nbsp;&nbsp;&nbsp; Kom&oacute;rka 4&nbsp;&nbsp;&nbsp; Kom&oacute;rka 5</span><br>
+
+<br>
+
+<span style="font-weight: bold;">Rowspan</span><br>
+
+<br>
+
+Rowspan określa na ile wierszy ma zostać kom&oacute;rka rozciągnięta:<br>
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;table border="1"&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td rowspan="3"&gt;Kom&oacute;rka 1&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 2&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 3&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; &lt;td&gt;Kom&oacute;rka 4&lt;/td&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/tr&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/table&gt;</span><br>
+
+<br>
+
+Będzie tak wyglądał w przeglądarce:<br>
+
+<span style="background-color: rgb(255, 255, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Kom&oacute;rka 2</span><br style="background-color: rgb(255, 255, 153);">
+
+<span style="background-color: rgb(255, 255, 153);">Komorka 1 &nbsp;Kom&oacute;rka 3</span><br style="background-color: rgb(255, 255, 153);">
+
+<span style="background-color: rgb(255, 255, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Kom&oacute;rka &nbsp;4<br>
+
+<br>
+
+<span style="background-color: rgb(255, 255, 255);">W powyższym przykładzie rowspan jest ustawiony na "3" w kom&oacute;rce Kom&oacute;rka 1. <br>
+
+To określa nachodzenie kom&oacute;rki na 3 wiersze (własny wiersz plus
+dodatkowe dwa). Kom&oacute;rka 1 oraz Kom&oacute;rka 2 są więc w jednym
+wierszu, podczas gdy Kom&oacute;rka 3 i Kom&oacute;rka 4 formują dwa
+niezależne wiersze.<br>
+
+<br style="background-color: rgb(255, 255, 153);">
+
+</span></span>
+<hr style="width: 100%; height: 2px;">
+<h3>Układ graficzny element&oacute;w (CSS)</h3>
+
+<br>
+
+Aby dodać na swojej stronie układ graficzny wykorzystaj Kaskadowe Arkusze Stył&oacute;w (Cascading Style Sheets - CSS). <br>
+
+CSS jest lepszą połową języka HTML: HTML zajmuje się nieprzyjemną
+częścią (strukturą), podczas gdy CSS nadaje miły akcent (układ
+graficzny).<br>
+
+CSS może być dodany dzięki atrybutowi style. <br>
+
+<br>
+
+Na przykład, możesz ustawić czcionki i wielkość czcionki akapitu:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;p style="font-size:20px;"&gt;To jest czcionka wielkości 20&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;p style="font-family:courier;"&gt;To jest czcionka Courier&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;p style="font-size:20px; font-family:courier;"&gt;To jest czcionka Courier wielkości 20&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br>
+
+<span style="text-decoration: underline;">Jedną z inteligentnych cech CSS jest możliwość globalnego określenia wyglądu i układu graficznego element&oacute;w. </span><br style="text-decoration: underline;">
+
+<span style="text-decoration: underline;">Zamiast używania atrybutu
+style w każdym znaczniku, możesz powiedzieć przeglądarce by ten sam
+styl przypisała pewnej części element&oacute;w na stronie:</span><br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;html&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;head&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;title&gt;Moja pierwsza strona CSS&lt;/title&gt;&nbsp;&nbsp;&nbsp; </span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; <span style="background-color: rgb(102, 255, 153);">&lt;style type="text/css"&gt;</span></span><br style="background-color: rgb(102, 255, 153);">
+
+<span style="background-color: rgb(102, 255, 153);">&nbsp;&nbsp;&nbsp; &nbsp; h1 {font-size: 30px; font-family: arial;}</span><br style="background-color: rgb(102, 255, 153);">
+
+<span style="background-color: rgb(102, 255, 153);">&nbsp;&nbsp;&nbsp; &nbsp; h2 {font-size: 15px; font-family: courier;}</span><br style="background-color: rgb(102, 255, 153);">
+
+<span style="background-color: rgb(102, 255, 153);">&nbsp;&nbsp;&nbsp; &nbsp; p {font-size: 8px; font-family: "times new roman";}</span><br style="background-color: rgb(102, 255, 153);">
+
+<span style="background-color: rgb(102, 255, 153);">&nbsp; &lt;/style&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/head&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;body&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;h1&gt;Moja pierwsza strona CSS&lt;/h1&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;h2&gt;Witam na mojej pierwszej stronie CSS&lt;/h2&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;p&gt;Tutaj możesz zobaczyć jak działa CSS&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp; &lt;/body&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;/html&gt;</span><br>
+
+<br>
+
+W powyższym przykładzie CSS został umieszczony w sekcji
+nagł&oacute;wkowej więc ma zastosowanie na całej stronie. Aby to
+zrobić, wystarczy umieścić znacznik &lt;style type="text/css"&gt;,
+kt&oacute;ry m&oacute;wi przeglądarce że umieszczasz CSS.<br>
+
+W przykładzie wszystkie nagł&oacute;wki na stronie będą miały czcionkę
+Arial wielkości 30px a podnagł&oacute;wki Courier wielkości 15. Tekst w
+akapitach będzie posiadał czcionkę <br>
+
+Times New Roman wielkości 8.<br>
+
+<br>
+
+Kolejną opcją jest umieszczenie CSS w oddzielnym dokumencie. Dzięki
+oddzielnemu dokumentowi CSS możesz aplikować te same style dla wielu
+stron na raz. <br>
+
+<br>
+
+Bardzo mądrze jeżeli chcesz na przykład zmienić czcionkę dla strony internetowej z dużą ilością dokument&oacute;w HTML. <br>
+
+<br>
+
+CSS może zostać użyty nie tylko do określania typu czcionki oraz rozmiar&oacute;w. <br>
+
+Daje on o wiele więcej możliwości. Na przykład, możesz dodać kolor i tło.<br>
+
+ Oto parę przykład&oacute;w żebyś miał z czym poeksperymentować:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;p style="color:green;"&gt;Zielony napis&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;h1 style="background-color: blue;"&gt;Tytuł na niebieskim tle&lt;/h1&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;body style="background-image: url('http://www.html.net/logo.png');"&gt;</span><br>
+
+<br>
+
+<br>
+
+Poza dodawaniem kolor&oacute;w, typ&oacute;w czcionkek itp., CSS
+portafi także kontrolować pozycjonowanie element&oacute;w na stronie
+(marginesy, otaczanie, wyr&oacute;wnanie, szerokość, wysokość itp.).
+Poprzez regulowanie r&oacute;żnych ustawień element&oacute;w, dzięki
+CSS jesteś w stanie elegancko i precyzyjnie rozmieścić elementy na
+stronie.<br>
+
+<br>
+
+Przykład <br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;p style="padding:25px;border:1px solid red;"&gt;Kocham CSS&lt;/p&gt;</span><br>
+
+<br>
+
+Dzięki właściwości float element może ułożyć się na prawo lub na lewo a kolejne elementy będą go otaczać. <br>
+
+Następujący przykład ilustruje zasadę:<br>
+
+<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;img src="bill.jpg" alt="Bill Gates" style= "float:left;" /&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; sed diam nonummy nibh euismod tincidunt ut laoreet dolore</span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; magna aliquam erat volutpat. Ut wisi enim ad minim veniam, </span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; quis nostrud exerci tation ullamcorper suscipit </span><br style="background-color: rgb(153, 255, 153);">
+
+<span style="background-color: rgb(153, 255, 153);">&nbsp;&nbsp;&nbsp; lobortis nisl ut aliquip ex ea commodo consequat...&lt;/p&gt;</span><br style="background-color: rgb(153, 255, 153);">
+
+<br style="background-color: rgb(153, 255, 153);">
+
+Za pomocą właściwości position, możesz umieścić element na swojej stronie dokładnie tam gdzie chcesz:<br>
+
+<span style="background-color: rgb(153, 255, 153);">&lt;img src="bill.jpg" alt="Bill Gates" style="position:absolute;bottom:50px;right:10px;" /&gt;</span><br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;">
+<h3>Publikacja stron</h3>
+
+<br>
+
+Aby umieścić stronę w internecie, musisz tylko mieć trochę miejsca na serwerze w inernecie oraz darmowy program FTP.<br>
+
+Można też wykorzystać np. Total Commander do publikacji w roli FTP (Sieć, FTP Połączenie)<br>
+
+<br>
+
+Jeżeli masz dostęp do Internetu, może już masz darmowe miejsce na
+serwerze dla twojej strony intenetowej. Twoje miejsce na serwerze
+najprawdopodomniej będzie wyglądało następująco:
+http://home.dostawca.com/~uzytkownik. Jest też możliwość że masz musisz
+jeszcze aktywować swoje konto na serwerze. Więcej informacji na ten
+temat znajdziesz na stronie dostawcy twojego internetu.<br>
+
+<br>
+
+Inną opcją jest znalezienie darmowego miejsca na serwerze w internecie.
+W ten sam spos&oacute;b jak zakładałeś konto poczty elektronicznej (na
+przykład na Hotmail lub WP), możesz zarejestrować za darmo miejsce na
+serwerze w internecie. Jest wiele firm oferujących taką usługę - jedna
+z nich to Angelfire (kliknij "Sign up " i dalej kieruj się instrukcją)
+- rejestracja zajmie tylko parę minut.<br>
+
+<br>
+
+Aby mieć dostęp do serwera, musisz znać tak zwaną "Nazwę hosta" (Na przykład, ftp.osemka.pl) oraz nazwę użytkownika i hasło.<br>
+
+Czy to wszystko czego potrzebuję?<br>
+
+Aby mieć dostęp do serwera i załadować swoje strony, musisz mieć także
+klienta FTP. Możesz nie posiadać jeszcze takiego programu, ale
+naszczęście, możesz go ściągnąć za darmo.<br>
+
+Istnieje wiele r&oacute;żnych program&oacute;w FTP. Jednym z lepszych
+jest FileZilla, kt&oacute;ra jest całkowicie za darmo. Więc teraz
+ściągnij FileZille ze strony filezilla.sourceforge.net.<br>
+
+I jak załaduje strony na serwer?<br>
+
+<br>
+
+Niżej opisany jest spos&oacute;b załadowania stron na darmowe konto na
+serwerze Angelfire za pomocą programu FileZilla. Ale procedura jest
+bardzo podobna także dla innych dostawc&oacute;w i program&oacute;w FTP.<br>
+
+Otw&oacute;rz program FTP podczas połączenia z Internetem. Wpisz "Nazwę
+Hosta " ("ftp.angelfire.com" w polu "Address"), użytkownika (pole
+"User") oraz hasło (pole "Password") i kliknij "Connect". Powinieneś
+teraz mieć dostęp do serwera. po jednej stronie programu możesz
+zobaczyć zawartość swojego komputera ("Local Site"), a po drugiej,
+możesz zobaczyć zawartość serwera ("Remote Site")<br>
+
+Znajdź swoje dokumenty HTML oraz obrazki na swoim dysku (w kategorii
+"Local site") i przekopiuj je na serwer (kategoria "Remote site")
+poprzez podw&oacute;jne kliknięcie plik&oacute;w do skopiowania. Teraz
+cały świat może je zobaczyć! (Na przykład, pod adresem
+http://www.angelfire.com/folk/htmlnet/strona1.htm).<br>
+
+<br>
+
+Nazwij jedną ze stron "index.htm" (lub "index.html") i stanie się ona
+domyślną stroną. tzn. jeżeli wpiszesz adres
+http://www.angelfire.com/folk/htmlnet (bez nazwy pliku) zobaczysz tak
+naprawdę strone http://www.angelfire.com/folk/htmlnet/index.htm.<br>
+
+<br>
+
+</body>
+</html>
+ŠýMű      Y¸)Y¸,>0@í       .    :http://casimirr.strefa.pl/HTMLPodstPrzykl.htm necko:classified 1 strongly-framed 0 request-method GET request-Host casimirr.strefa.pl response-head HTTP/1.0 200 OK
+Date: Tue, 12 Sep 2017 16:58:17 GMT
+Server: Apache
+Vary: Host
+Content-Type: text/html
+Content-Language: pl
+ original-response-headers Date: Tue, 12 Sep 2017 16:58:17 GMT
+Server: Apache
+Vary: Host
+Content-Type: text/html
+Content-Language: pl
+Connection: close
+ uncompressed-len 0 predictor::resource-count 11 predictor::http://w.iplsc.com/internal/inpl.intad/inpl.intad.jssc 1,1,1505235497,4096 predictor::http://js.iplsc.com/inpl.measure/inpl.measure.jssc 1,1,1505235497,4096 predictor::http://casimirr.strefa.pl/element.png 1,1,1505235497,4096 net-response-time-onstart 152 net-response-time-onstop 647 predictor::http://iwa.iplsc.com/xgemius.js?v=3 1,1,1505235497,4096 predictor::http://config.sensic.net/pl1-sst-w.js 1,1,1505235497,4096 predictor::http://iwa.iplsc.com/iwa.js 1,1,1505235497,4096 predictor::http://hub.com.pl/_1505235498665/ad.js?id=jmMGG.YakhqC6lYwZksm_UVVEl99F73_kmJNoUkRFYX.c7/x=1366/y=768/key=testcappinguposlowach 1,1,1505235497,4096 predictor::http://interia.hit.gemius.pl/fpdata.js?href=casimirr.strefa.pl 1,1,1505235497,4096 predictor::http://stats.g.doubleclick.net/dc.js 1,1,1505235497,4096 predictor::http://interia.hit.gemius.pl/_1505235500495/rexdot.js?l=90&id=0nJF._e.GUanfXqR4NZDC8Wnj_gZxRscrVlo4ElDjIT.a7&et=view&hsrc=1&extra=&fr=1&tz=-120&fv=-&href=http%3A%2F%2Fcasimirr.strefa.pl%2FHTMLPodstPrzykl.htm&ref=https%3A%2F%2Fwww.google.pl%2F&screen=1366x768r1000&col=24&window=1207x594&ltime=74&lsdata=QzrMtvcXYRi_FMbsW5L0aYnKXxr78JcZLUvzCAdzW6b.H7Iwek2KkJPyZK37fD4DoJdtIJAde8E46JzdDCnEY0H_P2e0/FFl4lsaK.Zqwi/&fpdata=T6QnZ.yU_FE80KGodu6AR6ZmpFUngzuc29wt5DD9oxb.G7&vis=1&lsadd=KlGVsGoa 1,1,1505235497,4096 predictor::http://interiaao.hit.gemius.pl/_1505235500647/redot.gif?id=11.gkieJI4pfMDSon9sPGpR8LcAG9w_kQ7Nz8H9cwfD.D7&stparam=yomslinmba&sarg=59B6938D4955F990 1,1,1505235497,4096   ö.

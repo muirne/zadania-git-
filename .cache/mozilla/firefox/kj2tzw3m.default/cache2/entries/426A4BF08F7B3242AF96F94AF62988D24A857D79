@@ -1,0 +1,911 @@
+/*global $, document, setTimeout, window, Validator, console, alert */
+
+String.prototype.escapeDiacritics = function()
+{
+    return this.replace(/ą/g, 'a').replace(/Ą/g, 'A')
+        .replace(/ć/g, 'c').replace(/Ć/g, 'C')
+        .replace(/ę/g, 'e').replace(/Ę/g, 'E')
+        .replace(/ł/g, 'l').replace(/Ł/g, 'L')
+        .replace(/ń/g, 'n').replace(/Ń/g, 'N')
+        .replace(/ó/g, 'o').replace(/Ó/g, 'O')
+        .replace(/ś/g, 's').replace(/Ś/g, 'S')
+        .replace(/ż/g, 'z').replace(/Ż/g, 'Z')
+        .replace(/ź/g, 'z').replace(/Ź/g, 'Z');
+};
+
+(function () {
+    'use strict';
+
+    var loadScripts;
+
+    var ignore = true;
+
+    $(function () {
+
+        loadScripts('js/vendor/jquery.uniform.js', 'utf-8', function () {
+            $('.uniform').uniform();
+        });
+
+        loadScripts('js/vendor/jquery.meiomask.js', 'utf-8', function () {
+            $.mask.masks = $.extend($.mask.masks, {
+                pesel:         { mask: '99999999999' },
+                postcodehead:   { mask: '99' },
+                postcodetail:   { mask: '999' },
+                number: { mask: '999999999' },
+				nrb: { mask: '99999999999999999999999999' },
+                dowod: { mask: '***999999' },
+                passport: { mask: 'PP9999999'},
+				number4: { mask: '9999' },
+				number16: { mask: '9999999999999999' },
+                datepl: {mask: '99/99/9999' },
+				polishanddigits: {mask: 'g', type: 'repeat'},
+                polish: {mask: 'L', type: 'repeat'}
+            });
+            $.mask.rules = $.extend($.mask.rules, {
+                p: /[abcdefghijklmnopqrstuvwxyz]/,
+                P: /[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]/,
+                L: /[a-z\u0080-\u017F\u002D\u0020]/i,
+				g: /[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ]/
+            });
+            $('input.masked').setMask({
+                'attr': 'data-mask'
+            });
+        });
+
+        loadScripts('js/vendor/jquery.makeplaceholder.js', 'utf-8', function () {
+            $('input[placeholder]').makePlaceholder();
+        });
+
+		$( '.tooltip' ).tooltip({
+            position: {
+                my: "left+5 bottom-17",
+                at: "left top",
+                using: function( position, feedback ) {
+                    $( this ).css( position );
+                    $( "<div>" )
+                        .addClass( "arrow" )
+                        .addClass( feedback.vertical )
+                        .addClass( feedback.horizontal )
+                        .appendTo( this );
+                }
+            },
+            content: function(){
+                if($(this).attr('title').length) {
+                    return $(this).attr('title');
+                } else {
+                    return $(this).children('span').html();
+                }
+            }
+        });
+
+        $(document).on('blur', 'input.required', function () {
+            if ($(this).hasClass('datepicker')) {
+                var $this = $(this);
+
+                setTimeout(function () {
+                    Validator.checkField($this, $this.data('parser'));
+                }, 200);
+            } else {
+                Validator.checkField($(this), $(this).data('parser'));
+            }
+        });
+        $(document).on('change', 'select.required', function () {
+            Validator.checkField($(this), $(this).data('parser'));
+        });
+
+        $('select', '#subject').on('change', function () {
+            $('.icon-16, .error', '#subject').remove();
+            $('.selector', '#subject').removeClass('invalid');
+
+            if ($('select', '#subject').val() === "") {
+                $('#subject').append('<span class="icon-16 invalid"></span><span class="error">Należy wybrać temat</span>');
+                $('.selector', '#subject').addClass('invalid');
+            }
+        });
+
+
+        $('#input_email, #input_email2, #input_phone, #input_phone2').on('keydown', function (e) {
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86)) {
+                e.preventDefault();
+            }
+        });
+
+        $('#input_name, #input_lastname').on('keydown', function (e) {
+            if ($(this).val().length >= 30) {
+                if (!(e.keyCode === 18 || e.keyCode === 17 || e.keyCode === 35 || e.keyCode === 36 || e.keyCode === 37 || e.keyCode === 39 || e.keyCode === 46 || e.keyCode === 8)) {
+                    e.preventDefault();
+                }
+            }
+        });
+
+        $(document).on('click', '.ignore', function() {
+            ignore = false;
+            $(this).parent().parent().hide();
+        });
+
+        // vote function
+        $('.fields-stack .pull-left .addField').on('click', function() {
+            if ( !$(this).hasClass('active') ) {
+                $('.fields-stack .pull-left .addField').removeClass('active');
+            }
+            $(this).toggleClass('active');
+            var input = $('.additional-field');
+            input.val('');
+            var textarea = $('.question-input-short');
+            $('.ico-text').removeClass('active');
+            textarea.prop('disabled', true);
+
+            if ( $(this).hasClass('active') ) {
+                input.val($(this).index());
+                $(this).parent().find('li').removeClass('active');
+                $(this).addClass('active');
+                $(this).parent().next('.fields').hide();
+                textarea.prop('disabled', false);
+                $('.ico-text').addClass('active');
+            }
+        });
+
+        $('#main-form').on('submit', function (e) {
+            var elements = $('.required'),
+                l = elements.length,
+                currEl,
+                i;
+
+            $('.icon-16, .error').remove();
+            $('.selector, input').removeClass('invalid');
+            $('.checkboxes-valid').hide();
+            $('.fields').hide();
+
+            if ($('select', '#subject').val() === "") {
+                $('#subject').append('<span class="icon-16 invalid"></span><span class="error">Należy wybrać temat</span>');
+                $('.selector', '#subject').addClass('invalid');
+            }
+
+            var inputs = $('.checkboxes > div').length;
+            var inputsCheck = inputs;
+            $('.checkboxes > div').each(function() {
+                var input = $(this).find('input').val();
+                if ( input == '1' )
+                    inputsCheck--
+            });
+
+            if ( $('.additional-field').val() != '' && $('.question-input-short').val() == '' ) {
+
+                $('.lastValid').removeClass('longer').append('<span class="icon-16 invalid"></span><span class="error">Proszę uzupełnić treść</span>');
+                $('.lastValid').show();
+                setTimeout(function() {
+                    $('.lastValid').hide();
+                }, 2500);
+            }
+            var textarea = $('.question-input-short').val().escapeDiacritics();
+            console.log(ignore);
+            if ( ($('.additional-field').val() != '' && textarea.match(/placowka|placowki|placowce|placowkach|oddzial|oddzialowi|oddzialu|oddzialach|oddziale|pracownik|pracownikowi|pracownikom|doradca|doradcy|doradcow|pracownica|pracowniczka|dpradczyni|przelew|przelewu|przelewem|przelewy|logowanie|logowaniem|logowania|ca24|ca 24|dostep|dostepu/i)) && ignore ) {
+                $('.lastValid').addClass('longer').append('<span class="icon-16 invalid"></span><span class="error longer">Formularz służy do zgłaszania opinii dotyczącej serwisu internetowego. <a href="#" class="ignore">zignoruj</a></span>');
+                $('.lastValid').show();
+                setTimeout(function() {
+                    $('.lastValid').hide();
+                }, 5000);
+            }
+
+
+            if ( inputsCheck >= inputs ) {
+                $('.checkboxes-valid').append('<span class="icon-16 invalid"></span><span class="error">Proszę wybrać cel</span>');
+                $('.checkboxes-valid').show();
+                setTimeout(function() {
+                    $('.checkboxes-valid').hide();
+                }, 2500);
+            }
+
+            for (i = 0; i < l; i++) {
+                currEl = elements.eq(i);
+                Validator.checkField(currEl, currEl.data('parser'));
+            }
+
+            if ($('.error, .invalid').length) {
+                e.preventDefault();
+            }
+
+        });
+
+        // vote function
+        $('ul.list > li').on('click', function() {
+            var input = $('.list-choice');
+            input.val($(this).text());
+            $(this).parent().find('li').removeClass('active');
+            $(this).addClass('active');
+            $(this).parent().next('.fields').hide();
+        });
+        $('ul.note > li').on('click', function() {
+            var input = $('.note-choice');
+            input.val($(this).index());
+            $(this).parent().find('li').removeClass('active');
+            $(this).addClass('active');
+            $(this).parent().next('.fields').hide();
+        });
+        $('.checkboxes > div').on('click', function() {
+            $(this).parent().next('.fields').hide();
+            if ( $(this).hasClass('active') ) {
+                $(this).removeClass('active');
+                $(this).find('input').val('0');
+            } else {
+                $(this).addClass('active');
+                $(this).find('input').val('1');
+            }
+        });
+
+        $('.question-input-short').prop('disabled', true);
+        $('input.list-choice, input.note-choice, .checkboxes > div input, .additional-field').val('');
+    });
+
+
+    loadScripts = function loadScripts(src, charset, callback) {
+        if (typeof callback !== "function") {
+            callback = function () {
+                return true;
+            };
+        }
+        $.ajax({
+            url: src,
+            scriptCharset: charset || 'utf-8',
+            dataType: "script"
+        }).done(callback);
+    };
+}());
+
+(function () {
+    'use strict';
+
+    var Validator;
+
+    Validator = function () {
+        var nerrors, checkEmail, checkEmpty, checkNotRequired, checkSelect, checkCheckbox, checkPesel, checkIDnumber,
+            checkPassport, checkDate, checkTypes, checkRegex, checkNRB, checkFileUpload;
+
+        nerrors = 0;
+
+        checkRegex = function (el) {
+            var re, id;
+
+            re = new RegExp(el.data('regex'), 'g');
+            console.log(re);
+
+            if ($('.icon-16', el.parent()).length) {
+                el.next('.icon-16').remove();
+            }
+
+            if (!re.test(el.val())) {
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+                nerrors++;
+                el.parent().children('span.error').remove();
+                el.parent().append('<span class="error">' + el.data('msg') + '</span>');
+            } else {
+                if (!$('.invalid', el.parent()).length) {
+                    el.parent().children('span.error').remove();
+                }
+                id = el.data('placer') || el.attr('id');
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+                $('#placer_' + id).text(el.val());
+            }
+        };
+
+        checkEmail = function (el) {
+            var re, bcompare, id;
+
+            el.parent().children('span.error').remove();
+            bcompare = true;
+
+            re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            if ($('.icon-16', el.parent()).length) {
+                $('.icon-16', el.parent()).remove();
+            }
+            if (el.attr('id') === 'input_email2') {
+                if (el.val() !== $('#input_email').val()) {
+                    bcompare = false;
+                }
+            }
+            if (!re.test(el.val()) || !bcompare) {
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+                nerrors++;
+                el.parent().append('<span class="error">' + el.data('msg') + '</span>');
+            } else {
+                id = el.data('placer') || el.attr('id');
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+                $('#placer_' + id).text(el.val());
+            }
+        };
+
+        checkEmpty = function (el) {
+            var bcompare, blength, date, id;
+            el.parent().children('span.error').remove();
+
+            bcompare = true;
+            blength = true;
+
+            if ($('.icon-16', el.parent()).length) {
+                $('.icon-16', el.parent()).remove();
+            }
+            if (el.attr('id') === 'input_phone2') {
+                if (el.val() !== $('#input_phone').val()) {
+                    bcompare = false;
+                }
+            }
+            if (el.attr('id') === 'input_phone' || el.attr('id') === 'input_phone2') {
+                // console.log(el.val().length)
+                if (el.val().length !== 9) {
+                    blength = false;
+                }
+            }
+
+            if (el.attr('id') === 'input_street' || el.attr('id') === 'input_city' || el.attr('id') === 'input_correspondence_street' || el.attr('id') === 'input_correspondence_city') {
+                // console.log(el.val().length)
+                if (el.val().length < 2) {
+                    blength = false;
+                }
+            }
+
+            if (el.hasClass('datepicker')) {
+                date = el.val().split('.');
+                $(".datepicker[data-parser='date']")
+                    .datepicker("option", "minDate", new Date(parseInt(date[2], 10), parseInt(date[1], 10) - 1, parseInt(date[0], 10) + 1));
+            }
+			if (el.attr('id') === 'input_agent_no') {
+				
+                if (el.val().length < 4) {
+                    blength = false;
+                }else{
+					var a = el.val();
+					var b = a.split('');
+					if (b[0] != 4 && b[0] != 6){
+						blength = false;
+					}
+					
+				}
+            }
+			if (el.attr('id') === 'creditNumber') {
+				var a = el.val().substring(0,7);
+                if (el.val().length < 16) {
+                    blength = false;
+                }
+				
+            }
+
+            if (el.val() === "" || !bcompare || !blength) {
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+                el.parent().show();
+                setTimeout(function() {
+                    el.parent().hide();
+                }, 2500);
+                nerrors++;
+                el.parent().append('<span class="error">' + el.data('msg') + '</span>');
+            } else {
+                id = el.data('placer') || el.attr('id');
+                //el.removeClass('invalid').addClass('valid');
+                //el.after('<span class="icon-16 valid" />');
+                $('#placer_' + id).text(el.val());
+            }
+        };
+		
+		checkFileUpload = function (el) {
+            var isFile, tmsg;
+
+            el.siblings('span.error').remove();
+            if ($('.icon-16', el.parent()).length) {
+                $('.icon-16', el.parent()).remove();
+            }
+
+            isFile = el.val();
+            tmsg = '<span class="error">' + el.data('msg') + '</span>';
+
+            //console.log(isFile);
+
+            if (isFile === "") {
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+                nerrors++;
+                el.parent().append(tmsg);
+            } else {
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+            }
+        };
+		
+        checkNotRequired = function (el) {
+            var id;
+
+            if ($('.icon-16', el.parent()).length) {
+                $('.icon-16', el.parent()).remove();
+            }
+
+            if (el.val() !== "") {
+                id = el.data('placer') || el.attr('id');
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+                $('#placer_' + id).text(el.val());
+            } else {
+                id = el.data('placer') || el.attr('id');
+                el.removeClass('valid');
+                $('#placer_' + id).text('');
+            }
+        };
+
+        checkSelect = function (el) {
+            var option, tmsg, id;
+
+            el.parent().siblings('span.error').remove();
+            if ($('.icon-16', el.parent().parent()).length) {
+                $('.icon-16', el.parent().parent()).remove();
+            }
+
+            option = $('option:selected', el);
+            tmsg = '<span class="error">' + el.data('msg') + '</span>';
+            el = el.parent();
+            if (option.val() === "") {
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+                nerrors++;
+                el.parent().append(tmsg);
+            } else {
+                id = el.children('select').data('placer') || el.children('select').attr('id');
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+                $('#placer_' + id).text(option.text());
+            }
+
+        };
+
+        checkCheckbox = function (el) {
+            var c;
+
+            el.parent().children('span.error').remove();
+
+            c = el.parent().parent().siblings('label');
+            c.removeClass('invalid');
+
+            if (!el.is(':checked')) {
+                c.addClass('invalid');
+                nerrors++;
+                // el.parent().append('<span class="error">'+el.data('msg')+'</span>');
+            }
+        };
+		
+		checkPesel = function (el) {
+            var validatePesel, p, id, invalid_pesels;
+
+            el.parent().children('span.error').remove();
+
+            if ($('.icon-16', el.parent()).length) {
+                $('.icon-16', el.parent()).remove();
+            }
+
+            validatePesel = function (p) {
+                var ratio, sum;
+                ratio = parseInt(p[0], 10);
+                ratio += parseInt(p[1], 10) * 3;
+                ratio += parseInt(p[2], 10) * 7;
+                ratio += parseInt(p[3], 10) * 9;
+                ratio += parseInt(p[4], 10);
+                ratio += parseInt(p[5], 10) * 3;
+                ratio += parseInt(p[6], 10) * 7;
+                ratio += parseInt(p[7], 10) * 9;
+                ratio += parseInt(p[8], 10);
+                ratio += parseInt(p[9], 10) * 3;
+                sum = ratio % 10;
+                if (sum === 0) {
+                    return true;
+                }
+                sum = 10 - sum;
+                if (sum === parseInt(p[10], 10)) {
+                    return true;
+                }
+                return false;
+            };
+
+            p = el.val();
+            p += '';
+            p = p.split("");
+
+            invalid_pesels = ["00000000000", "22222222222", "44444444444", "55555555555", "66666666666",
+                "88888888888"];
+
+            if (validatePesel(p) && $.inArray(el.val(), invalid_pesels) === -1) {
+                id = el.data('placer') || el.attr('id');
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+                $('#placer_' + id).text(el.val());
+            } else {
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+                nerrors++;
+                el.parent().append('<span class="error">' + el.data('msg') + '</span>');
+            }
+        };
+		
+        checkNRB = function (el) {
+            var validateNRB, p, id, bcompare;
+			bcompare = true;
+            el.parent().children('span.error').remove();
+            if ($('.icon-16', el.parent()).length) {
+                $('.icon-16', el.parent()).remove();
+            }
+
+            validateNRB = function (p) {
+                var n = p;
+				var i;
+				var b = '';
+				for (i=0;i<26;i++){b+=n[i];}
+				n = b + "2521";
+				var l = n.length;
+				n = n.substr(2) + n.substr(0,2); 
+				var c=0;
+				c+=parseInt(n.charAt(29))*1;
+				c+=parseInt(n.charAt(28))*10;
+				c+=parseInt(n.charAt(27))*3;
+				c+=parseInt(n.charAt(26))*30;
+				c+=parseInt(n.charAt(25))*9;
+				c+=parseInt(n.charAt(24))*90;
+				c+=parseInt(n.charAt(23))*27;
+				c+=parseInt(n.charAt(22))*76;
+				c+=parseInt(n.charAt(21))*81;
+				c+=parseInt(n.charAt(20))*34;
+				c+=parseInt(n.charAt(19))*49;
+				c+=parseInt(n.charAt(18))*5;
+				c+=parseInt(n.charAt(17))*50;
+				c+=parseInt(n.charAt(16))*15;
+				c+=parseInt(n.charAt(15))*53;
+				c+=parseInt(n.charAt(14))*45;
+				c+=parseInt(n.charAt(13))*62;
+				c+=parseInt(n.charAt(12))*38;
+				c+=parseInt(n.charAt(11))*89;
+				c+=parseInt(n.charAt(10))*17;
+				c+=parseInt(n.charAt(9))*73;
+				c+=parseInt(n.charAt(8))*51;
+				c+=parseInt(n.charAt(7))*25;
+				c+=parseInt(n.charAt(6))*56;
+				c+=parseInt(n.charAt(5))*75;
+				c+=parseInt(n.charAt(4))*71;
+				c+=parseInt(n.charAt(3))*31;
+				c+=parseInt(n.charAt(2))*19;
+				c+=parseInt(n.charAt(1))*93;
+				c+=parseInt(n.charAt(0))*57;
+					if((c%97)==1) { 
+						return true 
+					} else { 
+						return false
+					}
+            };
+			if (el.attr('id') === 'input_nrb') {
+				var tt=el.val();
+				var ss = tt.substr(2,8);
+                if (ss == '19401076') {
+                    bcompare = true;
+                }else{bcompare = false;};
+            }
+			
+			
+            p = el.val();
+            p += '';
+            p = p.split("");
+
+            if (validateNRB(p) && bcompare) {
+                id = el.data('placer') || el.attr('id');
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+                $('#placer_' + id).text(el.val());
+            } else {
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+                nerrors++;
+                el.parent().append('<span class="error">' + el.data('msg') + '</span>');
+            }
+        };
+
+        checkIDnumber = function (el) {
+            el.parent().children('span.error').remove();
+            if ($('.icon-16', el.parent()).length) {
+                $('.icon-16', el.parent()).remove();
+            }
+
+            var arr, weights, sum, i, key, id_length, id;
+
+            arr = {"A" : "10", "B" : "11", "C" : "12", "D" : "13", "E" : "14",
+                "F" : "15", "G" : "16", "H" : "17", "I" : "18", "J" : "19",
+                "K" : "20", "L" : "21", "M" : "22", "N" : "23", "O" : "24",
+                "P" : "25", "Q" : "26", "R" : "27", "S" : "28", "T" : "29",
+                "U" : "30", "V" : "31", "W" : "32", "X" : "33", "Y" : "34",
+                "Z" : "35"};
+
+            weights = [7, 3, 1, 9, 7, 3, 1, 7, 3];
+            sum = 0;
+            key = '';
+            id = el.val().split('');
+            id_length = id.length;
+            for (i = 0; i < id_length; i += 1) {
+                key = id[i];
+                if (isNaN(key)) {
+                    key = key.toUpperCase();
+                }
+                if (arr[key] !== undefined) {
+                    id[i] = parseInt(arr[key], 10);
+                } else {
+                    id[i] = parseInt(id[i], 10);
+                }
+                sum += id[i] * weights[i];
+            }
+            if (sum % 10 === 0 && el.val() !== "") {
+                id = el.data('placer') || el.attr('id');
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+                $('#placer_' + id).text(el.val());
+            } else {
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+                nerrors++;
+                el.parent().append('<span class="error">' + el.data('msg') + '</span>');
+            }
+        };
+
+        checkPassport = function (el) {
+            el.parent().children('span.error').remove();
+            if ($('.icon-16', el.parent()).length) {
+                $('.icon-16', el.parent()).remove();
+            }
+
+            var arr, weights, sum, key, id, id_length, i;
+
+            arr = {"A" : "10", "B" : "11", "C" : "12", "D" : "13",
+                "E" : "14", "F" : "15", "G" : "16", "H" : "17", "I" : "18",
+                "J" : "19", "K" : "20", "L" : "21", "M" : "22", "N" : "23",
+                "O" : "24", "P" : "25", "Q" : "26", "R" : "27", "S" : "28",
+                "T" : "29", "U" : "30", "V" : "31", "W" : "32", "X" : "33",
+                "Y" : "34", "Z" : "35"};
+            weights = [7, 3, 9, 1, 7, 3, 1, 7, 3];
+            sum = 0;
+            key = '';
+            id = el.val().split('');
+            id_length = id.length;
+
+            for (i = 0; i < id_length; i++) {
+                key = id[i];
+                if (isNaN(key)) {
+                    key = key.toUpperCase();
+                }
+                if (arr[key] !== undefined) {
+                    id[i] = arr[key];
+                }
+                sum += id[i] * weights[i];
+            }
+            if (sum % 10 === 0 && el.val() !== "") {
+                id = el.data('placer') || el.attr('id');
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+                $('#placer_' + id).text(el.val());
+            } else {
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+                nerrors++;
+                el.parent().append('<span class="error">' + el.data('msg') + '</span>');
+            }
+        };
+
+        checkDate = function (el) {
+            var date_create, date_expired, id;
+//            var identity, date_create, date_expired, id;
+
+            el.parent().children('span.error').remove();
+            if ($('.icon-16', el.parent()).length) {
+                $('.icon-16', el.parent()).remove();
+            }
+
+//            identity = $('#identity option:selected').index();
+            // console.log(identity)
+
+            date_create = $('#input_datecreated').val().split('.');
+            date_expired = el.val().split('.');
+
+            if ((date_create[2] <= date_expired[2]) && (date_create[1] <= date_expired[1]) && (date_create[0] < date_expired[0])) {
+                id = el.data('placer') || el.attr('id');
+                el.removeClass('invalid').addClass('valid');
+                el.after('<span class="icon-16 valid" />');
+                $('#placer_' + id).text(el.val());
+            } else {
+                el.removeClass('valid').addClass('invalid');
+                el.after('<span class="icon-16 invalid" />');
+                nerrors++;
+                el.parent().append('<span class="error">' + el.data('msg') + '</span>');
+            }
+        };
+
+        checkTypes = function (el, type) {
+            switch (type) {
+			case "file":
+                checkFileUpload(el);
+                break;
+			case "nrb":
+				checkNRB(el);
+				break;
+            case "email":
+                checkEmail(el);
+                break;
+            case "empty":
+                checkEmpty(el);
+                break;
+            case "select":
+                checkSelect(el);
+                break;
+            case "pesel":
+                checkPesel(el);
+                break;
+            case "idnumber":
+                checkIDnumber(el);
+                break;
+            case "regex":
+                checkRegex(el);
+                break;
+            case "passport":
+                checkPassport(el);
+                break;
+            case "checkbox":
+                checkCheckbox(el);
+                break;
+            case "date":
+                checkDate(el);
+                break;
+            case "notrequired":
+                checkNotRequired(el);
+                break;
+            }
+        };
+
+        this.checkField = function (el, type) {
+            checkTypes(el, type);
+        };
+        this.checkStep = function (el, type) {
+//            var msg;
+            nerrors = 0;
+//            msg = '<strong>Wystąpiły następujące błędy:</strong><ul>';
+            el.each(function () {
+                checkTypes($(this), $(this).attr(type));
+            });
+            return {
+                nerrors: nerrors
+            };
+        };
+    };
+
+    window.Validator = new Validator();
+}());
+    // CHECK EXTENSION
+
+    var checkExtension = function (el) {
+        var fileExtension = "";
+
+        if (el.val().lastIndexOf(".") > 0) {
+            fileExtension = el.val().substring(el.val().lastIndexOf(".") + 1, el.val().length);
+        }
+        if (fileExtension === "png" || fileExtension === "jpg" || fileExtension === "pdf" || fileExtension === "jpeg") {
+            return true;
+        } else {
+            el.replaceWith(el = el.clone(true));
+            return false;
+        }
+    };
+
+    // SHOW FILE PREVIEW
+
+    var fileApi = function () {
+
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            $('html').addClass('file-api');
+            $('#fileupload-preview').removeClass('hide');
+
+            var handleFileSelect = function (evt, nr) {
+                var files, maxSize, $fileContainer, i, f, reader;
+
+                files = evt.target.files;
+                maxSize = 0.5; // mb
+                $fileContainer = $('.fileapi-container');
+                $fileContainer.removeClass('error');
+
+                for (i = 0, f; f = files[i]; i++) {
+
+                    reader = new FileReader();
+                    reader.onload = (function (theFile) {
+                        return function (e) {
+                            var fname, fsize, ftype, fpreview;
+
+                            fname = theFile.name;
+                            fsize = theFile.size / 1024 / 1024;
+                            ftype = theFile.type;
+                            fpreview = $('<a href="' + e.target.result + '" target="_blank" title="' + encodeURI(fname) + '">Podglad pliku</a><a href="#" data-delete="' + nr + '" class="delete hide">Usuń</a>');
+                            $('.preview_' + nr).html('');
+
+                            // check size
+                            if (fsize > maxSize || (ftype !== "image/png" && ftype !== "image/jpg" && ftype !== "image/jpeg" && ftype !== "application/pdf")) {
+                                $('input[data-file-nr="' + nr + '"]').val('');
+                                return false;
+                            }
+                            // add to summary
+                            fpreview.appendTo('.preview_' + nr);
+                            if (nr === 2) { 
+                                $('#fileupload-preview .file-second').removeClass('hide');
+                                $('input[name="attachment2"]').after('<span class="icon-16 valid"></span>');
+                            }
+
+                            //$('input[data-file-nr="' + nr + '"]').attr('disabled', 'disabled');
+
+                        };
+                    })(f);
+                    reader.readAsDataURL(f);
+                }
+            };
+
+            $('.fileapi').change(function (e) {
+                var nr = $(this).data("file-nr");
+                handleFileSelect(e, nr);
+            });
+
+            $('.fileapi-container').on('click', '.delete', function () {
+                var $self, deleteFile;
+
+                $self = $(this);
+                deleteFile = $self.data('delete');
+
+                $('input[data-file-nr="' + deleteFile + '"]')
+                    .val('');
+                    //.removeAttr('disabled');
+                $self.parent().prev('.icon-16').remove();
+                $self.parent().html('');        
+                $('#fileupload-preview .file-second').addClass('hide');
+                return false;
+            });
+
+        } else {
+            //console.log('no-file-api');
+            $('.fileapi').change(function () {
+                var $self = $(this);
+                checkExtension($self);
+            });
+        }
+    };
+
+   
+    $(document).ready(function () {
+		fileApi();
+		
+		
+         $("textarea").on('keyup', function(){
+			var a = $( this ).attr( "maxlength" );
+			var b = $(this).val().length;
+			var c = a - b;
+			if (c<0)c=0;
+			var d = $(this).val().substring(0,a);
+			$(this).val(d);
+			$(this).next().find('.counter').text(c);
+			$(this).next().next().find('.counter').text(c);
+		});   
+	
+		
+    });Q��2��      Y���Y���>)� Y�w   I    :https://formularz.credit-agricole.pl/landing-pages/648/js/app/scripts.js necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Accept-Ranges: bytes
+Etag: W/"33578-1483443515000"
+Last-Modified: Tue, 03 Jan 2017 11:38:35 GMT
+Content-Type: application/javascript;charset=UTF-8
+Content-Language: pl-PL
+Content-Length: 33578
+Date: Tue, 05 Sep 2017 17:33:44 GMT
+ original-response-headers Server: Apache-Coyote/1.1
+Accept-Ranges: bytes
+Etag: W/"33578-1483443515000"
+Last-Modified: Tue, 03 Jan 2017 11:38:35 GMT
+Content-Type: application/javascript;charset=UTF-8
+Content-Language: pl-PL
+Content-Length: 33578
+Date: Tue, 05 Sep 2017 17:33:44 GMT
+ uncompressed-len 0 net-response-time-onstart 939 net-response-time-onstop 939   �*

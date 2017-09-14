@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>grep – Linux Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.2" />
+<meta name="description" content="grep – polecenie występujące w Uniksie i systemach pochodnych. Z danego tekstu pokazuje linie, które pasują do wzorca." />
+<meta name="keywords" content="Grep,polecenie Grep,Linux,polecenia,komendy,Linux polecenie Grep" />
+<link rel="alternate" type="application/x-wiki" title="Edytuj" href="http://linuxwiki.pl/wiki/Grep?action=edit" />
+<link rel="edit" title="Edytuj" href="http://linuxwiki.pl/wiki/Grep?action=edit" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Linux Wiki (pl)" />
+<link rel="EditURI" type="application/rsd+xml" href="//linuxwiki.pl/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="/wiki/Grep" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Kanał Atom Linux Wiki" href="/index.php?title=Specjalna:Ostatnie_zmiany&amp;feed=atom" />
+<link rel="stylesheet" href="//linuxwiki.pl/load.php?debug=false&amp;lang=pl&amp;modules=ext.gadget.Kolory%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="//linuxwiki.pl/load.php?debug=false&amp;lang=pl&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: linuxwiki:resourceloader:filter:minify-css:7:ea2778a7d5fd9c920736d94511fa1e2d */</style>
+<script src="//linuxwiki.pl/load.php?debug=false&amp;lang=pl&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Grep","wgTitle":"Grep","wgCurRevisionId":3880,"wgRevisionId":3880,"wgArticleId":59,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Polecenia"],"wgBreakFrames":false,"wgPageContentLanguage":"pl","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],"wgMonthNamesShort":["","sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"],"wgRelevantPageName":"Grep","wgRelevantArticleId":59,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"pl"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: linuxwiki:resourceloader:filter:minify-js:7:ea05e79731047fed5997cfbdd907520a */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<script type="text/javascript" src="http://ciasteczka.eu/cookiesEU-latest.min.js"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Grep skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="pl">grep</h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">Z Linux Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Skocz do:					<a href="#mw-head">nawigacja</a>, 					<a href="#p-search">szukaj</a>
+				</div>
+				<div id="mw-content-text" lang="pl" dir="ltr" class="mw-content-ltr"><p><b>grep</b> – polecenie występujące w <a href="http://linuxwiki.pl/wiki/Unix?action=edit&amp;redlink=1" class="new" title="Unix (strona nie istnieje)">Uniksie</a> i systemach pochodnych. Z danego tekstu pokazuje linie, które pasują do wzorca.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Spis treści</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#U.C5.BCycie"><span class="tocnumber">1</span> <span class="toctext">Użycie</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Najcz.C4.99.C5.9Bciej_u.C5.BCywane_prze.C5.82.C4.85czniki"><span class="tocnumber">2</span> <span class="toctext">Najczęściej używane przełączniki</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Przyk.C5.82ady"><span class="tocnumber">3</span> <span class="toctext">Przykłady</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Przyk.C5.82ad_1_.E2.80.93_z_u.C5.BCyciem_potoku"><span class="tocnumber">3.1</span> <span class="toctext">Przykład 1 – z użyciem potoku</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Przyk.C5.82ad_2_.E2.80.93_z_plikiem"><span class="tocnumber">3.2</span> <span class="toctext">Przykład 2 – z plikiem</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Przyk.C5.82ad_3_.E2.80.93_z_.E2.80.9Ekontekstem.E2.80.9D"><span class="tocnumber">3.3</span> <span class="toctext">Przykład 3 – z „kontekstem”</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Ciekawostki"><span class="tocnumber">4</span> <span class="toctext">Ciekawostki</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="U.C5.BCycie">Użycie</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://linuxwiki.pl/wiki/Grep?action=edit&amp;section=1" title="Edytuj sekcję: Użycie">edytuj</a><span class="mw-editsection-bracket">]</span></span></h2>
+<pre class="terminal terminal-normalny">
+<span class="znak-zachety explain" title="Ta linia może być wykonana jako dowolny użytkownik">$</span> grep [opcje] &lt;wzorzec&gt; [plik]</pre>
+<ul><li> <code>opcje</code> – opcjonalne przełączniki;</li>
+<li> <code>wzorzec</code> – co grep ma dopasowywać;</li>
+<li> <code>plik</code> – plik, w którym grep będzie szukać wzorca. Jeżeli go nie będzie, zostanie użyte standardowe wejście.</li></ul>
+<h2><span class="mw-headline" id="Najcz.C4.99.C5.9Bciej_u.C5.BCywane_prze.C5.82.C4.85czniki">Najczęściej używane przełączniki</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://linuxwiki.pl/wiki/Grep?action=edit&amp;section=2" title="Edytuj sekcję: Najczęściej używane przełączniki">edytuj</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li> <code>-A <i>x</i></code> – pokazuje <i>x</i> linii po znalezionym wzorcu</li>
+<li> <code>-B <i>x</i></code> – pokazuje <i>x</i> linii przed znalezionym wzorcem</li>
+<li> <code>-x</code> – zaznacza tylko te dopasowania, które pasują do całej linii</li>
+<li> <code>-i</code> – „znieczula” grepa na wielkość liter. W tym przypadku wyrazy <i>Linux</i> i <i>LInuX</i> będą traktowane jak identyczne.</li>
+<li> <code>-E</code> – używa rozszerzonych wyrażeń regularnych</li></ul>
+<h2><span class="mw-headline" id="Przyk.C5.82ady">Przykłady</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://linuxwiki.pl/wiki/Grep?action=edit&amp;section=3" title="Edytuj sekcję: Przykłady">edytuj</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Przyk.C5.82ad_1_.E2.80.93_z_u.C5.BCyciem_potoku">Przykład 1 – z użyciem <a href="/wiki/Potok" title="Potok">potoku</a></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://linuxwiki.pl/wiki/Grep?action=edit&amp;section=4" title="Edytuj sekcję: Przykład 1 – z użyciem potoku">edytuj</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Wywołanie <code><a href="/wiki/Ls" title="Ls">ls</a> | grep txt</code> w przykładowym folderze wypisze:
+</p>
+<pre class="terminal terminal-normalny">
+<span class="znak-zachety explain" title="Ta linia może być wykonana jako dowolny użytkownik">$</span>  ls | grep txt
+do zrobienia.txt
+linuxwiki.txt
+moje notatki.txt
+</pre>
+<p>Przy użyciu <a href="/wiki/Potok" title="Potok">potoku</a> program <a href="/wiki/Ls" title="Ls">ls</a> przekazał grepowi listę plików używając <a href="/wiki/Standardowe_strumienie" title="Standardowe strumienie">standardowego wejścia</a>. Grep otrzymał listę i pokazał tylko linie, które zawierały podany wzorzec (<i>txt</i>).
+</p>
+<h3><span class="mw-headline" id="Przyk.C5.82ad_2_.E2.80.93_z_plikiem">Przykład 2 – z plikiem</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://linuxwiki.pl/wiki/Grep?action=edit&amp;section=5" title="Edytuj sekcję: Przykład 2 – z plikiem">edytuj</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Wywołanie <code>grep "Panno Święta" "pan tadeusz.txt"</code> w przykładowym folderze zawierającym tekst pierwszej księgi <i>Pana Tadeusza</i> w pliku <code>pan tadeusz.txt</code> wypisze:
+</p>
+<pre class="terminal terminal-normalny">
+<span class="znak-zachety explain" title="Ta linia może być wykonana jako dowolny użytkownik">$</span> grep &quot;Panno Święta&quot; &quot;pan tadeusz.txt&quot;
+Panno Święta, co jasnej bronisz Częstochowy
+</pre>
+<h3><span class="mw-headline" id="Przyk.C5.82ad_3_.E2.80.93_z_.E2.80.9Ekontekstem.E2.80.9D">Przykład 3 – z „kontekstem”</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://linuxwiki.pl/wiki/Grep?action=edit&amp;section=6" title="Edytuj sekcję: Przykład 3 – z „kontekstem”">edytuj</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Gdy nie wiadomo, skąd pochodzi fragment (tak jak w powyższym przykładzie), przydadzą nam się opcje <code>-A</code> oraz <code>-B</code>. Chcemy zobaczyć 4 linie przed i 3 linie po tej z wzorcem. Zakładamy, że do zorientowania się wystarczy. Tak więc wywołanie komendy <code>grep -B 4 -A 3 "Panno Święta" "pan tadeusz.txt"</code> w przykładowym folderze wypisze na ekran:
+</p>
+<pre class="terminal terminal-normalny">
+<span class="znak-zachety explain" title="Ta linia może być wykonana jako dowolny użytkownik">$</span> grep -B 4 -A 3 &quot;Panno Święta&quot; &quot;pan tadeusz.txt&quot;
+Ile cię trzeba cenić, ten tylko się dowie,
+Kto cię stracił. Dziś piękność twą w całej ozdobie
+Widzę i opisuję, bo tęsknię po tobie.
+
+'''Panno Święta, co jasnej bronisz Częstochowy'''
+I w Ostrej świecisz Bramie! 2 Ty, co gr&#243;d zamkowy
+Nowogr&#243;dzki ochraniasz z jego wiernym ludem!
+Jak mnie dziecko do zdrowia powr&#243;ciłaś cudem
+</pre>
+<p>W celu łatwiejszego zorientowania się linia z wzorcem została oznaczona przez pogrubienie. W normalnych warunkach grep tego nie robi.
+</p>
+<h2><span class="mw-headline" id="Ciekawostki">Ciekawostki</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://linuxwiki.pl/wiki/Grep?action=edit&amp;section=7" title="Edytuj sekcję: Ciekawostki">edytuj</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li> Istnieją takie polecenia jak <i>egrep</i> i <i>fgrep</i>. <i>Egrep</i> to to samo co grep wywołany z parametrem <i>-E</i>, a <i>fgrep</i> – z parametrem <i>-f</i></li></ul>
+<p><br style="clear:both;" />
+</p>
+<table class="navbox" cellspacing="0" style=";;"><tr><td style="padding:2px;"><table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;;"><tr><th style=";;;" colspan="3" class="navbox-title"><div style="float:left; width:6em;text-align:left;"><div class="noprint plainlinksneverexpand" style="background-color:transparent; padding:0; font-weight:normal; font-size:xx-small; color: #000; white-space:nowrap;"><a href="/wiki/Szablon:Polecenia" title="Szablon:Polecenia"><span title="Pokaż ten szablon">p</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://linuxwiki.pl/wiki/Dyskusja_szablonu:Polecenia?action=edit&amp;redlink=1" class="new" title="Dyskusja szablonu:Polecenia (strona nie istnieje)"><span style="color: #002bb8;" title="Dyskusja na temat tego szablonu">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<span class="plainlinks"><a class="external text" href="http://linuxwiki.pl/wiki/Szablon:Polecenia?action=edit"><span style="color: #002bb8;" title="Możesz edytować ten szablon. Użyj przycisku podglądu przed zapisaniem zmian.">e</span></a></span></div></div><span style="font-size:110%;">Polecenia i ważne narzędzia w konsoli Linuksa</span></th></tr><tr style="height:2px;"><td></td></tr><tr><td class="navbox-group" style=";;;;;">Pliki i foldery</td><td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;;;;;;" class="navbox-list navbox-odd"><div style="padding:0em 0.25em"><a href="/wiki/Cat" title="Cat">cat</a> &#8226; <a href="http://linuxwiki.pl/wiki/Chgrp?action=edit&amp;redlink=1" class="new" title="Chgrp (strona nie istnieje)">chgrp</a> &#8226; <a href="/wiki/Chmod" title="Chmod">chmod</a> &#8226; <a href="/wiki/Chown" title="Chown">chown</a> &#8226; <a href="/wiki/Cd" title="Cd">cd</a> &#8226; <a href="/wiki/Cp" title="Cp">cp</a> &#8226; <a href="/wiki/Df" title="Df">df</a> &#8226; <a href="/wiki/Du" title="Du">du</a> &#8226; <a href="/wiki/File" title="File">file</a> &#8226; <a href="http://linuxwiki.pl/wiki/Find?action=edit&amp;redlink=1" class="new" title="Find (strona nie istnieje)">find</a> &#8226; <a href="http://linuxwiki.pl/wiki/Fsck?action=edit&amp;redlink=1" class="new" title="Fsck (strona nie istnieje)">fsck</a> &#8226; <a href="http://linuxwiki.pl/wiki/Getfacl?action=edit&amp;redlink=1" class="new" title="Getfacl (strona nie istnieje)">getfacl</a>/<a href="http://linuxwiki.pl/wiki/Setfacl?action=edit&amp;redlink=1" class="new" title="Setfacl (strona nie istnieje)">setfacl</a> &#8226; <a href="http://linuxwiki.pl/wiki/Ln?action=edit&amp;redlink=1" class="new" title="Ln (strona nie istnieje)">ln</a> &#8226; <a href="/wiki/Ls" title="Ls">ls</a> &#8226; <a href="http://linuxwiki.pl/wiki/Lsof?action=edit&amp;redlink=1" class="new" title="Lsof (strona nie istnieje)">lsof</a> &#8226; <a href="/wiki/Mkdir" title="Mkdir">mkdir</a> &#8226; <a href="/wiki/Mkfifo" title="Mkfifo">mkfifo</a> &#8226; <a href="/wiki/Mount" title="Mount">mount</a> &#8226; <a href="/wiki/Mv" title="Mv">mv</a> &#8226; <a href="/wiki/Pwd" title="Pwd">pwd</a> &#8226; <a href="/wiki/Rm" title="Rm">rm</a> &#8226; <a href="/wiki/Rmdir" title="Rmdir">rmdir</a> &#8226; <a href="/wiki/Split" title="Split">split</a> &#8226; <a href="/wiki/Touch" title="Touch">touch</a> &#8226; <a href="/wiki/Tree" title="Tree">tree</a> &#8226; <a href="/wiki/Umount" title="Umount">umount</a> &#8226; <a href="/wiki/Unlink" title="Unlink">unlink</a></div></td><td style="width:0%;padding:0px 0px 0px 2px;;" rowspan="11"><a href="/wiki/Plik:Crystal_Clear_app_terminal.png" class="image"><img alt="Crystal Clear app terminal.png" src="/images/thumb/1/1a/Crystal_Clear_app_terminal.png/64px-Crystal_Clear_app_terminal.png" width="64" height="64" srcset="/images/thumb/1/1a/Crystal_Clear_app_terminal.png/96px-Crystal_Clear_app_terminal.png 1.5x, /images/1/1a/Crystal_Clear_app_terminal.png 2x" /></a></td></tr><tr style="height:2px"><td></td></tr><tr><td class="navbox-group" style=";;;;;">Procesy</td><td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;;;;;;" class="navbox-list navbox-even"><div style="padding:0em 0.25em"><a href="http://linuxwiki.pl/wiki/At?action=edit&amp;redlink=1" class="new" title="At (strona nie istnieje)">at</a> &#8226; <a href="/wiki/Chroot" title="Chroot">chroot</a> &#8226; <a href="http://linuxwiki.pl/wiki/Crontab?action=edit&amp;redlink=1" class="new" title="Crontab (strona nie istnieje)">crontab</a> &#8226; <a href="/wiki/Fg" title="Fg">fg</a> &#8226; <a href="/wiki/Kill" title="Kill">kill</a> &#8226; <a href="/wiki/Killall" title="Killall">killall</a> &#8226; <a href="/wiki/Ps" title="Ps">ps</a> &#8226; <a href="http://linuxwiki.pl/wiki/Top?action=edit&amp;redlink=1" class="new" title="Top (strona nie istnieje)">top</a> &#8226; <a href="/wiki/Watch" title="Watch">watch</a></div></td></tr><tr style="height:2px"><td></td></tr><tr><td class="navbox-group" style=";;;;;">Użytkownicy i konta w systemie</td><td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;;;;;;" class="navbox-list navbox-odd"><div style="padding:0em 0.25em"><a href="/wiki/Last" title="Last">last</a> &#8226; <a href="/wiki/Logname" title="Logname">logname</a> &#8226; <a href="/wiki/Passwd" title="Passwd">passwd</a> &#8226; <a href="/wiki/Shutdown" title="Shutdown">shutdown</a> &#8226; <a href="/wiki/Su" title="Su">su</a> &#8226; <a href="/wiki/Sudo" title="Sudo">sudo</a> &#8226; <a href="/wiki/Tty" title="Tty">tty</a> &#8226; <a href="/wiki/W" title="W">w</a> &#8226; <a href="/wiki/Who" title="Who">who</a> &#8226; <a href="/wiki/Whoami" title="Whoami">whoami</a></div></td></tr><tr style="height:2px"><td></td></tr><tr><td class="navbox-group" style=";;;;;">Tekst</td><td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;;;;;;" class="navbox-list navbox-even"><div style="padding:0em 0.25em"><a href="/wiki/Cut" title="Cut">cut</a> &#8226; <strong class="selflink">grep</strong> &#8226; <a href="/wiki/Head" title="Head">head</a> &#8226; <a href="http://linuxwiki.pl/wiki/More?action=edit&amp;redlink=1" class="new" title="More (strona nie istnieje)">more</a> &#8226; <a href="http://linuxwiki.pl/wiki/Less?action=edit&amp;redlink=1" class="new" title="Less (strona nie istnieje)">less</a> &#8226; <a href="http://linuxwiki.pl/wiki/Tail?action=edit&amp;redlink=1" class="new" title="Tail (strona nie istnieje)">tail</a> &#8226; <a href="/wiki/Sort" title="Sort">sort</a> &#8226; <a href="/wiki/Tee" title="Tee">tee</a> &#8226; <a href="/wiki/Tr" title="Tr">tr</a> &#8226; <a href="/wiki/Wc" title="Wc">wc</a> &#8226; <a href="/wiki/Yes" title="Yes">yes</a></div></td></tr><tr style="height:2px"><td></td></tr><tr><td class="navbox-group" style=";;;;;">Wbudowane w powłokę</td><td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;;;;;;" class="navbox-list navbox-odd"><div style="padding:0em 0.25em"><a href="/wiki/Alias" title="Alias">alias</a> &#8226; <a href="/wiki/Clear" title="Clear">clear</a> &#8226; <a href="/wiki/Echo" title="Echo">echo</a> &#8226; <a href="/wiki/False" title="False">false</a> &#8226; <a href="/wiki/Printf" title="Printf">printf</a> &#8226; <a href="/wiki/Read" title="Read">read</a> &#8226; <a href="/wiki/Test" title="Test">test</a> &#8226; <a href="/wiki/True" title="True">true</a> &#8226; <a href="/wiki/Unalias" title="Unalias">unalias</a> &#8226; <a href="/wiki/Unset" title="Unset">unset</a></div></td></tr><tr style="height:2px"><td></td></tr><tr><td class="navbox-group" style=";;;;;">Różne</td><td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;;;;;;" class="navbox-list navbox-even"><div style="padding:0em 0.25em"><a href="/wiki/Basename" title="Basename">basename</a> &#8226; <a href="/wiki/Cal" title="Cal">cal</a> &#8226; <a href="/wiki/Hostname" title="Hostname">hostname</a> &#8226; <a href="/wiki/Man" title="Man">man</a> &#8226; <a href="/wiki/Sleep" title="Sleep">sleep</a> &#8226; <a href="/wiki/Uname" title="Uname">uname</a> &#8226; <a href="/wiki/Uptime" title="Uptime">uptime</a></div></td></tr></table></td></tr></table>
+<!-- 
+NewPP limit report
+CPU time usage: 0.700 seconds
+Real time usage: 0.703 seconds
+Preprocessor visited node count: 1031/1000000
+Preprocessor generated node count: 14389/1000000
+Post‐expand include size: 16103/2097152 bytes
+Template argument size: 6844/2097152 bytes
+Highest expansion depth: 9/40
+Expensive parser function count: 1/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  484.348      1 - -total
+ 78.56%  380.503      1 - Szablon:Polecenia
+ 73.60%  356.471      1 - Szablon:Navbox
+  8.30%   40.221      8 - Szablon:...
+  6.28%   30.421      1 - Szablon:Tnavbar
+  5.12%   24.821      8 - Szablon:Kursor
+  4.42%   21.397     68 - Szablon:*
+  2.39%   11.563      1 - Szablon:Małą_literą
+  1.94%    9.382      1 - Szablon:Słowa_kluczowe
+  1.19%    5.752      1 - Szablon:Clear
+-->
+
+<!-- Saved in parser cache with key linuxwiki:pcache:idhash:59-0!*!0!!pl!5!* and timestamp 20170906184407 and revision id 3880
+ -->
+</div>									<div class="printfooter">
+						Źródło: „<a dir="ltr" href="http://linuxwiki.pl/index.php?title=Grep&amp;oldid=3880">http://linuxwiki.pl/index.php?title=Grep&amp;oldid=3880</a>”					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Specjalna:Kategorie" title="Specjalna:Kategorie">Kategoria</a>: <ul><li><a href="/wiki/Kategoria:Polecenia" title="Kategoria:Polecenia">Polecenia</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu nawigacyjne</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Osobiste</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="/index.php?title=Specjalna:Zaloguj&amp;returnto=Grep&amp;type=signup" title="Zachęcamy do stworzenia konta i zalogowania, ale nie jest to konieczne.">Utwórz konto</a></li><li id="pt-login"><a href="/index.php?title=Specjalna:Zaloguj&amp;returnto=Grep" title="Zachęcamy do zalogowania się, choć nie jest to obowiązkowe. [o]" accesskey="o">Zaloguj się</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Przestrzenie nazw</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Grep"  title="Zobacz stronę treści [c]" accesskey="c">Strona</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://linuxwiki.pl/wiki/Dyskusja:Grep?action=edit&amp;redlink=1"  title="Dyskusja o zawartości tej strony [t]" accesskey="t">Dyskusja</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Warianty</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Wyświetleń</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/Grep" >Czytaj</a></span></li>
+															<li id="ca-edit"><span><a href="http://linuxwiki.pl/wiki/Grep?action=edit"  title="Możesz edytować tę stronę. Przed zapisaniem zmian użyj przycisku podgląd. [e]" accesskey="e">Edytuj</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://linuxwiki.pl/wiki/Grep?action=history"  title="Starsze wersje tej strony. [h]" accesskey="h">Historia</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Więcej</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Szukaj</label>
+						</h3>
+
+						<form action="/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Szukaj" title="Przeszukaj Linux Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Specjalna:Szukaj" name="title" /><input type="submit" name="fulltext" value="Szukaj" title="Szukaj wprowadzonego tekstu w treści stron" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Przejdź" title="Przejdź do strony o dokładnie takim tytule, o ile istnieje" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Linux_Wiki"  title="Strona główna"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Nawigacja</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="/wiki/Linux_Wiki" title="Przejdź na stronę główną [z]" accesskey="z">Strona główna</a></li>
+													<li id="n-randompage"><a href="/wiki/Specjalna:Losowa_strona" title="Załaduj losową stronę [x]" accesskey="x">Losowa strona</a></li>
+													<li id="n-Zawarto.C5.9B.C4.87"><a href="/wiki/Kategoria:Strona_g%C5%82%C3%B3wna">Zawartość</a></li>
+													<li id="n-help"><a href="/wiki/Pomoc:Strona_g%C5%82%C3%B3wna" title="Tutaj możesz się dowiedzieć wielu rzeczy.">Pomoc</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Linux' aria-labelledby='p-Linux-label'>
+			<h3 id='p-Linux-label'>Linux</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-Podstawy"><a href="/wiki/Kategoria:Linux">Podstawy</a></li>
+													<li id="n-Dystrybucje"><a href="/wiki/Kategoria:Dystrybucje">Dystrybucje</a></li>
+													<li id="n-Oprogramowanie"><a href="/wiki/Kategoria:Oprogramowanie">Oprogramowanie</a></li>
+													<li id="n-Katalogi"><a href="/wiki/Kategoria:Katalogi">Katalogi</a></li>
+													<li id="n-Poradniki"><a href="/wiki/Poradnik:Strona_g%C5%82%C3%B3wna">Poradniki</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Dla_edytor.C3.B3w' aria-labelledby='p-Dla_edytor.C3.B3w-label'>
+			<h3 id='p-Dla_edytor.C3.B3w-label'>Dla edytorów</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-Cz.C4.99ste-pytania"><a href="/wiki/Linux_Wiki:FAQ">Częste pytania</a></li>
+													<li id="n-Kana.C5.82-IRC"><a href="/wiki/Linux_Wiki:IRC">Kanał IRC</a></li>
+													<li id="n-Metastrony"><a href="/wiki/Kategoria:Linux_Wiki">Metastrony</a></li>
+													<li id="n-Forum"><a href="/wiki/Forum:Strona_g%C5%82%C3%B3wna">Forum</a></li>
+													<li id="n-recentchanges"><a href="/wiki/Specjalna:Ostatnie_zmiany" title="Lista ostatnich zmian na Linux Wiki. [r]" accesskey="r">Ostatnie zmiany</a></li>
+													<li id="n-Zasady"><a href="/wiki/Linux_Wiki:Zasady">Zasady</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Polecamy' aria-labelledby='p-Polecamy-label'>
+			<h3 id='p-Polecamy-label'>Polecamy</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-Encyklopedia-Borealis"><a href="http://borealis.net.pl/">Encyklopedia Borealis</a></li>
+													<li id="n-GTA-Wiki"><a href="http://pl.gta.wikia.com/">GTA Wiki</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Narzędzia</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="/wiki/Specjalna:Linkuj%C4%85ce/Grep" title="Pokaż listę wszystkich stron linkujących do tej strony [j]" accesskey="j">Linkujące</a></li>
+													<li id="t-recentchangeslinked"><a href="/wiki/Specjalna:Zmiany_w_linkowanych/Grep" title="Ostatnie zmiany w stronach, do których ta strona linkuje [k]" accesskey="k">Zmiany w linkowanych</a></li>
+													<li id="t-specialpages"><a href="/wiki/Specjalna:Strony_specjalne" title="Lista wszystkich specjalnych stron [q]" accesskey="q">Strony specjalne</a></li>
+													<li id="t-print"><a href="/index.php?title=Grep&amp;printable=yes" rel="alternate" title="Wersja do wydruku [p]" accesskey="p">Wersja do druku</a></li>
+													<li id="t-permalink"><a href="/index.php?title=Grep&amp;oldid=3880" title="Stały link do tej wersji strony">Link do tej wersji</a></li>
+													<li id="t-info"><a href="/index.php?title=Grep&amp;action=info" title="Więcej informacji na temat tej strony">Informacje o tej stronie</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>W innych językach</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-fi"><a href="https://linux.fi/wiki/grep" title="grep – suomi" lang="fi" hreflang="fi">Suomi</a></li>
+											</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> </li>
+											<li id="footer-info-copyright">Treść udostępniana na licencji <a class="external" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons – za uznaniem autora, na tych samych zasadach</a>, jeśli nie podano inaczej.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="/wiki/Linux_Wiki:Zasady_zachowania_poufno%C5%9Bci" title="Linux Wiki:Zasady zachowania poufności">Zasady zachowania poufności</a></li>
+											<li id="footer-places-about"><a href="/wiki/Linux_Wiki:O_nas" title="Linux Wiki:O nas">O Linux Wiki</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Linux_Wiki:Informacje_prawne" title="Linux Wiki:Informacje prawne">Informacje prawne</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="/resources/assets/licenses/cc-by-sa.png" alt="Creative Commons – za uznaniem autora, na tych samych zasadach" width="88" height="31" /></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="//www.mediawiki.org/"><img src="/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.FancyBoxThumbs","ext.gadget.Kolory"],null,true);
+}</script>
+<script>
+var fbtFancyBoxOptions = {};
+</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//linuxwiki.pl/load.php?debug=false\u0026amp;lang=pl\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.linuxwiki.pl/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "1"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+<!-- Piwik Image Tracker -->
+<noscript><img src="http://piwik.linuxwiki.pl/staty.php?idsite=1&amp;rec=1" style="border:0" alt="" /></noscript>
+<!-- End Piwik --><script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":527});
+}</script>
+	</body>
+</html>
+�=c p           Y�B�>+��           :http://linuxwiki.pl/wiki/Grep strongly-framed 1 request-method GET request-Accept-Encoding gzip, deflate request-Cookie 1wlPq1TQAycZzDuY2cQ3H0NKenM= response-head HTTP/1.1 200 OK
+Server: nginx/1.13.4
+Date: Thu, 07 Sep 2017 13:00:30 GMT
+Content-Type: text/html; charset=UTF-8
+X-Powered-By: PHP/5.6.26-1
+X-Content-Type-Options: nosniff
+Content-language: pl
+X-UA-Compatible: IE=Edge
+Vary: Accept-Encoding, Cookie
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: private, must-revalidate, max-age=0
+Last-Modified: Wed, 15 Jun 2016 13:45:18 GMT
+ original-response-headers Server: nginx/1.13.4
+Date: Thu, 07 Sep 2017 13:00:30 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/5.6.26-1
+X-Content-Type-Options: nosniff
+Content-language: pl
+X-UA-Compatible: IE=Edge
+Vary: Accept-Encoding, Cookie
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: private, must-revalidate, max-age=0
+Last-Modified: Wed, 15 Jun 2016 13:45:18 GMT
+ uncompressed-len 0 predictor::resource-count 12 predictor::http://linuxwiki.pl/load.php?debug=false&lang=pl&modules=ext.gadget.Kolory%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&only=styles&skin=vector&* 1,1,0,4096 predictor::http://linuxwiki.pl/load.php?debug=false&lang=pl&modules=site&only=styles&skin=vector&* 1,1,0,4096 predictor::http://linuxwiki.pl/load.php?debug=false&lang=pl&modules=startup&only=scripts&skin=vector&* 1,1,0,4096 predictor::http://ciasteczka.eu/cookiesEU-latest.min.js 1,1,0,4096 predictor::http://linuxwiki.pl/load.php?debug=false&lang=pl&modules=jquery%2Cmediawiki&only=scripts&skin=vector&version=20170907T124218Z 1,1,0,4096 predictor::http://linuxwiki.pl/load.php?debug=false&lang=pl&modules=jquery.accessKeyLabel%2Cclient%2CmwExtension%2CtabIndex%2Cthrottle-debounce%7Cmediawiki.legacy.ajax%2Cwikibits%7Cmediawiki.notify%2Cutil%7Cmediawiki.page.startup%7Cskins.vector.js&skin=vector&version=20170907T124218Z&* 1,1,0,4096 predictor::http://cdn.edl.cloud/init.js?p=d24cf1 1,1,0,4096 predictor::https://linuxwiki.pl/images/7/71/T%C5%82o.png 1,1,0,4096 predictor::http://linuxwiki.pl/load.php?debug=false&lang=pl&modules=ext.FancyBoxThumbs%7Cext.gadget.Kolory%7Cjquery.checkboxShiftClick%2Ccookie%2CgetAttrs%2ChighlightText%2CmakeCollapsible%2Cmw-jump%2Cplaceholder%2Csuggestions%7Cmediawiki.action.view.postEdit%7Cmediawiki.api%2Ccldr%2Ccookie%2CjqueryMsg%2Clanguage%2CsearchSuggest%2Ctemplate%2Ctoc%2Cuser%7Cmediawiki.language.data%2Cinit%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.ready%7Cuser.defaults&skin=vector&version=20170907T124218Z&* 1,1,0,4096 predictor::http://linuxwiki.pl/load.php?debug=false&lang=pl&modules=site&only=scripts&skin=vector&* 1,1,0,4096 predictor::http://piwik.linuxwiki.pl/piwik.js 1,1,0,4096 predictor::http://piwik.linuxwiki.pl/piwik.php?action_name=grep%20%E2%80%93%20Linux%20Wiki&idsite=1&rec=1&r=624801&h=15&m=0&s=31&url=http%3A%2F%2Flinuxwiki.pl%2Fwiki%2FGrep&urlref=https%3A%2F%2Fwww.google.pl%2F&_id=3d678d5e190c23e5&_idts=1504788142&_idvc=1&_idn=0&_refts=1504788142&_viewts=1504788142&_ref=https%3A%2F%2Fwww.google.pl%2F&send_image=0&cookie=1&res=1366x768&gt_ms=764 1,1,0,4096   ��
