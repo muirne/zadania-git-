@@ -125,13 +125,13 @@ addons.mozilla.org:HPKP	0	17423	1510587515119,1,1,WoiWRyIOVNa9ihaBciRSC7XHjliYS9
 syndication.twitter.com:HSTS	3	17420	2136275779985,1,0
 js.stripe.com:HSTS	0	17421	1536769284079,1,1
 prod.registrar.skype.com:HSTS	2	17423	1536939416046,1,1
-outlook.live.com:HSTS	3	17423	1536940884445,1,1
+outlook.live.com:HSTS	3	17423	1536941484456,1,1
 versioncheck.addons.mozilla.org:HSTS	0	17414	1504602168505,1,0
 cdn.polyfill.io:HSTS	0	17419	1536586816038,1,1
 normandy.cdn.mozilla.net:HSTS	8	17423	1536939485131,1,1
 use.typekit.net:HSTS	2	17421	1536747956256,1,1
 normandy.cdn.mozilla.net:HPKP	8	17423	1505489885136,1,0,WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=sRHdihwgkaib1P1gxX8HFszlD+7/gTfNvuAybgLPNis=
-static.asm.skype.com:HSTS	2	17423	1536940921658,1,1
+static.asm.skype.com:HSTS	2	17423	1536941525367,1,1
 analytics.twitter.com:HSTS	2	17421	2136362835566,1,0
 a.disquscdn.com:HSTS	0	17422	1505294906606,1,1
 api.github.com:HPKP	1	17423	1510586655434,1,1,WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=RRM1dGqnDFsCJXBTHky16vi1obOlCgFFn/yOhI/y+ho=k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws=K87oWBWM9UZfyddvDfoxL+8lpNyoUB2ptGtn0fv6G2Q=IQBnNBEiFuhj+8x6X8XLgh01V9Ic5/V3IRQLNFFc7v4=iie1VXtL7HzAMF+/PVPR9xzT80kQxdZeJ+zduCB3uj0=LvRiGEjRqfzurezaWuj8Wie2gyHMrW5Q06LspMnox7A=
