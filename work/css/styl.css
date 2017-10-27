@@ -1,0 +1,37 @@
+.kociu{
+    background-color: hotpink;
+    opacity: .5;
+    border: 4px dotted black;
+    font-style: italic;
+    font-family: cursive;
+    font-weight: bold;
+    text-align: center;text-transform: lowercase;
+    text-overflow: ellipsis;
+    text-decoration-color: red;
+}
+
+body{
+  background-image: url("http://www.lifewithcats.tv/wp-content/uploads/2016/08/Fish-tank-1024x576.png");
+  background-size:cover;
+}
+
+
+table {
+  border-collapse:separate;
+  border-spacing: 3px;
+  border-color: red;
+  border-style: dotted;
+  text-align: center;
+  padding: 30px;
+}
+
+th,td{
+  border: 1px solid black;
+  padding: 10px 15px;
+}
+
+form{
+  background-color: yellow;
+  text-align: left;
+  border-style: ridge;
+}
